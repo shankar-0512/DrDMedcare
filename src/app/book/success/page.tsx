@@ -134,6 +134,14 @@ function SuccessContent() {
           </div>
           <p className="mt-3 text-sm font-semibold text-slate-800">priyankanandhini8-3@okaxis</p>
           <p className="mt-0.5 text-xs text-slate-400">Scan with any UPI app · Amount ₹{booking.final_price_inr} is pre-filled</p>
+          <a
+            href={`upi://pay?pa=priyankanandhini8-3@okaxis&pn=Dr D's MedCare&am=${booking.final_price_inr}&cu=INR`}
+            className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-md transition-all hover:opacity-90"
+            style={{ background: 'rgb(var(--color-primary))' }}
+          >
+            Open UPI App to Pay ₹{booking.final_price_inr}
+          </a>
+          <p className="mt-2 text-xs text-slate-400">Opens GPay, PhonePe, Paytm &amp; more</p>
         </div>
       )}
 
