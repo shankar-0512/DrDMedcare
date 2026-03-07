@@ -51,6 +51,8 @@ function SuccessContent() {
     preferred_start:   preferredStart ?? '',
   } : null
 
+  const upiLink = `upi://pay?pa=priyankanandhini8-3@okaxis&pn=${encodeURIComponent("Dr D's MedCare")}&am=${booking?.final_price_inr ?? 0}&cu=INR`
+
   const whatsappText = encodeURIComponent(
     `Hi Dr D's MedCare, I have made the payment for my booking.\n\nBooking ID: ${bookingId ?? ''}\n\nI am attaching the payment screenshot / reference number.`
   )
@@ -131,7 +133,7 @@ function SuccessContent() {
           <div className="flex justify-center">
             <div className="rounded-xl border border-slate-200 p-3 bg-white inline-block">
               <QRCodeSVG
-                value={`upi://pay?pa=priyankanandhini8-3@okaxis&pn=Dr D's MedCare&am=${booking.final_price_inr}&cu=INR`}
+                value={upiLink}
                 size={180}
                 marginSize={0}
               />
@@ -142,7 +144,7 @@ function SuccessContent() {
           {isMobile && (
             <>
               <a
-                href={`upi://pay?pa=priyankanandhini8-3@okaxis&pn=Dr D's MedCare&am=${booking.final_price_inr}&cu=INR`}
+                href={upiLink}
                 className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-md transition-all hover:opacity-90"
                 style={{ background: 'rgb(var(--color-primary))' }}
               >
