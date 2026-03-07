@@ -142,12 +142,14 @@ export default function BookingsPage() {
   async function deleteBooking(booking: Booking) {
     if (!confirm(`Delete booking for ${booking.patient_name}? This cannot be undone.`)) return
     setDeleting(true)
-    if (booking.slot_id) {
-      await supabase.from('slots').update({ is_booked: false, booking_id: null }).eq('id', booking.slot_id)
-    }
-    const { error } = await supabase.from('bookings').delete().eq('id', booking.id)
+    const res = await fetch('/api/admin/delete-booking', {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ bookingId: booking.id, slotId: booking.slot_id }),
+    })
+    const data = await res.json()
     setDeleting(false)
-    if (error) { showToast('Error: ' + error.message); return }
+    if (!res.ok) { showToast('Error: ' + data.message); return }
     showToast('Booking deleted ✓')
     setSelected(null)
     await load()
