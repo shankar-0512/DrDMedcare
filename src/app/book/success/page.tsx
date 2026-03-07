@@ -142,8 +142,7 @@ function SuccessContent() {
             {[
               {
                 label: 'GPay',
-                href: isAndroid
-                  `gpay://upi/pay?pa=priyankanandhini8-5@oksbi&pn=${encodeURIComponent("Dr D's MedCare")}&am=${booking.final_price_inr}&cu=INR`,
+                href: `gpay://upi/pay?pa=priyankanandhini8-5@oksbi&pn=${encodeURIComponent("Dr D's MedCare")}&am=${booking.final_price_inr}&cu=INR`,
                 img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/512px-Google_Pay_Logo.svg.png',
               },
               {
