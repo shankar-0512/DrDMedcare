@@ -40,18 +40,16 @@ const schema = z.object({
   patientEmail:   z.string().email().optional().or(z.literal('')),
   language:       z.string().min(2),
 
-  consentEducation:     z.boolean(),
-  consentNoPrescribing: z.boolean(),
-  consentNotEmergency:  z.boolean(),
+  consentLegal: z.boolean(),
 })
 
 export async function POST(req: Request) {
   try {
     const body = schema.parse(await req.json())
 
-    if (!body.consentEducation || !body.consentNoPrescribing || !body.consentNotEmergency) {
+    if (!body.consentLegal) {
       return NextResponse.json(
-        { message: 'All consent checkboxes must be accepted.' },
+        { message: 'You must agree to the Terms of Service, Disclaimer, and Privacy Policy.' },
         { status: 400 }
       )
     }
@@ -147,9 +145,7 @@ export async function POST(req: Request) {
         patient_email:   body.patientEmail ?? '',
         language:        body.language,
 
-        consent_education:      body.consentEducation,
-        consent_no_prescribing: body.consentNoPrescribing,
-        consent_not_emergency:  body.consentNotEmergency,
+        consent_legal: body.consentLegal,
       })
       .select('id')
       .single()
