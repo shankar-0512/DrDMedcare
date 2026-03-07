@@ -140,6 +140,7 @@ function SuccessContent() {
             </div>
           </div>
           <p className="mt-3 text-sm font-semibold text-slate-800">priyankanandhini8-5@oksbi</p>
+          <p className="text-xs text-slate-500">UPI Mobile: 9080709332</p>
           <p className="mt-0.5 text-xs text-slate-400">Scan with any UPI app · Amount ₹{booking.final_price_inr} is pre-filled</p>
           {isAndroid && (
             <>
