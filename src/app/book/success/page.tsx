@@ -51,7 +51,7 @@ function SuccessContent() {
     preferred_start:   preferredStart ?? '',
   } : null
 
-  const upiLink = `upi://pay?pa=priyankanandhini8-3@okaxis&pn=${encodeURIComponent("Dr D's MedCare")}&am=${booking?.final_price_inr ?? 0}&cu=INR`
+  const upiLink = `upi://pay?pa=priyankanandhini8-5@oksbi&pn=${encodeURIComponent("Dr D's MedCare")}&am=${booking?.final_price_inr ?? 0}&cu=INR`
 
   const whatsappText = encodeURIComponent(
     `Hi Dr D's MedCare, I have made the payment for my booking.\n\nBooking ID: ${bookingId ?? ''}\n\nI am attaching the payment screenshot / reference number.`
@@ -139,7 +139,7 @@ function SuccessContent() {
               />
             </div>
           </div>
-          <p className="mt-3 text-sm font-semibold text-slate-800">priyankanandhini8-3@okaxis</p>
+          <p className="mt-3 text-sm font-semibold text-slate-800">priyankanandhini8-5@oksbi</p>
           <p className="mt-0.5 text-xs text-slate-400">Scan with any UPI app · Amount ₹{booking.final_price_inr} is pre-filled</p>
           {isMobile && (
             <>
