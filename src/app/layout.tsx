@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://drdmedcare.vercel.app'),
+  metadataBase: new URL('https://dr-d-medcare.vercel.app'),
   title: "Dr D's MedCare",
   description: "Prescription & medication education for patients in India. Education only. No diagnosis or prescribing.",
   icons: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Dr D's MedCare — Understand your medicines before you take them",
     description: "Personalised medication counselling sessions with Dr Priyanka Deventhiran, Pharm D. India only. Education only.",
     type: 'website',
-    url: 'https://drdmedcare.vercel.app',
+    url: 'https://dr-d-medcare.vercel.app',
     images: [{ url: '/ogimage.png' }],
   },
   twitter: {
