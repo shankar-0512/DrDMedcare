@@ -25,11 +25,13 @@ export const metadata: Metadata = {
     description: "Personalised medication counselling sessions with Dr Priyanka Deventhiran, Pharm D. India only. Education only.",
     type: 'website',
     url: 'https://drdmedcare.vercel.app',
+    images: [{ url: '/ogimage.png' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: "Dr D's MedCare",
     description: "Personalised medication counselling sessions for patients in India.",
+    images: ['/ogimage.png'],
   },
 };
 
