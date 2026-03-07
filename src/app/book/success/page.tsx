@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { QRCodeSVG } from 'qrcode.react'
 
@@ -29,7 +29,10 @@ function formatSlug(slug: string) {
 }
 
 function SuccessContent() {
-
+  const [isAndroid, setIsAndroid] = useState(false)
+  useEffect(() => {
+    setIsAndroid(/Android/i.test(navigator.userAgent))
+  }, [])
 
   const searchParams   = useSearchParams()
   const bookingId      = searchParams.get('bookingId')
@@ -138,35 +141,18 @@ function SuccessContent() {
           </div>
           <p className="mt-3 text-sm font-semibold text-slate-800">priyankanandhini8-5@oksbi</p>
           <p className="mt-0.5 text-xs text-slate-400">Scan with any UPI app · Amount ₹{booking.final_price_inr} is pre-filled</p>
-          <div className="mt-4 flex justify-center gap-3">
-            {[
-              {
-                label: 'GPay',
-                href: `gpay://upi/pay?pa=priyankanandhini8-5@oksbi&pn=${encodeURIComponent("Dr D's MedCare")}&am=${booking.final_price_inr}&cu=INR`,
-                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Google_Pay_Logo.svg/512px-Google_Pay_Logo.svg.png',
-              },
-              {
-                label: 'PhonePe',
-                href: `phonepe://pay?pa=priyankanandhini8-5@oksbi&pn=${encodeURIComponent("Dr D's MedCare")}&am=${booking.final_price_inr}&cu=INR`,
-                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/PhonePe_Logo.svg/512px-PhonePe_Logo.svg.png',
-              },
-              {
-                label: 'Paytm',
-                href: `paytmmp://pay?pa=priyankanandhini8-5@oksbi&pn=${encodeURIComponent("Dr D's MedCare")}&am=${booking.final_price_inr}&cu=INR`,
-                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Paytm_Logo_%28standalone%29.svg/512px-Paytm_Logo_%28standalone%29.svg.png',
-              },
-            ].map(({ label, href, img }) => (
+          {isAndroid && (
+            <>
               <a
-                key={label}
-                href={href}
-                className="flex flex-col items-center gap-1.5 rounded-xl border border-slate-200 px-4 py-3 text-xs font-medium text-slate-600 hover:border-slate-300 hover:bg-slate-50 transition-all"
+                href={upiLink}
+                className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-md transition-all hover:opacity-90"
+                style={{ background: 'rgb(var(--color-primary))' }}
               >
-                <img src={img} alt={label} className="h-8 w-8 rounded-lg object-contain" />
-                {label}
+                Open UPI App to Pay ₹{booking.final_price_inr}
               </a>
-            ))}
-          </div>
-          <p className="mt-2 text-xs text-slate-400">Tap to open your UPI app · ₹{booking.final_price_inr} pre-filled</p>
+              <p className="mt-2 text-xs text-slate-400">Opens GPay, PhonePe, Paytm &amp; more</p>
+            </>
+          )}
         </div>
       )}
 
