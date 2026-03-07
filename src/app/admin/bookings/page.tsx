@@ -83,6 +83,7 @@ export default function BookingsPage() {
   const [statusFilter, setStatusFilter] = useState<string>('all')
   const [toast, setToast]               = useState('')
   const [updating, setUpdating]         = useState(false)
+  const [deleting, setDeleting]         = useState(false)
   const [paymentRef, setPaymentRef]     = useState('')
 
   useEffect(() => { load() }, [])
@@ -136,6 +137,20 @@ export default function BookingsPage() {
     await load()
     const updated = bookings.find((b) => b.id === booking.id)
     if (updated) setSelected({ ...updated, status: 'cancelled' })
+  }
+
+  async function deleteBooking(booking: Booking) {
+    if (!confirm(`Delete booking for ${booking.patient_name}? This cannot be undone.`)) return
+    setDeleting(true)
+    if (booking.slot_id) {
+      await supabase.from('slots').update({ is_booked: false, booking_id: null }).eq('id', booking.slot_id)
+    }
+    const { error } = await supabase.from('bookings').delete().eq('id', booking.id)
+    setDeleting(false)
+    if (error) { showToast('Error: ' + error.message); return }
+    showToast('Booking deleted ✓')
+    setSelected(null)
+    await load()
   }
 
   async function activateMonthly(booking: Booking) {
@@ -360,6 +375,15 @@ export default function BookingsPage() {
                     Cancel booking
                   </button>
                 )}
+
+                <button
+                  type="button"
+                  disabled={deleting}
+                  onClick={() => deleteBooking(selected)}
+                  className="rounded-lg border border-red-300 bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 transition-all disabled:opacity-50"
+                >
+                  {deleting ? 'Deleting…' : 'Delete booking'}
+                </button>
               </div>
             </div>
 
