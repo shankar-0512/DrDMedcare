@@ -29,9 +29,9 @@ function formatSlug(slug: string) {
 }
 
 function SuccessContent() {
-  const [isMobile, setIsMobile] = useState(false)
+  const [isAndroid, setIsAndroid] = useState(false)
   useEffect(() => {
-    setIsMobile(/Android|iPhone|iPad/i.test(navigator.userAgent))
+    setIsAndroid(/Android/i.test(navigator.userAgent))
   }, [])
 
   const searchParams   = useSearchParams()
@@ -141,7 +141,7 @@ function SuccessContent() {
           </div>
           <p className="mt-3 text-sm font-semibold text-slate-800">priyankanandhini8-5@oksbi</p>
           <p className="mt-0.5 text-xs text-slate-400">Scan with any UPI app · Amount ₹{booking.final_price_inr} is pre-filled</p>
-          {isMobile && (
+          {isAndroid && (
             <>
               <a
                 href={upiLink}
