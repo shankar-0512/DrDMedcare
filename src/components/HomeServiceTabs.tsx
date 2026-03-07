@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase/client'
 
@@ -101,6 +101,7 @@ export default function HomeServiceTabs() {
   const [items, setItems]           = useState<ServiceType[]>([])
   const [loading, setLoading]       = useState(true)
   const [activeSlug, setActiveSlug] = useState<string>('')
+  const detailRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const cached = getCached()
@@ -173,7 +174,10 @@ export default function HomeServiceTabs() {
               <button
                 key={s.id}
                 type="button"
-                onClick={() => setActiveSlug(s.slug)}
+                onClick={() => {
+                  setActiveSlug(s.slug)
+                  setTimeout(() => detailRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50)
+                }}
                 className={[
                   'group relative rounded-2xl border-2 p-5 text-left transition-all duration-200',
                   isActive
@@ -212,7 +216,7 @@ export default function HomeServiceTabs() {
 
         {/* Expanded detail panel */}
         {active && (
-          <div className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <div ref={detailRef} className="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
             <div className="h-1 w-full" style={{ background: 'rgb(var(--color-primary))' }} />
             <div className="p-6 sm:p-8">
               <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">

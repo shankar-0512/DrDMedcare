@@ -21,7 +21,7 @@ export default function TermsPage() {
         <section>
           <h2 className="text-base font-bold text-slate-900 mb-3">1. Service description</h2>
           <p>
-            Dr D's MedCare provides medication education and counselling services conducted by Dr Priyanka Deventhiran, a qualified pharmacist. Services include prescription counselling, medication adherence planning, elderly polypharmacy support, disease awareness counselling, medication device training, and side effects counselling.
+            Dr D's MedCare provides medication education and counselling services conducted by Dr Priyanka Deventhiran, a qualified pharmacist. Services include prescription counselling, medication adherence planning, elderly care, disease awareness counselling, medication device training, and side effects counselling.
           </p>
           <p className="mt-3">
             All services are educational only. We do not diagnose medical conditions, prescribe medications, or recommend changes to any existing treatment. Our services are not a substitute for consultation with a licensed physician.

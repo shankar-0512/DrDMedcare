@@ -25,15 +25,16 @@ function formatDate(dateStr: string) {
   })
 }
 
+function getISTDateString(offsetDays = 0): string {
+  const now = new Date()
+  const istMins = now.getUTCHours() * 60 + now.getUTCMinutes() + 330
+  const extraDays = Math.floor(istMins / (24 * 60))
+  return new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + extraDays + offsetDays))
+    .toISOString().split('T')[0]
+}
+
 function getNext14Days(): string[] {
-  const dates: string[] = []
-  const today = new Date()
-  for (let i = 0; i < 14; i++) {
-    const d = new Date(today)
-    d.setDate(today.getDate() + i)
-    dates.push(d.toISOString().split('T')[0])
-  }
-  return dates
+  return Array.from({ length: 14 }, (_, i) => getISTDateString(i))
 }
 
 function toIST(date: string, time: string): string {
@@ -70,12 +71,13 @@ export default function SlotStep(props: {
   }
 
   function isPast(slot: Slot): boolean {
-    const today = new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' })
-    if (slot.slot_date !== today) return false
-    const [h, m] = slot.start_time.split(':').map(Number)
+    if (slot.slot_date !== getISTDateString()) return false
     const now = new Date()
-    const istNow = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }))
-    return istNow.getHours() * 60 + istNow.getMinutes() >= h * 60 + m
+    const istTotalMins = now.getUTCHours() * 60 + now.getUTCMinutes() + 330
+    const istHours = Math.floor(istTotalMins / 60) % 24
+    const istMins = istTotalMins % 60
+    const [h, m] = slot.start_time.split(':').map(Number)
+    return istHours * 60 + istMins >= h * 60 + m
   }
 
   function isAvailable(slot: Slot) {

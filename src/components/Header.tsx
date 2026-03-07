@@ -75,7 +75,7 @@ export default function Header() {
       {/* Top bar */}
       <div className="px-4 py-1.5" style={{ background: 'rgb(var(--color-primary))' }}>
         <div className="mx-auto max-w-6xl flex items-center justify-center text-xs text-white/85 font-medium tracking-wide">
-          <span className="uppercase">Education only · No diagnosis or prescribing</span>
+          <span className="uppercase font-bold">Education · Counselling · Guidance</span>
         </div>
       </div>
 
@@ -109,14 +109,8 @@ export default function Header() {
                 <span className="text-base font-semibold text-slate-800 tracking-tight">
                   Dr Priyanka Deventhiran
                 </span>
-                <span
-                  className="rounded-full border px-2.5 py-0.5 text-[10px] font-semibold text-[rgb(var(--color-primary))]"
-                  style={{ background: 'rgb(var(--color-primary-soft))', borderColor: 'rgb(var(--color-primary-mid))' }}
-                >
-                  India only
-                </span>
                 <span className="rounded-full bg-amber-50 border border-amber-200 px-2.5 py-0.5 text-[10px] font-semibold text-amber-700">
-                  Education only
+                  India only
                 </span>
               </div>
               <span className="text-xs text-[rgb(var(--color-muted))]">

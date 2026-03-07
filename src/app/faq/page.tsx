@@ -23,7 +23,7 @@ const FAQ_DATA: FAQCategory[] = [
     title: 'Before your session',
     icon: '📋',
     items: [
-      { q: 'Do I need a prescription to book?', a: 'For prescription counselling sessions, yes — you will need to share your prescription. You can upload it during booking on the website, or send it via WhatsApp before your session. For medication adherence planning, a prescription is helpful but not always required.' },
+      { q: 'Do I need a prescription to book?', a: 'For prescription counselling sessions, yes — you will need to share your prescription via WhatsApp before your session. For medication adherence planning, a prescription is helpful but not always required.' },
       { q: 'What languages are sessions available in?', a: 'Sessions are available in Tamil, English, Telugu and Hindi. Please mention your preferred language when booking.' },
       { q: "Who is this service for?", a: "Dr D's MedCare is especially helpful for elderly patients managing multiple medicines, parents of young children on medications, patients with chronic conditions like diabetes or hypertension, caregivers managing medicines for a family member, and anyone who wants to understand their prescription better before starting a new medicine." },
       { q: 'Is this service for emergencies?', a: 'No. This is not an emergency service. If you or someone around you is experiencing a medical emergency, please call 112 or go to your nearest hospital immediately.' },

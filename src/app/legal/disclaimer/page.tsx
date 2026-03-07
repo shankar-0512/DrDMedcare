@@ -51,16 +51,19 @@ export default function DisclaimerPage() {
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">5. Accuracy of information</h2>
+          <h2 className="text-base font-bold text-slate-900 mb-3">5. Accuracy of Information</h2>
           <p>
-            While we make every effort to ensure the accuracy of information provided, medication guidelines, drug interactions, and clinical recommendations are subject to change. Always verify information with your treating physician or pharmacist before making any decisions about your medication.
+            While we make every effort to ensure the information provided is accurate and up to date, medication guidelines, drug interactions, and clinical recommendations are subject to change. Dr D's MedCare is not responsible for any decisions made based on the information provided through our services. Always consult your treating physician before making any changes to your medication or treatment plan.
           </p>
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">6. Limitation of liability</h2>
+          <h2 className="text-base font-bold text-slate-900 mb-3">6. Limitation of Liability</h2>
           <p>
-            To the fullest extent permitted by applicable law, Dr D's MedCare, its operators, and affiliates shall not be liable for any loss, injury, or damage arising from your use of or reliance on any information provided through our services. Your use of our services is entirely at your own risk.
+            The information provided through Dr D's MedCare is for educational purposes only and does not constitute medical advice, diagnosis, or treatment. It is not a substitute for consultation with a licensed physician or qualified healthcare professional. Always consult your doctor before making any changes to your medication or treatment plan.
+          </p>
+          <p className="mt-3">
+            To the fullest extent permitted by applicable law, Dr D's MedCare, its operators, and affiliates shall not be liable for any loss, injury, or damage — direct or indirect — arising from your use of or reliance on any information provided through our services, regardless of how that information was used or applied. Your use of our services is entirely at your own risk.
           </p>
         </section>
 
