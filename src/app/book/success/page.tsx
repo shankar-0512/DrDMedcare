@@ -1,5 +1,6 @@
 'use client'
 
+import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { QRCodeSVG } from 'qrcode.react'
 
@@ -27,7 +28,7 @@ function formatSlug(slug: string) {
   return slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
 }
 
-export default function BookingSuccessPage() {
+function SuccessContent() {
   const searchParams   = useSearchParams()
   const bookingId      = searchParams.get('bookingId')
   const patientName    = searchParams.get('patientName')
@@ -179,5 +180,13 @@ export default function BookingSuccessPage() {
       </p>
 
     </main>
+  )
+}
+
+export default function BookingSuccessPage() {
+  return (
+    <Suspense>
+      <SuccessContent />
+    </Suspense>
   )
 }

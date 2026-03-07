@@ -3,7 +3,6 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export async function proxy(request: NextRequest) {
-  console.log('MIDDLEWARE HIT:', request.nextUrl.pathname)
   const { pathname } = request.nextUrl
 
   // Only protect /admin routes, allow /admin/login through

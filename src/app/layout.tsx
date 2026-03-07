@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://drdmedcare.vercel.app'),
   title: "Dr D's MedCare",
   description: "Prescription & medication education for patients in India. Education only. No diagnosis or prescribing.",
   icons: {
