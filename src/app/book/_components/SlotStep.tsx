@@ -34,7 +34,7 @@ function getISTDateString(offsetDays = 0): string {
 }
 
 function getNext14Days(): string[] {
-  return Array.from({ length: 14 }, (_, i) => getISTDateString(i))
+  return Array.from({ length: 14 }, (_, i) => getISTDateString(i + 2))
 }
 
 function toIST(date: string, time: string): string {
