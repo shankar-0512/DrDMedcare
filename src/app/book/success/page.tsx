@@ -52,6 +52,7 @@ function SuccessContent() {
   } : null
 
   const upiLink = `upi://pay?pa=30818055@kvb&pn=${encodeURIComponent("Dr D's MedCare")}&am=${booking?.final_price_inr ?? 0}&cu=INR`
+  const upiDeepLink = `upi://pay?pa=30818055@kvb&pn=${encodeURIComponent("Dr D's MedCare")}&cu=INR`
 
   const whatsappText = encodeURIComponent(
     `Hi Dr D's MedCare, I have made the payment for my booking.\n\nBooking ID: ${bookingId ?? ''}\n\nI am attaching the payment screenshot / reference number.`
@@ -145,7 +146,7 @@ function SuccessContent() {
           {isAndroid && (
             <>
               <a
-                href={upiLink}
+                href={upiDeepLink}
                 className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-md transition-all hover:opacity-90"
                 style={{ background: 'rgb(var(--color-primary))' }}
               >
