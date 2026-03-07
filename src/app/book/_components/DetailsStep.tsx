@@ -55,6 +55,7 @@ export default function DetailsStep(props: {
   const [c1, setC1] = useState(false)
   const [c2, setC2] = useState(false)
   const [c3, setC3] = useState(false)
+  const [cLegal, setCLegal] = useState(false)
   const [cRx, setCRx] = useState(false) // prescription consent
 
   const isPrescription = props.draft.serviceType?.slug === 'prescription-counselling'
@@ -87,7 +88,7 @@ export default function DetailsStep(props: {
     if (!patientAddress.trim()) { props.onError('Please enter your address.'); return }
 
     // Consent validations
-    if (!c1 || !c2 || !c3)     { props.onError('Please tick all consent checkboxes to continue.'); return }
+    if (!c1 || !c2 || !c3 || !cLegal) { props.onError('Please tick all consent checkboxes to continue.'); return }
     if (isPrescription && !cRx) { props.onError('Please confirm you will send your prescription on WhatsApp.'); return }
 
     setLoading(true)
@@ -321,6 +322,7 @@ export default function DetailsStep(props: {
             { state: c1, set: setC1, text: 'I understand this is medication education based on my existing prescription.' },
             { state: c2, set: setC2, text: "I understand Dr D's MedCare does not diagnose, prescribe, or change medicines." },
             { state: c3, set: setC3, text: 'I agree this is not for emergencies.' },
+            { state: cLegal, set: setCLegal, text: null },
             ...(isPrescription ? [{ state: cRx, set: setCRx, text: 'I will send a clear photo of my prescription on WhatsApp along with my payment confirmation.' }] : []),
           ].map((item, i) => (
             <label key={i} className="flex items-start gap-3 cursor-pointer group">
@@ -344,7 +346,16 @@ export default function DetailsStep(props: {
                 checked={item.state}
                 onChange={(e) => item.set(e.target.checked)}
               />
-              <span className="text-sm text-slate-600 leading-relaxed">{item.text}</span>
+              {item.text ? (
+                <span className="text-sm text-slate-600 leading-relaxed">{item.text}</span>
+              ) : (
+                <span className="text-sm text-slate-600 leading-relaxed">
+                  I have read and agree to the{' '}
+                  <a href="/legal/terms" target="_blank" className="underline text-[rgb(var(--color-primary))]">Terms of Service</a>,{' '}
+                  <a href="/legal/disclaimer" target="_blank" className="underline text-[rgb(var(--color-primary))]">Disclaimer</a>, and{' '}
+                  <a href="/legal/privacy" target="_blank" className="underline text-[rgb(var(--color-primary))]">Privacy Policy</a>.
+                </span>
+              )}
             </label>
           ))}
         </div>
