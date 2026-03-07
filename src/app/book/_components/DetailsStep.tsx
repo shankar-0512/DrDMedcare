@@ -106,9 +106,7 @@ export default function DetailsStep(props: {
         patientAddress: patientAddress.trim(),
         patientEmail: patientEmail.trim(),
         language,
-        consentEducation: c1,
-        consentNoPrescribing: c2,
-        consentNotEmergency: c3,
+        consentLegal: cLegal,
       }),
     })
 
