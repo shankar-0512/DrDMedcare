@@ -59,6 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${BASE_URL}/blog/clinical-pharmacist-vs-pharmacist`,
+      lastModified: new Date('2025-03-20'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: `${BASE_URL}/legal/privacy`,
       lastModified: new Date(),
       changeFrequency: 'yearly',

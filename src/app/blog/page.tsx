@@ -20,13 +20,21 @@ type BlogPost = {
 
 const POSTS: BlogPost[] = [
   {
+    slug: 'clinical-pharmacist-vs-pharmacist',
+    title: "Clinical pharmacist vs pharmacist — what's the difference and why does it matter?",
+    excerpt: "Both work with medicines — but their roles, training, and what they can do for you are very different. Here's a clear breakdown.",
+    category: 'Awareness',
+    readTime: '5 min read',
+    date: 'March 2025',
+    featured: true,
+  },
+  {
     slug: 'healthcare-professionals-india',
     title: 'Who does what in Indian healthcare — a simple guide',
     excerpt: "Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse, physiotherapist, dietitian, lab technician and ASHA worker — each plays a distinct and important role. Here's a quick guide to who does what.",
     category: 'Awareness',
     readTime: '4 min read',
     date: 'March 2025',
-    featured: true,
   },
   {
     slug: 'why-i-started-drd-medcare',
@@ -125,9 +133,9 @@ export default function BlogPage() {
                 </div>
                 <div className="hidden lg:flex items-center justify-center bg-sky-50/60 p-10">
                   <div className="text-center">
-                    <div className="text-7xl">🏥</div>
+                    <div className="text-7xl">💊</div>
                     <p className="mt-4 text-sm font-medium text-sky-700">Awareness</p>
-                    <p className="mt-1 text-xs text-slate-400 max-w-[200px] leading-relaxed">Understanding the Indian healthcare system</p>
+                    <p className="mt-1 text-xs text-slate-400 max-w-[200px] leading-relaxed">Understanding who does what with your medicines</p>
                   </div>
                 </div>
               </div>
