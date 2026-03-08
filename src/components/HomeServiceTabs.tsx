@@ -14,30 +14,6 @@ type ServiceType = {
   base_price_inr: number
 }
 
-const CACHE_KEY = 'drds_service_types_v2'
-const CACHE_TTL = 1000 * 60 * 10 // 10 minutes
-
-function getCached(): ServiceType[] | null {
-  try {
-    const raw = sessionStorage.getItem(CACHE_KEY)
-    if (!raw) return null
-    const { data, ts } = JSON.parse(raw)
-    if (!Array.isArray(data) || data.length === 0) return null
-    if (Date.now() - ts > CACHE_TTL) return null
-    return data
-  } catch {
-    return null
-  }
-}
-
-function setCache(data: ServiceType[]) {
-  try {
-    // Never cache empty results
-    if (!data || data.length === 0) return
-    sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() }))
-  } catch {}
-}
-
 function iconFor(slug: string) {
   const map: Record<string, string> = {
     'prescription-counselling': '🧾',
@@ -100,44 +76,52 @@ function ServiceSkeleton() {
 export default function HomeServiceTabs() {
   const [items, setItems]           = useState<ServiceType[]>([])
   const [loading, setLoading]       = useState(true)
+  const [error, setError]           = useState(false)
   const [activeSlug, setActiveSlug] = useState<string>('')
   const detailRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const cached = getCached()
-    if (cached && cached.length > 0) {
-      setItems(cached)
-      setActiveSlug(cached[0]?.slug ?? '')
+    load()
+  }, [])
+
+  async function load() {
+    setLoading(true)
+    setError(false)
+    const { data, error } = await supabase
+      .from('service_types')
+      .select('id,slug,title,short_desc,long_desc,icon,base_price_inr')
+      .eq('is_active', true)
+      .order('sort_order', { ascending: true })
+
+    if (error || !data || data.length === 0) {
+      setError(true)
       setLoading(false)
       return
     }
-
-    async function load() {
-      const { data, error } = await supabase
-        .from('service_types')
-        .select('id,slug,title,short_desc,long_desc,icon,base_price_inr')
-        .eq('is_active', true)
-        .order('sort_order', { ascending: true })
-
-      if (error) { setLoading(false); return }
-      const list = (data ?? []) as ServiceType[]
-      setCache(list)
-      setItems(list)
-      setActiveSlug(list[0]?.slug ?? '')
-      setLoading(false)
-    }
-    load()
-  }, [])
+    const list = data as ServiceType[]
+    setItems(list)
+    setActiveSlug(list[0]?.slug ?? '')
+    setLoading(false)
+  }
 
   const activeIndex = useMemo(() => items.findIndex((x) => x.slug === activeSlug), [items, activeSlug])
   const active = items[activeIndex] ?? null
 
   if (loading) return <ServiceSkeleton />
 
-  if (items.length === 0) {
+  if (error || items.length === 0) {
     return (
       <section className="px-4 py-16">
-        <div className="mx-auto max-w-6xl text-sm text-slate-400">No services available right now.</div>
+        <div className="mx-auto max-w-6xl flex flex-col items-center gap-3 text-center py-8">
+          <p className="text-sm text-slate-400">Could not load services. Please try again.</p>
+          <button
+            onClick={load}
+            className="rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all hover:opacity-90"
+            style={{ background: 'rgb(var(--color-primary))' }}
+          >
+            Retry
+          </button>
+        </div>
       </section>
     )
   }
