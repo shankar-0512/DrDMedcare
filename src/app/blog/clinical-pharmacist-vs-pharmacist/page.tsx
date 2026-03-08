@@ -1,9 +1,26 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
+const _title = "Clinical Pharmacist vs Pharmacist — What's the Difference?"
+const _desc = "Both work with medicines — but their roles, training, and what they can do for you are very different. Here's what you need to know."
+const _ogImage = `https://dr-d-medcare.vercel.app/api/og?title=${encodeURIComponent(_title)}&category=Awareness`
+
 export const metadata: Metadata = {
-  title: "Clinical Pharmacist vs Pharmacist — What's the Difference? | Dr D's MedCare Blog",
-  description: "Both work with medicines — but their roles, training, and what they can do for you are very different. Here's what you need to know.",
+  title: `${_title} | Dr D's MedCare Blog`,
+  description: _desc,
+  openGraph: {
+    title: _title,
+    description: _desc,
+    type: 'article',
+    url: 'https://dr-d-medcare.vercel.app/blog/clinical-pharmacist-vs-pharmacist',
+    images: [{ url: _ogImage, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: _title,
+    description: _desc,
+    images: [_ogImage],
+  },
 }
 
 const jsonLd = {

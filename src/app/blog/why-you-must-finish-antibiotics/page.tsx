@@ -1,9 +1,26 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
+const _title = 'Why Stopping Antibiotics Midway Is Dangerous'
+const _desc = "Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your antibiotic course early."
+const _ogImage = `https://dr-d-medcare.vercel.app/api/og?title=${encodeURIComponent(_title)}&category=Education`
+
 export const metadata: Metadata = {
-  title: "Why Stopping Antibiotics Midway Is Dangerous | Dr D's MedCare Blog",
-  description: "Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your antibiotic course early.",
+  title: `${_title} | Dr D's MedCare Blog`,
+  description: _desc,
+  openGraph: {
+    title: _title,
+    description: _desc,
+    type: 'article',
+    url: 'https://dr-d-medcare.vercel.app/blog/why-you-must-finish-antibiotics',
+    images: [{ url: _ogImage, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: _title,
+    description: _desc,
+    images: [_ogImage],
+  },
 }
 
 const jsonLd = {

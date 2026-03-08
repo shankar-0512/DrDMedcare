@@ -1,9 +1,26 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
+const _title = 'Common Drug-Food Interactions Every Indian Patient Should Know'
+const _desc = 'Dal, milk, banana, tea — everyday foods that can silently reduce or amplify the effect of your medicines.'
+const _ogImage = `https://dr-d-medcare.vercel.app/api/og?title=${encodeURIComponent(_title)}&category=Education`
+
 export const metadata: Metadata = {
-  title: "Common Drug-Food Interactions Every Indian Patient Should Know | Dr D's MedCare Blog",
-  description: "Dal, milk, banana, tea — everyday foods that can silently reduce or amplify the effect of your medicines.",
+  title: `${_title} | Dr D's MedCare Blog`,
+  description: _desc,
+  openGraph: {
+    title: _title,
+    description: _desc,
+    type: 'article',
+    url: 'https://dr-d-medcare.vercel.app/blog/drug-food-interactions-india',
+    images: [{ url: _ogImage, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: _title,
+    description: _desc,
+    images: [_ogImage],
+  },
 }
 
 const jsonLd = {

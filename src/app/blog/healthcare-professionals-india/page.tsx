@@ -1,9 +1,26 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
+const _title = 'Who Does What in Indian Healthcare — A Simple Guide'
+const _desc = 'Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse — each plays a distinct role. A quick guide to who does what in Indian healthcare.'
+const _ogImage = `https://dr-d-medcare.vercel.app/api/og?title=${encodeURIComponent(_title)}&category=Awareness`
+
 export const metadata: Metadata = {
-  title: "Who Does What in Indian Healthcare — A Simple Guide | Dr D's MedCare Blog",
-  description: "Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse — each plays a distinct role. A quick guide to who does what in Indian healthcare.",
+  title: `${_title} | Dr D's MedCare Blog`,
+  description: _desc,
+  openGraph: {
+    title: _title,
+    description: _desc,
+    type: 'article',
+    url: 'https://dr-d-medcare.vercel.app/blog/healthcare-professionals-india',
+    images: [{ url: _ogImage, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: _title,
+    description: _desc,
+    images: [_ogImage],
+  },
 }
 
 const jsonLd = {
