@@ -1,7 +1,7 @@
 'use client'
 
 import { Suspense, useEffect, useState } from 'react'
-import { useSearchParams } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { QRCodeSVG } from 'qrcode.react'
 
 type BookingDetail = {
@@ -39,12 +39,15 @@ const SERVICE_LABELS: Record<string, string> = {
 
 function SuccessContent() {
   const [isAndroid, setIsAndroid] = useState(false)
-  useEffect(() => {
-    setIsAndroid(/Android/i.test(navigator.userAgent))
-  }, [])
+  const router = useRouter()
 
   const searchParams   = useSearchParams()
   const bookingId      = searchParams.get('bookingId')
+
+  useEffect(() => {
+    setIsAndroid(/Android/i.test(navigator.userAgent))
+    if (!bookingId) router.replace('/book')
+  }, [bookingId, router])
   const patientName    = searchParams.get('patientName')
   const finalPrice     = searchParams.get('finalPrice')
   const serviceSlug    = searchParams.get('serviceSlug')

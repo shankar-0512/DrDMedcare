@@ -99,6 +99,7 @@ export default function BookingsPage() {
       .from('bookings')
       .select('*')
       .order('created_at', { ascending: false })
+      .limit(200)
     setBookings((data ?? []) as Booking[])
     setLoading(false)
   }

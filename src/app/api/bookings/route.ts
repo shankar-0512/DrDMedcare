@@ -245,19 +245,23 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: 'Invalid slot time range.' }, { status: 400 })
     }
 
-    // Validate slot if provided
+    // Atomically claim slot — prevents double-booking race condition
     if (body.slotId) {
-      const { data: slot } = await supabase
+      const { data: claimed } = await supabase
         .from('slots')
-        .select('id, is_booked, is_blocked, is_dummy')
+        .update({ is_booked: true })
         .eq('id', body.slotId)
+        .eq('is_booked', false)
+        .eq('is_blocked', false)
+        .eq('is_dummy', false)
+        .select('id')
         .single()
 
-      if (!slot) {
-        return NextResponse.json({ message: 'Selected slot not found.' }, { status: 400 })
-      }
-      if (slot.is_booked || slot.is_blocked || slot.is_dummy) {
-        return NextResponse.json({ message: 'Selected slot is no longer available. Please choose another.' }, { status: 400 })
+      if (!claimed) {
+        return NextResponse.json(
+          { message: 'Selected slot is no longer available. Please choose another.' },
+          { status: 409 }
+        )
       }
     }
 
@@ -288,11 +292,11 @@ export async function POST(req: Request) {
 
     if (error) return NextResponse.json({ message: error.message }, { status: 400 })
 
-    // Mark slot as booked
+    // Link booking_id to the already-claimed slot
     if (body.slotId) {
       await supabase
         .from('slots')
-        .update({ is_booked: true, booking_id: data.id })
+        .update({ booking_id: data.id })
         .eq('id', body.slotId)
     }
 
@@ -301,8 +305,8 @@ export async function POST(req: Request) {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY)
         await resend.emails.send({
-          from: "Dr D's MedCare <onboarding@resend.dev>",
-          replyTo: 'drpriyankamedcare@gmail.com',
+          from: process.env.RESEND_FROM_EMAIL ?? "Dr D's MedCare <onboarding@resend.dev>",
+          replyTo: process.env.RESEND_REPLY_TO ?? 'drpriyankamedcare@gmail.com',
           to: body.patientEmail,
           subject: "Your session request is confirmed — Dr D's MedCare",
           html: buildConfirmationEmail({

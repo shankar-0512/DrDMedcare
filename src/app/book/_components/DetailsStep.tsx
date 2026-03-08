@@ -256,7 +256,12 @@ export default function DetailsStep(props: {
               type="tel"
               maxLength={10}
               value={patientPhone}
-              onChange={(e) => setPatientPhone(e.target.value.replace(/\D/g, ''))}
+              onChange={(e) => {
+                const digits = e.target.value.replace(/\D/g, '')
+                // Strip leading 91 if user typed +91XXXXXXXXXX (12 digits)
+                const cleaned = digits.length === 12 && digits.startsWith('91') ? digits.slice(2) : digits
+                setPatientPhone(cleaned.slice(0, 10))
+              }}
             />
           </div>
 
