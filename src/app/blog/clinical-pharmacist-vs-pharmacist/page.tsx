@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = "Clinical Pharmacist vs Pharmacist — What's the Difference?"
 const _desc = "Both work with medicines — but their roles, training, and what they can do for you are very different. Here's what you need to know."
-const _ogImage = `https://dr-d-medcare.vercel.app/api/og?title=${encodeURIComponent(_title)}&category=Awareness`
+const _ogImage = 'https://dr-d-medcare.vercel.app/og/clinical-pharmacist-vs-pharmacist.png'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
