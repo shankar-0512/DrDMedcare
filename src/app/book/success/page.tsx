@@ -28,6 +28,15 @@ function formatSlug(slug: string) {
   return slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
 }
 
+const SERVICE_LABELS: Record<string, string> = {
+  'prescription-counselling': 'Prescription Counselling',
+  'adherence-planning':       'Adherence Planning',
+  'elderly-polypharmacy':     'Elderly Care',
+  'disease-awareness':        'Disease Awareness',
+  'device-usage':             'Device Usage',
+  'side-effects':             'Side Effects Review',
+}
+
 function SuccessContent() {
   const [isAndroid, setIsAndroid] = useState(false)
   useEffect(() => {
@@ -98,7 +107,7 @@ function SuccessContent() {
             </div>
             <div>
               <p className="text-xs text-slate-400">Service</p>
-              <p className="font-medium text-slate-800">{formatSlug(booking.service_type_slug)}</p>
+              <p className="font-medium text-slate-800">{SERVICE_LABELS[booking.service_type_slug] ?? formatSlug(booking.service_type_slug)}</p>
             </div>
             <div>
               <p className="text-xs text-slate-400">Plan</p>
