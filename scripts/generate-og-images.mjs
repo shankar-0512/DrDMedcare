@@ -132,7 +132,7 @@ const POSTS = [
           `<div style="width:72px;height:72px;background:white;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 4px 16px rgba(0,0,0,0.06);border:1px solid #e0f2fe;">${e}</div>`
         ).join('')}
       </div>
-      <div style="position:absolute;bottom:80px;right:60px;background:white;border-radius:12px;padding:10px 20px;box-shadow:0 4px 16px rgba(3,105,161,0.1);border:1px solid #e0f2fe;">
+      <div style="position:absolute;bottom:155px;right:60px;background:white;border-radius:12px;padding:10px 20px;box-shadow:0 4px 16px rgba(3,105,161,0.1);border:1px solid #e0f2fe;">
         <span style="font-size:13px;font-weight:600;color:#0369a1;">10 roles explained</span>
       </div>
       `
