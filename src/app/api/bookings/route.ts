@@ -102,6 +102,21 @@ export async function POST(req: Request) {
 
     const finalPriceInr = calculateFinalPrice(basePriceInr, planCode)
 
+    // Rate limit: max 3 bookings per phone number per 24 hours
+    const since = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
+    const { count } = await supabase
+      .from('bookings')
+      .select('id', { count: 'exact', head: true })
+      .eq('patient_phone', body.patientPhone)
+      .gte('created_at', since)
+
+    if ((count ?? 0) >= 3) {
+      return NextResponse.json(
+        { message: 'Too many bookings from this number. Please try again after 24 hours or contact us on WhatsApp.' },
+        { status: 429 }
+      )
+    }
+
     const startIso = new Date(body.preferredStart).toISOString()
     const endIso   = new Date(body.preferredEnd).toISOString()
 
