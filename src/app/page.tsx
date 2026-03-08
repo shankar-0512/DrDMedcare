@@ -3,6 +3,45 @@ import Image from 'next/image'
 import HomeServiceTabs from '@/components/HomeServiceTabs'
 import WhatsAppButton, { WA_MESSAGES } from '@/components/WhatsappButton'
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MedicalBusiness',
+  name: "Dr D's MedCare",
+  url: 'https://dr-d-medcare.vercel.app',
+  logo: 'https://dr-d-medcare.vercel.app/logo.png',
+  image: 'https://dr-d-medcare.vercel.app/ogimage.png',
+  description: 'Personalised medication counselling sessions for patients in India. Prescription education, adherence planning, polypharmacy management, and more.',
+  telephone: '+919080709332',
+  areaServed: 'IN',
+  availableLanguage: ['English', 'Tamil', 'Telugu', 'Hindi'],
+  priceRange: '₹₹',
+  medicalSpecialty: 'Pharmacy',
+  employee: {
+    '@type': 'Person',
+    name: 'Dr Priyanka Deventhiran',
+    jobTitle: 'Clinical Pharmacist',
+    honorificPrefix: 'Dr',
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Pharm D',
+    },
+    knowsLanguage: ['English', 'Tamil', 'Telugu', 'Hindi'],
+    worksFor: { '@name': "Dr D's MedCare" },
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Medication Counselling Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Prescription Counselling', description: 'Understand your prescription in detail.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Adherence Planning', description: 'Build a medication routine that fits your life.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Elderly Polypharmacy Review', description: 'Safe medication review for seniors on multiple drugs.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Disease Awareness Session', description: 'Understand your condition and how your medicines work.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Device & Inhaler Training', description: 'Learn to use inhalers, insulin pens, and other devices correctly.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Side Effects Counselling', description: 'Identify, manage, and report side effects safely.' } },
+    ],
+  },
+};
+
 const TRUST_BADGES = [
   { icon: '🎓', label: 'Pharm D Qualified' },
   { icon: '🇮🇳', label: 'India Only' },
@@ -18,6 +57,10 @@ const STATS = [
 export default function HomePage() {
   return (
     <main className="relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -top-32 -right-32 h-[480px] w-[480px] rounded-full opacity-[0.07]" style={{ background: 'rgb(var(--color-primary))' }} />
