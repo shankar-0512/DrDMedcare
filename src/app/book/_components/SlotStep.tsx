@@ -92,7 +92,7 @@ export default function SlotStep(props: {
   }
 
   const availableSlots = slots.filter(isAvailable)
-  const unavailableSlots = slots.filter((s) => !isAvailable(s) && !isPast(s))
+  const visibleSlots = slots.filter((s) => !isPast(s))
 
   return (
     <div className="space-y-5">
@@ -162,9 +162,19 @@ export default function SlotStep(props: {
           </div>
         ) : (
           <div className="grid grid-cols-3 gap-2 sm:grid-cols-4">
-            {/* Available slots */}
-            {availableSlots.map((slot) => {
+            {visibleSlots.map((slot) => {
+              const available = isAvailable(slot)
               const isSelected = selectedSlot?.id === slot.id
+              if (!available) {
+                return (
+                  <div
+                    key={slot.id}
+                    className="rounded-xl border-2 border-slate-100 bg-slate-50 px-3 py-2.5 text-sm font-semibold text-slate-300 text-center cursor-not-allowed"
+                  >
+                    {formatTime(slot.start_time)}
+                  </div>
+                )
+              }
               return (
                 <button
                   key={slot.id}
@@ -182,16 +192,6 @@ export default function SlotStep(props: {
                 </button>
               )
             })}
-
-            {/* Unavailable slots — shown greyed out */}
-            {unavailableSlots.map((slot) => (
-              <div
-                key={slot.id}
-                className="rounded-xl border-2 border-slate-100 bg-slate-50 px-3 py-2.5 text-sm font-semibold text-slate-300 text-center cursor-not-allowed"
-              >
-                {formatTime(slot.start_time)}
-              </div>
-            ))}
           </div>
         )}
       </div>
