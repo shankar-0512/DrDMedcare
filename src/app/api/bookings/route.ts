@@ -143,6 +143,109 @@ function buildConfirmationEmail(params: {
 </html>`
 }
 
+function buildAdminNotificationEmail(params: {
+  bookingId: string
+  patientName: string
+  patientPhone: string
+  patientEmail: string
+  patientAge: number
+  patientGender: string
+  patientAddress: string
+  language: string
+  serviceTitle: string
+  planCode: PlanCode
+  preferredStart: string
+  finalPriceInr: number
+}): string {
+  const adminLink = `https://dr-d-medcare.vercel.app/admin/bookings`
+  return `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f1f5f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:32px 16px;">
+    <tr><td align="center">
+      <table width="100%" style="max-width:540px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.08);">
+
+        <tr>
+          <td style="background:#0f766e;padding:24px 40px;">
+            <h1 style="margin:0;color:#ffffff;font-size:18px;font-weight:700;">New Booking Received</h1>
+            <p style="margin:4px 0 0;color:#99f6e4;font-size:13px;">Dr D's MedCare · Admin Alert</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:32px 40px;">
+            <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:24px;">
+              <tr><td style="padding:20px 24px;">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;width:40%;">Patient</td>
+                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.patientName}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Age / Gender</td>
+                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.patientAge} · ${params.patientGender}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Phone</td>
+                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.patientPhone}</td>
+                  </tr>
+                  ${params.patientEmail ? `<tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Email</td>
+                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.patientEmail}</td>
+                  </tr>` : ''}
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Address</td>
+                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.patientAddress}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Language</td>
+                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.language.toUpperCase()}</td>
+                  </tr>
+                  <tr><td colspan="2" style="padding:8px 0;border-top:1px solid #e2e8f0;"></td></tr>
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Service</td>
+                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.serviceTitle}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Plan</td>
+                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${planLabel(params.planCode)}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Preferred slot</td>
+                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${formatDateTime(params.preferredStart)}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Amount</td>
+                    <td style="padding:5px 0;color:#0f766e;font-size:15px;font-weight:700;">₹${params.finalPriceInr}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Booking ID</td>
+                    <td style="padding:5px 0;color:#94a3b8;font-size:12px;font-family:monospace;">${params.bookingId}</td>
+                  </tr>
+                </table>
+              </td></tr>
+            </table>
+
+            <table cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="background:#0f766e;border-radius:8px;">
+                  <a href="${adminLink}" style="display:inline-block;padding:12px 24px;color:#ffffff;font-size:14px;font-weight:600;text-decoration:none;">
+                    View in Admin →
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`
+}
+
 const schema = z.object({
   serviceTypeSlug: z.string().min(1).optional(),
   planCode: z.enum(['quick_15', 'full_30', 'monthly']).optional(),
@@ -300,27 +403,60 @@ export async function POST(req: Request) {
         .eq('id', body.slotId)
     }
 
-    // Send confirmation email if patient provided one
-    if (body.patientEmail) {
-      try {
-        const resend = new Resend(process.env.RESEND_API_KEY)
-        await resend.emails.send({
-          from: process.env.RESEND_FROM_EMAIL ?? "Dr D's MedCare <onboarding@resend.dev>",
-          replyTo: process.env.RESEND_REPLY_TO ?? 'drpriyankamedcare@gmail.com',
-          to: body.patientEmail,
-          subject: "Your session request is confirmed — Dr D's MedCare",
-          html: buildConfirmationEmail({
+    // Send emails — both fire concurrently, failures never block the booking response
+    try {
+      const resend = new Resend(process.env.RESEND_API_KEY)
+      const from = process.env.RESEND_FROM_EMAIL ?? "Dr D's MedCare <onboarding@resend.dev>"
+      const adminEmail = process.env.RESEND_REPLY_TO ?? 'drpriyankamedcare@gmail.com'
+
+      const emailJobs = []
+
+      // Patient confirmation
+      if (body.patientEmail) {
+        emailJobs.push(
+          resend.emails.send({
+            from,
+            replyTo: adminEmail,
+            to: body.patientEmail,
+            subject: "Your session request is confirmed — Dr D's MedCare",
+            html: buildConfirmationEmail({
+              patientName: body.patientName,
+              serviceTitle: serviceType.title,
+              planCode,
+              preferredStart: startIso,
+              finalPriceInr,
+              bookingId: data.id,
+            }),
+          })
+        )
+      }
+
+      // Admin notification
+      emailJobs.push(
+        resend.emails.send({
+          from,
+          to: adminEmail,
+          subject: `New booking: ${body.patientName} — ${serviceType.title}`,
+          html: buildAdminNotificationEmail({
+            bookingId: data.id,
             patientName: body.patientName,
+            patientPhone: body.patientPhone,
+            patientEmail: body.patientEmail ?? '',
+            patientAge: body.patientAge,
+            patientGender: body.patientGender,
+            patientAddress: body.patientAddress,
+            language: body.language,
             serviceTitle: serviceType.title,
             planCode,
             preferredStart: startIso,
             finalPriceInr,
-            bookingId: data.id,
           }),
         })
-      } catch {
-        // Email failure should not block the booking response
-      }
+      )
+
+      await Promise.allSettled(emailJobs)
+    } catch {
+      // Email failure should not block the booking response
     }
 
     return NextResponse.json({
