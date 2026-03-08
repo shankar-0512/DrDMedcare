@@ -58,7 +58,9 @@ ${decorHtml}
         <div style="font-size:12px;color:#94a3b8;margin-top:2px;">Clinical Pharmacist · Pharm D</div>
       </div>
     </div>
-    <span style="font-size:14px;color:#94a3b8;font-weight:500;">dr-d-medcare.vercel.app</span>
+    <div style="display:flex;align-items:center;gap:8px;background:${accentColor};border-radius:100px;padding:10px 22px;">
+      <span style="font-size:15px;font-weight:700;color:white;letter-spacing:-0.2px;">Read article →</span>
+    </div>
   </div>
 </div>
 </body>
