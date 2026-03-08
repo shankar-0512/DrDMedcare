@@ -59,7 +59,7 @@ function buildConfirmationEmail(params: {
 
         <!-- Header -->
         <tr>
-          <td style="background:#7c3aed;padding:32px 40px;text-align:center;">
+          <td style="background:#0f766e;padding:32px 40px;text-align:center;">
             <p style="margin:0;font-size:28px;">💊</p>
             <h1 style="margin:8px 0 0;color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.3px;">Dr D's MedCare</h1>
             <p style="margin:4px 0 0;color:#ddd6fe;font-size:13px;">Medication Counselling · India</p>
@@ -91,7 +91,7 @@ function buildConfirmationEmail(params: {
                     </tr>
                     <tr>
                       <td style="padding:6px 0;color:#64748b;font-size:13px;">Amount</td>
-                      <td style="padding:6px 0;color:#7c3aed;font-size:15px;font-weight:700;">₹${params.finalPriceInr}</td>
+                      <td style="padding:6px 0;color:#0f766e;font-size:15px;font-weight:700;">₹${params.finalPriceInr}</td>
                     </tr>
                     <tr>
                       <td style="padding:6px 0;color:#64748b;font-size:13px;">Booking ID</td>
@@ -131,7 +131,7 @@ function buildConfirmationEmail(params: {
         <tr>
           <td style="background:#f8fafc;border-top:1px solid #e2e8f0;padding:20px 40px;text-align:center;">
             <p style="margin:0;color:#94a3b8;font-size:12px;">
-              Questions? Reply to this email or WhatsApp <a href="https://wa.me/919080709332" style="color:#7c3aed;text-decoration:none;">+91 90807 09332</a>
+              Questions? Reply to this email or WhatsApp <a href="https://wa.me/919080709332" style="color:#0f766e;text-decoration:none;">+91 90807 09332</a>
             </p>
           </td>
         </tr>
