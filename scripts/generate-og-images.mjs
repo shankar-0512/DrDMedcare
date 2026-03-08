@@ -243,11 +243,11 @@ async function run() {
   for (const post of POSTS) {
     console.log(`Generating: ${post.slug}`)
     const page = await browser.newPage()
-    await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 2 })
+    await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1 })
     await page.setContent(post.html, { waitUntil: 'networkidle0' })
 
-    const outPath = path.join(OUT_DIR, `${post.slug}.png`)
-    await page.screenshot({ path: outPath, type: 'png', clip: { x: 0, y: 0, width: 1200, height: 630 } })
+    const outPath = path.join(OUT_DIR, `${post.slug}.jpg`)
+    await page.screenshot({ path: outPath, type: 'jpeg', quality: 85, clip: { x: 0, y: 0, width: 1200, height: 630 } })
     console.log(`  ✓ Saved ${post.slug}.png`)
     await page.close()
   }

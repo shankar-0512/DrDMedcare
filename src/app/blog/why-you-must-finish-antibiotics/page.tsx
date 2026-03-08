@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Why Stopping Antibiotics Midway Is Dangerous'
 const _desc = "Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your antibiotic course early."
-const _ogImage = 'https://dr-d-medcare.vercel.app/og/why-you-must-finish-antibiotics.png'
+const _ogImage = 'https://dr-d-medcare.vercel.app/og/why-you-must-finish-antibiotics.jpg'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,

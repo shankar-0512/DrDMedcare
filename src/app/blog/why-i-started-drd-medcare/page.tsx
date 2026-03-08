@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = "Why I Started Dr D's MedCare"
 const _desc = "A child died because nobody warned a mother about mixing cough syrup with milk. That moment changed everything for me."
-const _ogImage = 'https://dr-d-medcare.vercel.app/og/why-i-started-drd-medcare.png'
+const _ogImage = 'https://dr-d-medcare.vercel.app/og/why-i-started-drd-medcare.jpg'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,

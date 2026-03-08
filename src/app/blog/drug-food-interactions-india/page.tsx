@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Common Drug-Food Interactions Every Indian Patient Should Know'
 const _desc = 'Dal, milk, banana, tea — everyday foods that can silently reduce or amplify the effect of your medicines.'
-const _ogImage = 'https://dr-d-medcare.vercel.app/og/drug-food-interactions-india.png'
+const _ogImage = 'https://dr-d-medcare.vercel.app/og/drug-food-interactions-india.jpg'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,

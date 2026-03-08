@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Who Does What in Indian Healthcare — A Simple Guide'
 const _desc = 'Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse — each plays a distinct role. A quick guide to who does what in Indian healthcare.'
-const _ogImage = 'https://dr-d-medcare.vercel.app/og/healthcare-professionals-india.png'
+const _ogImage = 'https://dr-d-medcare.vercel.app/og/healthcare-professionals-india.jpg'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
