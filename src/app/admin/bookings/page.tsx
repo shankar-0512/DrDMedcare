@@ -41,7 +41,7 @@ const PAYMENT_COLORS: Record<string, string> = {
 const SERVICE_LABELS: Record<string, string> = {
   'prescription-counselling': 'Prescription Counselling',
   'adherence-planning':       'Adherence Planning',
-  'elderly-polypharmacy':     'Elderly Polypharmacy',
+  'elderly-polypharmacy':     'Elderly Care',
   'disease-awareness':        'Disease Awareness',
   'device-usage':             'Device Usage',
   'side-effects':             'Side Effects Review',

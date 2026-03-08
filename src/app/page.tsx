@@ -10,7 +10,7 @@ const jsonLd = {
   url: 'https://dr-d-medcare.vercel.app',
   logo: 'https://dr-d-medcare.vercel.app/logo.png',
   image: 'https://dr-d-medcare.vercel.app/ogimage.png',
-  description: 'Personalised medication counselling sessions for patients in India. Prescription education, adherence planning, polypharmacy management, and more.',
+  description: 'Personalised medication counselling sessions for patients in India. Prescription education, adherence planning, elderly care, and more.',
   telephone: '+919080709332',
   areaServed: 'IN',
   availableLanguage: ['English', 'Tamil', 'Telugu', 'Hindi'],
@@ -34,7 +34,7 @@ const jsonLd = {
     itemListElement: [
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Prescription Counselling', description: 'Understand your prescription in detail.' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Adherence Planning', description: 'Build a medication routine that fits your life.' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Elderly Polypharmacy Review', description: 'Safe medication review for seniors on multiple drugs.' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Elderly Care', description: 'Safe medication review for seniors on multiple drugs.' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Disease Awareness Session', description: 'Understand your condition and how your medicines work.' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Device & Inhaler Training', description: 'Learn to use inhalers, insulin pens, and other devices correctly.' } },
       { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Side Effects Counselling', description: 'Identify, manage, and report side effects safely.' } },
