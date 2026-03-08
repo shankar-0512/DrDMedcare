@@ -48,7 +48,7 @@ export default function Post() {
 
         <h2>The clinical pharmacist</h2>
         <p>
-          A clinical pharmacist holds a Pharm D (Doctor of Pharmacy) — a six-year programme that includes two years of clinical rotations in hospitals, working directly alongside doctors, nurses, and patients. In addition to deep pharmaceutical knowledge, the training focuses specifically on patient care: reviewing complete medication plans, identifying drug interactions across multiple medicines, adjusting doses for patients with kidney or liver conditions, and — critically — counselling patients about their treatment.
+          A clinical pharmacist holds a Pharm D (Doctor of Pharmacy) — a six-year programme that includes five years of education and one year of clinical rotations in hospitals, working directly alongside doctors, nurses, and patients. In addition to deep pharmaceutical knowledge, the training focuses specifically on patient care: reviewing complete medication plans, identifying drug interactions across multiple medicines, adjusting doses for patients with kidney or liver conditions, and — critically — counselling patients about their treatment.
         </p>
         <p>
           In hospitals, clinical pharmacists work as part of the medical team. They review prescriptions not just for accuracy, but for safety, appropriateness, and potential optimisation. They are trained to ask: <em>Is this the right medicine for this patient? Are there interactions with their other medicines? Does the patient understand what they're taking and why?</em>
