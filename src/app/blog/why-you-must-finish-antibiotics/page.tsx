@@ -6,9 +6,25 @@ export const metadata: Metadata = {
   description: "Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your antibiotic course early.",
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: 'Why stopping antibiotics midway is dangerous',
+  description: "Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your antibiotic course early.",
+  author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
+  publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://dr-d-medcare.vercel.app' },
+  datePublished: '2025-03-10',
+  url: 'https://dr-d-medcare.vercel.app/blog/why-you-must-finish-antibiotics',
+  image: 'https://dr-d-medcare.vercel.app/ogimage.png',
+  inLanguage: 'en-IN',
+  keywords: 'antibiotics course India, antibiotic resistance, finish antibiotics, stop antibiotics early',
+}
+
 export default function Post() {
   return (
-    <BlogPostLayout
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BlogPostLayout
       title="Why stopping antibiotics midway is dangerous"
       excerpt="Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your course early."
       category="Education"
@@ -74,5 +90,6 @@ export default function Post() {
         Feeling better is great. It means the medicine is working. But it's not the finish line — it's the halfway point. Complete your course, follow the instructions, and if you have any doubts about your antibiotic prescription, a prescription counselling session can help you understand exactly what you're taking and why.
       </p>
     </BlogPostLayout>
+    </>
   )
 }

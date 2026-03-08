@@ -6,9 +6,25 @@ export const metadata: Metadata = {
   description: "Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse — each plays a distinct role. A quick guide to who does what in Indian healthcare.",
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: 'Who does what in Indian healthcare — a simple guide',
+  description: 'Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse — each plays a distinct role. A quick guide to who does what in Indian healthcare.',
+  author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
+  publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://dr-d-medcare.vercel.app' },
+  datePublished: '2025-03-15',
+  url: 'https://dr-d-medcare.vercel.app/blog/healthcare-professionals-india',
+  image: 'https://dr-d-medcare.vercel.app/ogimage.png',
+  inLanguage: 'en-IN',
+  keywords: 'Indian healthcare professionals, clinical pharmacist India, doctor vs pharmacist, healthcare roles India',
+}
+
 export default function Post() {
   return (
-    <BlogPostLayout
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BlogPostLayout
       title="Who does what in Indian healthcare — a simple guide"
       excerpt="Doctor, specialist, clinical pharmacist, medication counsellor, pharmacist, nurse, physiotherapist, dietitian, lab technician and ASHA worker — each plays a distinct and important role. Here's a quick guide to who does what."
       category="Awareness"
@@ -80,5 +96,6 @@ export default function Post() {
       </p>
 
     </BlogPostLayout>
+    </>
   )
 }

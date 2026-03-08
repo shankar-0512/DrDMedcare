@@ -6,9 +6,25 @@ export const metadata: Metadata = {
   description: "Dal, milk, banana, tea — everyday foods that can silently reduce or amplify the effect of your medicines.",
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: 'Common drug-food interactions every Indian patient should know',
+  description: 'Dal, milk, banana, tea — everyday foods that can silently reduce or amplify the effect of your medicines.',
+  author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
+  publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://dr-d-medcare.vercel.app' },
+  datePublished: '2025-03-05',
+  url: 'https://dr-d-medcare.vercel.app/blog/drug-food-interactions-india',
+  image: 'https://dr-d-medcare.vercel.app/ogimage.png',
+  inLanguage: 'en-IN',
+  keywords: 'drug food interactions India, milk antibiotics, medicine with food, Indian diet medicine',
+}
+
 export default function Post() {
   return (
-    <BlogPostLayout
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BlogPostLayout
       title="Common drug-food interactions every Indian patient should know"
       excerpt="Dal, milk, banana, tea — everyday foods that can silently reduce or amplify the effect of your medicines."
       category="Education"
@@ -89,5 +105,6 @@ export default function Post() {
         If you'd like to go through your specific prescription and understand exactly what to eat, avoid, and when — that's precisely what a prescription counselling session with me covers.
       </p>
     </BlogPostLayout>
+    </>
   )
 }

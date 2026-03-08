@@ -6,9 +6,25 @@ export const metadata: Metadata = {
   description: "A child died because nobody warned a mother about mixing cough syrup with milk. That moment changed everything for me.",
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: "Why I started Dr D's MedCare",
+  description: "A child died because nobody warned a mother about mixing cough syrup with milk. That moment changed everything for me.",
+  author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
+  publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://dr-d-medcare.vercel.app' },
+  datePublished: '2025-03-01',
+  url: 'https://dr-d-medcare.vercel.app/blog/why-i-started-drd-medcare',
+  image: 'https://dr-d-medcare.vercel.app/ogimage.png',
+  inLanguage: 'en-IN',
+  keywords: 'medication counselling India, clinical pharmacist India, patient education',
+}
+
 export default function Post() {
   return (
-    <BlogPostLayout
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <BlogPostLayout
       title="Why I started Dr D's MedCare"
       excerpt="A child died because nobody warned a mother about mixing cough syrup with milk. That moment changed everything for me."
       category="Our story"
@@ -65,5 +81,6 @@ export default function Post() {
         If you've ever left a doctor's appointment with questions you were too nervous to ask, or stared at a prescription wondering what you're actually taking — this service is for you.
       </p>
     </BlogPostLayout>
+    </>
   )
 }
