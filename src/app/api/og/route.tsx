@@ -31,7 +31,9 @@ export async function GET(req: NextRequest) {
         }}
       >
         {/* Top teal accent bar */}
-        <div style={{ height: '10px', background: '#0f766e', width: '100%', display: 'flex' }} />
+        <div style={{ height: '10px', background: '#0f766e', width: '1200px', display: 'flex' }}>
+          <span> </span>
+        </div>
 
         {/* Main content */}
         <div
@@ -45,28 +47,27 @@ export async function GET(req: NextRequest) {
         >
           {/* Brand label */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ fontSize: '20px', fontWeight: 700, color: '#0f766e' }}>Dr D's MedCare</span>
+            <span style={{ fontSize: '20px', fontWeight: 700, color: '#0f766e' }}>Dr D&apos;s MedCare</span>
             <span style={{ color: '#cbd5e1', fontSize: '20px' }}>·</span>
             <span style={{ fontSize: '18px', color: '#64748b', fontWeight: 400 }}>Blog</span>
           </div>
 
           {/* Category badge + Title */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-            <div
-              style={{
-                display: 'flex',
-                background: cat.bg,
-                color: cat.text,
-                fontSize: '16px',
-                fontWeight: 700,
-                padding: '6px 18px',
-                borderRadius: '100px',
-                width: 'fit-content',
-                letterSpacing: '0.05em',
-                textTransform: 'uppercase',
-              }}
-            >
-              {category}
+            <div style={{ display: 'flex' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  background: cat.bg,
+                  color: cat.text,
+                  fontSize: '15px',
+                  fontWeight: 700,
+                  padding: '6px 18px',
+                  borderRadius: '100px',
+                }}
+              >
+                {category}
+              </div>
             </div>
             <div
               style={{
@@ -75,6 +76,8 @@ export async function GET(req: NextRequest) {
                 color: '#0f172a',
                 lineHeight: 1.2,
                 maxWidth: '980px',
+                display: 'flex',
+                flexWrap: 'wrap',
               }}
             >
               {title}
