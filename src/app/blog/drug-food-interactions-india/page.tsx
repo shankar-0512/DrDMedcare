@@ -13,7 +13,7 @@ const jsonLd = {
   description: 'Dal, milk, banana, tea — everyday foods that can silently reduce or amplify the effect of your medicines.',
   author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://dr-d-medcare.vercel.app' },
-  datePublished: '2025-03-05',
+  datePublished: '2026-03-05',
   url: 'https://dr-d-medcare.vercel.app/blog/drug-food-interactions-india',
   image: 'https://dr-d-medcare.vercel.app/ogimage.png',
   inLanguage: 'en-IN',
@@ -29,7 +29,7 @@ export default function Post() {
       excerpt="Dal, milk, banana, tea — everyday foods that can silently reduce or amplify the effect of your medicines."
       category="Education"
       readTime="6 min read"
-      date="March 2025"
+      date="March 2026"
     >
       <p>
         Most people know that you shouldn't drink alcohol with certain medicines. But very few people know that a glass of milk, a cup of tea, or even a banana can interfere with their medication just as significantly. In India, where food and medicine routines are deeply intertwined, this is one of the most common — and most overlooked — causes of medicines not working as they should.

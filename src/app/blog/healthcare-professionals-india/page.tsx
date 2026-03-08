@@ -13,7 +13,7 @@ const jsonLd = {
   description: 'Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse — each plays a distinct role. A quick guide to who does what in Indian healthcare.',
   author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://dr-d-medcare.vercel.app' },
-  datePublished: '2025-03-15',
+  datePublished: '2026-03-15',
   url: 'https://dr-d-medcare.vercel.app/blog/healthcare-professionals-india',
   image: 'https://dr-d-medcare.vercel.app/ogimage.png',
   inLanguage: 'en-IN',
@@ -29,7 +29,7 @@ export default function Post() {
       excerpt="Doctor, specialist, clinical pharmacist, medication counsellor, pharmacist, nurse, physiotherapist, dietitian, lab technician and ASHA worker — each plays a distinct and important role. Here's a quick guide to who does what."
       category="Awareness"
       readTime="4 min read"
-      date="March 2025"
+      date="March 2026"
     >
       <p>
         The Indian healthcare system involves many different professionals, each with a specific and well-defined role. Understanding who does what can help you ask the right questions, approach the right person, and make the most of every healthcare interaction.

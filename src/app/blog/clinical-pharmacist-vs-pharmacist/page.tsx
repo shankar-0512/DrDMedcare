@@ -13,7 +13,7 @@ const jsonLd = {
   description: "Both work with medicines — but their roles, training, and what they can do for you are very different. Here's what you need to know.",
   author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://dr-d-medcare.vercel.app' },
-  datePublished: '2025-03-20',
+  datePublished: '2026-03-20',
   url: 'https://dr-d-medcare.vercel.app/blog/clinical-pharmacist-vs-pharmacist',
   image: 'https://dr-d-medcare.vercel.app/ogimage.png',
   inLanguage: 'en-IN',
@@ -29,7 +29,7 @@ export default function Post() {
         excerpt="Both work with medicines — but their roles, training, and what they can do for you are very different. Here's a clear breakdown."
         category="Awareness"
         readTime="5 min read"
-        date="March 2025"
+        date="March 2026"
       >
         <p>
           Most people use the words "pharmacist" and "clinical pharmacist" interchangeably. This is understandable — both professionals work with medicines, and in India, the distinction isn't always visible to patients. But the two roles are meaningfully different, and understanding that difference can change how you use the healthcare system.

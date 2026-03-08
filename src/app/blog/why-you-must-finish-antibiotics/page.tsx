@@ -13,7 +13,7 @@ const jsonLd = {
   description: "Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your antibiotic course early.",
   author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://dr-d-medcare.vercel.app' },
-  datePublished: '2025-03-10',
+  datePublished: '2026-03-10',
   url: 'https://dr-d-medcare.vercel.app/blog/why-you-must-finish-antibiotics',
   image: 'https://dr-d-medcare.vercel.app/ogimage.png',
   inLanguage: 'en-IN',
@@ -29,7 +29,7 @@ export default function Post() {
       excerpt="Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your course early."
       category="Education"
       readTime="5 min read"
-      date="March 2025"
+      date="March 2026"
     >
       <p>
         It's one of the most common things I hear from patients. <em>"I started feeling better after two days, so I stopped the antibiotics. Why finish the whole course?"</em> It's a reasonable question — and the answer matters more than most people realise.

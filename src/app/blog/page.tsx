@@ -25,7 +25,7 @@ const POSTS: BlogPost[] = [
     excerpt: "Both work with medicines — but their roles, training, and what they can do for you are very different. Here's a clear breakdown.",
     category: 'Awareness',
     readTime: '5 min read',
-    date: 'March 2025',
+    date: 'March 2026',
     featured: true,
   },
   {
@@ -34,7 +34,7 @@ const POSTS: BlogPost[] = [
     excerpt: "Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse, physiotherapist, dietitian, lab technician and ASHA worker — each plays a distinct and important role. Here's a quick guide to who does what.",
     category: 'Awareness',
     readTime: '4 min read',
-    date: 'March 2025',
+    date: 'March 2026',
   },
   {
     slug: 'why-i-started-drd-medcare',
@@ -42,7 +42,7 @@ const POSTS: BlogPost[] = [
     excerpt: 'A child died because nobody warned a mother about mixing cough syrup with milk. That moment changed everything for me.',
     category: 'Our story',
     readTime: '4 min read',
-    date: 'March 2025',
+    date: 'March 2026',
   },
   {
     slug: 'drug-food-interactions-india',
@@ -50,7 +50,7 @@ const POSTS: BlogPost[] = [
     excerpt: 'Dal, milk, banana, tea — everyday foods that can silently reduce or amplify the effect of your medicines.',
     category: 'Education',
     readTime: '6 min read',
-    date: 'March 2025',
+    date: 'March 2026',
   },
   {
     slug: 'why-you-must-finish-antibiotics',
@@ -58,7 +58,7 @@ const POSTS: BlogPost[] = [
     excerpt: "Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your course early.",
     category: 'Education',
     readTime: '5 min read',
-    date: 'March 2025',
+    date: 'March 2026',
   },
 ]
 

@@ -13,7 +13,7 @@ const jsonLd = {
   description: "A child died because nobody warned a mother about mixing cough syrup with milk. That moment changed everything for me.",
   author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://dr-d-medcare.vercel.app' },
-  datePublished: '2025-03-01',
+  datePublished: '2026-03-01',
   url: 'https://dr-d-medcare.vercel.app/blog/why-i-started-drd-medcare',
   image: 'https://dr-d-medcare.vercel.app/ogimage.png',
   inLanguage: 'en-IN',
@@ -29,7 +29,7 @@ export default function Post() {
       excerpt="A child died because nobody warned a mother about mixing cough syrup with milk. That moment changed everything for me."
       category="Our story"
       readTime="4 min read"
-      date="March 2025"
+      date="March 2026"
     >
       <p>
         I was working as a clinical pharmacist in a private hospital in Chennai when I read a news report that I haven't been able to forget since. A mother had given her young child a dose of cough syrup mixed into a glass of milk — thinking, as many parents do, that it would make the medicine easier to swallow. The child died from a drug interaction.
