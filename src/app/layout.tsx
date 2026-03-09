@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://drdmedcare.com'),
   verification: {
-    google: 'eRNG9z9o5IkW6ZYj3WREZxAq-xcSV-zYz9SGCamJqvI',
+    google: 'adqxEXshCADg4T53hLT0h-Vei2piRlb5pcr1kLCXJnY',
   },
   title: "Dr D's MedCare",
   description: "Prescription & medication education for patients in India. Education only. No diagnosis or prescribing.",
