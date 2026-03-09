@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: "Clinical Reference — Drug Monographs | Dr D's MedCare",
   description: 'Clinical drug monographs for healthcare professionals. Compiled by Dr Priyanka Deventhiran, Pharm D.',
   robots: { index: true, follow: true },
 }
@@ -21,79 +20,63 @@ const MONOGRAPHS = [
 
 export default function ClinicalIndexPage() {
   return (
-    <main style={{ minHeight: '100vh', background: '#f8f4ee', padding: '3rem 2rem 5rem', fontFamily: 'system-ui, sans-serif' }}>
-      <div style={{ maxWidth: '860px', margin: '0 auto' }}>
+    <main className="min-h-screen" style={{ background: 'rgb(var(--color-bg))', fontFamily: 'system-ui, sans-serif' }}>
 
-        {/* Header */}
-        <div style={{ marginBottom: '2.5rem' }}>
-          <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.75rem', color: '#6b7280', textDecoration: 'none', marginBottom: '1.2rem' }}>
+      {/* Hero strip */}
+      <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgb(var(--color-secondary)) 0%, rgb(var(--color-primary)) 100%)' }}>
+        <div className="pointer-events-none absolute -top-16 -right-16 w-64 h-64 rounded-full bg-white opacity-5" />
+        <div className="px-6 py-10 max-w-3xl mx-auto">
+          <Link href="/" className="inline-flex items-center gap-1 text-xs font-medium text-white/60 hover:text-white/90 transition-colors mb-6">
             ← Back to drdmedcare.com
           </Link>
-          <br />
-          <span style={{
-            display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-            background: 'rgba(13,27,42,0.08)', border: '1px solid rgba(13,27,42,0.15)',
-            color: '#0d1b2a', fontSize: '0.68rem', fontWeight: 700,
-            letterSpacing: '0.12em', textTransform: 'uppercase',
-            padding: '0.3rem 0.8rem', borderRadius: '2px', marginBottom: '1rem',
-          }}>
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/15 border border-white/25 px-3 py-1 text-[10px] font-semibold text-white uppercase tracking-widest mb-4">
             ⚕️ For Healthcare Professionals Only
-          </span>
-          <h1 style={{ fontSize: '2rem', fontWeight: 700, color: '#0d1b2a', marginBottom: '0.5rem', fontFamily: 'Georgia, serif' }}>
-            Clinical Drug Monographs
-          </h1>
-          <p style={{ color: '#5a6478', maxWidth: '58ch', lineHeight: 1.7, fontSize: '0.95rem' }}>
+          </div>
+          <h1 className="text-3xl font-bold text-white tracking-tight mb-2">Clinical Drug Monographs</h1>
+          <p className="text-white/60 text-sm leading-relaxed max-w-xl">
             Evidence-based clinical reference compiled by Dr Priyanka Deventhiran, Pharm D.
             Each monograph covers mechanism, dosing, pharmacokinetics, interactions, monitoring, and counselling points.
           </p>
-          <div style={{
-            marginTop: '1.2rem', padding: '0.9rem 1.1rem',
-            background: '#fefce8', border: '1px solid #b45309',
-            borderLeft: '4px solid #b45309', borderRadius: '4px',
-            fontSize: '0.83rem', color: '#78350f', lineHeight: 1.6,
-          }}>
-            <strong>Important:</strong> These monographs are intended for use by qualified healthcare professionals only.
+        </div>
+      </div>
+
+      <div className="px-6 py-8 max-w-3xl mx-auto">
+
+        {/* Disclaimer */}
+        <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 mb-6">
+          <p className="text-xs font-bold uppercase tracking-widest text-amber-700 mb-1">Important</p>
+          <p className="text-sm text-slate-600 leading-relaxed">
+            These monographs are intended for use by qualified healthcare professionals only.
             They do not constitute medical advice and should not be used by patients for self-treatment decisions.
-          </div>
+          </p>
         </div>
 
-        <style>{`
-          .monograph-card { background:#fff; border:1px solid #d8cfc4; border-radius:8px; padding:1.4rem 1.6rem; border-left:4px solid #c9a84c; transition:box-shadow 0.2s,transform 0.15s; }
-          .monograph-card:hover { box-shadow:0 6px 24px rgba(0,0,0,0.1); transform:translateY(-1px); }
-        `}</style>
-
         {/* Monograph cards */}
-        <div style={{ display: 'grid', gap: '1rem' }}>
+        <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">Available Monographs</p>
+        <div className="flex flex-col gap-3">
           {MONOGRAPHS.map(m => (
-            <Link key={m.slug} href={`/clinical/${m.slug}`} style={{ textDecoration: 'none' }}>
-              <div className="monograph-card">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  <div>
-                    <h2 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0d1b2a', marginBottom: '0.25rem', fontFamily: 'Georgia, serif' }}>
-                      {m.name}
-                    </h2>
-                    <p style={{ fontSize: '0.78rem', color: '#5a6478', marginBottom: '0.7rem' }}>
-                      {m.class} · ATC {m.atc} · {m.sections} sections · Last reviewed {m.updated}
-                    </p>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+            <Link key={m.slug} href={`/clinical/${m.slug}`} className="block group">
+              <div className="bg-white rounded-2xl border border-slate-200 p-5 border-l-4 hover:shadow-md transition-all" style={{ borderLeftColor: 'rgb(var(--color-primary))' }}>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex-1">
+                    <h2 className="text-base font-bold text-slate-900 mb-1 group-hover:text-[rgb(var(--color-primary))] transition-colors">{m.name}</h2>
+                    <p className="text-xs text-slate-400 mb-3 font-mono">{m.class} · ATC {m.atc} · {m.sections} sections · Last reviewed {m.updated}</p>
+                    <div className="flex flex-wrap gap-1.5">
                       {m.tags.map(t => (
-                        <span key={t} style={{
-                          background: '#e8f0fe', color: '#1d4ed8',
-                          padding: '0.2rem 0.55rem', borderRadius: '2px',
-                          fontSize: '0.73rem', fontWeight: 500,
-                          border: '1px solid rgba(29,78,216,0.15)',
-                        }}>{t}</span>
+                        <span key={t} className="rounded-full px-2.5 py-0.5 text-[11px] font-medium border" style={{ background: 'rgb(var(--color-primary-soft))', color: 'rgb(var(--color-primary))', borderColor: 'rgb(var(--color-primary-mid))' }}>
+                          {t}
+                        </span>
                       ))}
                     </div>
                   </div>
-                  <span style={{ color: '#c9a84c', fontWeight: 700, fontSize: '1.2rem', marginTop: '0.2rem' }}>→</span>
+                  <span className="text-xl font-bold transition-transform group-hover:translate-x-1" style={{ color: 'rgb(var(--color-primary))' }}>→</span>
                 </div>
               </div>
             </Link>
           ))}
         </div>
 
-        <p style={{ marginTop: '2rem', fontSize: '0.78rem', color: '#9ca3af', textAlign: 'center' }}>
+        <p className="mt-6 text-xs text-slate-400 text-center">
           More monographs will be added over time. · Compiled by Dr Priyanka Deventhiran, Pharm D
         </p>
       </div>
