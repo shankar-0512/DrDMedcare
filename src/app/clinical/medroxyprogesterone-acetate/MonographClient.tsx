@@ -397,7 +397,7 @@ export default function MonographClient() {
         </div>
 
         {/* ── Content ── */}
-        <div className="px-6 py-6 max-w-4xl">
+        <div className="px-6 py-6">
 
           {/* 01 */}
           <Section id="s1" num="01" title="What Is It? — Drug Overview & Classification" collapsed={!!collapsed['s1']} onToggle={() => toggleSection('s1')}>
