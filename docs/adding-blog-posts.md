@@ -35,7 +35,7 @@ The PNG will be saved to `public/og/[slug].png` automatically.
 
 Set `_ogImage` in the page file to:
 ```
-https://dr-d-medcare.vercel.app/og/[slug].png
+https://drdmedcare.com/og/[slug].png
 ```
 
 ---
