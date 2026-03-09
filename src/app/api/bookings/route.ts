@@ -169,7 +169,7 @@ function buildPatientConfirmationEmail(params: {
           <td style="padding:32px 40px;">
             <p style="margin:0 0 20px;color:#0f172a;font-size:15px;">Hi ${params.patientName},</p>
             <p style="margin:0 0 24px;color:#334155;font-size:14px;line-height:1.6;">
-              Thank you for booking a session with Dr Priyanka Deventhiran. Your request has been received and she will reach out to confirm your appointment shortly.
+              Thank you for booking a session with Dr Priyanka Deventhiran. Your slot is reserved — please complete the steps below to confirm it.
             </p>
 
             <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:24px;">
@@ -199,8 +199,13 @@ function buildPatientConfirmationEmail(params: {
               </td></tr>
             </table>
 
+            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
+              <tr><td style="padding:4px 0;color:#334155;font-size:13px;">1. Make payment via UPI to <strong>30818055@kvb</strong> (UPI mobile: 9080709332).</td></tr>
+              <tr><td style="padding:4px 0;color:#334155;font-size:13px;">2. Send your payment screenshot on WhatsApp along with your Booking ID.</td></tr>
+              <tr><td style="padding:4px 0;color:#334155;font-size:13px;">3. We will confirm your session slot within a few hours.</td></tr>
+            </table>
             <p style="margin:0 0 8px;color:#334155;font-size:13px;line-height:1.6;">
-              Payment is collected at the time of the session. If you need to reschedule or have any questions, reply to this email or reach out on WhatsApp.
+              Questions? Reply to this email or reach out on WhatsApp at +91 90807 09332.
             </p>
             <p style="margin:24px 0 0;color:#94a3b8;font-size:12px;">Dr D's MedCare · drdmedcare.com</p>
           </td>
