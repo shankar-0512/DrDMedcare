@@ -283,6 +283,9 @@ export default function MonographClient() {
           </div>
           <p className="text-white text-sm font-bold leading-tight">Medroxyprogesterone Acetate</p>
           <p className="text-slate-500 text-[10px] font-medium uppercase tracking-widest mt-0.5">Clinical Drug Monograph</p>
+          <Link href="/clinical/medroxyprogesterone-acetate/patient-leaflet" className="inline-flex items-center gap-1 mt-2 text-[10px] font-medium rounded-full px-2.5 py-0.5 border border-teal-800 bg-teal-900/40 text-teal-400 hover:bg-teal-800/60 transition-colors">
+            📄 Patient Leaflet
+          </Link>
 
           {/* Progress indicator */}
           <div className="mt-3 flex items-center gap-2">
@@ -372,11 +375,14 @@ export default function MonographClient() {
             </p>
 
             {/* Classification tags */}
-            <div className="flex flex-wrap gap-2 mb-8">
+            <div className="flex flex-wrap gap-2 mb-4">
               {['Synthetic Progestogen', 'ATC G03AC06', 'Prescription Only', 'Hormonal Therapy', 'CYP3A4 Substrate'].map(t => (
                 <span key={t} className="rounded-full bg-white/10 border border-white/20 px-3 py-1 text-xs font-medium text-white/80">{t}</span>
               ))}
             </div>
+            <Link href="/clinical/medroxyprogesterone-acetate/patient-leaflet" className="inline-flex items-center gap-2 rounded-full bg-white/15 border border-white/25 px-3 py-1.5 text-xs font-medium text-white/80 hover:bg-white/25 transition-colors mb-8">
+              📄 Patient Information Leaflet →
+            </Link>
 
             {/* Quick-ref meta strip */}
             <div className="flex flex-wrap gap-x-8 gap-y-3 border-t border-white/15 pt-5">

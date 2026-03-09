@@ -14,7 +14,8 @@ const MONOGRAPHS = [
     class: 'Synthetic Progestogen',
     sections: 25,
     tags: ['Gynaecology', 'Contraception', 'HRT', 'Oncology'],
-    updated: '2025',
+    updated: '2026',
+    patientLeaflet: true,
   },
 ]
 
@@ -55,8 +56,8 @@ export default function ClinicalIndexPage() {
         <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">Available Monographs</p>
         <div className="flex flex-col gap-3">
           {MONOGRAPHS.map(m => (
-            <Link key={m.slug} href={`/clinical/${m.slug}`} className="block group">
-              <div className="bg-white rounded-2xl border border-slate-200 p-5 border-l-4 hover:shadow-md transition-all" style={{ borderLeftColor: 'rgb(var(--color-primary))' }}>
+            <div key={m.slug} className="bg-white rounded-2xl border border-slate-200 border-l-4 hover:shadow-md transition-all" style={{ borderLeftColor: 'rgb(var(--color-primary))' }}>
+              <Link href={`/clinical/${m.slug}`} className="block group p-5 pb-3">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1">
                     <h2 className="text-base font-bold text-slate-900 mb-1 group-hover:text-[rgb(var(--color-primary))] transition-colors">{m.name}</h2>
@@ -71,8 +72,16 @@ export default function ClinicalIndexPage() {
                   </div>
                   <span className="text-xl font-bold transition-transform group-hover:translate-x-1" style={{ color: 'rgb(var(--color-primary))' }}>→</span>
                 </div>
-              </div>
-            </Link>
+              </Link>
+              {m.patientLeaflet && (
+                <div className="px-5 pb-4 pt-0 flex items-center gap-2 border-t border-slate-100 mt-0 pt-3">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">Also available:</span>
+                  <Link href={`/clinical/${m.slug}/patient-leaflet`} className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[11px] font-semibold border hover:shadow-sm transition-all" style={{ background: 'rgb(var(--color-primary-soft))', color: 'rgb(var(--color-primary))', borderColor: 'rgb(var(--color-primary-mid))' }}>
+                    📄 Patient Information Leaflet
+                  </Link>
+                </div>
+              )}
+            </div>
           ))}
         </div>
 
