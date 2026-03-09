@@ -26,6 +26,10 @@ export default function ClinicalIndexPage() {
 
         {/* Header */}
         <div style={{ marginBottom: '2.5rem' }}>
+          <Link href="/" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.75rem', color: '#6b7280', textDecoration: 'none', marginBottom: '1.2rem' }}>
+            ← Back to drdmedcare.com
+          </Link>
+          <br />
           <span style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
             background: 'rgba(13,27,42,0.08)', border: '1px solid rgba(13,27,42,0.15)',

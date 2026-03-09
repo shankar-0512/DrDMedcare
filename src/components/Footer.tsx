@@ -8,6 +8,7 @@ const LINKS = [
   { label: 'Disclaimer', href: '/legal/disclaimer' },
   { label: 'Privacy', href: '/legal/privacy' },
   { label: 'Terms', href: '/legal/terms' },
+  { label: 'Clinical Reference ⚕️', href: '/clinical' },
 ]
 
 export default function Footer() {

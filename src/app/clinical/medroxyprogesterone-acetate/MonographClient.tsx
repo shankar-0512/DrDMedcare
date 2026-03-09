@@ -273,9 +273,14 @@ export default function MonographClient() {
 
         {/* Header */}
         <div className="px-4 py-4 border-b border-slate-800 sticky top-0 bg-slate-900 z-10">
-          <Link href="/clinical" className="flex items-center gap-1.5 text-[10px] font-medium text-slate-500 hover:text-slate-300 transition-colors mb-3">
-            ← Clinical Reference
-          </Link>
+          <div className="flex items-center justify-between mb-3">
+            <Link href="/clinical" className="flex items-center gap-1 text-[10px] font-medium text-slate-500 hover:text-slate-300 transition-colors">
+              ← Clinical Reference
+            </Link>
+            <Link href="/" className="flex items-center gap-1 text-[10px] font-medium text-slate-500 hover:text-teal-400 transition-colors">
+              🏠 Home
+            </Link>
+          </div>
           <p className="text-white text-sm font-bold leading-tight">Medroxyprogesterone Acetate</p>
           <p className="text-slate-500 text-[10px] font-medium uppercase tracking-widest mt-0.5">Clinical Drug Monograph</p>
 
