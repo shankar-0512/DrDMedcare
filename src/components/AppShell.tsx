@@ -7,7 +7,7 @@ import Footer from '@/components/Footer'
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
-  const isAdmin = pathname.startsWith('/admin')
+  const isAdmin = pathname.startsWith('/admin') || pathname.startsWith('/clinical')
 
   useEffect(() => {
     if (!window.location.hash) {
