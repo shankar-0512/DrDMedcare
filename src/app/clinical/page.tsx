@@ -4,7 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: "Clinical Reference — Drug Monographs | Dr D's MedCare",
   description: 'Clinical drug monographs for healthcare professionals. Compiled by Dr Priyanka Deventhiran, Pharm D.',
-  robots: { index: false, follow: false },
+  robots: { index: true, follow: true },
 }
 
 const MONOGRAPHS = [
