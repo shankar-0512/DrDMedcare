@@ -891,7 +891,7 @@ export default function MonographClient() {
         {/* Footer */}
         <div className="px-6 py-8 mt-4 border-t border-slate-200" style={{ background: 'rgb(var(--color-secondary))' }}>
           <p className="text-xs text-white/40 leading-relaxed">
-            This monograph is intended for use by qualified healthcare professionals only. It does not constitute medical advice. Clinical decisions should be made in conjunction with the complete prescribing information and individual patient assessment. Last reviewed: 2025.
+            This monograph is intended for use by qualified healthcare professionals only. It does not constitute medical advice. Clinical decisions should be made in conjunction with the complete prescribing information and individual patient assessment. Last reviewed: 2026.
           </p>
         </div>
 
