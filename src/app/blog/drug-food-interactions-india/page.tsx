@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Common Drug-Food Interactions Every Indian Patient Should Know'
 const _desc = 'Dal, milk, banana, tea — everyday foods that can silently reduce or amplify the effect of your medicines.'
-const _ogImage = 'https://dr-d-medcare.vercel.app/og/drug-food-interactions-india.jpg'
+const _ogImage = 'https://drdmedcare.com/og/drug-food-interactions-india.jpg'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: _title,
     description: _desc,
     type: 'article',
-    url: 'https://dr-d-medcare.vercel.app/blog/drug-food-interactions-india',
+    url: 'https://drdmedcare.com/blog/drug-food-interactions-india',
     images: [{ url: _ogImage, width: 1200, height: 630 }],
   },
   twitter: {
@@ -29,10 +29,10 @@ const jsonLd = {
   headline: 'Common drug-food interactions every Indian patient should know',
   description: 'Dal, milk, banana, tea — everyday foods that can silently reduce or amplify the effect of your medicines.',
   author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
-  publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://dr-d-medcare.vercel.app' },
+  publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-05',
-  url: 'https://dr-d-medcare.vercel.app/blog/drug-food-interactions-india',
-  image: 'https://dr-d-medcare.vercel.app/ogimage.png',
+  url: 'https://drdmedcare.com/blog/drug-food-interactions-india',
+  image: 'https://drdmedcare.com/ogimage.png',
   inLanguage: 'en-IN',
   keywords: 'drug food interactions India, milk antibiotics, medicine with food, Indian diet medicine',
 }

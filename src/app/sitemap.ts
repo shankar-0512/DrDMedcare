@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const BASE_URL = 'https://dr-d-medcare.vercel.app';
+const BASE_URL = 'https://drdmedcare.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

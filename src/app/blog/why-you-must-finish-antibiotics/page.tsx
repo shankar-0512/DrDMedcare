@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Why Stopping Antibiotics Midway Is Dangerous'
 const _desc = "Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your antibiotic course early."
-const _ogImage = 'https://dr-d-medcare.vercel.app/og/why-you-must-finish-antibiotics.jpg'
+const _ogImage = 'https://drdmedcare.com/og/why-you-must-finish-antibiotics.jpg'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: _title,
     description: _desc,
     type: 'article',
-    url: 'https://dr-d-medcare.vercel.app/blog/why-you-must-finish-antibiotics',
+    url: 'https://drdmedcare.com/blog/why-you-must-finish-antibiotics',
     images: [{ url: _ogImage, width: 1200, height: 630 }],
   },
   twitter: {
@@ -29,10 +29,10 @@ const jsonLd = {
   headline: 'Why stopping antibiotics midway is dangerous',
   description: "Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your antibiotic course early.",
   author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
-  publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://dr-d-medcare.vercel.app' },
+  publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-10',
-  url: 'https://dr-d-medcare.vercel.app/blog/why-you-must-finish-antibiotics',
-  image: 'https://dr-d-medcare.vercel.app/ogimage.png',
+  url: 'https://drdmedcare.com/blog/why-you-must-finish-antibiotics',
+  image: 'https://drdmedcare.com/ogimage.png',
   inLanguage: 'en-IN',
   keywords: 'antibiotics course India, antibiotic resistance, finish antibiotics, stop antibiotics early',
 }

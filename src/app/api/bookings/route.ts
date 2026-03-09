@@ -53,7 +53,7 @@ function buildAdminNotificationEmail(params: {
   preferredStart: string
   finalPriceInr: number
 }): string {
-  const adminLink = `https://dr-d-medcare.vercel.app/admin/bookings`
+  const adminLink = `https://drdmedcare.com/admin/bookings`
   return `<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>

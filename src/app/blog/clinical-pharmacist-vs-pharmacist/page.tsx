@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = "Clinical Pharmacist vs Pharmacist — What's the Difference?"
 const _desc = "Both work with medicines — but their roles, training, and what they can do for you are very different. Here's what you need to know."
-const _ogImage = 'https://dr-d-medcare.vercel.app/og/clinical-pharmacist-vs-pharmacist.jpg'
+const _ogImage = 'https://drdmedcare.com/og/clinical-pharmacist-vs-pharmacist.jpg'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: _title,
     description: _desc,
     type: 'article',
-    url: 'https://dr-d-medcare.vercel.app/blog/clinical-pharmacist-vs-pharmacist',
+    url: 'https://drdmedcare.com/blog/clinical-pharmacist-vs-pharmacist',
     images: [{ url: _ogImage, width: 1200, height: 630 }],
   },
   twitter: {
@@ -29,10 +29,10 @@ const jsonLd = {
   headline: "Clinical pharmacist vs pharmacist — what's the difference and why does it matter?",
   description: "Both work with medicines — but their roles, training, and what they can do for you are very different. Here's what you need to know.",
   author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
-  publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://dr-d-medcare.vercel.app' },
+  publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-20',
-  url: 'https://dr-d-medcare.vercel.app/blog/clinical-pharmacist-vs-pharmacist',
-  image: 'https://dr-d-medcare.vercel.app/ogimage.png',
+  url: 'https://drdmedcare.com/blog/clinical-pharmacist-vs-pharmacist',
+  image: 'https://drdmedcare.com/ogimage.png',
   inLanguage: 'en-IN',
   keywords: 'clinical pharmacist India, pharmacist vs clinical pharmacist, Pharm D India, medication counselling India',
 }

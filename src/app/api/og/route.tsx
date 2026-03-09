@@ -86,7 +86,7 @@ export async function GET(req: NextRequest) {
 
           {/* Footer */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
-            <span style={{ fontSize: '17px', color: '#94a3b8' }}>dr-d-medcare.vercel.app</span>
+            <span style={{ fontSize: '17px', color: '#94a3b8' }}>drdmedcare.com</span>
             <span style={{ fontSize: '16px', color: '#0f766e', fontWeight: 600 }}>
               Medication Counselling · India
             </span>
