@@ -890,10 +890,7 @@ export default function MonographClient() {
 
         {/* Footer */}
         <div className="px-6 py-8 mt-4 border-t border-slate-200" style={{ background: 'rgb(var(--color-secondary))' }}>
-          <p className="text-xs text-white/50 leading-relaxed">
-            <strong className="text-white/75">Sources:</strong> FDA/DailyMed Provera Prescribing Information (rev. March 2024) · Pfizer Medical Information (Provera) · StatPearls — Medroxyprogesterone (NCBI, updated February 2024) · DrugBank DB00603 · Wikipedia/MPA (primary literature) · WHI Estrogen Plus Progestin Substudy · European Medicines Agency (EMA) · MHRA (UK) SmPC · ACOG Practice Bulletins · Drugs.com Monograph (reviewed July 2025) · DailyMed (rev. C, 3/2024)
-          </p>
-          <p className="text-xs text-white/40 leading-relaxed mt-3">
+          <p className="text-xs text-white/40 leading-relaxed">
             This monograph is intended for use by qualified healthcare professionals only. It does not constitute medical advice. Clinical decisions should be made in conjunction with the complete prescribing information and individual patient assessment. Last reviewed: 2025.
           </p>
         </div>
