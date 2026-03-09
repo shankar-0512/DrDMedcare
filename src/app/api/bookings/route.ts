@@ -142,6 +142,77 @@ function buildAdminNotificationEmail(params: {
 </html>`
 }
 
+function buildPatientConfirmationEmail(params: {
+  patientName: string
+  serviceTitle: string
+  planCode: PlanCode
+  preferredStart: string
+  finalPriceInr: number
+  bookingId: string
+}): string {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;background:#f1f5f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:32px 16px;">
+    <tr><td align="center">
+      <table width="100%" style="max-width:540px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.08);">
+
+        <tr>
+          <td style="background:#0f766e;padding:24px 40px;">
+            <h1 style="margin:0;color:#ffffff;font-size:18px;font-weight:700;">Booking Received</h1>
+            <p style="margin:4px 0 0;color:#99f6e4;font-size:13px;">Dr D's MedCare · Confirmation</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:32px 40px;">
+            <p style="margin:0 0 20px;color:#0f172a;font-size:15px;">Hi ${params.patientName},</p>
+            <p style="margin:0 0 24px;color:#334155;font-size:14px;line-height:1.6;">
+              Thank you for booking a session with Dr Priyanka Deventhiran. Your request has been received and she will reach out to confirm your appointment shortly.
+            </p>
+
+            <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:24px;">
+              <tr><td style="padding:20px 24px;">
+                <table width="100%" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;width:40%;">Service</td>
+                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.serviceTitle}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Plan</td>
+                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${planLabel(params.planCode)}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Preferred slot</td>
+                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${formatDateTime(params.preferredStart)}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Amount</td>
+                    <td style="padding:5px 0;color:#0f766e;font-size:15px;font-weight:700;">₹${params.finalPriceInr}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Booking ID</td>
+                    <td style="padding:5px 0;color:#94a3b8;font-size:12px;font-family:monospace;">${params.bookingId}</td>
+                  </tr>
+                </table>
+              </td></tr>
+            </table>
+
+            <p style="margin:0 0 8px;color:#334155;font-size:13px;line-height:1.6;">
+              Payment is collected at the time of the session. If you need to reschedule or have any questions, reply to this email or reach out on WhatsApp.
+            </p>
+            <p style="margin:24px 0 0;color:#94a3b8;font-size:12px;">Dr D's MedCare · drdmedcare.com</p>
+          </td>
+        </tr>
+
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`
+}
+
 const schema = z.object({
   serviceTypeSlug: z.string().min(1).optional(),
   planCode: z.enum(['quick_15', 'full_30', 'monthly']).optional(),
@@ -299,30 +370,49 @@ export async function POST(req: Request) {
         .eq('id', body.slotId)
     }
 
-    // Notify admin of new booking
+    // Send booking emails (admin + patient) — failure must not block the booking response
     try {
       const resend = new Resend(process.env.RESEND_API_KEY)
-      const from = process.env.RESEND_FROM_EMAIL ?? "Dr D's MedCare <onboarding@resend.dev>"
+      const from = "Dr D's MedCare <bookings@drdmedcare.com>"
       const adminEmail = process.env.RESEND_REPLY_TO ?? 'drpriyankamedcare@gmail.com'
-      await resend.emails.send({
-        from,
-        to: adminEmail,
-        subject: `New booking: ${body.patientName} — ${serviceType.title}`,
-        html: buildAdminNotificationEmail({
-          bookingId: data.id,
-          patientName: body.patientName,
-          patientPhone: body.patientPhone,
-          patientEmail: body.patientEmail ?? '',
-          patientAge: body.patientAge,
-          patientGender: body.patientGender,
-          patientAddress: body.patientAddress,
-          language: body.language,
-          serviceTitle: serviceType.title,
-          planCode,
-          preferredStart: startIso,
-          finalPriceInr,
+
+      const emailParams = {
+        bookingId: data.id,
+        patientName: body.patientName,
+        patientPhone: body.patientPhone,
+        patientEmail: body.patientEmail ?? '',
+        patientAge: body.patientAge,
+        patientGender: body.patientGender,
+        patientAddress: body.patientAddress,
+        language: body.language,
+        serviceTitle: serviceType.title,
+        planCode,
+        preferredStart: startIso,
+        finalPriceInr,
+      }
+
+      const sends = [
+        resend.emails.send({
+          from,
+          to: adminEmail,
+          subject: `New booking: ${body.patientName} — ${serviceType.title}`,
+          html: buildAdminNotificationEmail(emailParams),
         }),
-      })
+      ]
+
+      if (body.patientEmail) {
+        sends.push(
+          resend.emails.send({
+            from,
+            to: body.patientEmail,
+            replyTo: adminEmail,
+            subject: `Your booking is confirmed — Dr D's MedCare`,
+            html: buildPatientConfirmationEmail(emailParams),
+          })
+        )
+      }
+
+      await Promise.allSettled(sends)
     } catch {
       // Email failure should not block the booking response
     }
