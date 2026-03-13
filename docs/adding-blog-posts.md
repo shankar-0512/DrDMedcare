@@ -9,7 +9,7 @@ Copy the structure from an existing post (e.g. `src/app/blog/clinical-pharmacist
 
 Things to update:
 - `_title`, `_desc`, `_ogImage` constants at the top
-- `metadata` export: title, description, openGraph, twitter
+- `metadata` export: title, description, openGraph, twitter, and `alternates: { canonical: '/blog/your-slug' }`
 - `jsonLd` object: headline, description, datePublished, url
 - `<BlogPostLayout>` props: title, excerpt, category, readTime, date
 - Post content

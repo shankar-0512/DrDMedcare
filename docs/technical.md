@@ -18,12 +18,19 @@ src/
 │   │   └── [slug]/page.tsx             # Individual blog posts (static, not dynamic route)
 │   ├── book/
 │   │   ├── page.tsx                    # Booking entry point
-│   │   ├── success/page.tsx            # Post-booking confirmation + UPI QR
+│   │   ├── success/
+│   │   │   ├── layout.tsx              # noindex metadata
+│   │   │   └── page.tsx                # Post-booking confirmation + UPI QR
 │   │   └── _components/
 │   │       ├── BookingWizard.tsx       # Orchestrates the 3 steps
 │   │       ├── ServiceStep.tsx         # Step 1: pick service + plan
 │   │       ├── SlotStep.tsx            # Step 2: pick date + time
 │   │       └── DetailsStep.tsx         # Step 3: patient details form
+│   ├── clinical/
+│   │   ├── page.tsx                    # Monograph index
+│   │   └── medroxyprogesterone-acetate/
+│   │       ├── page.tsx                # Drug monograph
+│   │       └── patient-leaflet/page.tsx
 │   ├── admin/
 │   │   ├── login/page.tsx
 │   │   ├── layout.tsx                  # Sidebar nav, sign out
@@ -32,16 +39,22 @@ src/
 │   │   ├── slots/page.tsx              # Generate + manage slots
 │   │   └── bookings/page.tsx           # Split-view booking manager
 │   └── api/
-│       ├── bookings/route.ts           # POST — creates bookings
-│       ├── admin/delete-booking/route.ts  # DELETE — protected, service role
-│       └── og/route.tsx                # Edge function — dynamic OG images (legacy, now using static PNGs)
+│       ├── bookings/route.ts           # POST — creates bookings (public)
+│       ├── services/route.ts           # GET — active service types (public)
+│       ├── services/plans/route.ts     # GET — plans for a service type (public)
+│       ├── public-slots/route.ts       # GET — available slots by date (public)
+│       └── admin/
+│           ├── availability/route.ts   # GET/POST/PATCH — availability rules + overrides
+│           ├── bookings/route.ts       # GET/PATCH — bookings
+│           ├── slots/route.ts          # GET/POST/PATCH — slots
+│           └── delete-booking/route.ts # DELETE — removes booking + frees slot
 ├── components/
-│   ├── AppShell.tsx                    # Layout wrapper, hides header/footer on /admin
+│   ├── AppShell.tsx                    # Layout wrapper, hides header/footer on /admin and /clinical
 │   ├── HomeServiceTabs.tsx             # Service cards on homepage, fetches live from DB
 │   ├── BlogPostLayout.tsx              # Shared blog post template
 │   └── WhatsappButton.tsx             # wa.me link buttons with pre-filled messages
 ├── lib/
-│   ├── supabase/client.ts              # Browser client (anon key)
+│   ├── supabase/client.ts              # Browser client (anon key) — auth only
 │   ├── supabase/server.ts              # Server client (service role key)
 │   └── pricing.ts                     # Price calculation with plan multipliers
 └── proxy.ts                           # Next.js middleware — guards /admin/*
@@ -95,7 +108,6 @@ The actual time slots patients can book.
 | is_booked | boolean | Set atomically during booking |
 | is_dummy | boolean | Looks booked to users, but isn't |
 | is_blocked | boolean | Admin hold, not selectable |
-| is_dummy | boolean | Admin can modify freely |
 | booking_id | uuid | Linked after booking created |
 
 ### `bookings`
@@ -196,6 +208,8 @@ Slots are generated from the admin panel, not automatically. Priyanka clicks "Ge
 5. For each active time range → generate a slot every 30 minutes.
 6. Upsert with conflict on `(slot_date, start_time)` — safe to re-run.
 
+**Auto-dummy slots:** There's a checkbox in the admin panel called "Automatic dummy slots" (on by default). When enabled, generation randomly picks 1–7 slots from the batch and marks them `is_dummy = true`. This makes the calendar look partially booked to new visitors. The checkbox can be turned off when real bookings are high enough.
+
 ---
 
 ## IST timezone
@@ -232,19 +246,24 @@ After multiplying, prices are rounded:
 
 There are two:
 
-**`lib/supabase/client.ts`** — uses the anon key, runs in the browser. Subject to RLS policies. Used for all public/patient-facing operations.
+**`lib/supabase/client.ts`** — uses the anon key, runs in the browser. Only used for auth operations (`signInWithPassword`, `signOut`). Nothing else.
 
-**`lib/supabase/server.ts`** — uses the service role key, runs server-side only. Bypasses RLS. Only used where absolutely necessary (currently just the delete-booking API). Never expose the service role key to the client.
+**`lib/supabase/server.ts`** — uses the service role key, runs server-side only. Bypasses RLS. Used by all API routes for every database read/write. Never expose the service role key to the client.
+
+All data fetching — including public-facing pages like the booking wizard and slot picker — goes through API routes that use the service role client. The anon client is not used for any data operations because RLS policies block it.
 
 ---
 
 ## Email
 
-Resend handles email notifications. There's only one email sent — an admin notification when a new booking is created. There's no patient confirmation email (Resend's free tier only sends to the account owner, which is Priyanka).
+Resend handles email notifications. Two emails are sent on each booking:
 
-If `RESEND_FROM_EMAIL` or `RESEND_REPLY_TO` are not set, the email silently fails. The booking still succeeds — email is non-blocking.
+1. **Admin notification** — always sent to Priyanka. Includes patient details, session info, and a link to the admin panel.
+2. **Patient confirmation** — sent only if the patient provided an email address. Includes booking summary and payment instructions.
 
-The email template is inline HTML built in the booking API route. It includes patient details, session info, and a link to the admin panel.
+Both are non-blocking — if either fails, the booking still succeeds. Email templates are inline HTML built directly in the booking API route.
+
+Note: Resend's free tier only allows sending to the account owner's email (`drpriyankamedcare@gmail.com`). In production with a verified domain, both emails go to their intended recipients.
 
 ---
 
@@ -291,3 +310,5 @@ All of these need to be set in Vercel's environment variables for production. Th
 **"Phone number with +91 failing validation"** — Some users paste or autofill their number as `919876543210`. The form now detects 12-digit numbers starting with `91` and strips the prefix automatically.
 
 **"OG image showing wrong content"** — The `next/og` route used `width: fit-content` which Satori doesn't support — it silently collapsed the layout to a white box. Replaced with a flex wrapper.
+
+**"Admin data not loading / availability saves but comes back empty"** — All Supabase tables have RLS policies that block the anon key for writes and sometimes reads. The fix was to route every admin operation (and all public data fetches) through server-side API routes that use the service role key. Never use the browser client (`lib/supabase/client.ts`) for data — only for auth.
