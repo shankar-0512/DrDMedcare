@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase/client'
 
 type Booking = {
   id: string
@@ -95,46 +94,39 @@ export default function BookingsPage() {
 
   async function load() {
     setLoading(true)
-    const { data } = await supabase
-      .from('bookings')
-      .select('*')
-      .order('created_at', { ascending: false })
-      .limit(200)
-    setBookings((data ?? []) as Booking[])
+    const res = await fetch('/api/admin/bookings')
+    if (res.ok) {
+      const { bookings: data } = await res.json()
+      setBookings(data as Booking[])
+    }
     setLoading(false)
   }
 
   async function updateBooking(id: string, updates: Partial<Booking>) {
     setUpdating(true)
-    const { error } = await supabase.from('bookings').update(updates).eq('id', id)
+    const res = await fetch('/api/admin/bookings', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id, updates }),
+    })
     setUpdating(false)
-    if (error) { showToast('Error: ' + error.message); return }
+    if (!res.ok) { const { message } = await res.json(); showToast('Error: ' + message); return }
     showToast('Booking updated ✓')
     await load()
-    // Refresh selected
     const updated = bookings.find((b) => b.id === id)
     if (updated) setSelected({ ...updated, ...updates })
   }
 
   async function cancelBooking(booking: Booking) {
     setUpdating(true)
-    const { error } = await supabase
-      .from('bookings')
-      .update({ status: 'cancelled' })
-      .eq('id', booking.id)
-
-    if (error) { showToast('Error: ' + error.message); setUpdating(false); return }
-
-    // Free up the slot
-    if (booking.slot_id) {
-      await supabase
-        .from('slots')
-        .update({ is_booked: false, booking_id: null })
-        .eq('id', booking.slot_id)
-    }
-
-    showToast('Booking cancelled and slot released ✓')
+    const res = await fetch('/api/admin/bookings', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: booking.id, cancel: true, slotId: booking.slot_id }),
+    })
     setUpdating(false)
+    if (!res.ok) { const { message } = await res.json(); showToast('Error: ' + message); return }
+    showToast('Booking cancelled and slot released ✓')
     await load()
     const updated = bookings.find((b) => b.id === booking.id)
     if (updated) setSelected({ ...updated, status: 'cancelled' })

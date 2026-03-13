@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase/client'
 
 type Slot = {
   id: string
@@ -92,76 +91,76 @@ export default function SlotsPage() {
 
   async function loadSlots(date: string) {
     setLoading(true)
-    const { data } = await supabase
-      .from('slots')
-      .select('*')
-      .eq('slot_date', date)
-      .order('start_time')
-    setSlots((data ?? []) as Slot[])
+    const res = await fetch(`/api/admin/slots?date=${date}`)
+    if (res.ok) {
+      const { slots: data } = await res.json()
+      setSlots(data as Slot[])
+    }
     setLoading(false)
   }
 
   async function generateSlots() {
     setGenerating(true)
 
-    const [{ data: rules }, { data: overrides }] = await Promise.all([
-      supabase.from('availability_rules').select('*').eq('is_active', true),
-      supabase.from('availability_overrides').select('*'),
-    ])
+    // Fetch rules and overrides via service-role API
+    const availRes = await fetch('/api/admin/availability')
+    if (!availRes.ok) { showToast('Error fetching availability'); setGenerating(false); return }
+    const { rules, overrides } = await availRes.json()
 
     const ruleList = (rules ?? []) as Rule[]
     const overrideList = (overrides ?? []) as Override[]
-    const overrideMap = Object.fromEntries(overrideList.map((o) => [o.date, o]))
+    const overrideMap = Object.fromEntries(overrideList.map((o: Override) => [o.date, o]))
 
     const dates = getNext30Days().slice(0, generateDays)
-    const toInsert: any[] = []
+    const toInsert: { slot_date: string; start_time: string; end_time: string }[] = []
 
     for (const date of dates) {
       const dayOfWeek = new Date(date + 'T00:00:00').getDay()
       const override = overrideMap[date]
 
-      // Blocked override — skip this date entirely
       if (override && !override.is_available) continue
 
-      // Extra availability override
       if (override && override.is_available && override.start_time && override.end_time) {
-        const slotTimes = generateSlotTimes(override.start_time, override.end_time)
-        for (const { start, end } of slotTimes) {
+        for (const { start, end } of generateSlotTimes(override.start_time, override.end_time)) {
           toInsert.push({ slot_date: date, start_time: start, end_time: end })
         }
         continue
       }
 
-      // Normal weekly rules
-      const dayRules = ruleList.filter((r) => r.day_of_week === dayOfWeek)
+      const dayRules = ruleList.filter((r: Rule) => r.day_of_week === dayOfWeek)
       for (const rule of dayRules) {
-        const slotTimes = generateSlotTimes(rule.start_time, rule.end_time)
-        for (const { start, end } of slotTimes) {
+        for (const { start, end } of generateSlotTimes(rule.start_time, rule.end_time)) {
           toInsert.push({ slot_date: date, start_time: start, end_time: end })
         }
       }
     }
 
-    if (toInsert.length > 0) {
-      const { error } = await supabase
-        .from('slots')
-        .upsert(toInsert, { onConflict: 'slot_date,start_time', ignoreDuplicates: true })
-
-      if (error) { showToast('Error: ' + error.message); setGenerating(false); return }
-    }
-
-    showToast(`Generated slots for next ${generateDays} days ✓`)
+    const res = await fetch('/api/admin/slots', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ toInsert }),
+    })
     setGenerating(false)
+    if (!res.ok) { const { message } = await res.json(); showToast('Error: ' + message); return }
+    showToast(`Generated slots for next ${generateDays} days ✓`)
     loadSlots(selectedDate)
   }
 
   async function toggleSlotProp(slotId: string, prop: 'is_dummy' | 'is_blocked', current: boolean) {
-    await supabase.from('slots').update({ [prop]: !current }).eq('id', slotId)
+    await fetch('/api/admin/slots', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ id: slotId, updates: { [prop]: !current } }),
+    })
     loadSlots(selectedDate)
   }
 
   async function deleteSlot(slotId: string) {
-    await supabase.from('slots').delete().eq('id', slotId)
+    await fetch('/api/admin/slots', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ deleteId: slotId }),
+    })
     loadSlots(selectedDate)
   }
 
