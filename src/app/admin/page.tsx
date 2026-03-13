@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { supabase } from '@/lib/supabase/client'
 
 type Booking = {
   id: string
@@ -65,19 +64,16 @@ export default function AdminDashboard() {
   async function load() {
     setLoading(true)
 
-    const todayStart = `${today}T00:00:00.000Z`
-    const todayEnd   = `${today}T23:59:59.999Z`
-
-    const [
-      { data: allBookings },
-      { data: tSlots },
-    ] = await Promise.all([
-      supabase.from('bookings').select('*').order('created_at', { ascending: false }),
-      supabase.from('slots').select('*').eq('slot_date', today).order('start_time'),
+    const [bookingsRes, slotsRes] = await Promise.all([
+      fetch('/api/admin/bookings'),
+      fetch(`/api/admin/slots?date=${today}`),
     ])
 
-    const all = (allBookings ?? []) as Booking[]
-    const slots = (tSlots ?? []) as Slot[]
+    const { bookings: allBookings } = bookingsRes.ok ? await bookingsRes.json() : { bookings: [] }
+    const { slots: tSlots }         = slotsRes.ok   ? await slotsRes.json()    : { slots: [] }
+
+    const all   = (allBookings ?? []) as Booking[]
+    const slots = (tSlots ?? [])      as Slot[]
 
     const todayB = all.filter((b) => {
       const d = new Date(b.preferred_start).toISOString().split('T')[0]
