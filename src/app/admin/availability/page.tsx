@@ -116,13 +116,17 @@ export default function AvailabilityPage() {
 
   async function saveRules() {
     setSaving(true)
-    // Delete all existing rules and reinsert
-    await supabase.from('availability_rules').delete().neq('id', 0)
-    const now = new Date().toISOString()
-    const toInsert = rules.map(({ id: _id, ...r }) => ({ ...r, created_at: now }))
-    const { error } = await supabase.from('availability_rules').insert(toInsert)
+    const res = await fetch('/api/admin/availability', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ rules }),
+    })
     setSaving(false)
-    if (error) { showToast('Error saving: ' + error.message); return }
+    if (!res.ok) {
+      const { message } = await res.json()
+      showToast('Error saving: ' + message)
+      return
+    }
     showToast('Weekly schedule saved ✓')
     load()
   }
