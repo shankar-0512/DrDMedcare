@@ -4,6 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: "Blog | Dr D's MedCare",
   description: "Plain-language articles on medicines, drug interactions, medication adherence, and patient education for Indian patients.",
+  alternates: { canonical: '/blog' },
 }
 import Image from 'next/image'
 import WhatsAppButton, { WA_MESSAGES } from '@/components/WhatsappButton'

@@ -3,6 +3,7 @@ import PILClient from './PILClient'
 
 export const metadata: Metadata = {
   description: 'Patient information leaflet for medroxyprogesterone tablets. What it is used for, how to take it, side effects, storage, and lifestyle tips.',
+  alternates: { canonical: '/clinical/medroxyprogesterone-acetate/patient-leaflet' },
   robots: { index: true, follow: true },
 }
 

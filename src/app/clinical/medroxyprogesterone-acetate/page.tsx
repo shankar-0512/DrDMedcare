@@ -3,6 +3,7 @@ import MonographClient from './MonographClient'
 
 export const metadata: Metadata = {
   description: 'Comprehensive clinical drug monograph for medroxyprogesterone acetate (MPA). For qualified healthcare professionals only.',
+  alternates: { canonical: '/clinical/medroxyprogesterone-acetate' },
   robots: { index: true, follow: true },
 }
 

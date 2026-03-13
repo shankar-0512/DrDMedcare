@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     title: _title,
     description: _desc,
     images: [_ogImage],
-  },
+  },,
+  alternates: { canonical: '/blog/clinical-pharmacist-vs-pharmacist' },
 }
-
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',

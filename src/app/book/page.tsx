@@ -1,4 +1,9 @@
+import type { Metadata } from 'next'
 import { Suspense } from 'react'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/book' },
+}
 import BookingWizard from './_components/BookingWizard'
 
 export default function BookPage() {

@@ -1,4 +1,9 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+}
 import Image from 'next/image'
 import HomeServiceTabs from '@/components/HomeServiceTabs'
 import WhatsAppButton, { WA_MESSAGES } from '@/components/WhatsappButton'

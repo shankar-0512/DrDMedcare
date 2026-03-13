@@ -4,6 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: "About Dr Priyanka Deventhiran | Dr D's MedCare",
   description: "Clinical pharmacist with a Pharm D from Tamil Nadu Dr. M.G.R. Medical University. Helping patients in India understand their medicines through personalised counselling sessions.",
+  alternates: { canonical: '/about' },
 }
 import Image from 'next/image'
 import WhatsAppButton, { WA_MESSAGES } from '@/components/WhatsappButton'
