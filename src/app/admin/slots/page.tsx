@@ -77,6 +77,7 @@ export default function SlotsPage() {
   const [toast, setToast]           = useState('')
   const [selectedDate, setSelectedDate] = useState<string>('')
   const [generateDays, setGenerateDays] = useState(7)
+  const [autoDummy, setAutoDummy]   = useState(true)
 
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0]
@@ -112,7 +113,7 @@ export default function SlotsPage() {
     const overrideMap = Object.fromEntries(overrideList.map((o: Override) => [o.date, o]))
 
     const dates = getNext30Days().slice(0, generateDays)
-    const toInsert: { slot_date: string; start_time: string; end_time: string }[] = []
+    const toInsert: { slot_date: string; start_time: string; end_time: string; is_dummy?: boolean }[] = []
 
     for (const date of dates) {
       const dayOfWeek = new Date(date + 'T00:00:00').getDay()
@@ -133,6 +134,19 @@ export default function SlotsPage() {
           toInsert.push({ slot_date: date, start_time: start, end_time: end })
         }
       }
+    }
+
+    // Randomly mark 1–7 slots as dummy across all generated slots
+    if (autoDummy && toInsert.length > 0) {
+      const count = Math.floor(Math.random() * 7) + 1
+      const indices = [...Array(toInsert.length).keys()]
+      for (let i = indices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [indices[i], indices[j]] = [indices[j], indices[i]]
+      }
+      indices.slice(0, Math.min(count, toInsert.length)).forEach((i) => {
+        toInsert[i].is_dummy = true
+      })
     }
 
     const res = await fetch('/api/admin/slots', {
@@ -210,6 +224,17 @@ export default function SlotsPage() {
             {generating ? 'Generating…' : 'Generate slots'}
           </button>
         </div>
+        <label className="mt-4 flex items-center gap-2.5 cursor-pointer w-fit">
+          <input
+            type="checkbox"
+            checked={autoDummy}
+            onChange={(e) => setAutoDummy(e.target.checked)}
+            className="rounded border-slate-300 accent-[rgb(var(--color-primary))]"
+          />
+          <span className="text-sm text-slate-600">
+            Automatic dummy slots <span className="text-slate-400 text-xs">(randomly marks 1–7 slots as dummy on generation)</span>
+          </span>
+        </label>
       </div>
 
       {/* ── View & manage by date ── */}
