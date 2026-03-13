@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase/client'
 
 type Slot = {
   id: string
@@ -58,13 +57,11 @@ export default function SlotStep(props: {
   async function loadSlots(date: string) {
     setLoading(true)
     setSelectedSlot(null)
-    const { data } = await supabase
-      .from('slots')
-      .select('*')
-      .eq('slot_date', date)
-      .eq('is_blocked', false)
-      .order('start_time')
-    setSlots((data ?? []) as Slot[])
+    const res = await fetch(`/api/public-slots?date=${date}`)
+    if (res.ok) {
+      const { slots: data } = await res.json()
+      setSlots(data as Slot[])
+    }
     setLoading(false)
   }
 

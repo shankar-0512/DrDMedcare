@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { supabase } from '@/lib/supabase/client'
 import ServiceStep from './ServiceStep'
 import SlotStep from './SlotStep'
 import DetailsStep from './DetailsStep'
@@ -124,19 +123,15 @@ export default function BookingWizard() {
       setLoading(true)
       setError('')
 
-      const { data, error } = await supabase
-        .from('service_types')
-        .select('slug,title,short_desc,base_price_inr')
-        .eq('is_active', true)
-        .order('sort_order', { ascending: true })
-
-      if (error) {
-        setError(error.message)
+      const res = await fetch('/api/services')
+      if (!res.ok) {
+        const { message } = await res.json()
+        setError(message ?? 'Failed to load services')
         setLoading(false)
         return
       }
-
-      const types = (data ?? []) as ServiceType[]
+      const { services } = await res.json()
+      const types = (services ?? []) as ServiceType[]
       setServiceTypes(types)
 
       if (types.length > 0) {
@@ -166,28 +161,15 @@ export default function BookingWizard() {
   async function loadPlansFor(serviceTypeSlug: string) {
     setError('')
 
-    const { data, error } = await supabase
-      .from('service_type_plans')
-      .select(`
-        plan_code,
-        sort_order,
-        services:services (
-          code,
-          title,
-          duration_minutes,
-          price_inr
-        )
-      `)
-      .eq('service_type_slug', serviceTypeSlug)
-      .eq('is_active', true)
-      .order('sort_order', { ascending: true })
-
-    if (error) {
-      setError(error.message)
+    const res = await fetch(`/api/services/plans?type=${encodeURIComponent(serviceTypeSlug)}`)
+    if (!res.ok) {
+      const { message } = await res.json()
+      setError(message ?? 'Failed to load plans')
       setPlans([])
       return
     }
 
+    const { plans: data } = await res.json()
     const list = (data ?? [])
       .map((row: any) => row.services)
       .filter((p: any) => !!p) as Plan[]

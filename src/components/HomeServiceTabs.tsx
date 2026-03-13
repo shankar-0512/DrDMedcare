@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
-import { supabase } from '@/lib/supabase/client'
 
 type ServiceType = {
   id: number
@@ -87,18 +86,19 @@ export default function HomeServiceTabs() {
   async function load() {
     setLoading(true)
     setError(false)
-    const { data, error } = await supabase
-      .from('service_types')
-      .select('id,slug,title,short_desc,long_desc,icon,base_price_inr')
-      .eq('is_active', true)
-      .order('sort_order', { ascending: true })
-
-    if (error || !data || data.length === 0) {
+    const res = await fetch('/api/services')
+    if (!res.ok) {
       setError(true)
       setLoading(false)
       return
     }
-    const list = data as ServiceType[]
+    const { services } = await res.json()
+    if (!services || services.length === 0) {
+      setError(true)
+      setLoading(false)
+      return
+    }
+    const list = services as ServiceType[]
     setItems(list)
     setActiveSlug(list[0]?.slug ?? '')
     setLoading(false)
