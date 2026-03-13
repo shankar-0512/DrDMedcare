@@ -19,6 +19,20 @@ async function getAuthSession() {
   return session
 }
 
+// Fetch availability rules + overrides
+export async function GET() {
+  const session = await getAuthSession()
+  if (!session) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
+
+  const supabase = createSupabaseServer()
+  const [{ data: rules }, { data: overrides }] = await Promise.all([
+    supabase.from('availability_rules').select('*').order('day_of_week').order('start_time'),
+    supabase.from('availability_overrides').select('*').order('date'),
+  ])
+
+  return NextResponse.json({ rules: rules ?? [], overrides: overrides ?? [] })
+}
+
 // Save weekly availability rules (delete-all + re-insert)
 export async function POST(req: Request) {
   const session = await getAuthSession()
@@ -39,5 +53,24 @@ export async function POST(req: Request) {
     if (error) return NextResponse.json({ message: error.message }, { status: 400 })
   }
 
+  return NextResponse.json({ success: true })
+}
+
+// Upsert or delete an availability override
+export async function PATCH(req: Request) {
+  const session = await getAuthSession()
+  if (!session) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
+
+  const supabase = createSupabaseServer()
+  const body = await req.json()
+
+  if (body.deleteId !== undefined) {
+    const { error } = await supabase.from('availability_overrides').delete().eq('id', body.deleteId)
+    if (error) return NextResponse.json({ message: error.message }, { status: 400 })
+    return NextResponse.json({ success: true })
+  }
+
+  const { error } = await supabase.from('availability_overrides').upsert(body.override, { onConflict: 'date' })
+  if (error) return NextResponse.json({ message: error.message }, { status: 400 })
   return NextResponse.json({ success: true })
 }

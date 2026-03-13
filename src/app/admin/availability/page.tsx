@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabase/client'
 
 type Rule = {
   id?: number
@@ -64,12 +63,12 @@ export default function AvailabilityPage() {
 
   async function load() {
     setLoading(true)
-    const [{ data: r }, { data: o }] = await Promise.all([
-      supabase.from('availability_rules').select('*').order('day_of_week').order('start_time'),
-      supabase.from('availability_overrides').select('*').order('date'),
-    ])
-    setRules((r ?? []) as Rule[])
-    setOverrides((o ?? []) as Override[])
+    const res = await fetch('/api/admin/availability')
+    if (res.ok) {
+      const { rules: r, overrides: o } = await res.json()
+      setRules(r as Rule[])
+      setOverrides(o as Override[])
+    }
     setLoading(false)
   }
 
@@ -138,22 +137,31 @@ export default function AvailabilityPage() {
     if (newIsAvailable && (!newStart || !newEnd)) { showToast('Please set start and end time.'); return }
     if (newIsAvailable && newEnd <= newStart) { showToast('End time must be after start time.'); return }
 
-    const { error } = await supabase.from('availability_overrides').upsert({
-      date: newDate,
-      is_available: newIsAvailable,
-      start_time: newIsAvailable ? newStart : null,
-      end_time: newIsAvailable ? newEnd : null,
-      reason: newReason,
-    }, { onConflict: 'date' })
-
-    if (error) { showToast('Error: ' + error.message); return }
+    const res = await fetch('/api/admin/availability', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        override: {
+          date: newDate,
+          is_available: newIsAvailable,
+          start_time: newIsAvailable ? newStart : null,
+          end_time: newIsAvailable ? newEnd : null,
+          reason: newReason,
+        },
+      }),
+    })
+    if (!res.ok) { const { message } = await res.json(); showToast('Error: ' + message); return }
     showToast('Override saved ✓')
     setNewDate(''); setNewReason(''); setNewIsAvailable(false)
     load()
   }
 
   async function deleteOverride(id: number) {
-    await supabase.from('availability_overrides').delete().eq('id', id)
+    await fetch('/api/admin/availability', {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ deleteId: id }),
+    })
     showToast('Override removed ✓')
     load()
   }
