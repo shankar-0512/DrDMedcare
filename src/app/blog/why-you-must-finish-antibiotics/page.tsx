@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: _title,
     description: _desc,
     images: [_ogImage],
-  },,
+  },
   alternates: { canonical: '/blog/why-you-must-finish-antibiotics' },
 }
 const jsonLd = {
