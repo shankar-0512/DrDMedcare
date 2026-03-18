@@ -5,6 +5,7 @@ const LINKS = [
   { label: 'About me', href: '/about' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Drug Monographs', href: '/clinical' },
   { label: 'Disclaimer', href: '/legal/disclaimer' },
   { label: 'Privacy', href: '/legal/privacy' },
   { label: 'Terms', href: '/legal/terms' },

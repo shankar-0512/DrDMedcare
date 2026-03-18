@@ -387,11 +387,8 @@ export default function MonographClient() {
             {/* Quick-ref meta strip */}
             <div className="flex flex-wrap gap-x-8 gap-y-3 border-t border-white/15 pt-5">
               {[
-                ['Molecular Formula', 'C₂₄H₃₄O₄'],
-                ['Molecular Weight', '386.52 g/mol'],
-                ['CAS Number', '71-58-9'],
                 ['FDA Approval', 'June 18, 1959'],
-                ['Last Reviewed', '2025'],
+                ['Last Reviewed', '2026'],
               ].map(([label, value]) => (
                 <div key={label}>
                   <p className="text-[9px] font-bold uppercase tracking-widest text-white/40 mb-0.5">{label}</p>
@@ -407,7 +404,7 @@ export default function MonographClient() {
 
           {/* 01 */}
           <Section id="s1" num="01" title="What Is It? — Drug Overview & Classification" collapsed={!!collapsed['s1']} onToggle={() => toggleSection('s1')}>
-            <p>Medroxyprogesterone acetate (MPA) is a synthetic progestogen derived from progesterone. Structurally it is the 17α-acetate ester of medroxyprogesterone, carrying a 6α-methyl substitution on the pregnane steroid backbone. These modifications — the 6α-methyl group and the 17α-acetoxy moiety — substantially increase metabolic stability relative to native progesterone, conferring superior oral bioavailability and a prolonged duration of action, particularly in parenteral depot formulations.</p>
+            <p>Medroxyprogesterone acetate (MPA) is a synthetic progestin derived from progesterone, engineered for enhanced metabolic stability and prolonged duration of action compared to native progesterone — particularly relevant in parenteral depot formulations.</p>
             <p>MPA is a potent, selective progesterone receptor (PR) agonist. It does not bind sex hormone-binding globulin (SHBG), which distinguishes it from some other progestins. While MPA exhibits weak androgenic activity, it is largely devoid of significant oestrogenic action at therapeutic doses. At high doses, it also demonstrates glucocorticoid receptor cross-reactivity, explaining the Cushingoid features observed in oncology dosing regimens.</p>
             <p>It is classified under the hormonal agents — progestogens — and is used across a broad spectrum of gynaecological, oncological, and endocrinological indications.</p>
             <Table>
@@ -417,10 +414,6 @@ export default function MonographClient() {
                 <TRow><Td bold>Drug Class</Td><Td>Progestogen — Synthetic Progestin (Pregnane derivative)</Td></TRow>
                 <TRow><Td bold>Therapeutic Class</Td><Td>Hormones — Sex Hormones & Modulators of the Genital System</Td></TRow>
                 <TRow><Td bold>ATC Code</Td><Td>G03AC06</Td></TRow>
-                <TRow><Td bold>Chemical Name</Td><Td>6α-Methyl-17α-acetoxypregn-4-ene-3,20-dione</Td></TRow>
-                <TRow><Td bold>Molecular Formula</Td><Td>C₂₄H₃₄O₄</Td></TRow>
-                <TRow><Td bold>Molecular Weight</Td><Td>386.52 g/mol</Td></TRow>
-                <TRow><Td bold>CAS Number</Td><Td>71-58-9</Td></TRow>
                 <TRow><Td bold>FDA First Approval</Td><Td>June 18, 1959</Td></TRow>
                 <TRow><Td bold>Route of Administration</Td><Td>Oral; Intramuscular (IM); Subcutaneous (SC)</Td></TRow>
                 <TRow><Td bold>Receptor Targets</Td><Td>Progesterone receptor (primary); weak glucocorticoid & androgen receptor activity</Td></TRow>
@@ -541,7 +534,7 @@ export default function MonographClient() {
               <PKCard label="Volume of Distribution" value="High (lipophilic)" note="Extensive tissue distribution; exact Vd not standardised" />
             </div>
             <p className="text-xs font-bold uppercase tracking-widest pt-2" style={{ color: 'rgb(var(--color-primary))' }}>Metabolism</p>
-            <p>MPA is extensively metabolised in the liver, primarily via CYP3A4-mediated hydroxylation at positions C6β, C21, C2β, and C1β. Additional metabolic routes include 3- and 5-dihydro and 3,5-tetrahydro metabolite formation, as well as conjugation reactions. The 6α-methyl and 17α-acetoxy modifications make MPA more resistant to first-pass metabolism than progesterone, accounting for its superior oral efficacy.</p>
+            <p>MPA is extensively metabolised in the liver, primarily via CYP3A4-mediated hydroxylation, with additional conjugation reactions. Its structural modifications confer greater resistance to first-pass metabolism compared to progesterone, accounting for its superior oral efficacy.</p>
             <p>No formal DDI studies with specific CYP3A4 inducers or inhibitors have been conducted for MPA, though CYP3A4 inducers are known to reduce MPA plasma concentrations clinically.</p>
             <p className="text-xs font-bold uppercase tracking-widest pt-2" style={{ color: 'rgb(var(--color-primary))' }}>Elimination</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 my-3">
