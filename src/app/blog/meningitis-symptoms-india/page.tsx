@@ -56,7 +56,7 @@ export default function Post() {
         <h2>What is meningitis?</h2>
 
         <p>
-          Meningitis is inflammation of the meninges — the thin membranes that surround and protect your brain and spinal cord. It is almost always caused by an infection, most commonly bacteria or viruses.
+          Meningitis is an infection of the meninges — the thin membranes that surround and protect your brain and spinal cord. It is most commonly caused by bacteria or viruses.
         </p>
 
         {/* Viral vs Bacterial comparison card */}
@@ -64,7 +64,7 @@ export default function Post() {
           <div className="rounded-xl border border-amber-200 bg-amber-50 p-5">
             <div className="text-2xl mb-2">🦠</div>
             <p className="text-sm font-bold text-amber-800 mb-1">Viral meningitis</p>
-            <p className="text-sm text-amber-700 leading-relaxed">More common. Usually resolves in 1–2 weeks with rest. Caused by enteroviruses — the same family behind the common cold.</p>
+            <p className="text-sm text-amber-700 leading-relaxed">More common. Usually resolves in 1–2 weeks with medicines and rest. Caused by enteroviruses — the same family behind the common cold.</p>
           </div>
           <div className="rounded-xl border border-red-200 bg-red-50 p-5">
             <div className="text-2xl mb-2">⚠️</div>
@@ -74,7 +74,7 @@ export default function Post() {
         </div>
 
         <p>
-          The main bacterial culprits in India are <em>Neisseria meningitidis</em> (meningococcal disease), <em>Streptococcus pneumoniae</em> (pneumococcal disease), and in young children, <em>Haemophilus influenzae</em>.
+          The principal causative organisms in India are <em>Neisseria meningitidis</em> (meningococcal disease), <em>Streptococcus pneumoniae</em> (pneumococcal disease), and in young children, <em>Haemophilus influenzae</em>.
         </p>
 
         <h2>Who is at risk?</h2>
@@ -190,7 +190,7 @@ export default function Post() {
         <h2>What to do if you suspect meningitis</h2>
 
         <p>
-          <strong>Do not wait to see if it improves.</strong> Meningitis is not a wait-and-watch situation. If you see a combination of severe headache, fever, and neck stiffness — particularly in a child or young adult — go to hospital immediately. Tell the triage staff you are concerned about meningitis. Those words will ensure the person is seen urgently.
+          <strong>Do not wait to see if it improves.</strong> Meningitis is not a wait-and-watch situation. If you see a combination of severe headache, fever, and neck stiffness — particularly in a child or young adult — go to hospital immediately. Tell the healthcare staff you are concerned about meningitis. Those words will ensure the person is seen urgently.
         </p>
 
         <p>

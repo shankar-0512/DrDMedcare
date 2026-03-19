@@ -78,7 +78,7 @@ export default function BlogPostLayout({ title, excerpt, category, readTime, dat
         <div className="mt-10 rounded-xl border border-amber-200 bg-amber-50/50 p-5">
           <p className="text-xs font-semibold uppercase tracking-widest text-amber-700 mb-1">Disclaimer</p>
           <p className="text-sm text-slate-600 leading-relaxed">
-            This article is for educational purposes only. It does not constitute medical advice and should not replace a consultation with your doctor or pharmacist. Always consult a qualified healthcare professional before making any changes to your medicines.
+            This article is for educational purposes only. It does not constitute medical advice and should not replace a consultation with your doctor. Always consult a qualified healthcare professional before making any changes to your medicines.
           </p>
         </div>
 

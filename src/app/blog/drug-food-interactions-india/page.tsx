@@ -79,7 +79,7 @@ export default function Post() {
       </p>
 
       <p>
-        <strong>What to do:</strong> You don't need to avoid bananas entirely, but don't overdo it. One banana a day is generally fine. Talk to your doctor or pharmacist if you're on multiple blood pressure medicines.
+        <strong>What to do:</strong> You don't need to avoid bananas entirely, but don't overdo it. One banana a day is generally fine. Talk to your doctor if you're on multiple blood pressure medicines.
       </p>
 
       <h2>Grapefruit and statins</h2>
