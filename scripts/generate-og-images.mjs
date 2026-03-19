@@ -196,6 +196,39 @@ const POSTS = [
     )
   },
 
+  // 6. Meningitis symptoms India
+  {
+    slug: 'meningitis-symptoms-india',
+    html: base(
+      'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 60%, #ddd6fe 100%)',
+      '#7c3aed',
+      '#ede9fe',
+      '#7c3aed',
+      'Education',
+      'Meningitis: Warning Signs Every Indian Family Must Know',
+      'Bacterial meningitis can turn fatal within 24 hours — know the signs',
+      'Dr Priyanka Deventhiran',
+      /* decor */ `
+      <svg style="position:absolute;top:-80px;right:-80px;opacity:0.12;" width="480" height="480" viewBox="0 0 480 480">
+        <circle cx="240" cy="240" r="240" fill="#7c3aed"/>
+      </svg>
+      <div style="position:absolute;top:48px;right:80px;font-size:160px;opacity:0.18;transform:rotate(-10deg);user-select:none;">🧠</div>
+      <!-- Warning card -->
+      <div style="position:absolute;top:180px;right:64px;background:white;border-radius:16px;padding:18px 22px;box-shadow:0 8px 32px rgba(124,58,237,0.15);border:1px solid #ede9fe;width:280px;">
+        <div style="font-size:11px;font-weight:700;color:#7c3aed;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">Warning signs</div>
+        ${['🤕 Sudden severe headache', '🌡️ High fever', '🔒 Stiff neck'].map(s =>
+          `<div style="font-size:13px;color:#1e293b;font-weight:600;padding:5px 0;border-bottom:1px solid #f1f5f9;">${s}</div>`
+        ).join('')}
+      </div>
+      <!-- Glass test badge -->
+      <div style="position:absolute;bottom:115px;right:64px;background:#fef2f2;border-radius:12px;padding:10px 18px;box-shadow:0 4px 16px rgba(220,38,38,0.1);display:flex;align-items:center;gap:8px;border:1px solid #fecaca;">
+        <span style="font-size:16px;">🔴</span>
+        <span style="font-size:13px;font-weight:600;color:#dc2626;">Do the glass test</span>
+      </div>
+      `
+    )
+  },
+
   // 5. Why finish antibiotics
   {
     slug: 'why-you-must-finish-antibiotics',

@@ -21,6 +21,14 @@ type BlogPost = {
 
 const POSTS: BlogPost[] = [
   {
+    slug: 'meningitis-symptoms-india',
+    title: 'Meningitis: warning signs every Indian family must know',
+    excerpt: "Bacterial meningitis can become life-threatening within 24 hours. Here's how to recognise it early, what to do, and which vaccines are available in India.",
+    category: 'Education',
+    readTime: '6 min read',
+    date: 'March 2026',
+  },
+  {
     slug: 'clinical-pharmacist-vs-pharmacist',
     title: "Clinical pharmacist vs pharmacist — what's the difference and why does it matter?",
     excerpt: "Both work with medicines — but their roles, training, and what they can do for you are very different. Here's a clear breakdown.",
