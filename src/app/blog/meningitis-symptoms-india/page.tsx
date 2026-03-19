@@ -59,12 +59,22 @@ export default function Post() {
           Meningitis is inflammation of the meninges — the thin membranes that surround and protect your brain and spinal cord. It is almost always caused by an infection, most commonly bacteria or viruses.
         </p>
 
-        <p>
-          <strong>Viral meningitis</strong> is more common and usually less severe. Most people recover fully within two weeks with rest and supportive care. It is often caused by enteroviruses — the same family of viruses behind the common cold.
-        </p>
+        {/* Viral vs Bacterial comparison card */}
+        <div className="not-prose grid sm:grid-cols-2 gap-4 my-6">
+          <div className="rounded-xl border border-amber-200 bg-amber-50 p-5">
+            <div className="text-2xl mb-2">🦠</div>
+            <p className="text-sm font-bold text-amber-800 mb-1">Viral meningitis</p>
+            <p className="text-sm text-amber-700 leading-relaxed">More common. Usually resolves in 1–2 weeks with rest. Caused by enteroviruses — the same family behind the common cold.</p>
+          </div>
+          <div className="rounded-xl border border-red-200 bg-red-50 p-5">
+            <div className="text-2xl mb-2">⚠️</div>
+            <p className="text-sm font-bold text-red-800 mb-1">Bacterial meningitis</p>
+            <p className="text-sm text-red-700 leading-relaxed">Far more dangerous. Can be fatal within 24–48 hours. Can cause hearing loss, brain damage, or limb loss even with treatment.</p>
+          </div>
+        </div>
 
         <p>
-          <strong>Bacterial meningitis</strong> is far more dangerous. The main culprits in India are <em>Neisseria meningitidis</em> (meningococcal disease), <em>Streptococcus pneumoniae</em> (pneumococcal disease), and in young children, <em>Haemophilus influenzae</em>. Without urgent treatment, bacterial meningitis can be fatal. Even with treatment, it can leave lasting damage — hearing loss, brain damage, limb amputation in severe cases.
+          The main bacterial culprits in India are <em>Neisseria meningitidis</em> (meningococcal disease), <em>Streptococcus pneumoniae</em> (pneumococcal disease), and in young children, <em>Haemophilus influenzae</em>.
         </p>
 
         <h2>Who is at risk?</h2>
@@ -80,19 +90,33 @@ export default function Post() {
         <h2>The warning signs — know these by heart</h2>
 
         <p>
-          The classic triad of meningitis is: <strong>sudden severe headache, high fever, and stiff neck</strong>. But in practice, not every patient will have all three at once, especially in the early hours. Here is what to watch for:
+          The classic triad of meningitis is: <strong>sudden severe headache, high fever, and stiff neck</strong>. But in practice, not every patient will have all three at once, especially in the early hours.
         </p>
 
-        <ul>
-          <li><strong>Severe headache</strong> — not a dull ache, but an intense, sudden headache that feels different from anything before</li>
-          <li><strong>High fever</strong> — often 39–40°C, coming on quickly</li>
-          <li><strong>Neck stiffness</strong> — the person cannot bring their chin to their chest; they resist any attempt to bend the neck forward</li>
-          <li><strong>Photophobia</strong> — unusual sensitivity to light; the person wants to be in a dark room</li>
-          <li><strong>Phonophobia</strong> — sensitivity to sound</li>
-          <li><strong>Nausea and vomiting</strong></li>
-          <li><strong>Confusion or altered consciousness</strong> — the person seems drowsy, confused, or difficult to wake</li>
-          <li><strong>Seizures</strong> — particularly in children</li>
-        </ul>
+        {/* Warning signs visual card */}
+        <div className="not-prose rounded-xl border-2 border-violet-200 bg-violet-50 p-6 my-6">
+          <p className="text-xs font-bold uppercase tracking-widest text-violet-600 mb-4">Warning signs</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              { icon: '🤕', label: 'Sudden severe headache', note: 'Intense, different from anything before' },
+              { icon: '🌡️', label: 'High fever', note: 'Often 39–40°C, coming on fast' },
+              { icon: '🔒', label: 'Stiff neck', note: 'Cannot bring chin to chest' },
+              { icon: '💡', label: 'Sensitivity to light', note: 'Wants to be in a dark room' },
+              { icon: '🔇', label: 'Sensitivity to sound', note: 'Noise feels unbearable' },
+              { icon: '🤢', label: 'Nausea & vomiting', note: 'Often with the headache' },
+              { icon: '😵', label: 'Confusion or drowsiness', note: 'Difficult to wake or keep alert' },
+              { icon: '⚡', label: 'Seizures', note: 'Particularly in children' },
+            ].map(({ icon, label, note }) => (
+              <div key={label} className="flex items-start gap-3 bg-white rounded-lg p-3 border border-violet-100">
+                <span className="text-xl shrink-0">{icon}</span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-800">{label}</p>
+                  <p className="text-xs text-slate-500 mt-0.5">{note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <p>
           In infants, the signs are different and easier to miss. Look for a bulging fontanelle (the soft spot on the baby's head), a high-pitched unusual cry, refusal to feed, a limp or floppy body, and extreme irritability.
@@ -104,9 +128,32 @@ export default function Post() {
           In meningococcal meningitis specifically, a rash can appear. It starts as small red or purple spots that look like tiny blood spots under the skin (petechiae). These can spread rapidly into larger blotchy bruise-like patches (purpura).
         </p>
 
-        <p>
-          Here is a simple test you can do at home called the <strong>glass test</strong>: press a clear glass firmly against the rash. If the spots do not fade or disappear under pressure, <strong>go to hospital immediately</strong>. This non-blanching rash is a sign of septicaemia (blood poisoning) and is a medical emergency.
-        </p>
+        {/* Glass test step-by-step */}
+        <div className="not-prose rounded-xl border border-red-200 bg-red-50 p-6 my-6">
+          <p className="text-xs font-bold uppercase tracking-widest text-red-600 mb-4">The glass test — step by step</p>
+          <div className="flex flex-col gap-3">
+            {[
+              { step: '1', text: 'Find a clear drinking glass' },
+              { step: '2', text: 'Press it firmly against the rash or spots' },
+              { step: '3', text: 'Look through the glass while pressing' },
+            ].map(({ step, text }) => (
+              <div key={step} className="flex items-center gap-3">
+                <div className="h-7 w-7 rounded-full bg-red-600 text-white text-xs font-bold flex items-center justify-center shrink-0">{step}</div>
+                <p className="text-sm text-red-900 font-medium">{text}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 grid sm:grid-cols-2 gap-3">
+            <div className="rounded-lg bg-green-100 border border-green-200 p-3 text-center">
+              <p className="text-xs font-bold text-green-700 uppercase tracking-wide mb-1">Spots fade ✓</p>
+              <p className="text-xs text-green-700">Likely not meningococcal — monitor closely</p>
+            </div>
+            <div className="rounded-lg bg-red-200 border border-red-300 p-3 text-center">
+              <p className="text-xs font-bold text-red-800 uppercase tracking-wide mb-1">Spots stay visible 🚨</p>
+              <p className="text-xs text-red-800 font-semibold">Go to A&amp;E immediately. Do not wait.</p>
+            </div>
+          </div>
+        </div>
 
         <blockquote>
           If the rash does not fade under a glass, do not wait. Do not call a private clinic. Go to the nearest hospital emergency department immediately.
@@ -115,19 +162,30 @@ export default function Post() {
         <h2>Why meningitis is commonly missed in India</h2>
 
         <p>
-          The early symptoms of meningitis — fever, headache, fatigue — overlap heavily with common illnesses like viral fever, dengue, typhoid, and even malaria. This is why it is so often attributed to "viral fever" and treated at home in the first critical hours.
+          The early symptoms — fever, headache, fatigue — overlap heavily with common illnesses like viral fever, dengue, typhoid, and even malaria. This is why it is so often attributed to "viral fever" and treated at home in the first critical hours.
         </p>
 
-        <p>
-          A few things to remember that distinguish meningitis from ordinary viral fever:
-        </p>
-
-        <ul>
-          <li>The headache in meningitis is typically <em>severe and constant</em>, not mild and intermittent</li>
-          <li>Neck stiffness is almost never present in ordinary fever — if you or someone in your family cannot bend their neck forward, that is a red flag</li>
-          <li>The speed of deterioration is alarming — a person can go from feeling unwell to unconscious in a matter of hours</li>
-          <li>Light sensitivity is pronounced and distressing, not just mild discomfort</li>
-        </ul>
+        {/* Comparison table */}
+        <div className="not-prose rounded-xl border border-slate-200 overflow-hidden my-6">
+          <div className="grid grid-cols-3 bg-slate-100 px-4 py-2.5">
+            <p className="text-xs font-bold text-slate-500 uppercase tracking-wide">Symptom</p>
+            <p className="text-xs font-bold text-amber-600 uppercase tracking-wide">Viral fever</p>
+            <p className="text-xs font-bold text-red-600 uppercase tracking-wide">Meningitis</p>
+          </div>
+          {[
+            ['Headache', 'Mild, dull', 'Severe, sudden, constant'],
+            ['Neck stiffness', 'Absent', 'Almost always present'],
+            ['Light sensitivity', 'Mild', 'Intense, distressing'],
+            ['Deterioration', 'Gradual over days', 'Hours — can be rapid'],
+            ['Rash', 'May be present', 'Non-blanching spots'],
+          ].map(([symptom, fever, meningitis]) => (
+            <div key={symptom} className="grid grid-cols-3 px-4 py-3 border-t border-slate-100 bg-white">
+              <p className="text-sm font-semibold text-slate-700">{symptom}</p>
+              <p className="text-sm text-amber-700">{fever}</p>
+              <p className="text-sm text-red-700 font-medium">{meningitis}</p>
+            </div>
+          ))}
+        </div>
 
         <h2>What to do if you suspect meningitis</h2>
 
@@ -145,15 +203,45 @@ export default function Post() {
           This is an area where awareness is genuinely low in India. Vaccines against the most common causes of bacterial meningitis are available but not yet part of the national immunisation schedule.
         </p>
 
-        <ul>
-          <li><strong>Pneumococcal vaccine (PCV13 / PCV15 / PPSV23)</strong> — protects against <em>Streptococcus pneumoniae</em>, the leading cause of bacterial meningitis in India. Recommended for all children, adults over 65, and anyone with chronic illness or weakened immunity. PCV13 is now available at many government hospitals at subsidised rates.</li>
-          <li><strong>Meningococcal vaccine (MenACWY)</strong> — protects against <em>Neisseria meningitidis</em> serogroups A, C, W, and Y. Recommended for adolescents, Hajj pilgrims (mandatory), travellers to high-risk regions, and those with certain immune conditions.</li>
-          <li><strong>Hib vaccine (Haemophilus influenzae type b)</strong> — already included in India's Universal Immunisation Programme as part of the Pentavalent vaccine given to infants. Make sure your child has received all scheduled doses.</li>
-        </ul>
-
-        <p>
-          If you are unsure whether you or your children have received the pneumococcal or meningococcal vaccines, speak to your doctor or a clinical pharmacist. These vaccines are available at private vaccination clinics and some government facilities across India.
-        </p>
+        {/* Vaccines card */}
+        <div className="not-prose rounded-xl border border-teal-200 bg-teal-50 p-6 my-6">
+          <p className="text-xs font-bold uppercase tracking-widest text-teal-700 mb-4">Vaccines available in India 💉</p>
+          <div className="flex flex-col gap-4">
+            {[
+              {
+                name: 'Pneumococcal vaccine',
+                brands: 'PCV13 / PCV15 / PPSV23',
+                protects: 'Streptococcus pneumoniae — the leading cause of bacterial meningitis in India',
+                who: 'All children, adults over 65, anyone with chronic illness or weakened immunity',
+                note: 'PCV13 available at many government hospitals at subsidised rates',
+              },
+              {
+                name: 'Meningococcal vaccine',
+                brands: 'MenACWY',
+                protects: 'Neisseria meningitidis serogroups A, C, W & Y',
+                who: 'Adolescents, Hajj & Umrah pilgrims (mandatory), travellers to high-risk regions',
+                note: 'Mandatory for Saudi Arabia travel',
+              },
+              {
+                name: 'Hib vaccine',
+                brands: 'Part of Pentavalent vaccine',
+                protects: 'Haemophilus influenzae type b',
+                who: 'Infants — already in Universal Immunisation Programme',
+                note: 'Ensure all scheduled infant doses are completed',
+              },
+            ].map(({ name, brands, protects, who, note }) => (
+              <div key={name} className="bg-white rounded-lg border border-teal-100 p-4">
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <p className="text-sm font-bold text-slate-800">{name}</p>
+                  <span className="text-xs bg-teal-100 text-teal-700 font-semibold px-2 py-0.5 rounded-full shrink-0">{brands}</span>
+                </div>
+                <p className="text-xs text-slate-600 mb-1"><span className="font-semibold">Protects against:</span> {protects}</p>
+                <p className="text-xs text-slate-600 mb-1"><span className="font-semibold">Recommended for:</span> {who}</p>
+                <p className="text-xs text-teal-700 font-medium mt-2">ℹ️ {note}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <h2>A note on antibiotic use</h2>
 
