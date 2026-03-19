@@ -27,6 +27,7 @@ const POSTS: BlogPost[] = [
     category: 'Education',
     readTime: '6 min read',
     date: 'March 2026',
+    featured: true,
   },
   {
     slug: 'clinical-pharmacist-vs-pharmacist',
@@ -35,7 +36,6 @@ const POSTS: BlogPost[] = [
     category: 'Awareness',
     readTime: '5 min read',
     date: 'March 2026',
-    featured: true,
   },
   {
     slug: 'healthcare-professionals-india',
