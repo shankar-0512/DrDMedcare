@@ -50,9 +50,21 @@ export async function POST(req: Request) {
   if (toInsert.length === 0) return NextResponse.json({ success: true })
 
   const supabase = createSupabaseServer()
+
+  // Delete existing slots for the dates being generated to allow re-randomization of dummies
+  const dates = [...new Set(toInsert.map(slot => slot.slot_date))]
+  const { error: deleteError } = await supabase
+    .from('slots')
+    .delete()
+    .in('slot_date', dates)
+    .eq('is_booked', false) // Only delete unbooked slots to be safe
+
+  if (deleteError) return NextResponse.json({ message: deleteError.message }, { status: 400 })
+
+  // Insert new slots
   const { error } = await supabase
     .from('slots')
-    .upsert(toInsert, { onConflict: 'slot_date,start_time', ignoreDuplicates: true })
+    .insert(toInsert)
 
   if (error) return NextResponse.json({ message: error.message }, { status: 400 })
   return NextResponse.json({ success: true })
