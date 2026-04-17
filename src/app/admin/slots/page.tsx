@@ -113,7 +113,7 @@ export default function SlotsPage() {
     const overrideMap = Object.fromEntries(overrideList.map((o: Override) => [o.date, o]))
 
     const dates = getNext30Days().slice(0, generateDays)
-    const toInsert: { slot_date: string; start_time: string; end_time: string; is_dummy?: boolean }[] = []
+    const toInsert: { slot_date: string; start_time: string; end_time: string; is_dummy: boolean; is_booked: boolean; is_blocked: boolean; booking_id: null }[] = []
 
     for (const date of dates) {
       const dayOfWeek = new Date(date + 'T00:00:00').getDay()
@@ -123,7 +123,7 @@ export default function SlotsPage() {
 
       if (override && override.is_available && override.start_time && override.end_time) {
         for (const { start, end } of generateSlotTimes(override.start_time, override.end_time)) {
-          toInsert.push({ slot_date: date, start_time: start, end_time: end })
+          toInsert.push({ slot_date: date, start_time: start, end_time: end, is_dummy: false, is_booked: false, is_blocked: false, booking_id: null })
         }
         continue
       }
@@ -131,7 +131,7 @@ export default function SlotsPage() {
       const dayRules = ruleList.filter((r: Rule) => r.day_of_week === dayOfWeek)
       for (const rule of dayRules) {
         for (const { start, end } of generateSlotTimes(rule.start_time, rule.end_time)) {
-          toInsert.push({ slot_date: date, start_time: start, end_time: end })
+          toInsert.push({ slot_date: date, start_time: start, end_time: end, is_dummy: false, is_booked: false, is_blocked: false, booking_id: null })
         }
       }
     }
