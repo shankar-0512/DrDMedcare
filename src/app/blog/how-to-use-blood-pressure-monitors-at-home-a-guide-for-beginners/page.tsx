@@ -198,7 +198,7 @@ export default function Post() {
         </div>
 
         <p>
-          Home blood pressure monitoring empowers you to stay on top of your health. Start today and book a consultation with DrDMedcare for expert guidance.
+          Home blood pressure monitoring empowers you to stay on top of your health. Start today and book a consultation with Dr D's Medcare for expert guidance.
         </p>
       </BlogPostLayout>
     </>
