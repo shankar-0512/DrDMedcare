@@ -69,6 +69,14 @@ const POSTS: BlogPost[] = [
     readTime: '5 min read',
     date: 'March 2026',
   },
+  {
+    slug: 'how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners',
+    title: 'How to Use Blood Pressure Monitors at Home: A Guide for Beginners',
+    excerpt: 'Monitoring your blood pressure at home is a simple yet powerful way to take control of your heart health. With the right device and technique, you can track readings regularly and share them with your doctor for better management.',
+    category: 'Education',
+    readTime: '4 min read',
+    date: 'April 2026',
+  },
 ]
 
 const CATEGORY_COLORS: Record<string, string> = {

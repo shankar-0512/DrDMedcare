@@ -264,6 +264,35 @@ const POSTS = [
       `
     )
   },
+
+  // 7. How to use blood pressure monitors at home
+  {
+    slug: 'how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners',
+    html: base(
+      'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%)',
+      '#0369a1',
+      '#e0f2fe',
+      '#0369a1',
+      'Education',
+      'How to Use Blood Pressure Monitors at Home: A Guide for Beginners',
+      'Take control of your heart health with accurate home monitoring',
+      'Dr Priyanka Deventhiran',
+      /* decor */ `
+      <svg style="position:absolute;top:-80px;right:-80px;opacity:0.12;" width="480" height="480" viewBox="0 0 480 480">
+        <circle cx="240" cy="240" r="240" fill="#0369a1"/>
+      </svg>
+      <div style="position:absolute;top:48px;right:80px;font-size:160px;opacity:0.18;transform:rotate(-10deg);user-select:none;">❤️</div>
+      <!-- BP monitor icon -->
+      <div style="position:absolute;bottom:100px;right:120px;font-size:120px;opacity:0.15;transform:rotate(15deg);user-select:none;">🩺</div>
+      <!-- Reading card -->
+      <div style="position:absolute;top:170px;right:72px;background:white;border-radius:16px;padding:16px 24px;box-shadow:0 8px 32px rgba(3,105,161,0.15);border:1px solid #e0f2fe;">
+        <div style="font-size:11px;font-weight:700;color:#0369a1;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">Normal Reading</div>
+        <div style="font-size:22px;font-weight:900;color:#0f172a;">120/80</div>
+        <div style="font-size:11px;color:#64748b;margin-top:4px;">mmHg</div>
+      </div>
+      `
+    )
+  },
 ]
 
 // ─── Generator ───────────────────────────────────────────────────────────────

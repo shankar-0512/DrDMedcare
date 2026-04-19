@@ -71,6 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${BASE_URL}/blog/how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners`,
+      lastModified: new Date('2026-04-19'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: `${BASE_URL}/clinical`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
