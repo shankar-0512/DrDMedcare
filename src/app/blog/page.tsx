@@ -75,6 +75,14 @@ const POSTS: BlogPost[] = [
     category: 'Education',
     readTime: '4 min read',
     date: 'April 2026',
+  },
+  {
+    slug: 'myasthenia-gravis-india',
+    title: 'Myasthenia Gravis: Understanding the Disease, the Treatment, and the Medicines to Avoid',
+    excerpt: "MG is a rare autoimmune disease where muscle weakness is unpredictable — and where a common antibiotic or antacid can trigger a crisis. Here's what every patient and carer needs to know.",
+    category: 'Education',
+    readTime: '7 min read',
+    date: 'June 2026',
     featured: true,
   },
 ]

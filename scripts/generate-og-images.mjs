@@ -293,6 +293,39 @@ const POSTS = [
       `
     )
   },
+
+  // 8. Myasthenia Gravis
+  {
+    slug: 'myasthenia-gravis-india',
+    html: base(
+      'linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #ddd6fe 100%)',
+      '#6d28d9',
+      '#ede9fe',
+      '#6d28d9',
+      'Education',
+      'Myasthenia Gravis: Medicines That Help — and Ones That Don\'t',
+      'Why every new prescription needs a second look in MG',
+      'Dr Priyanka Deventhiran',
+      /* decor */ `
+      <svg style="position:absolute;top:-100px;right:-100px;opacity:0.10;" width="520" height="520" viewBox="0 0 520 520">
+        <circle cx="260" cy="260" r="260" fill="#6d28d9"/>
+      </svg>
+      <svg style="position:absolute;bottom:-60px;left:-60px;opacity:0.07;" width="360" height="360" viewBox="0 0 360 360">
+        <circle cx="180" cy="180" r="180" fill="#4c1d95"/>
+      </svg>
+      <!-- Warning card -->
+      <div style="position:absolute;top:160px;right:72px;background:white;border-radius:16px;padding:18px 24px;box-shadow:0 8px 32px rgba(109,40,217,0.15);border:1px solid #ede9fe;max-width:240px;">
+        <div style="font-size:11px;font-weight:700;color:#6d28d9;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">⚠ Medicines to Avoid</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          <div style="font-size:13px;color:#1e293b;font-weight:600;">Ciprofloxacin</div>
+          <div style="font-size:13px;color:#1e293b;font-weight:600;">Azithromycin</div>
+          <div style="font-size:13px;color:#1e293b;font-weight:600;">Magnesium antacids</div>
+          <div style="font-size:13px;color:#1e293b;font-weight:600;">Beta-blockers</div>
+        </div>
+      </div>
+      `
+    )
+  },
 ]
 
 // ─── Generator ───────────────────────────────────────────────────────────────

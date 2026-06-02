@@ -77,6 +77,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${BASE_URL}/blog/myasthenia-gravis-india`,
+      lastModified: new Date('2026-06-02'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: `${BASE_URL}/clinical`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
