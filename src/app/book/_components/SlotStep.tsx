@@ -50,7 +50,7 @@ export default function SlotStep(props: {
   useEffect(() => {
     async function loadAvailableDates() {
       const from = getISTDateString(2)
-      const to   = getISTDateString(15)
+      const to   = getISTDateString(30)
       const res  = await fetch(`/api/available-dates?from=${from}&to=${to}`)
       if (res.ok) {
         const { dates: data } = await res.json()
