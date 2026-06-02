@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Myasthenia Gravis: Understanding the Disease, the Treatment, and the Medicines to Avoid'
-const _desc = 'MG is a rare autoimmune disease where muscle weakness can become life-threatening — and where a common antibiotic or antacid can silently make things worse. Here is what every patient and carer needs to know.'
+const _desc = 'MG is a rare autoimmune disease where muscle weakness is unpredictable, and where a common antibiotic or antacid can trigger a crisis. Here is what every patient and carer needs to know.'
 const _ogImage = 'https://drdmedcare.com/og/myasthenia-gravis-india.jpg'
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
   headline: 'Myasthenia Gravis: Understanding the Disease, the Treatment, and the Medicines to Avoid',
-  description: 'MG is a rare autoimmune disease where muscle weakness can become life-threatening — and where a common antibiotic or antacid can silently make things worse.',
+  description: 'MG is a rare autoimmune disease where muscle weakness is unpredictable, and where a common antibiotic or antacid can trigger a crisis.',
   author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-06-02',
@@ -44,149 +44,357 @@ export default function Post() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <BlogPostLayout
         title="Myasthenia Gravis: Understanding the Disease, the Treatment, and the Medicines to Avoid"
-        excerpt="MG is a rare autoimmune disease where muscle weakness is unpredictable — and where a common antibiotic or antacid can trigger a crisis. Here is what every patient and carer needs to know."
+        excerpt="MG is a rare autoimmune disease where muscle weakness is unpredictable, and where a common antibiotic or antacid can trigger a crisis. Here is what every patient and carer needs to know."
         category="Education"
         readTime="7 min read"
         date="June 2026"
       >
         <p>
-          Imagine waking up one morning and finding that your eyelids are too heavy to fully open. By afternoon, your voice sounds nasal, and chewing through a full meal leaves you exhausted. By evening, you feel almost normal again. The next day, it starts over.
+          Imagine waking up one morning with eyelids too heavy to fully open. By afternoon, your voice sounds nasal and chewing through a meal leaves you exhausted. By evening, you feel almost normal again. The next day, it starts over.
         </p>
         <p>
-          This fluctuating, activity-dependent weakness — worse with effort, better with rest — is the hallmark of myasthenia gravis (MG). It is one of the most misunderstood conditions in neurology, and in India, it is frequently confused with fatigue, thyroid problems, or cervical spondylosis for months or even years before the correct diagnosis is made.
+          This fluctuating, activity-dependent weakness — worse with effort, better with rest — is the hallmark of myasthenia gravis (MG). It is one of the most misunderstood conditions in neurology. In India, it is frequently mistaken for fatigue, thyroid problems, or cervical spondylosis for months or even years before the correct diagnosis is made.
         </p>
         <p>
-          More than any other chronic condition, MG demands careful medication management. The treatment itself is complex. But what makes MG particularly dangerous is a long list of common medicines — antibiotics, antacids, eye drops, heart medicines — that can silently worsen the disease or trigger a life-threatening crisis in someone who is otherwise stable.
+          More than almost any other chronic condition, MG demands careful medication management. The treatment itself is complex, but what makes MG particularly dangerous is a long list of common medicines — antibiotics, antacids, eye drops, heart medicines — that can silently worsen the disease or trigger a life-threatening crisis in someone who is otherwise stable.
         </p>
 
         <h2>What happens in the body</h2>
         <p>
-          Normally, when your brain wants a muscle to move, it sends a signal down a nerve. At the end of the nerve, a chemical called acetylcholine is released, crosses a tiny gap, and attaches to receptors on the muscle — triggering movement. In myasthenia gravis, the immune system produces antibodies that attack and block these acetylcholine receptors. Fewer receptors mean weaker signals, and weaker signals mean weaker muscles.
+          Normally, when your brain wants a muscle to move, it sends a signal down a nerve. At the nerve ending, a chemical called acetylcholine is released, crosses a tiny gap, and attaches to receptors on the muscle to trigger movement. In myasthenia gravis, the immune system produces antibodies that attack and block these acetylcholine receptors. Fewer receptors mean weaker signals, and weaker signals mean weaker muscles.
         </p>
         <p>
-          The weakness is not constant because the nerve keeps releasing acetylcholine — but the more you use a muscle, the more depleted the available acetylcholine becomes, and the weaker the muscle gets. Rest allows acetylcholine to accumulate again, which is why patients often feel better in the morning and deteriorate as the day progresses.
+          The weakness is not constant because the nerve keeps releasing acetylcholine. But the more you use a muscle, the more the available acetylcholine is depleted, and the weaker the muscle gets. Rest allows it to build up again, which is why patients often feel better in the morning and weaker as the day goes on.
         </p>
         <p>
-          In most patients, the antibodies target the acetylcholine receptor (AChR). In a smaller group, they target a protein called MuSK (muscle-specific kinase). A third group is described as "seronegative" — the antibodies are present but current tests cannot detect them. This matters because treatment response can differ between these groups.
-        </p>
-        <p>
-          The thymus gland — which plays a role in immune development — is abnormal in a significant proportion of MG patients. In about 10–15% of cases, a thymoma (thymus tumour) is found. Even without a tumour, the thymus is often enlarged and thought to be a trigger for the autoimmune process.
+          In most patients, the antibodies target the acetylcholine receptor (AChR). In a smaller group, they target a protein called MuSK (muscle-specific kinase). A third group is described as seronegative — the antibodies are present but current tests cannot detect them. This matters because treatment response can differ between these groups.
         </p>
 
-        <h2>Symptoms: what to look for</h2>
+        {/* Ocular vs Generalised */}
+        <div className="not-prose grid sm:grid-cols-2 gap-4 my-6">
+          <div className="rounded-xl border border-amber-200 bg-amber-50 p-5">
+            <div className="text-2xl mb-2">👁️</div>
+            <p className="text-sm font-bold text-amber-800 mb-1">Ocular MG — 15% of patients</p>
+            <p className="text-sm text-amber-700 leading-relaxed">Weakness confined only to the eyelids and eye muscles. No other muscles affected. Some patients remain in this form permanently.</p>
+          </div>
+          <div className="rounded-xl border border-violet-200 bg-violet-50 p-5">
+            <div className="text-2xl mb-2">💪</div>
+            <p className="text-sm font-bold text-violet-800 mb-1">Generalised MG — 85% of patients</p>
+            <p className="text-sm text-violet-700 leading-relaxed">Weakness spreads to the face, throat, neck, and limbs. In severe cases, breathing muscles are affected.</p>
+          </div>
+        </div>
+
+        <h2>Symptoms to look out for</h2>
         <p>
-          MG can affect any voluntary muscle, but some muscles are far more commonly involved than others. The most typical pattern is:
-        </p>
-        <ul>
-          <li><strong>Ptosis</strong> — drooping of one or both eyelids. This is often the first symptom and is characteristically worse in the evening or after prolonged use of the eyes.</li>
-          <li><strong>Diplopia</strong> — double vision, caused by weakness in the muscles that control eye movement. This is often the symptom that first prompts a visit to a doctor.</li>
-          <li><strong>Dysarthria</strong> — a nasal or slurred quality to the voice, particularly after talking for a while. Family members often notice this before the patient does.</li>
-          <li><strong>Dysphagia</strong> — difficulty swallowing, especially towards the end of a meal. Some patients begin to choke on liquids or thin foods.</li>
-          <li><strong>Limb weakness</strong> — difficulty climbing stairs, lifting arms above the head, or rising from a chair. Unlike most neurological conditions, the weakness tends to be proximal (closer to the body) rather than in the hands or feet.</li>
-          <li><strong>Neck weakness</strong> — difficulty holding the head up, particularly by afternoon.</li>
-        </ul>
-        <p>
-          MG does not cause pain, numbness, tingling, or problems with bladder or bowel function. If these symptoms are present, another diagnosis should be considered.
-        </p>
-        <p>
-          About 15% of patients have purely ocular MG — weakness confined only to the eyelids and eye muscles, with no involvement of other muscles. The rest will develop generalised MG over time, though the pace varies enormously.
+          MG can affect any voluntary muscle, but certain muscles are involved far more commonly than others. The pattern of weakness is characteristic: it worsens with repeated use and improves with rest.
         </p>
 
-        <h2>Diagnosis</h2>
+        {/* Symptom cards */}
+        <div className="not-prose rounded-xl border-2 border-violet-200 bg-violet-50 p-6 my-6">
+          <p className="text-xs font-bold uppercase tracking-widest text-violet-600 mb-4">Common symptoms of MG</p>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {[
+              { icon: '👁️', label: 'Drooping eyelids (ptosis)', note: 'Often worse in the evening or after prolonged screen use' },
+              { icon: '👀', label: 'Double vision (diplopia)', note: 'Caused by weakness in the eye-movement muscles' },
+              { icon: '🗣️', label: 'Nasal or slurred voice', note: 'Particularly after talking for a while' },
+              { icon: '🍽️', label: 'Difficulty swallowing', note: 'Choking or fatigue at the end of meals' },
+              { icon: '🦾', label: 'Proximal limb weakness', note: 'Trouble climbing stairs, lifting arms, rising from a chair' },
+              { icon: '🙆', label: 'Neck weakness', note: 'Difficulty holding the head up, especially by afternoon' },
+            ].map(({ icon, label, note }) => (
+              <div key={label} className="flex items-start gap-3 bg-white rounded-lg p-3 border border-violet-100">
+                <span className="text-xl shrink-0">{icon}</span>
+                <div>
+                  <p className="text-sm font-semibold text-slate-800">{label}</p>
+                  <p className="text-xs text-slate-500 mt-0.5">{note}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <p>
-          The diagnosis of MG is typically made by a neurologist and involves a combination of clinical assessment, blood tests, and electrical studies. The key investigations are:
+          MG does not cause pain, numbness, tingling, or problems with bladder or bowel function. If those symptoms are present, another diagnosis should be considered.
         </p>
-        <ul>
-          <li><strong>Acetylcholine receptor (AChR) antibody test</strong> — positive in approximately 85% of generalised MG and 50% of purely ocular MG. A positive result is highly specific for the diagnosis.</li>
-          <li><strong>Anti-MuSK antibody test</strong> — for patients who are AChR-antibody negative.</li>
-          <li><strong>Repetitive nerve stimulation (RNS) and single-fibre EMG</strong> — electrophysiological tests that show the characteristic decrement in muscle response that MG produces. Single-fibre EMG is the most sensitive test available.</li>
-          <li><strong>CT scan of the chest</strong> — to look for a thymoma, which requires surgical removal regardless of its size in MG patients.</li>
-          <li><strong>The ice pack test</strong> — a simple bedside test for ptosis. Cold temporarily improves neuromuscular transmission, so applying an ice pack to a drooping eyelid for two minutes and observing improvement is a quick clinical pointer towards MG.</li>
-        </ul>
+
+        <h2>How MG is diagnosed</h2>
         <p>
-          In India, access to single-fibre EMG is limited to tertiary neurology centres. Many patients are diagnosed on the basis of clinical features combined with a positive antibody test and a positive response to treatment.
+          Diagnosis is made by a neurologist and involves a combination of clinical assessment, blood tests, and electrical studies. The key investigations are:
         </p>
+
+        {/* Diagnosis cards */}
+        <div className="not-prose rounded-xl border border-slate-200 overflow-hidden my-6">
+          <div className="bg-slate-100 px-5 py-3">
+            <p className="text-xs font-bold text-slate-500 uppercase tracking-wide">Diagnostic investigations</p>
+          </div>
+          {[
+            {
+              test: 'AChR antibody blood test',
+              detail: 'Positive in ~85% of generalised MG and ~50% of ocular MG. A positive result is highly specific for the diagnosis.',
+              tag: 'First-line',
+              tagColor: 'bg-violet-100 text-violet-700',
+            },
+            {
+              test: 'Anti-MuSK antibody test',
+              detail: 'Ordered for patients who are AChR-antibody negative.',
+              tag: 'Second-line',
+              tagColor: 'bg-amber-100 text-amber-700',
+            },
+            {
+              test: 'Repetitive nerve stimulation (RNS) / Single-fibre EMG',
+              detail: 'Electrophysiological tests that demonstrate the characteristic fatiguable weakness. Single-fibre EMG is the most sensitive test available.',
+              tag: 'Specialist',
+              tagColor: 'bg-slate-100 text-slate-600',
+            },
+            {
+              test: 'CT scan of the chest',
+              detail: 'To check for a thymoma (thymus gland tumour), which is found in 10–15% of MG patients and requires surgical removal.',
+              tag: 'All patients',
+              tagColor: 'bg-teal-100 text-teal-700',
+            },
+            {
+              test: 'The ice pack test',
+              detail: 'A simple bedside test for ptosis. Applying an ice pack to the drooping eyelid for two minutes temporarily improves neuromuscular transmission. Improvement points towards MG.',
+              tag: 'Bedside',
+              tagColor: 'bg-blue-100 text-blue-700',
+            },
+          ].map(({ test, detail, tag, tagColor }) => (
+            <div key={test} className="flex items-start gap-4 px-5 py-4 border-t border-slate-100 bg-white">
+              <div className="flex-1">
+                <div className="flex items-start justify-between gap-3 mb-1">
+                  <p className="text-sm font-semibold text-slate-800">{test}</p>
+                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0 ${tagColor}`}>{tag}</span>
+                </div>
+                <p className="text-xs text-slate-500 leading-relaxed">{detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
 
         <h2>The medicines used to treat MG</h2>
         <p>
-          Treatment for MG has two goals: relieve symptoms in the short term, and suppress the underlying autoimmune process in the long term. The two are usually managed together.
+          Treatment has two goals: relieve symptoms in the short term, and suppress the underlying autoimmune process in the long term. The two are usually managed together.
         </p>
-        <p>
-          <strong>Pyridostigmine (Mestinon)</strong> is the cornerstone of symptomatic treatment. It works by blocking the enzyme that breaks down acetylcholine — allowing more of it to accumulate and bind to whatever receptors remain. The effect is temporary (lasting three to four hours) and purely symptomatic, so the dose is taken multiple times a day. Most patients notice a meaningful improvement in strength within thirty to sixty minutes of a dose.
-        </p>
-        <p>
-          The dose of pyridostigmine must be carefully calibrated. Too little and the patient remains weak. Too much — a condition called cholinergic crisis — paradoxically worsens weakness because excess acetylcholine over-stimulates and then blocks the neuromuscular junction. Signs of over-treatment include increased saliva, abdominal cramps, sweating, and pinpoint pupils. This is why self-adjusting the dose without medical advice is genuinely dangerous in MG.
-        </p>
-        <p>
-          <strong>Corticosteroids (prednisolone)</strong> are the most widely used immunosuppressive treatment in India. They are effective but come with a well-known burden of side effects with long-term use: weight gain, blood sugar elevation, bone loss, cataracts, and susceptibility to infections. An important and counterintuitive point: when steroids are first started in MG, many patients experience a transient worsening of weakness in the first two to three weeks before they improve. This is well-documented and does not mean the treatment is failing — but it should be anticipated, and hospitalisation is sometimes recommended for the initiation period.
-        </p>
-        <p>
-          <strong>Azathioprine</strong> is the most commonly used steroid-sparing agent in India. It takes three to twelve months to show its full effect, so it is started alongside steroids with the aim of eventually tapering the steroid dose. Regular blood count and liver function monitoring are mandatory during azathioprine treatment.
-        </p>
-        <p>
-          <strong>Mycophenolate mofetil, cyclosporine, and tacrolimus</strong> are alternatives for patients who cannot tolerate azathioprine or do not respond adequately.
-        </p>
-        <p>
-          <strong>Plasma exchange (plasmapheresis) and intravenous immunoglobulin (IVIG)</strong> are rapid interventions used during a myasthenic crisis or before surgery. They work within days but the effect lasts only weeks, so they are bridges rather than long-term treatments.
-        </p>
-        <p>
-          <strong>Thymectomy</strong> — surgical removal of the thymus — is recommended for all patients with thymoma. For patients without thymoma, thymectomy is recommended for AChR-positive generalised MG in patients under 65, as it improves outcomes and reduces long-term medication requirements.
-        </p>
+
+        {/* Treatment medicines */}
+        <div className="not-prose rounded-xl border border-teal-200 bg-teal-50 p-6 my-6">
+          <p className="text-xs font-bold uppercase tracking-widest text-teal-700 mb-4">Treatment medicines in MG</p>
+          <div className="flex flex-col gap-4">
+            {[
+              {
+                name: 'Pyridostigmine (Mestinon)',
+                type: 'Symptomatic',
+                how: 'Blocks the enzyme that breaks down acetylcholine, letting more of it accumulate. Effect lasts 3–4 hours. Taken multiple times a day.',
+                note: 'Dose must be carefully calibrated. Too much can paradoxically worsen weakness — a condition called cholinergic crisis.',
+                tagColor: 'bg-teal-200 text-teal-800',
+              },
+              {
+                name: 'Prednisolone (corticosteroids)',
+                type: 'Immunosuppressant',
+                how: 'Most widely used immunosuppressive in India. Effective but carries a burden of side effects with long-term use: weight gain, blood sugar elevation, bone loss.',
+                note: 'Important: weakness may transiently worsen in the first 2–3 weeks of starting steroids before it improves. This is expected, not treatment failure.',
+                tagColor: 'bg-amber-100 text-amber-800',
+              },
+              {
+                name: 'Azathioprine',
+                type: 'Steroid-sparing agent',
+                how: 'Started alongside steroids to allow eventual dose reduction. Takes 3–12 months to show full effect.',
+                note: 'Regular blood count and liver function monitoring is mandatory during treatment.',
+                tagColor: 'bg-slate-100 text-slate-700',
+              },
+              {
+                name: 'IVIG / Plasma exchange',
+                type: 'Crisis management',
+                how: 'Rapid interventions for myasthenic crisis or before surgery. Work within days but the effect lasts only a few weeks.',
+                note: 'Bridges rather than long-term treatments.',
+                tagColor: 'bg-red-100 text-red-700',
+              },
+              {
+                name: 'Thymectomy',
+                type: 'Surgery',
+                how: 'Removal of the thymus gland. Recommended for all patients with thymoma. Also recommended for AChR-positive generalised MG under age 65.',
+                note: 'Improves long-term outcomes and reduces medication requirements over time.',
+                tagColor: 'bg-violet-100 text-violet-700',
+              },
+            ].map(({ name, type, how, note, tagColor }) => (
+              <div key={name} className="bg-white rounded-lg border border-teal-100 p-4">
+                <div className="flex items-start justify-between gap-2 mb-2">
+                  <p className="text-sm font-bold text-slate-800">{name}</p>
+                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0 ${tagColor}`}>{type}</span>
+                </div>
+                <p className="text-xs text-slate-600 leading-relaxed mb-2">{how}</p>
+                <p className="text-xs text-teal-700 font-medium">ℹ️ {note}</p>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <h2>Medicines that can worsen MG — the critical list</h2>
         <p>
-          This is the section that matters most from a medication safety perspective, and the one that is most often overlooked in routine care. Many common medicines — prescribed for entirely different conditions — can exacerbate MG or precipitate a myasthenic crisis. Patients and their families must be aware of this risk every time a new medicine is prescribed.
-        </p>
-        <p>
-          <strong>Antibiotics</strong> are the most important category to flag. Aminoglycosides (gentamicin, amikacin, tobramycin) are absolutely contraindicated in MG — they impair acetylcholine release at the neuromuscular junction and can cause acute, severe worsening. Even a single dose can be dangerous. Fluoroquinolones — ciprofloxacin, levofloxacin, and ofloxacin — are among the most prescribed antibiotics in India for urinary tract and chest infections, and all carry a warning for MG patients. Macrolide antibiotics (azithromycin, erythromycin) also carry documented risk. If an MG patient needs antibiotics, the treating neurologist should be informed before the prescription is filled.
-        </p>
-        <p>
-          <strong>Magnesium</strong> — in any form — can worsen MG significantly. This includes magnesium-containing antacids (many popular Indian brands contain magnesium hydroxide), laxatives, and intravenous magnesium used in hospitals for eclampsia or arrhythmia. MG patients admitted for any reason should wear a medical alert indicating that magnesium is contraindicated.
-        </p>
-        <p>
-          <strong>Beta-blockers</strong> — propranolol, atenolol, metoprolol, bisoprolol — are widely used for hypertension and heart conditions. They can impair neuromuscular transmission and have precipitated crises in MG patients. If a beta-blocker is genuinely needed, the decision should be made in consultation with a neurologist, and the patient should be monitored closely.
-        </p>
-        <p>
-          <strong>Statins</strong> — atorvastatin, rosuvastatin, simvastatin — can cause a myopathy (muscle damage) that may be misinterpreted as MG worsening, or can genuinely aggravate existing weakness. This does not mean all MG patients must avoid statins, but any new muscle weakness in a patient starting a statin should prompt immediate review.
-        </p>
-        <p>
-          <strong>Chloroquine and hydroxychloroquine</strong> — used for malaria, lupus, and rheumatoid arthritis — are known to worsen MG and should be used with great caution if at all.
-        </p>
-        <p>
-          <strong>Iodinated contrast agents</strong> used in CT scans and some X-ray procedures can precipitate acute worsening. The radiologist and anaesthetist must be informed of the MG diagnosis before any procedure involving contrast.
-        </p>
-        <p>
-          <strong>Neuromuscular blocking agents</strong> used in surgery (vecuronium, rocuronium, succinylcholine) have exaggerated and prolonged effects in MG patients. The anaesthetist must always be informed before any surgery — even minor procedures.
-        </p>
-        <p>
-          This is not an exhaustive list. The general principle is: if you have MG and you are prescribed any new medicine — including over-the-counter products, antacids, eye drops, or supplements — check with your neurologist or a clinical pharmacist before starting it. No medicine is too minor to review.
+          This is the section that matters most from a medication safety perspective, and the one most often overlooked in routine care. Many common medicines prescribed for entirely different conditions can exacerbate MG or precipitate a crisis. Patients must be aware of this risk every time a new medicine is prescribed.
         </p>
 
-        <h2>Myasthenic crisis: recognise it early</h2>
+        {/* Medicines to avoid — main visual */}
+        <div className="not-prose rounded-xl border-2 border-red-200 bg-red-50 p-6 my-6">
+          <p className="text-xs font-bold uppercase tracking-widest text-red-600 mb-4">⚠️ Medicines to avoid or use with extreme caution</p>
+
+          <div className="flex flex-col gap-3">
+            {[
+              {
+                category: 'Aminoglycoside antibiotics',
+                examples: 'Gentamicin, amikacin, tobramycin',
+                risk: 'Absolutely contraindicated. Impair acetylcholine release at the neuromuscular junction. Even a single IV dose can cause acute, severe worsening.',
+                level: 'Avoid completely',
+                levelColor: 'bg-red-600 text-white',
+                rowColor: 'bg-red-100 border-red-200',
+              },
+              {
+                category: 'Fluoroquinolone antibiotics',
+                examples: 'Ciprofloxacin, levofloxacin, ofloxacin',
+                risk: 'Among the most prescribed antibiotics in India for UTI and chest infections. All carry a documented risk of worsening MG. Inform your neurologist before any antibiotic course.',
+                level: 'Avoid if possible',
+                levelColor: 'bg-red-500 text-white',
+                rowColor: 'bg-red-50 border-red-200',
+              },
+              {
+                category: 'Macrolide antibiotics',
+                examples: 'Azithromycin, erythromycin, clarithromycin',
+                risk: 'Documented risk of neuromuscular junction impairment. Commonly prescribed for respiratory infections.',
+                level: 'Avoid if possible',
+                levelColor: 'bg-red-500 text-white',
+                rowColor: 'bg-red-50 border-red-200',
+              },
+              {
+                category: 'Magnesium (all forms)',
+                examples: 'Magnesium-containing antacids (Gelusil, Digene), laxatives, IV magnesium',
+                risk: 'Can significantly worsen MG. Many popular Indian antacids contain magnesium hydroxide. Patients admitted to hospital for any reason should inform staff that magnesium is contraindicated.',
+                level: 'Avoid completely',
+                levelColor: 'bg-red-600 text-white',
+                rowColor: 'bg-red-100 border-red-200',
+              },
+              {
+                category: 'Beta-blockers',
+                examples: 'Propranolol, atenolol, metoprolol, bisoprolol',
+                risk: 'Widely used for hypertension and heart disease. Can impair neuromuscular transmission. Associated with crisis in MG patients. If genuinely needed, decision must involve the neurologist.',
+                level: 'Use with caution',
+                levelColor: 'bg-orange-500 text-white',
+                rowColor: 'bg-orange-50 border-orange-200',
+              },
+              {
+                category: 'Statins',
+                examples: 'Atorvastatin, rosuvastatin, simvastatin',
+                risk: 'Can cause myopathy that mimics or aggravates MG weakness. Any new muscle weakness after starting a statin requires immediate review.',
+                level: 'Use with caution',
+                levelColor: 'bg-orange-500 text-white',
+                rowColor: 'bg-orange-50 border-orange-200',
+              },
+              {
+                category: 'Chloroquine / Hydroxychloroquine',
+                examples: 'Used for malaria, lupus, rheumatoid arthritis',
+                risk: 'Known to worsen MG. Should be avoided or used only after careful neurological review.',
+                level: 'Avoid if possible',
+                levelColor: 'bg-red-500 text-white',
+                rowColor: 'bg-red-50 border-red-200',
+              },
+              {
+                category: 'Iodinated contrast (CT / X-ray dye)',
+                examples: 'Used in contrast CT scans, some angiograms',
+                risk: 'Can precipitate acute worsening. The radiologist and anaesthetist must be informed of the MG diagnosis before any contrast procedure.',
+                level: 'Inform team first',
+                levelColor: 'bg-amber-500 text-white',
+                rowColor: 'bg-amber-50 border-amber-200',
+              },
+              {
+                category: 'Anaesthetic agents',
+                examples: 'Vecuronium, rocuronium, succinylcholine',
+                risk: 'Neuromuscular blocking agents used in surgery have exaggerated and prolonged effects in MG. The anaesthetist must always be told about the MG diagnosis before any surgery, even minor procedures.',
+                level: 'Inform anaesthetist',
+                levelColor: 'bg-amber-500 text-white',
+                rowColor: 'bg-amber-50 border-amber-200',
+              },
+            ].map(({ category, examples, risk, level, levelColor, rowColor }) => (
+              <div key={category} className={`rounded-lg border p-4 ${rowColor}`}>
+                <div className="flex items-start justify-between gap-2 mb-1.5">
+                  <p className="text-sm font-bold text-slate-800">{category}</p>
+                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0 ${levelColor}`}>{level}</span>
+                </div>
+                <p className="text-xs text-slate-500 mb-1.5 font-medium">Examples: {examples}</p>
+                <p className="text-xs text-slate-700 leading-relaxed">{risk}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-red-700 font-semibold mt-4">
+            The general rule: if you have MG and are prescribed any new medicine — including over-the-counter products, antacids, eye drops, or supplements — check with your neurologist or clinical pharmacist before starting it.
+          </p>
+        </div>
+
+        <h2>Myasthenic crisis: know when to go to hospital</h2>
         <p>
-          A myasthenic crisis is a medical emergency defined by respiratory muscle weakness severe enough to require ventilatory support. It can develop over hours or days and is triggered by infection (particularly respiratory infections), surgery, missed medication, or — as discussed above — the wrong medicine.
-        </p>
-        <p>
-          Warning signs that a crisis may be developing include: increasing difficulty breathing, especially when lying flat; worsening swallowing with risk of aspiration; a weak cough that cannot clear secretions; and a sense that speaking or breathing requires unusual effort. If any of these appear, the patient should go directly to a hospital with a neurology or intensive care unit. This is not a "wait and see" situation.
+          A myasthenic crisis is a medical emergency defined by respiratory muscle weakness severe enough to require ventilatory support. It can develop over hours or days and is triggered by infection, surgery, missed medication, or the wrong medicine.
         </p>
 
-        <h2>Living with MG: what adherence means in practice</h2>
+        {/* Crisis warning card */}
+        <div className="not-prose rounded-xl border border-red-200 bg-red-50 p-6 my-6">
+          <p className="text-xs font-bold uppercase tracking-widest text-red-600 mb-4">🚨 Warning signs of a developing crisis</p>
+          <div className="flex flex-col gap-3">
+            {[
+              { icon: '😮‍💨', text: 'Increasing difficulty breathing, especially when lying flat' },
+              { icon: '🤐', text: 'Worsening difficulty swallowing with risk of choking' },
+              { icon: '😶', text: 'Weak cough that cannot clear secretions' },
+              { icon: '💬', text: 'Speaking or breathing requires unusual effort' },
+            ].map(({ icon, text }) => (
+              <div key={text} className="flex items-center gap-3 bg-white rounded-lg p-3 border border-red-100">
+                <span className="text-xl shrink-0">{icon}</span>
+                <p className="text-sm font-medium text-slate-800">{text}</p>
+              </div>
+            ))}
+          </div>
+          <blockquote className="mt-4 border-l-4 border-red-400 pl-4">
+            <p className="text-sm font-semibold text-red-800">If any of these appear, go directly to a hospital with a neurology or ICU. This is not a wait-and-see situation.</p>
+          </blockquote>
+        </div>
+
+        <h2>Living with MG</h2>
         <p>
-          Unlike many chronic conditions where missing a dose is inconvenient but not immediately dangerous, pyridostigmine is time-critical. Missing a dose — or taking it late — means the acetylcholine at the neuromuscular junction is not being protected, and weakness returns quickly. Patients should take their doses at the same times every day, and the timing should be built around daily activity: many patients time a dose thirty minutes before meals to ensure adequate swallowing strength, and before any physically demanding activity.
-        </p>
-        <p>
-          Heat reliably worsens MG — hot weather, hot baths, and fever all impair neuromuscular transmission. This is particularly relevant in India, where summer temperatures are high and fever from infection is a common crisis trigger. Staying cool, avoiding the midday sun during flares, and treating infections promptly and with MG-safe antibiotics are all part of daily management.
-        </p>
-        <p>
-          Emotional and physical stress, sleep deprivation, and overexertion can all precipitate worsening. This does not mean patients should restrict their lives — but it does mean paying attention to patterns and learning when the body needs rest.
+          Unlike many chronic conditions where missing a dose is inconvenient but not immediately dangerous, pyridostigmine is time-sensitive. Missing a dose means the acetylcholine at the neuromuscular junction is not being protected, and weakness returns quickly. Time your doses around your day.
         </p>
 
-        <h2>A note on the role of medication review</h2>
+        <div className="not-prose grid sm:grid-cols-2 gap-4 my-6">
+          {[
+            {
+              icon: '⏰',
+              title: 'Dose timing matters',
+              text: 'Take pyridostigmine 30 minutes before meals to ensure adequate swallowing strength. Set fixed alarms for every dose.',
+            },
+            {
+              icon: '🌡️',
+              title: 'Heat worsens MG',
+              text: 'Hot weather, hot baths, and fever all impair neuromuscular transmission. Stay cool, especially during summer. Treat fevers promptly with MG-safe medicines.',
+            },
+            {
+              icon: '🛌',
+              title: 'Rest is therapeutic',
+              text: 'Physical and emotional stress, sleep deprivation, and overexertion can all trigger worsening. Learn your body\'s patterns and build in rest.',
+            },
+            {
+              icon: '🩺',
+              title: 'Tell every healthcare provider',
+              text: 'Before any consultation, procedure, or prescription — inform the provider you have MG. A medical alert ID is worth wearing.',
+            },
+          ].map(({ icon, title, text }) => (
+            <div key={title} className="bg-white rounded-xl border border-slate-200 p-4">
+              <div className="text-2xl mb-2">{icon}</div>
+              <p className="text-sm font-bold text-slate-800 mb-1">{title}</p>
+              <p className="text-sm text-slate-600 leading-relaxed">{text}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2>Why medication review matters in MG</h2>
         <p>
-          Patients with MG are, by necessity, on multiple medicines — often a symptomatic agent, one or two immunosuppressants, and additional medicines for the side effects of those immunosuppressants (calcium and vitamin D for bone protection during steroid use, for example). Many will also have comorbidities — hypertension, diabetes, thyroid disorders — that require their own medications.
+          Patients with MG are, by necessity, on multiple medicines. Often a symptomatic agent, one or two immunosuppressants, and additional medicines to manage the side effects of those immunosuppressants (calcium and vitamin D for bone protection during steroid use, for example). Many will also have separate conditions — hypertension, diabetes, thyroid disorders — with their own medications.
         </p>
         <p>
-          In this context, a full medication review by a clinical pharmacist is not a luxury — it is a practical safeguard. The aim is to ensure that every medicine being taken is necessary, appropriately dosed, and compatible with the MG diagnosis. It is also an opportunity to identify medicines that have been continued out of habit long after they were needed, and to flag anything in the regimen that carries MG-specific risk.
+          In this context, a full medication review by a clinical pharmacist is a practical safeguard, not a luxury. The aim is to ensure that every medicine being taken is necessary, appropriately dosed, and compatible with the MG diagnosis. It is also an opportunity to flag anything in the regimen that carries MG-specific risk and to review medicines that may have been continued out of habit long after they were needed.
         </p>
         <p>
           If you or a family member has been diagnosed with MG and would like a structured review of your medicines, that is exactly the kind of session Dr D's MedCare offers.
