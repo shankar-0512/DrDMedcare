@@ -32,7 +32,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-01',
   url: 'https://drdmedcare.com/blog/why-i-started-drd-medcare',
-  image: 'https://drdmedcare.com/ogimage.png',
+  image: 'https://drdmedcare.com/og/why-i-started-drd-medcare.jpg',
   inLanguage: 'en-IN',
   keywords: 'medication counselling India, clinical pharmacist India, patient education',
 }

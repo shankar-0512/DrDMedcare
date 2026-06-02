@@ -32,7 +32,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-15',
   url: 'https://drdmedcare.com/blog/healthcare-professionals-india',
-  image: 'https://drdmedcare.com/ogimage.png',
+  image: 'https://drdmedcare.com/og/healthcare-professionals-india.jpg',
   inLanguage: 'en-IN',
   keywords: 'Indian healthcare professionals, clinical pharmacist India, doctor vs pharmacist, healthcare roles India',
 }

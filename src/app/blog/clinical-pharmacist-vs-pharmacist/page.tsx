@@ -32,7 +32,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-20',
   url: 'https://drdmedcare.com/blog/clinical-pharmacist-vs-pharmacist',
-  image: 'https://drdmedcare.com/ogimage.png',
+  image: 'https://drdmedcare.com/og/clinical-pharmacist-vs-pharmacist.jpg',
   inLanguage: 'en-IN',
   keywords: 'clinical pharmacist India, pharmacist vs clinical pharmacist, Pharm D India, medication counselling India',
 }

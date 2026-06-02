@@ -32,7 +32,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-05',
   url: 'https://drdmedcare.com/blog/drug-food-interactions-india',
-  image: 'https://drdmedcare.com/ogimage.png',
+  image: 'https://drdmedcare.com/og/drug-food-interactions-india.jpg',
   inLanguage: 'en-IN',
   keywords: 'drug food interactions India, milk antibiotics, medicine with food, Indian diet medicine',
 }

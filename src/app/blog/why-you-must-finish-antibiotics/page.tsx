@@ -32,7 +32,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-10',
   url: 'https://drdmedcare.com/blog/why-you-must-finish-antibiotics',
-  image: 'https://drdmedcare.com/ogimage.png',
+  image: 'https://drdmedcare.com/og/why-you-must-finish-antibiotics.jpg',
   inLanguage: 'en-IN',
   keywords: 'antibiotics course India, antibiotic resistance, finish antibiotics, stop antibiotics early',
 }
