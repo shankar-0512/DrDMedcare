@@ -30,10 +30,6 @@ function getISTDateString(offsetDays = 0): string {
   return ist.toISOString().split('T')[0]
 }
 
-function getNext14Days(): string[] {
-  return Array.from({ length: 14 }, (_, i) => getISTDateString(i + 2))
-}
-
 function toIST(date: string, time: string): string {
   return `${date}T${time}:00+05:30`
 }
@@ -44,14 +40,30 @@ export default function SlotStep(props: {
   onBack: () => void
   onNext: (slotId: string, preferredStart: string, preferredEnd: string) => void
 }) {
-  const dates = getNext14Days()
-  const [selectedDate, setSelectedDate] = useState<string>(dates[0])
+  const [dates, setDates]               = useState<string[]>([])
+  const [datesLoading, setDatesLoading] = useState(true)
+  const [selectedDate, setSelectedDate] = useState<string | null>(null)
   const [slots, setSlots]               = useState<Slot[]>([])
   const [loading, setLoading]           = useState(false)
   const [selectedSlot, setSelectedSlot] = useState<Slot | null>(null)
 
   useEffect(() => {
-    loadSlots(selectedDate)
+    async function loadAvailableDates() {
+      const from = getISTDateString(2)
+      const to   = getISTDateString(15)
+      const res  = await fetch(`/api/available-dates?from=${from}&to=${to}`)
+      if (res.ok) {
+        const { dates: data } = await res.json()
+        setDates(data as string[])
+        if ((data as string[]).length > 0) setSelectedDate((data as string[])[0])
+      }
+      setDatesLoading(false)
+    }
+    loadAvailableDates()
+  }, [])
+
+  useEffect(() => {
+    if (selectedDate) loadSlots(selectedDate)
   }, [selectedDate])
 
   async function loadSlots(date: string) {
@@ -102,38 +114,51 @@ export default function SlotStep(props: {
         <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
           Select a date
         </p>
-        <div className="flex gap-2 overflow-x-auto pb-1">
-          {dates.map((date) => {
-            const d = new Date(date + 'T00:00:00')
-            const isSelected = date === selectedDate
-            const dayName = d.toLocaleDateString('en-IN', { weekday: 'short' })
-            const dayNum  = d.getDate()
-            const month   = d.toLocaleDateString('en-IN', { month: 'short' })
+        {datesLoading ? (
+          <div className="flex gap-2">
+            {Array.from({ length: 4 }).map((_, i) => (
+              <div key={i} className="h-[62px] w-[56px] shrink-0 animate-pulse rounded-xl bg-slate-100" />
+            ))}
+          </div>
+        ) : dates.length === 0 ? (
+          <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-center">
+            <p className="text-sm text-slate-500">No available dates in the next two weeks.</p>
+            <p className="mt-1 text-xs text-slate-400">Please check back soon.</p>
+          </div>
+        ) : (
+          <div className="flex gap-2 overflow-x-auto pb-1">
+            {dates.map((date) => {
+              const d = new Date(date + 'T00:00:00')
+              const isSelected = date === selectedDate
+              const dayName = d.toLocaleDateString('en-IN', { weekday: 'short' })
+              const dayNum  = d.getDate()
+              const month   = d.toLocaleDateString('en-IN', { month: 'short' })
 
-            return (
-              <button
-                key={date}
-                type="button"
-                onClick={() => setSelectedDate(date)}
-                className={[
-                  'flex shrink-0 flex-col items-center rounded-xl border-2 px-3 py-2 transition-all duration-200 min-w-[56px]',
-                  isSelected
-                    ? 'text-white border-transparent shadow-md'
-                    : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300',
-                ].join(' ')}
-                style={isSelected ? { background: 'rgb(var(--color-primary))' } : {}}
-              >
-                <span className="text-[10px] font-medium opacity-80">{dayName}</span>
-                <span className="text-base font-bold leading-tight">{dayNum}</span>
-                <span className="text-[10px] opacity-70">{month}</span>
-              </button>
-            )
-          })}
-        </div>
+              return (
+                <button
+                  key={date}
+                  type="button"
+                  onClick={() => setSelectedDate(date)}
+                  className={[
+                    'flex shrink-0 flex-col items-center rounded-xl border-2 px-3 py-2 transition-all duration-200 min-w-[56px]',
+                    isSelected
+                      ? 'text-white border-transparent shadow-md'
+                      : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300',
+                  ].join(' ')}
+                  style={isSelected ? { background: 'rgb(var(--color-primary))' } : {}}
+                >
+                  <span className="text-[10px] font-medium opacity-80">{dayName}</span>
+                  <span className="text-base font-bold leading-tight">{dayNum}</span>
+                  <span className="text-[10px] opacity-70">{month}</span>
+                </button>
+              )
+            })}
+          </div>
+        )}
       </div>
 
       {/* Slots */}
-      <div>
+      {selectedDate && <div>
         <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
           Available slots — {formatDate(selectedDate)}
         </p>
@@ -186,7 +211,7 @@ export default function SlotStep(props: {
             })}
           </div>
         )}
-      </div>
+      </div>}
 
       {/* Selected slot confirmation */}
       {selectedSlot && (
