@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
-const _title = "Why I Started Dr D's MedCare"
+const _title = "Why I Became a Medication Counsellor"
 const _desc = "A child died because nobody warned a mother about mixing cough syrup with milk. That moment changed everything for me."
 const _ogImage = 'https://drdmedcare.com/og/why-i-started-drd-medcare.jpg'
 

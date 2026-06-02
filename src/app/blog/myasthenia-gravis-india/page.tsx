@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
-const _title = 'Myasthenia Gravis: Understanding the Disease, the Treatment, and the Medicines to Avoid'
+const _title = 'Myasthenia Gravis: Treatment and the Medicines to Avoid'
 const _desc = 'MG is a rare autoimmune disease where muscle weakness is unpredictable, and where a common antibiotic or antacid can trigger a crisis. Here is what every patient and carer needs to know.'
 const _ogImage = 'https://drdmedcare.com/og/myasthenia-gravis-india.jpg'
 

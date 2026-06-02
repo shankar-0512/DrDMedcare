@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   verification: {
     google: 'adqxEXshCADg4T53hLT0h-Vei2piRlb5pcr1kLCXJnY',
   },
-  title: "Dr D's MedCare",
-  description: "Prescription & medication education for patients in India. Education only. No diagnosis or prescribing.",
+  title: "Dr D's MedCare — Medication Counselling by a Clinical Pharmacist",
+  description: "Personalised medication counselling sessions with Dr Priyanka Deventhiran, Pharm D. Understand your prescription, interactions, and side effects. India only.",
   icons: {
     icon: "/logo.png",
   },

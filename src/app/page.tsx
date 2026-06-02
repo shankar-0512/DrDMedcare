@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
+  title: "Dr D's MedCare — Medication Counselling by a Clinical Pharmacist",
+  description: "Confused about your prescription? Book a personalised medication counselling session with Dr Priyanka Deventhiran, Pharm D. Understand your medicines, interactions, and side effects. India only.",
   alternates: { canonical: '/' },
 }
 import Image from 'next/image'
