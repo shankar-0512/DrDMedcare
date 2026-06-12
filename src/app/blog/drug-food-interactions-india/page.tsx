@@ -99,7 +99,7 @@ export default function Post() {
       </p>
 
       <p>
-        <strong>What to do:</strong> Levothyroxine should always be taken on an empty stomach, 30–60 minutes before breakfast. Don't eat your morning dal immediately after taking your thyroid tablet.
+        <strong>What to do:</strong> Levothyroxine should always be taken on an empty stomach, 30-60 minutes before breakfast. Don't eat your morning dal immediately after taking your thyroid tablet.
       </p>
 
       <h2>Vitamin K-rich foods and blood thinners</h2>

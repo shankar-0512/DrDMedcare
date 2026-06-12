@@ -64,12 +64,12 @@ export default function Post() {
           <div className="rounded-xl border border-amber-200 bg-amber-50 p-5">
             <div className="text-2xl mb-2">🦠</div>
             <p className="text-sm font-bold text-amber-800 mb-1">Viral meningitis</p>
-            <p className="text-sm text-amber-700 leading-relaxed">More common. Usually resolves in 1–2 weeks with medicines and rest. Caused by enteroviruses - the same family behind the common cold.</p>
+            <p className="text-sm text-amber-700 leading-relaxed">More common. Usually resolves in 1-2 weeks with medicines and rest. Caused by enteroviruses - the same family behind the common cold.</p>
           </div>
           <div className="rounded-xl border border-red-200 bg-red-50 p-5">
             <div className="text-2xl mb-2">⚠️</div>
             <p className="text-sm font-bold text-red-800 mb-1">Bacterial meningitis</p>
-            <p className="text-sm text-red-700 leading-relaxed">Far more dangerous. Can be fatal within 24–48 hours. Can cause hearing loss, brain damage, or limb loss even with treatment.</p>
+            <p className="text-sm text-red-700 leading-relaxed">Far more dangerous. Can be fatal within 24-48 hours. Can cause hearing loss, brain damage, or limb loss even with treatment.</p>
           </div>
         </div>
 
@@ -99,7 +99,7 @@ export default function Post() {
           <div className="grid sm:grid-cols-2 gap-3">
             {[
               { icon: '🤕', label: 'Sudden severe headache', note: 'Intense, different from anything before' },
-              { icon: '🌡️', label: 'High fever', note: 'Often 39–40°C, coming on fast' },
+              { icon: '🌡️', label: 'High fever', note: 'Often 39-40°C, coming on fast' },
               { icon: '🔒', label: 'Stiff neck', note: 'Cannot bring chin to chest' },
               { icon: '💡', label: 'Sensitivity to light', note: 'Wants to be in a dark room' },
               { icon: '🔇', label: 'Sensitivity to sound', note: 'Noise feels unbearable' },

@@ -77,7 +77,7 @@ export default function Post() {
         <h2>Choosing the Right Blood Pressure Monitor</h2>
 
         <p>
-          Look for an automatic upper-arm monitor with a cuff size that fits your arm (22-42 cm). Reliable brands commonly used in India include Dr. Morepen and AccuSure, with prices ranging from ₹1000–₹2500. Ensure the device is clinically validated and has features like memory storage and irregular heartbeat detection.
+          Look for an automatic upper-arm monitor with a cuff size that fits your arm (22-42 cm). Reliable brands commonly used in India include Dr. Morepen and AccuSure, with prices ranging from ₹1000-₹2500. Ensure the device is clinically validated and has features like memory storage and irregular heartbeat detection.
         </p>
 
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 my-6">

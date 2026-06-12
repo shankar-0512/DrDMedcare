@@ -147,7 +147,7 @@ export default function Post() {
             },
             {
               test: 'CT scan of the chest',
-              detail: 'To check for a thymoma (thymus gland tumour), which is found in 10–15% of MG patients and requires surgical removal.',
+              detail: 'To check for a thymoma (thymus gland tumour), which is found in 10-15% of MG patients and requires surgical removal.',
               tag: 'All patients',
               tagColor: 'bg-teal-100 text-teal-700',
             },
@@ -183,7 +183,7 @@ export default function Post() {
               {
                 name: 'Pyridostigmine (Mestinon)',
                 type: 'Symptomatic',
-                how: 'Blocks the enzyme that breaks down acetylcholine, letting more of it accumulate. Effect lasts 3–4 hours. Taken multiple times a day.',
+                how: 'Blocks the enzyme that breaks down acetylcholine, letting more of it accumulate. Effect lasts 3-4 hours. Taken multiple times a day.',
                 note: 'Dose must be carefully calibrated. Too much can paradoxically worsen weakness - a condition called cholinergic crisis.',
                 tagColor: 'bg-teal-200 text-teal-800',
               },
@@ -191,13 +191,13 @@ export default function Post() {
                 name: 'Prednisolone (corticosteroids)',
                 type: 'Immunosuppressant',
                 how: 'Most widely used immunosuppressive in India. Effective but carries a burden of side effects with long-term use: weight gain, blood sugar elevation, bone loss.',
-                note: 'Important: weakness may transiently worsen in the first 2–3 weeks of starting steroids before it improves. This is expected, not treatment failure.',
+                note: 'Important: weakness may transiently worsen in the first 2-3 weeks of starting steroids before it improves. This is expected, not treatment failure.',
                 tagColor: 'bg-amber-100 text-amber-800',
               },
               {
                 name: 'Azathioprine',
                 type: 'Steroid-sparing agent',
-                how: 'Started alongside steroids to allow eventual dose reduction. Takes 3–12 months to show full effect.',
+                how: 'Started alongside steroids to allow eventual dose reduction. Takes 3-12 months to show full effect.',
                 note: 'Regular blood count and liver function monitoring is mandatory during treatment.',
                 tagColor: 'bg-slate-100 text-slate-700',
               },

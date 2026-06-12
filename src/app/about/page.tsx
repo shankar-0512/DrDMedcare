@@ -18,7 +18,7 @@ const CREDENTIALS = [
 
 const APPROACH_ITEMS = [
   { icon: '💊', title: 'Prescription clarity', desc: 'I go through your prescription line by line - what each medicine is for, how and when to take it, and what to watch out for.' },
-  { icon: '⚠️', title: 'Interaction awareness', desc: 'Drug–drug and drug–food interactions are common and dangerous. I flag these clearly so you know exactly what to avoid.' },
+  { icon: '⚠️', title: 'Interaction awareness', desc: 'Drug-drug and drug-food interactions are common and dangerous. I flag these clearly so you know exactly what to avoid.' },
   { icon: '📅', title: 'Medication adherence', desc: 'For chronic patients, I build a structured schedule and follow up to make sure medicines are being taken correctly and consistently.' },
   { icon: '👨‍👩‍👧', title: 'Special populations', desc: 'Extra care for elderly, paediatric and chronic patients - those who need the most guidance and are often underserved.' },
 ]

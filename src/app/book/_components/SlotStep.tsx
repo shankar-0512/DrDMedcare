@@ -226,7 +226,7 @@ export default function SlotStep(props: {
             {formatDate(selectedSlot.slot_date)}
           </p>
           <p className="text-sm text-slate-600 mt-0.5">
-            {formatTime(selectedSlot.start_time)} – {formatTime(selectedSlot.end_time)} IST
+            {formatTime(selectedSlot.start_time)} - {formatTime(selectedSlot.end_time)} IST
           </p>
           <p className="mt-1 text-xs text-slate-400">Duration: {props.durationMinutes} minutes</p>
         </div>
