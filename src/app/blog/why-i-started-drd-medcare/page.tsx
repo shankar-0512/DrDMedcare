@@ -21,7 +21,10 @@ export const metadata: Metadata = {
     description: _desc,
     images: [_ogImage],
   },
-  alternates: { canonical: '/blog/why-i-started-drd-medcare' },
+  alternates: {
+    canonical: '/blog/why-i-started-drd-medcare',
+    languages: { 'en-IN': '/blog/why-i-started-drd-medcare' },
+  },
 }
 const jsonLd = {
   '@context': 'https://schema.org',

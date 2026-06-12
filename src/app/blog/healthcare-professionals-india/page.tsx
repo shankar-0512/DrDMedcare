@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
-const _title = 'Who Does What in Indian Healthcare - A Simple Guide'
+const _title = 'Who Does What in Indian Healthcare'
 const _desc = 'Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse - each plays a distinct role. A quick guide to who does what in Indian healthcare.'
 const _ogImage = 'https://drdmedcare.com/og/healthcare-professionals-india.jpg'
 
@@ -21,7 +21,10 @@ export const metadata: Metadata = {
     description: _desc,
     images: [_ogImage],
   },
-  alternates: { canonical: '/blog/healthcare-professionals-india' },
+  alternates: {
+    canonical: '/blog/healthcare-professionals-india',
+    languages: { 'en-IN': '/blog/healthcare-professionals-india' },
+  },
 }
 const jsonLd = {
   '@context': 'https://schema.org',

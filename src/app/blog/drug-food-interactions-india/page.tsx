@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
-const _title = 'Common Drug-Food Interactions Every Indian Patient Should Know'
+const _title = 'Drug-Food Interactions in India'
 const _desc = 'Dal, milk, banana, tea - everyday foods that can silently reduce or amplify the effect of your medicines.'
 const _ogImage = 'https://drdmedcare.com/og/drug-food-interactions-india.jpg'
 
@@ -21,7 +21,10 @@ export const metadata: Metadata = {
     description: _desc,
     images: [_ogImage],
   },
-  alternates: { canonical: '/blog/drug-food-interactions-india' },
+  alternates: {
+    canonical: '/blog/drug-food-interactions-india',
+    languages: { 'en-IN': '/blog/drug-food-interactions-india' },
+  },
 }
 const jsonLd = {
   '@context': 'https://schema.org',

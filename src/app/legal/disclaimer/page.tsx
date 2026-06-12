@@ -2,7 +2,10 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/legal/disclaimer' },
+  alternates: {
+    canonical: '/legal/disclaimer',
+    languages: { 'en-IN': '/legal/disclaimer' },
+  },
 }
 
 export default function DisclaimerPage() {

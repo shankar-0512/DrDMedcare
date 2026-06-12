@@ -2,7 +2,10 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/legal/terms' },
+  alternates: {
+    canonical: '/legal/terms',
+    languages: { 'en-IN': '/legal/terms' },
+  },
 }
 
 export default function TermsPage() {

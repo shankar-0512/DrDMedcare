@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
-const _title = 'Meningitis: Warning Signs Every Indian Family Must Know'
+const _title = 'Meningitis Warning Signs in India'
 const _desc = "Bacterial meningitis can become life-threatening within 24 hours. Here's how to recognise it early, what to do, and which vaccines are available in India."
 const _ogImage = 'https://drdmedcare.com/og/meningitis-symptoms-india.jpg'
 
@@ -21,7 +21,10 @@ export const metadata: Metadata = {
     description: _desc,
     images: [_ogImage],
   },
-  alternates: { canonical: '/blog/meningitis-symptoms-india' },
+  alternates: {
+    canonical: '/blog/meningitis-symptoms-india',
+    languages: { 'en-IN': '/blog/meningitis-symptoms-india' },
+  },
 }
 
 const jsonLd = {

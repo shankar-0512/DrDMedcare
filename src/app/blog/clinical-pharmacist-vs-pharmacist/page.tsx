@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
-const _title = "Clinical Pharmacist vs Pharmacist - What's the Difference?"
+const _title = "Clinical Pharmacist vs Pharmacist"
 const _desc = "Both work with medicines - but their roles, training, and what they can do for you are very different. Here's what you need to know."
 const _ogImage = 'https://drdmedcare.com/og/clinical-pharmacist-vs-pharmacist.jpg'
 
@@ -21,7 +21,10 @@ export const metadata: Metadata = {
     description: _desc,
     images: [_ogImage],
   },
-  alternates: { canonical: '/blog/clinical-pharmacist-vs-pharmacist' },
+  alternates: {
+    canonical: '/blog/clinical-pharmacist-vs-pharmacist',
+    languages: { 'en-IN': '/blog/clinical-pharmacist-vs-pharmacist' },
+  },
 }
 const jsonLd = {
   '@context': 'https://schema.org',

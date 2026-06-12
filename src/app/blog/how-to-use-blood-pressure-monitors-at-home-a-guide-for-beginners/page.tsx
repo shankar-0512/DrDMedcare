@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
-const _title = 'How to Use Blood Pressure Monitors at Home: A Guide for Beginners'
+const _title = 'Blood Pressure Monitors: A Home Guide'
 const _desc = 'Monitoring your blood pressure at home is a simple yet powerful way to take control of your heart health. Learn how to choose a device, take accurate readings, and interpret results.'
 const _ogImage = 'https://drdmedcare.com/og/how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners.jpg'
 
@@ -21,7 +21,10 @@ export const metadata: Metadata = {
     description: _desc,
     images: [_ogImage],
   },
-  alternates: { canonical: '/blog/how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners' },
+  alternates: {
+    canonical: '/blog/how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners',
+    languages: { 'en-IN': '/blog/how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners' },
+  },
 }
 
 const jsonLd = {

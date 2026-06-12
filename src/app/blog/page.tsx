@@ -4,7 +4,10 @@ import BlogGrid from './_components/BlogGrid'
 export const metadata: Metadata = {
   title: "Blog | Dr D's MedCare",
   description: "Plain-language articles on medicines, drug interactions, medication adherence, and patient education for Indian patients.",
-  alternates: { canonical: '/blog' },
+  alternates: {
+    canonical: '/blog',
+    languages: { 'en-IN': '/blog' },
+  },
 }
 
 export default function BlogPage() {

@@ -4,7 +4,10 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: "Dr D's MedCare - Medication Counselling by a Clinical Pharmacist",
   description: "Confused about your prescription? Book a personalised medication counselling session with Dr Priyanka Deventhiran, Pharm D. Understand your medicines, interactions, and side effects. India only.",
-  alternates: { canonical: '/' },
+  alternates: {
+    canonical: '/',
+    languages: { 'en-IN': '/' },
+  },
 }
 import Image from 'next/image'
 import HomeServiceTabs from '@/components/HomeServiceTabs'
@@ -20,6 +23,12 @@ const jsonLd = {
   description: 'Personalised medication counselling sessions for patients in India. Prescription education, adherence planning, elderly care, and more.',
   telephone: '+919080709332',
   areaServed: 'IN',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Chennai',
+    addressRegion: 'Tamil Nadu',
+    addressCountry: 'IN',
+  },
   availableLanguage: ['English', 'Tamil', 'Telugu', 'Hindi'],
   priceRange: '₹₹',
   medicalSpecialty: 'Pharmacy',

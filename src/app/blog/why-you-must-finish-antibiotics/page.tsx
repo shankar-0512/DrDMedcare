@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
-const _title = 'Why Stopping Antibiotics Midway Is Dangerous'
+const _title = 'Why You Must Finish Your Antibiotics'
 const _desc = "Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your antibiotic course early."
 const _ogImage = 'https://drdmedcare.com/og/why-you-must-finish-antibiotics.jpg'
 
@@ -21,7 +21,10 @@ export const metadata: Metadata = {
     description: _desc,
     images: [_ogImage],
   },
-  alternates: { canonical: '/blog/why-you-must-finish-antibiotics' },
+  alternates: {
+    canonical: '/blog/why-you-must-finish-antibiotics',
+    languages: { 'en-IN': '/blog/why-you-must-finish-antibiotics' },
+  },
 }
 const jsonLd = {
   '@context': 'https://schema.org',

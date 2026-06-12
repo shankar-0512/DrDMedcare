@@ -3,7 +3,10 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   description: 'Clinical drug monographs for healthcare professionals. Compiled by Dr Priyanka Deventhiran, Pharm D.',
-  alternates: { canonical: '/clinical' },
+  alternates: {
+    canonical: '/clinical',
+    languages: { 'en-IN': '/clinical' },
+  },
   robots: { index: true, follow: true },
 }
 
