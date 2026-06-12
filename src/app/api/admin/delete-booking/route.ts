@@ -5,7 +5,7 @@ import { createSupabaseServer } from '@/lib/supabase/server'
 
 export async function DELETE(req: Request) {
   try {
-    // Auth check — middleware only covers /admin pages, not /api routes
+    // Auth check - middleware only covers /admin pages, not /api routes
     const cookieStore = await cookies()
     const supabaseAuth = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,

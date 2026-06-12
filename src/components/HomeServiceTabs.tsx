@@ -49,7 +49,7 @@ function ServiceSkeleton() {
           </div>
         </div>
 
-        {/* Cards skeleton — same grid as real cards */}
+        {/* Cards skeleton - same grid as real cards */}
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[0, 1, 2, 3, 4, 5].map((i) => (
             <div key={i} className="rounded-2xl border-2 border-transparent bg-white p-5 shadow-sm">

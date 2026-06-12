@@ -19,13 +19,13 @@ export const metadata: Metadata = {
   verification: {
     google: 'adqxEXshCADg4T53hLT0h-Vei2piRlb5pcr1kLCXJnY',
   },
-  title: "Dr D's MedCare — Medication Counselling by a Clinical Pharmacist",
+  title: "Dr D's MedCare - Medication Counselling by a Clinical Pharmacist",
   description: "Personalised medication counselling sessions with Dr Priyanka Deventhiran, Pharm D. Understand your prescription, interactions, and side effects. India only.",
   icons: {
     icon: "/logo.png",
   },
   openGraph: {
-    title: "Dr D's MedCare — Understand your medicines before you take them",
+    title: "Dr D's MedCare - Understand your medicines before you take them",
     description: "Personalised medication counselling sessions with Dr Priyanka Deventhiran, Pharm D. India only. Education only.",
     type: 'website',
     url: 'https://drdmedcare.com',

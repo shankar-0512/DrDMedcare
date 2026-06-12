@@ -18,7 +18,7 @@ export default function DisclaimerPage() {
       <div className="space-y-8 text-sm leading-relaxed text-slate-700">
 
         <section className="rounded-2xl border border-amber-200 bg-amber-50 p-5">
-          <p className="font-semibold text-amber-800 mb-1">Important — please read carefully</p>
+          <p className="font-semibold text-amber-800 mb-1">Important - please read carefully</p>
           <p className="text-amber-700">
             Dr D's MedCare provides medication education and counselling services only. We do not diagnose, prescribe, or alter any treatment. Nothing on this website or in any session constitutes medical advice.
           </p>
@@ -68,7 +68,7 @@ export default function DisclaimerPage() {
             The information provided through Dr D's MedCare is for educational purposes only and does not constitute medical advice, diagnosis, or treatment. It is not a substitute for consultation with a licensed physician or qualified healthcare professional. Always consult your doctor before making any changes to your medication or treatment plan.
           </p>
           <p className="mt-3">
-            To the fullest extent permitted by applicable law, Dr D's MedCare, its operators, and affiliates shall not be liable for any loss, injury, or damage — direct or indirect — arising from your use of or reliance on any information provided through our services, regardless of how that information was used or applied. Your use of our services is entirely at your own risk.
+            To the fullest extent permitted by applicable law, Dr D's MedCare, its operators, and affiliates shall not be liable for any loss, injury, or damage - direct or indirect - arising from your use of or reliance on any information provided through our services, regardless of how that information was used or applied. Your use of our services is entirely at your own risk.
           </p>
         </section>
 

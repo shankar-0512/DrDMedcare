@@ -44,7 +44,7 @@ const POSTS: BlogPost[] = [
   {
     slug: 'drug-food-interactions-india',
     title: 'Common drug-food interactions every Indian patient should know',
-    excerpt: 'Dal, milk, banana, tea — everyday foods that can silently reduce or amplify the effect of your medicines.',
+    excerpt: 'Dal, milk, banana, tea - everyday foods that can silently reduce or amplify the effect of your medicines.',
     category: 'Education',
     readTime: '6 min read',
     date: 'March 2026',
@@ -59,16 +59,16 @@ const POSTS: BlogPost[] = [
   },
   {
     slug: 'clinical-pharmacist-vs-pharmacist',
-    title: "Clinical pharmacist vs pharmacist — what's the difference and why does it matter?",
-    excerpt: "Both work with medicines — but their roles, training, and what they can do for you are very different. Here's a clear breakdown.",
+    title: "Clinical pharmacist vs pharmacist - what's the difference and why does it matter?",
+    excerpt: "Both work with medicines - but their roles, training, and what they can do for you are very different. Here's a clear breakdown.",
     category: 'Awareness',
     readTime: '5 min read',
     date: 'March 2026',
   },
   {
     slug: 'healthcare-professionals-india',
-    title: 'Who does what in Indian healthcare — a simple guide',
-    excerpt: "Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse, physiotherapist, dietitian, lab technician and ASHA worker — each plays a distinct and important role.",
+    title: 'Who does what in Indian healthcare - a simple guide',
+    excerpt: "Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse, physiotherapist, dietitian, lab technician and ASHA worker - each plays a distinct and important role.",
     category: 'Awareness',
     readTime: '4 min read',
     date: 'March 2026',
@@ -164,7 +164,7 @@ export default function BlogGrid() {
         })}
       </div>
 
-      {/* Featured post — only on All tab */}
+      {/* Featured post - only on All tab */}
       {featured && (
         <Link href={`/blog/${featured.slug}`} className="group block mb-8">
           <div className="rounded-2xl border-2 bg-white/80 overflow-hidden shadow-sm hover:shadow-md transition-all duration-200" style={{ borderColor: 'rgb(var(--color-primary-mid))' }}>

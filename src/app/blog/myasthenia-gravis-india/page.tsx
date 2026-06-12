@@ -53,10 +53,10 @@ export default function Post() {
           Imagine waking up one morning with eyelids too heavy to fully open. By afternoon, your voice sounds nasal and chewing through a meal leaves you exhausted. By evening, you feel almost normal again. The next day, it starts over.
         </p>
         <p>
-          This fluctuating, activity-dependent weakness — worse with effort, better with rest — is the hallmark of myasthenia gravis (MG). It is one of the most misunderstood conditions in neurology. In India, it is frequently mistaken for fatigue, thyroid problems, or cervical spondylosis for months or even years before the correct diagnosis is made.
+          This fluctuating, activity-dependent weakness - worse with effort, better with rest - is the hallmark of myasthenia gravis (MG). It is one of the most misunderstood conditions in neurology. In India, it is frequently mistaken for fatigue, thyroid problems, or cervical spondylosis for months or even years before the correct diagnosis is made.
         </p>
         <p>
-          More than almost any other chronic condition, MG demands careful medication management. The treatment itself is complex, but what makes MG particularly dangerous is a long list of common medicines — antibiotics, antacids, eye drops, heart medicines — that can silently worsen the disease or trigger a life-threatening crisis in someone who is otherwise stable.
+          More than almost any other chronic condition, MG demands careful medication management. The treatment itself is complex, but what makes MG particularly dangerous is a long list of common medicines - antibiotics, antacids, eye drops, heart medicines - that can silently worsen the disease or trigger a life-threatening crisis in someone who is otherwise stable.
         </p>
 
         <h2>What happens in the body</h2>
@@ -67,19 +67,19 @@ export default function Post() {
           The weakness is not constant because the nerve keeps releasing acetylcholine. But the more you use a muscle, the more the available acetylcholine is depleted, and the weaker the muscle gets. Rest allows it to build up again, which is why patients often feel better in the morning and weaker as the day goes on.
         </p>
         <p>
-          In most patients, the antibodies target the acetylcholine receptor (AChR). In a smaller group, they target a protein called MuSK (muscle-specific kinase). A third group is described as seronegative — the antibodies are present but current tests cannot detect them. This matters because treatment response can differ between these groups.
+          In most patients, the antibodies target the acetylcholine receptor (AChR). In a smaller group, they target a protein called MuSK (muscle-specific kinase). A third group is described as seronegative - the antibodies are present but current tests cannot detect them. This matters because treatment response can differ between these groups.
         </p>
 
         {/* Ocular vs Generalised */}
         <div className="not-prose grid sm:grid-cols-2 gap-4 my-6">
           <div className="rounded-xl border border-amber-200 bg-amber-50 p-5">
             <div className="text-2xl mb-2">👁️</div>
-            <p className="text-sm font-bold text-amber-800 mb-1">Ocular MG — 15% of patients</p>
+            <p className="text-sm font-bold text-amber-800 mb-1">Ocular MG - 15% of patients</p>
             <p className="text-sm text-amber-700 leading-relaxed">Weakness confined only to the eyelids and eye muscles. No other muscles affected. Some patients remain in this form permanently.</p>
           </div>
           <div className="rounded-xl border border-violet-200 bg-violet-50 p-5">
             <div className="text-2xl mb-2">💪</div>
-            <p className="text-sm font-bold text-violet-800 mb-1">Generalised MG — 85% of patients</p>
+            <p className="text-sm font-bold text-violet-800 mb-1">Generalised MG - 85% of patients</p>
             <p className="text-sm text-violet-700 leading-relaxed">Weakness spreads to the face, throat, neck, and limbs. In severe cases, breathing muscles are affected.</p>
           </div>
         </div>
@@ -184,7 +184,7 @@ export default function Post() {
                 name: 'Pyridostigmine (Mestinon)',
                 type: 'Symptomatic',
                 how: 'Blocks the enzyme that breaks down acetylcholine, letting more of it accumulate. Effect lasts 3–4 hours. Taken multiple times a day.',
-                note: 'Dose must be carefully calibrated. Too much can paradoxically worsen weakness — a condition called cholinergic crisis.',
+                note: 'Dose must be carefully calibrated. Too much can paradoxically worsen weakness - a condition called cholinergic crisis.',
                 tagColor: 'bg-teal-200 text-teal-800',
               },
               {
@@ -228,12 +228,12 @@ export default function Post() {
           </div>
         </div>
 
-        <h2>Medicines that can worsen MG — the critical list</h2>
+        <h2>Medicines that can worsen MG - the critical list</h2>
         <p>
           This is the section that matters most from a medication safety perspective, and the one most often overlooked in routine care. Many common medicines prescribed for entirely different conditions can exacerbate MG or precipitate a crisis. Patients must be aware of this risk every time a new medicine is prescribed.
         </p>
 
-        {/* Medicines to avoid — main visual */}
+        {/* Medicines to avoid - main visual */}
         <div className="not-prose rounded-xl border-2 border-red-200 bg-red-50 p-6 my-6">
           <p className="text-xs font-bold uppercase tracking-widest text-red-600 mb-4">⚠️ Medicines to avoid or use with extreme caution</p>
 
@@ -323,7 +323,7 @@ export default function Post() {
             ))}
           </div>
           <p className="text-xs text-red-700 font-semibold mt-4">
-            The general rule: if you have MG and are prescribed any new medicine — including over-the-counter products, antacids, eye drops, or supplements — check with your neurologist or clinical pharmacist before starting it.
+            The general rule: if you have MG and are prescribed any new medicine - including over-the-counter products, antacids, eye drops, or supplements - check with your neurologist or clinical pharmacist before starting it.
           </p>
         </div>
 
@@ -378,7 +378,7 @@ export default function Post() {
             {
               icon: '🩺',
               title: 'Tell every healthcare provider',
-              text: 'Before any consultation, procedure, or prescription — inform the provider you have MG. A medical alert ID is worth wearing.',
+              text: 'Before any consultation, procedure, or prescription - inform the provider you have MG. A medical alert ID is worth wearing.',
             },
           ].map(({ icon, title, text }) => (
             <div key={title} className="bg-white rounded-xl border border-slate-200 p-4">
@@ -391,7 +391,7 @@ export default function Post() {
 
         <h2>Why medication review matters in MG</h2>
         <p>
-          Patients with MG are, by necessity, on multiple medicines. Often a symptomatic agent, one or two immunosuppressants, and additional medicines to manage the side effects of those immunosuppressants (calcium and vitamin D for bone protection during steroid use, for example). Many will also have separate conditions — hypertension, diabetes, thyroid disorders — with their own medications.
+          Patients with MG are, by necessity, on multiple medicines. Often a symptomatic agent, one or two immunosuppressants, and additional medicines to manage the side effects of those immunosuppressants (calcium and vitamin D for bone protection during steroid use, for example). Many will also have separate conditions - hypertension, diabetes, thyroid disorders - with their own medications.
         </p>
         <p>
           In this context, a full medication review by a clinical pharmacist is a practical safeguard, not a luxury. The aim is to ensure that every medicine being taken is necessary, appropriately dosed, and compatible with the MG diagnosis. It is also an opportunity to flag anything in the regimen that carries MG-specific risk and to review medicines that may have been continued out of habit long after they were needed.

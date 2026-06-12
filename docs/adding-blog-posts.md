@@ -41,7 +41,7 @@ https://drdmedcare.com/og/[slug].png
 ---
 
 ### 3. Add to the blog index
-`src/app/blog/page.tsx` — add an entry to the `POSTS` array:
+`src/app/blog/page.tsx` - add an entry to the `POSTS` array:
 
 ```ts
 {
@@ -51,7 +51,7 @@ https://drdmedcare.com/og/[slug].png
   category: 'Education',
   readTime: '5 min read',
   date: 'March 2026',
-  featured: true, // optional — only one post should have this
+  featured: true, // optional - only one post should have this
 }
 ```
 
@@ -60,7 +60,7 @@ If setting as featured, remove `featured: true` from the previous featured post.
 ---
 
 ### 4. Add to the sitemap
-`src/app/sitemap.ts` — add an entry:
+`src/app/sitemap.ts` - add an entry:
 
 ```ts
 {
@@ -76,7 +76,7 @@ If setting as featured, remove `featured: true` from the previous featured post.
 ### 5. Commit and push
 ```bash
 git add .
-git commit -m "feat: add blog post — [title]"
+git commit -m "feat: add blog post - [title]"
 git push
 ```
 

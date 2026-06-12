@@ -169,7 +169,7 @@ function buildPatientConfirmationEmail(params: {
           <td style="padding:32px 40px;">
             <p style="margin:0 0 20px;color:#0f172a;font-size:15px;">Hi ${params.patientName},</p>
             <p style="margin:0 0 24px;color:#334155;font-size:14px;line-height:1.6;">
-              Thank you for booking a session with Dr Priyanka Deventhiran. Your slot is reserved — please complete the steps below to confirm it.
+              Thank you for booking a session with Dr Priyanka Deventhiran. Your slot is reserved - please complete the steps below to confirm it.
             </p>
 
             <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:24px;">
@@ -320,7 +320,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ message: 'Invalid slot time range.' }, { status: 400 })
     }
 
-    // Atomically claim slot — prevents double-booking race condition
+    // Atomically claim slot - prevents double-booking race condition
     if (body.slotId) {
       const { data: claimed } = await supabase
         .from('slots')
@@ -375,7 +375,7 @@ export async function POST(req: Request) {
         .eq('id', body.slotId)
     }
 
-    // Send booking emails (admin + patient) — failure must not block the booking response
+    // Send booking emails (admin + patient) - failure must not block the booking response
     try {
       const resend = new Resend(process.env.RESEND_API_KEY)
       const from = "Dr D's MedCare <bookings@drdmedcare.com>"
@@ -400,7 +400,7 @@ export async function POST(req: Request) {
         resend.emails.send({
           from,
           to: adminEmail,
-          subject: `New booking: ${body.patientName} — ${serviceType.title}`,
+          subject: `New booking: ${body.patientName} - ${serviceType.title}`,
           html: buildAdminNotificationEmail(emailParams),
         }),
       ]
@@ -411,7 +411,7 @@ export async function POST(req: Request) {
             from,
             to: body.patientEmail,
             replyTo: adminEmail,
-            subject: `Your booking is confirmed — Dr D's MedCare`,
+            subject: `Your booking is confirmed - Dr D's MedCare`,
             html: buildPatientConfirmationEmail(emailParams),
           })
         )

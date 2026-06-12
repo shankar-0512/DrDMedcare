@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { createSupabaseServer } from '@/lib/supabase/server'
 
-// GET /api/services — active service types
+// GET /api/services - active service types
 export async function GET() {
   const supabase = createSupabaseServer()
   const { data, error } = await supabase

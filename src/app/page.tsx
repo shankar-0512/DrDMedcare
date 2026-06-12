@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: "Dr D's MedCare — Medication Counselling by a Clinical Pharmacist",
+  title: "Dr D's MedCare - Medication Counselling by a Clinical Pharmacist",
   description: "Confused about your prescription? Book a personalised medication counselling session with Dr Priyanka Deventhiran, Pharm D. Understand your medicines, interactions, and side effects. India only.",
   alternates: { canonical: '/' },
 }
@@ -103,11 +103,11 @@ export default function HomePage() {
 
               <p className="mt-5 max-w-lg text-base leading-relaxed text-slate-600">
                 I help patients and caregivers understand prescriptions, spot side effects,
-                and know when to go back to their doctor — all in a single focused session.
+                and know when to go back to their doctor - all in a single focused session.
               </p>
 
               <p className="mt-4 text-sm italic text-slate-400">
-                "Patient counselling — the missing pill in Indian healthcare."
+                "Patient counselling - the missing pill in Indian healthcare."
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3">

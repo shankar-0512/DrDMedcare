@@ -10,15 +10,15 @@ const FAQS = [
   },
   {
     q: 'What happens when I stop taking it?',
-    a: 'You will usually have a period when you stop each month or finish your course. If no period comes, speak to your doctor — in case you might be pregnant. For prostate cancer hot flushes, symptoms often improve after a few months and you may be able to stop once they have settled.',
+    a: 'You will usually have a period when you stop each month or finish your course. If no period comes, speak to your doctor - in case you might be pregnant. For prostate cancer hot flushes, symptoms often improve after a few months and you may be able to stop once they have settled.',
   },
   {
     q: 'Will it affect my contraception?',
-    a: 'Yes. Although medroxyprogesterone reduces fertility, it is not fully effective as contraception — you could still get pregnant. Use a non-hormonal method such as condoms. If you would prefer a hormonal option, your doctor may suggest switching to a contraceptive pill.',
+    a: 'Yes. Although medroxyprogesterone reduces fertility, it is not fully effective as contraception - you could still get pregnant. Use a non-hormonal method such as condoms. If you would prefer a hormonal option, your doctor may suggest switching to a contraceptive pill.',
   },
   {
     q: 'Can I drive?',
-    a: 'This medicine can cause dizziness and fatigue. Do not drive, cycle, or use machinery if affected. It is your responsibility to decide whether it is safe. If in any doubt — do not drive.',
+    a: 'This medicine can cause dizziness and fatigue. Do not drive, cycle, or use machinery if affected. It is your responsibility to decide whether it is safe. If in any doubt - do not drive.',
   },
   {
     q: 'Will I gain weight?',
@@ -26,7 +26,7 @@ const FAQS = [
   },
   {
     q: 'Are there similar medicines?',
-    a: 'Yes — other progestogen tablets such as norethisterone work similarly. Non-hormonal options for heavy periods include tranexamic acid. Ask your doctor what is best for your situation.',
+    a: 'Yes - other progestogen tablets such as norethisterone work similarly. Non-hormonal options for heavy periods include tranexamic acid. Ask your doctor what is best for your situation.',
   },
   {
     q: 'Does it cause withdrawal bleeding?',
@@ -69,7 +69,7 @@ const SE_CARDS = [
     name: 'Irregular bleeding / Spotting',
     tips: [
       "Make sure you're taking tablets on the correct days",
-      'If it continues, speak to your doctor — dose adjustment may be needed',
+      'If it continues, speak to your doctor - dose adjustment may be needed',
     ],
   },
   {
@@ -87,7 +87,7 @@ const SE_CARDS = [
     tips: [
       'Sit or lie down until it passes',
       'Do not drive or use machinery',
-      'Avoid alcohol — it makes these worse',
+      'Avoid alcohol - it makes these worse',
     ],
   },
   {
@@ -95,7 +95,7 @@ const SE_CARDS = [
     name: 'Mood changes / Depression',
     tips: [
       'Talk to your doctor if mood changes persist',
-      'Do not suffer in silence — treatment adjustments are possible',
+      'Do not suffer in silence - treatment adjustments are possible',
     ],
   },
   {
@@ -112,7 +112,7 @@ const SE_CARDS = [
 const LIFESTYLE_CARDS = [
   { icon: '🏃', title: 'Stay Active', desc: 'Regular exercise reduces hot flushes, improves sleep and mood, and strengthens bones. Try walking, yoga, tai chi, or aerobics.' },
   { icon: '🛏️', title: 'Better Sleep', desc: 'Wear loose clothes. Sleep in a cool, well-ventilated room. Aim for at least 8 hours. Avoid screens before bed.' },
-  { icon: '☕', title: 'Avoid Triggers', desc: 'Limit caffeine, alcohol, and spicy food — all known triggers for hot flushes and night sweats.' },
+  { icon: '☕', title: 'Avoid Triggers', desc: 'Limit caffeine, alcohol, and spicy food - all known triggers for hot flushes and night sweats.' },
   { icon: '🧘', title: 'Manage Stress', desc: 'Hormonal changes can affect your mood. Relaxation techniques and mindfulness can help reduce mood swings.' },
   { icon: '🚭', title: 'Stop Smoking', desc: 'Smoking worsens hot flushes and raises your risk of heart disease, stroke, and cancer. Stopping has immediate benefits.' },
   { icon: '🥗', title: 'Healthy Eating', desc: 'A balanced diet low in fat and high in complex carbohydrates helps with weight management and breast tenderness.' },
@@ -263,7 +263,7 @@ export default function PILClient() {
             </span>
           </h1>
           <p className="text-white/60 text-sm leading-relaxed mb-6 max-w-xl">
-            Read this leaflet carefully before you start taking this medicine. Keep it — you may need to read it again.
+            Read this leaflet carefully before you start taking this medicine. Keep it - you may need to read it again.
           </p>
           <div className="flex flex-wrap gap-2">
             {['Synthetic Progestogen', 'Prescription Only', 'Not a Contraceptive', 'Non Habit-Forming'].map((p) => (
@@ -285,7 +285,7 @@ export default function PILClient() {
         <div className="rounded-2xl bg-amber-50 border-2 border-amber-200 p-5 mb-6 flex gap-4">
           <span className="text-2xl flex-shrink-0 mt-0.5">⚠️</span>
           <div>
-            <p className="text-xs font-bold uppercase tracking-wider text-amber-700 mb-1">Important — Read First</p>
+            <p className="text-xs font-bold uppercase tracking-wider text-amber-700 mb-1">Important - Read First</p>
             <p className="text-sm text-amber-900 leading-relaxed">
               Medroxyprogesterone tablets do <strong>not</strong> prevent pregnancy. They are not a contraceptive. Use
               condoms or another non-hormonal method while taking this medicine. If you think you may be pregnant, stop
@@ -297,7 +297,7 @@ export default function PILClient() {
         {/* ── Section 1 ── */}
         <SectionCard id="s1" icon="💊" num="Section 1" title="What is Medroxyprogesterone and what is it used for?">
           <p>
-            Medroxyprogesterone is a medicine called a <strong>progestogen</strong> — a synthetic version of
+            Medroxyprogesterone is a medicine called a <strong>progestogen</strong> - a synthetic version of
             progesterone, a hormone your body makes naturally. It works the same way as natural progesterone, but with
             stronger effects.
           </p>
@@ -309,15 +309,15 @@ export default function PILClient() {
             <li>Irregular or heavy periods (abnormal uterine bleeding)</li>
             <li>Endometriosis</li>
             <li>Polycystic ovary syndrome (PCOS)</li>
-            <li>Menopausal symptoms — when taken alongside oestrogen as hormone replacement therapy (HRT)</li>
+            <li>Menopausal symptoms - when taken alongside oestrogen as hormone replacement therapy (HRT)</li>
             <li>Hot flushes caused by prostate cancer treatment</li>
             <li>Prevention of thickening of the uterine lining (endometrial hyperplasia) in women on HRT</li>
           </ul>
           <p>
-            High-dose tablets (100mg, 200mg, 400mg) are used separately for certain cancers — your doctor will explain
+            High-dose tablets (100mg, 200mg, 400mg) are used separately for certain cancers - your doctor will explain
             this if it applies to you.
           </p>
-          <TealBox title="ℹ️ Low Progesterone — What It Can Cause">
+          <TealBox title="ℹ️ Low Progesterone - What It Can Cause">
             Low progesterone can lead to missed periods, frequent miscarriages, abdominal pain in pregnancy, decreased
             sex drive, weight gain, and gallbladder problems. This medicine helps restore progesterone levels to correct
             these issues.
@@ -360,7 +360,7 @@ export default function PILClient() {
               <li>Anti-epileptic medicines: carbamazepine, phenytoin, phenobarbital, primidone</li>
               <li>Warfarin (blood thinner)</li>
               <li>
-                <strong>St John&apos;s Wort</strong> — do not take this herbal remedy with medroxyprogesterone
+                <strong>St John&apos;s Wort</strong> - do not take this herbal remedy with medroxyprogesterone
               </li>
             </ul>
             <p className="mt-2">Always tell your doctor about any herbal remedies, vitamins, or supplements you take.</p>
@@ -374,7 +374,7 @@ export default function PILClient() {
                 immediately and tell your doctor if you become pregnant.
               </li>
               <li>
-                <strong>Breastfeeding:</strong> Generally safe — only a small amount enters breast milk. Monitor your
+                <strong>Breastfeeding:</strong> Generally safe - only a small amount enters breast milk. Monitor your
                 baby for any changes in feeding and speak to your doctor if concerned.
               </li>
               <li>
@@ -396,7 +396,7 @@ export default function PILClient() {
             <TealBox title="✅ You can">
               <ul className="list-disc pl-5 space-y-1.5 mt-1">
                 <li>Take with or without food</li>
-                <li>Take at any time of day — but stick to the same time each day</li>
+                <li>Take at any time of day - but stick to the same time each day</li>
                 <li>If 3 times a day: space doses evenly throughout the day</li>
               </ul>
             </TealBox>
@@ -441,7 +441,7 @@ export default function PILClient() {
           </div>
 
           <AmberBox title="⏰ If you miss a dose">
-            You may notice some breakthrough bleeding or spotting. Take the missed dose as soon as you remember —
+            You may notice some breakthrough bleeding or spotting. Take the missed dose as soon as you remember -
             unless it is nearly time for your next dose. In that case, skip it and continue as normal.{' '}
             <strong>Never take two doses at once.</strong> Setting a daily alarm can help you remember.
           </AmberBox>
@@ -459,7 +459,7 @@ export default function PILClient() {
             not require medical attention and resolve over time.
           </p>
           <p className="font-semibold text-slate-900">
-            Common side effects (more than 1 in 100 people) — and what to do:
+            Common side effects (more than 1 in 100 people) - and what to do:
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -497,25 +497,25 @@ export default function PILClient() {
             </div>
           </div>
 
-          <RedBox title="🔴 Serious side effects — seek urgent help">
+          <RedBox title="🔴 Serious side effects - seek urgent help">
             <p className="mb-2">
               These are rare (less than 1 in 1,000) but serious.{' '}
               <strong>Call 999 or go to A&E immediately</strong> if you experience:
             </p>
             <ul className="list-disc pl-5 space-y-1.5">
               <li>
-                <strong>Pain, swelling, redness or warmth in a leg or arm</strong> — possible deep vein thrombosis
+                <strong>Pain, swelling, redness or warmth in a leg or arm</strong> - possible deep vein thrombosis
                 (DVT)
               </li>
               <li>
-                <strong>Sudden shortness of breath, chest pain with cough, or coughing up blood</strong> — possible
+                <strong>Sudden shortness of breath, chest pain with cough, or coughing up blood</strong> - possible
                 blood clot in the lungs
               </li>
               <li>
-                <strong>Sudden loss of vision in one or both eyes</strong> — possible blood clot
+                <strong>Sudden loss of vision in one or both eyes</strong> - possible blood clot
               </li>
               <li>
-                <strong>Lips, mouth, throat or tongue suddenly swelling</strong> — possible serious allergic reaction
+                <strong>Lips, mouth, throat or tongue suddenly swelling</strong> - possible serious allergic reaction
               </li>
               <li>
                 <strong>Struggling to breathe or swallow, throat feeling tight</strong>
@@ -527,7 +527,7 @@ export default function PILClient() {
                 <strong>Sudden extreme confusion, drowsiness or fainting</strong>
               </li>
               <li>
-                <strong>Seizures (fits), severe vomiting, or difficulty breathing</strong> — possible overdose
+                <strong>Seizures (fits), severe vomiting, or difficulty breathing</strong> - possible overdose
               </li>
             </ul>
           </RedBox>
@@ -625,7 +625,7 @@ export default function PILClient() {
 
         {/* ── Footer ── */}
         <div className="text-center text-xs text-slate-400 pb-6 leading-relaxed">
-          <p className="font-semibold text-slate-500 mb-1">Medroxyprogesterone Tablets — Patient Information Leaflet</p>
+          <p className="font-semibold text-slate-500 mb-1">Medroxyprogesterone Tablets - Patient Information Leaflet</p>
           <p>Synthetic Progestogen · Prescription Only · Therapeutic Class: Hormones</p>
           <p className="mt-2">
             This leaflet is for informational purposes only and does not replace professional medical advice.

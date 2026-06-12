@@ -264,10 +264,10 @@ export default function BookingsPage() {
               <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Patient</p>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div><p className="text-xs text-slate-400">Name</p><p className="font-medium text-slate-800">{selected.patient_name}</p></div>
-                <div><p className="text-xs text-slate-400">Age / Gender</p><p className="font-medium text-slate-800">{selected.patient_age ?? '—'} · {selected.patient_gender ?? '—'}</p></div>
+                <div><p className="text-xs text-slate-400">Age / Gender</p><p className="font-medium text-slate-800">{selected.patient_age ?? '-'} · {selected.patient_gender ?? '-'}</p></div>
                 <div><p className="text-xs text-slate-400">Phone</p><p className="font-medium text-slate-800">{selected.patient_phone}</p></div>
-                <div><p className="text-xs text-slate-400">Email</p><p className="font-medium text-slate-800">{selected.patient_email || '—'}</p></div>
-                <div className="col-span-2"><p className="text-xs text-slate-400">Address</p><p className="font-medium text-slate-800">{selected.patient_address || '—'}</p></div>
+                <div><p className="text-xs text-slate-400">Email</p><p className="font-medium text-slate-800">{selected.patient_email || '-'}</p></div>
+                <div className="col-span-2"><p className="text-xs text-slate-400">Address</p><p className="font-medium text-slate-800">{selected.patient_address || '-'}</p></div>
                 <div><p className="text-xs text-slate-400">Language</p><p className="font-medium text-slate-800">{selected.language}</p></div>
               </div>
             </div>

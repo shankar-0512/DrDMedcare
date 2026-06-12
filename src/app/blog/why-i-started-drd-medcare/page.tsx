@@ -49,7 +49,7 @@ export default function Post() {
       date="March 2026"
     >
       <p>
-        I was working as a clinical pharmacist in a private hospital in Chennai when I read a news report that I haven't been able to forget since. A mother had given her young child a dose of cough syrup mixed into a glass of milk — thinking, as many parents do, that it would make the medicine easier to swallow. The child died from a drug interaction.
+        I was working as a clinical pharmacist in a private hospital in Chennai when I read a news report that I haven't been able to forget since. A mother had given her young child a dose of cough syrup mixed into a glass of milk - thinking, as many parents do, that it would make the medicine easier to swallow. The child died from a drug interaction.
       </p>
 
       <p>
@@ -59,7 +59,7 @@ export default function Post() {
       <h2>The gap nobody talks about</h2>
 
       <p>
-        Every day in India, patients leave hospitals and clinics with prescriptions in hand and almost no understanding of what they're holding. A doctor's consultation lasts an average of five minutes. In that time, a diagnosis is made, a prescription is written, and the patient is sent on their way. There is no time — and often, no system — for anyone to sit down and explain what each medicine does, how to take it, what to avoid, and what to watch out for.
+        Every day in India, patients leave hospitals and clinics with prescriptions in hand and almost no understanding of what they're holding. A doctor's consultation lasts an average of five minutes. In that time, a diagnosis is made, a prescription is written, and the patient is sent on their way. There is no time - and often, no system - for anyone to sit down and explain what each medicine does, how to take it, what to avoid, and what to watch out for.
       </p>
 
       <p>
@@ -77,25 +77,25 @@ export default function Post() {
       </p>
 
       <p>
-        The questions were always the same. <em>Can I take this with food? Can I take this with my other tablet? What happens if I miss a dose? Is it safe to take during my fast?</em> Simple questions, with clear answers — but nobody had ever given them those answers.
+        The questions were always the same. <em>Can I take this with food? Can I take this with my other tablet? What happens if I miss a dose? Is it safe to take during my fast?</em> Simple questions, with clear answers - but nobody had ever given them those answers.
       </p>
 
       <h2>Why I built this</h2>
 
       <p>
-        Dr D's MedCare started from a simple idea: what if patients could get 15 or 30 minutes with someone who would just explain their medicines to them? No diagnosis. No prescription changes. Just clear, honest, personalised education — in their own language, at their own pace.
+        Dr D's MedCare started from a simple idea: what if patients could get 15 or 30 minutes with someone who would just explain their medicines to them? No diagnosis. No prescription changes. Just clear, honest, personalised education - in their own language, at their own pace.
       </p>
 
       <p>
-        Medication counselling is the missing pill in Indian healthcare. I'm here to fill that gap — one session at a time.
+        Medication counselling is the missing pill in Indian healthcare. I'm here to fill that gap - one session at a time.
       </p>
 
       <blockquote>
-        "Patient counselling — the missing pill in Indian healthcare."
+        "Patient counselling - the missing pill in Indian healthcare."
       </blockquote>
 
       <p>
-        If you've ever left a doctor's appointment with questions you were too nervous to ask, or stared at a prescription wondering what you're actually taking — this service is for you.
+        If you've ever left a doctor's appointment with questions you were too nervous to ask, or stared at a prescription wondering what you're actually taking - this service is for you.
       </p>
     </BlogPostLayout>
     </>

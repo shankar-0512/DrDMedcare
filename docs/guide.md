@@ -1,4 +1,4 @@
-# Dr D's MedCare — Complete System Guide
+# Dr D's MedCare - Complete System Guide
 
 **Site:** https://drdmedcare.com  
 **Owner:** Dr Priyanka Deventhiran (Pharm D, Clinical Pharmacist)  
@@ -119,7 +119,7 @@ DrDMedcare/
 | Analytics | Vercel Analytics | latest |
 | QR codes | qrcode.react | 4.2.0 |
 | OG images | Puppeteer | 24.38.0 |
-| Hosting | Vercel | — |
+| Hosting | Vercel | - |
 
 ---
 
@@ -209,7 +209,7 @@ The booking wizard lives at `/book` and is split into three steps:
        └── DetailsStep.tsx     # Step 3: patient info + consent + submit
 ```
 
-### Step 1 — Service & Plan
+### Step 1 - Service & Plan
 
 - Fetches `/api/services` and `/api/services/plans?type=<slug>`
 - Displays two plan options: `quick_15` (15 min) and `full_30` (30 min)
@@ -219,16 +219,16 @@ The booking wizard lives at `/book` and is split into three steps:
   - `full_30`: base price × 1.6
   - Rounded to nearest ₹50 (under ₹1000) or ₹100 (₹1000+)
 
-### Step 2 — Date & Time
+### Step 2 - Date & Time
 
 - Fetches `/api/available-dates?from=...&to=...` for the next 30 days
 - Only shows dates that actually have available (non-booked, non-dummy) slots
 - Selecting a date fetches `/api/public-slots?date=YYYY-MM-DD`
 - Past slots for today are filtered by comparing against IST time
-- Dummy slots (`is_dummy: true`) are shown as greyed out but selectable for booking check — actually filtered out: `!slot.is_dummy`
+- Dummy slots (`is_dummy: true`) are shown as greyed out but selectable for booking check - actually filtered out: `!slot.is_dummy`
 - Selecting a slot shows a confirmation card below the grid
 
-### Step 3 — Patient Details
+### Step 3 - Patient Details
 
 Form fields:
 - Full name (min 2 chars)
@@ -285,7 +285,7 @@ Shows:
 
 **Weekly rules:** Set working hours per day of the week. Each day can have multiple time blocks (e.g., 9am–12pm and 3pm–6pm). Inactive blocks are saved but not used for slot generation.
 
-**Date overrides:** Override a specific date — mark it closed, or give it different hours. Examples: holidays, conference days, special availability.
+**Date overrides:** Override a specific date - mark it closed, or give it different hours. Examples: holidays, conference days, special availability.
 
 ### Slots
 
@@ -294,21 +294,21 @@ Slot generation algorithm:
 2. For each date, find the applicable rule (override first, then weekly)
 3. Generate 30-minute slots from start to end time
 4. Optionally mark 1–7 random slots as `is_dummy: true` (appear unavailable to patients)
-5. POST to `/api/admin/slots` — deletes unbooked slots for those dates first, then inserts new ones
+5. POST to `/api/admin/slots` - deletes unbooked slots for those dates first, then inserts new ones
 
 Slot states:
 - **Available** (green): `is_booked: false`, `is_dummy: false`, `is_blocked: false`
 - **Booked** (blue): `is_booked: true`
-- **Dummy** (amber): `is_dummy: true` — shown as unavailable to patients, hides real availability
-- **Blocked** (red): `is_blocked: true` — completely hidden from public API
+- **Dummy** (amber): `is_dummy: true` - shown as unavailable to patients, hides real availability
+- **Blocked** (red): `is_blocked: true` - completely hidden from public API
 
 ### Bookings
 
 Booking statuses:
-- `pending_payment` — just submitted, awaiting WhatsApp payment proof
-- `confirmed` — payment verified, session scheduled
-- `completed` — session done
-- `cancelled` — cancelled, slot released
+- `pending_payment` - just submitted, awaiting WhatsApp payment proof
+- `confirmed` - payment verified, session scheduled
+- `completed` - session done
+- `cancelled` - cancelled, slot released
 
 Payment statuses:
 - `awaiting_proof` → `received` → `verified`
@@ -350,7 +350,7 @@ Admin actions:
 | PATCH | `/api/admin/bookings` | Update status, or cancel + release slot |
 | DELETE | `/api/admin/delete-booking` | Hard-delete a booking |
 
-### Booking API — key logic
+### Booking API - key logic
 
 ```
 POST /api/bookings
@@ -362,7 +362,7 @@ POST /api/bookings
      (If 0 rows updated → slot already taken → 409 Conflict)
   5. INSERT into bookings table
   6. UPDATE slot with booking_id
-  7. Send emails via Resend (non-blocking — booking succeeds even if email fails)
+  7. Send emails via Resend (non-blocking - booking succeeds even if email fails)
   8. Return { bookingId, finalPriceInr, ... }
 ```
 
@@ -372,7 +372,7 @@ POST /api/bookings
 
 ### Adding a new post
 
-1. Create `src/app/blog/[slug]/page.tsx` — copy an existing post as template
+1. Create `src/app/blog/[slug]/page.tsx` - copy an existing post as template
 2. Add entry to `scripts/generate-og-images.mjs` POSTS array
 3. Run `node scripts/generate-og-images.mjs` to generate the OG image
 4. Add to `POSTS` array in `src/app/blog/_components/BlogGrid.tsx`
@@ -401,7 +401,7 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@type': 'BlogPosting',
-  // All fields — importantly: image must match _ogImage, not the generic site OG image
+  // All fields - importantly: image must match _ogImage, not the generic site OG image
 }
 
 export default function Post() {
@@ -473,7 +473,7 @@ When a post is added to `POSTS` in `BlogGrid.tsx`, the count on each tab updates
 **Server client** (`src/lib/supabase/server.ts`):
 - Uses `SUPABASE_SERVICE_ROLE_KEY`
 - Used in: all API routes
-- Bypasses RLS — full access
+- Bypasses RLS - full access
 - Never persists session, no refresh token
 
 ### Key tables (inferred from API usage)
@@ -489,28 +489,28 @@ When a post is added to `POSTS` in `BlogGrid.tsx`, the count on each tab updates
 
 ### Known database quirks
 
-- `availability_rules.created_at` has `NOT NULL` with no default — must be passed explicitly when inserting
-- Slot double-booking prevention: conditional UPDATE (`WHERE is_booked = false`) as an optimistic lock — if 0 rows affected, the slot was taken
+- `availability_rules.created_at` has `NOT NULL` with no default - must be passed explicitly when inserting
+- Slot double-booking prevention: conditional UPDATE (`WHERE is_booked = false`) as an optimistic lock - if 0 rows affected, the slot was taken
 
 ---
 
 ## 12. Email System
 
-Provider: **Resend** (free tier, only sends to the account owner's email while on free plan — `drpriyankamedcare@gmail.com`)
+Provider: **Resend** (free tier, only sends to the account owner's email while on free plan - `drpriyankamedcare@gmail.com`)
 
 ### Triggered by
 
-`POST /api/bookings` — after a booking is successfully created
+`POST /api/bookings` - after a booking is successfully created
 
 ### Emails sent
 
 **Admin notification** (to `RESEND_REPLY_TO` or fallback):
-- Subject: New booking — Patient name, service, date/time
+- Subject: New booking - Patient name, service, date/time
 - Body: Full booking details, slot info, amount, payment status
 - Includes direct link to admin bookings page
 
 **Patient confirmation** (to `patientEmail` if provided):
-- Subject: Booking confirmed — reference ID
+- Subject: Booking confirmed - reference ID
 - Body: What happens next, UPI payment instructions, WhatsApp number, booking ID
 
 ### Email failure handling
@@ -524,7 +524,7 @@ Email failures are logged but do not fail the booking. The booking record and sl
 ### Root layout defaults (`src/app/layout.tsx`)
 
 ```
-Title:       "Dr D's MedCare — Medication Counselling by a Clinical Pharmacist"
+Title:       "Dr D's MedCare - Medication Counselling by a Clinical Pharmacist"
 Description: "Personalised medication counselling sessions with Dr Priyanka Deventhiran, Pharm D. ..."
 OG image:    https://drdmedcare.com/ogimage.png
 Twitter:     summary_large_image
@@ -535,9 +535,9 @@ metadataBase: https://drdmedcare.com
 
 Every page should override title and description. Key rules:
 - **Title length:** Keep `_title` under 60 characters (the full title with ` | Dr D's MedCare Blog` suffix should stay under ~75)
-- **No em dashes in descriptions** — reads as AI-generated in search snippets
+- **No em dashes in descriptions** - reads as AI-generated in search snippets
 - **Description:** 150–160 chars, should answer "why click this?" not just describe the page
-- **Canonical:** Always set via `alternates: { canonical: '/path' }` — Next.js resolves this against `metadataBase`
+- **Canonical:** Always set via `alternates: { canonical: '/path' }` - Next.js resolves this against `metadataBase`
 - **JSON-LD `image`:** Must use the post-specific OG image (`/og/[slug].jpg`), not the generic `/ogimage.png`
 
 ### Sitemap (`src/app/sitemap.ts`)
@@ -629,16 +629,16 @@ npx tsc --noEmit  # Type check only
 See `docs/adding-blog-posts.md` for the full checklist.
 
 Quick version:
-1. `src/app/blog/[slug]/page.tsx` — write post
-2. `scripts/generate-og-images.mjs` — add POSTS entry, run script
-3. `src/app/blog/_components/BlogGrid.tsx` — add to POSTS array
-4. `src/app/sitemap.ts` — add URL
+1. `src/app/blog/[slug]/page.tsx` - write post
+2. `scripts/generate-og-images.mjs` - add POSTS entry, run script
+3. `src/app/blog/_components/BlogGrid.tsx` - add to POSTS array
+4. `src/app/sitemap.ts` - add URL
 5. Commit + push
 6. Google Search Console → Request indexing
 
 ### Add a new service type
 
-Insert directly into the Supabase `service_types` table via the Supabase dashboard. No code changes needed — the booking wizard fetches services dynamically.
+Insert directly into the Supabase `service_types` table via the Supabase dashboard. No code changes needed - the booking wizard fetches services dynamically.
 
 ### Change service pricing
 
@@ -653,7 +653,7 @@ Update the three CSS variables in `src/app/globals.css`:
 --color-primary-mid
 ```
 
-The entire site uses these variables — no individual component changes needed.
+The entire site uses these variables - no individual component changes needed.
 
 ### Add a new admin page
 

@@ -58,11 +58,11 @@ export default function DetailsStep(props: {
   const isPrescription = props.draft.serviceType?.slug === 'prescription-counselling'
 
   const summary = useMemo(() => ({
-    serviceType: props.draft.serviceType?.title ?? '—',
-    plan: props.draft.plan?.title ?? '—',
-    duration: props.draft.plan?.duration_minutes ?? '—',
+    serviceType: props.draft.serviceType?.title ?? '-',
+    plan: props.draft.plan?.title ?? '-',
+    duration: props.draft.plan?.duration_minutes ?? '-',
     final: props.draft.finalPriceInr ?? 0,
-    slot: props.draft.preferredStart ?? '—',
+    slot: props.draft.preferredStart ?? '-',
   }), [props.draft])
 
   async function submit() {
@@ -162,7 +162,7 @@ export default function DetailsStep(props: {
         </div>
       </div>
 
-      {/* Prescription notice — only for prescription-counselling */}
+      {/* Prescription notice - only for prescription-counselling */}
       {isPrescription && (
         <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
           <div className="flex items-start gap-3">

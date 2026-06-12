@@ -209,7 +209,7 @@ export default function SlotsPage() {
       <div className="rounded-2xl border border-slate-200 bg-white shadow-sm mb-6 p-6">
         <h2 className="font-semibold text-slate-900 mb-1">Generate slots</h2>
         <p className="text-xs text-slate-500 mb-4">
-          Generates 30-minute slots from your weekly schedule. Safe to run multiple times — existing slots won't be duplicated.
+          Generates 30-minute slots from your weekly schedule. Safe to run multiple times - existing slots won't be duplicated.
         </p>
         <div className="flex items-center gap-3 flex-wrap">
           <div className="flex items-center gap-2">
@@ -312,7 +312,7 @@ export default function SlotsPage() {
                     )}
                   </div>
 
-                  {/* Actions — disabled for booked slots */}
+                  {/* Actions - disabled for booked slots */}
                   {!slot.is_booked && (
                     <div className="flex items-center gap-3">
                       <button

@@ -35,7 +35,7 @@ export async function GET() {
   return NextResponse.json({ bookings: data ?? [] })
 }
 
-// PATCH /api/admin/bookings — update booking fields, or cancel (with slot release)
+// PATCH /api/admin/bookings - update booking fields, or cancel (with slot release)
 export async function PATCH(req: Request) {
   const session = await getAuthSession()
   if (!session) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })

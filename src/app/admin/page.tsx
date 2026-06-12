@@ -189,7 +189,7 @@ export default function AdminDashboard() {
         )}
       </div>
 
-      {/* Pending payment — needs action */}
+      {/* Pending payment - needs action */}
       {pendingBookings.length > 0 && (
         <div className="rounded-2xl border border-amber-200 bg-amber-50/50 shadow-sm">
           <div className="flex items-center justify-between border-b border-amber-100 px-6 py-4">

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
-const _title = 'Who Does What in Indian Healthcare — A Simple Guide'
-const _desc = 'Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse — each plays a distinct role. A quick guide to who does what in Indian healthcare.'
+const _title = 'Who Does What in Indian Healthcare - A Simple Guide'
+const _desc = 'Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse - each plays a distinct role. A quick guide to who does what in Indian healthcare.'
 const _ogImage = 'https://drdmedcare.com/og/healthcare-professionals-india.jpg'
 
 export const metadata: Metadata = {
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: 'Who does what in Indian healthcare — a simple guide',
-  description: 'Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse — each plays a distinct role. A quick guide to who does what in Indian healthcare.',
+  headline: 'Who does what in Indian healthcare - a simple guide',
+  description: 'Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse - each plays a distinct role. A quick guide to who does what in Indian healthcare.',
   author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-15',
@@ -42,8 +42,8 @@ export default function Post() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <BlogPostLayout
-      title="Who does what in Indian healthcare — a simple guide"
-      excerpt="Doctor, specialist, clinical pharmacist, medication counsellor, pharmacist, nurse, physiotherapist, dietitian, lab technician and ASHA worker — each plays a distinct and important role. Here's a quick guide to who does what."
+      title="Who does what in Indian healthcare - a simple guide"
+      excerpt="Doctor, specialist, clinical pharmacist, medication counsellor, pharmacist, nurse, physiotherapist, dietitian, lab technician and ASHA worker - each plays a distinct and important role. Here's a quick guide to who does what."
       category="Awareness"
       readTime="4 min read"
       date="March 2026"
@@ -59,17 +59,17 @@ export default function Post() {
 
       <h2>Specialist doctor (MD / MS / DM / MCh)</h2>
       <p>
-        A specialist has completed advanced training in a specific area — such as cardiology, neurology, paediatrics or orthopaedics — and focuses on complex conditions within that field.
+        A specialist has completed advanced training in a specific area - such as cardiology, neurology, paediatrics or orthopaedics - and focuses on complex conditions within that field.
       </p>
 
       <h2>Clinical pharmacist (Pharm D)</h2>
       <p>
-        A clinical pharmacist is a pharmacist with advanced clinical training who works directly in patient care settings — reviewing medication plans, identifying drug interactions, counselling patients on their medicines, and collaborating with doctors to optimise treatment outcomes.
+        A clinical pharmacist is a pharmacist with advanced clinical training who works directly in patient care settings - reviewing medication plans, identifying drug interactions, counselling patients on their medicines, and collaborating with doctors to optimise treatment outcomes.
       </p>
 
       <h2>Medication counsellor</h2>
       <p>
-        A medication counsellor — typically a pharmacist by training — focuses exclusively on helping patients understand their prescribed medicines. This includes explaining what each medicine does, how and when to take it, what side effects to watch for, and how to stay consistent with a treatment plan.
+        A medication counsellor - typically a pharmacist by training - focuses exclusively on helping patients understand their prescribed medicines. This includes explaining what each medicine does, how and when to take it, what side effects to watch for, and how to stay consistent with a treatment plan.
       </p>
 
       <h2>Pharmacist (B Pharm / M Pharm)</h2>
@@ -79,7 +79,7 @@ export default function Post() {
 
       <h2>Nurse (GNM / B.Sc Nursing)</h2>
       <p>
-        Nurses provide hands-on patient care — administering medicines, monitoring vitals, assisting in procedures, and supporting patient recovery in hospitals and clinics.
+        Nurses provide hands-on patient care - administering medicines, monitoring vitals, assisting in procedures, and supporting patient recovery in hospitals and clinics.
       </p>
 
       <h2>Physiotherapist (BPT / MPT)</h2>
@@ -94,7 +94,7 @@ export default function Post() {
 
       <h2>Lab technician (DMLT / BMLT)</h2>
       <p>
-        A lab technician collects samples and performs diagnostic tests — blood work, urine analysis, cultures and more — providing the data that doctors use to diagnose and monitor conditions.
+        A lab technician collects samples and performs diagnostic tests - blood work, urine analysis, cultures and more - providing the data that doctors use to diagnose and monitor conditions.
       </p>
 
       <h2>Health worker / ASHA worker</h2>
@@ -105,7 +105,7 @@ export default function Post() {
       <hr />
 
       <p>
-        Every one of these professionals plays a vital role in your care. The best health outcomes happen when patients engage actively with each of them — asking questions, following guidance, and never hesitating to seek clarification on anything they don't understand.
+        Every one of these professionals plays a vital role in your care. The best health outcomes happen when patients engage actively with each of them - asking questions, following guidance, and never hesitating to seek clarification on anything they don't understand.
       </p>
 
       <p>

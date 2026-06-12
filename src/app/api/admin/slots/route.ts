@@ -39,7 +39,7 @@ export async function GET(req: Request) {
   return NextResponse.json({ slots: data ?? [] })
 }
 
-// POST /api/admin/slots — generate slots from availability rules
+// POST /api/admin/slots - generate slots from availability rules
 export async function POST(req: Request) {
   const session = await getAuthSession()
   if (!session) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
@@ -70,7 +70,7 @@ export async function POST(req: Request) {
   return NextResponse.json({ success: true })
 }
 
-// PATCH /api/admin/slots — update or delete a single slot
+// PATCH /api/admin/slots - update or delete a single slot
 export async function PATCH(req: Request) {
   const session = await getAuthSession()
   if (!session) return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })

@@ -128,7 +128,7 @@ function SuccessContent() {
         <div className="border-t pt-3" style={{ borderColor: 'rgb(var(--color-primary-mid))' }}>
           <p className="text-xs text-slate-400 mb-1">Booking ID</p>
           <p className="break-all font-mono text-sm font-semibold text-slate-800">
-            {bookingId ?? '—'}
+            {bookingId ?? '-'}
           </p>
           <p className="mt-1 text-xs text-slate-400">
             Include this ID in your WhatsApp message.

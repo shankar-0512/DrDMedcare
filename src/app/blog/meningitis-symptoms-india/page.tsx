@@ -50,13 +50,13 @@ export default function Post() {
         date="March 2026"
       >
         <p>
-          In my years of practice, meningitis is one condition I wish more families in India knew about. It is rare — but when it strikes, it moves fast. Bacterial meningitis can kill or cause permanent disability within 24 to 48 hours of symptoms starting. The difference between a good outcome and a devastating one is almost entirely down to how quickly a family recognises it and gets to hospital.
+          In my years of practice, meningitis is one condition I wish more families in India knew about. It is rare - but when it strikes, it moves fast. Bacterial meningitis can kill or cause permanent disability within 24 to 48 hours of symptoms starting. The difference between a good outcome and a devastating one is almost entirely down to how quickly a family recognises it and gets to hospital.
         </p>
 
         <h2>What is meningitis?</h2>
 
         <p>
-          Meningitis is an infection of the meninges — the thin membranes that surround and protect your brain and spinal cord. It is most commonly caused by bacteria or viruses.
+          Meningitis is an infection of the meninges - the thin membranes that surround and protect your brain and spinal cord. It is most commonly caused by bacteria or viruses.
         </p>
 
         {/* Viral vs Bacterial comparison card */}
@@ -64,7 +64,7 @@ export default function Post() {
           <div className="rounded-xl border border-amber-200 bg-amber-50 p-5">
             <div className="text-2xl mb-2">🦠</div>
             <p className="text-sm font-bold text-amber-800 mb-1">Viral meningitis</p>
-            <p className="text-sm text-amber-700 leading-relaxed">More common. Usually resolves in 1–2 weeks with medicines and rest. Caused by enteroviruses — the same family behind the common cold.</p>
+            <p className="text-sm text-amber-700 leading-relaxed">More common. Usually resolves in 1–2 weeks with medicines and rest. Caused by enteroviruses - the same family behind the common cold.</p>
           </div>
           <div className="rounded-xl border border-red-200 bg-red-50 p-5">
             <div className="text-2xl mb-2">⚠️</div>
@@ -80,14 +80,14 @@ export default function Post() {
         <h2>Who is at risk?</h2>
 
         <ul>
-          <li><strong>Infants and young children</strong> — their immune systems are still developing and their blood-brain barrier is more vulnerable</li>
-          <li><strong>Teenagers and young adults</strong> — especially those in close contact settings like hostels, colleges, and coaching centres</li>
+          <li><strong>Infants and young children</strong> - their immune systems are still developing and their blood-brain barrier is more vulnerable</li>
+          <li><strong>Teenagers and young adults</strong> - especially those in close contact settings like hostels, colleges, and coaching centres</li>
           <li><strong>Elderly individuals</strong> and those with weakened immunity (diabetes, HIV, those on long-term steroids)</li>
-          <li><strong>Hajj and Umrah pilgrims</strong> — meningococcal vaccination is mandatory for travel to Saudi Arabia for a reason; large gatherings are a well-documented risk factor</li>
-          <li><strong>People living in crowded conditions</strong> — a factor that is sadly still common across many parts of India</li>
+          <li><strong>Hajj and Umrah pilgrims</strong> - meningococcal vaccination is mandatory for travel to Saudi Arabia for a reason; large gatherings are a well-documented risk factor</li>
+          <li><strong>People living in crowded conditions</strong> - a factor that is sadly still common across many parts of India</li>
         </ul>
 
-        <h2>The warning signs — know these by heart</h2>
+        <h2>The warning signs - know these by heart</h2>
 
         <p>
           The classic triad of meningitis is: <strong>sudden severe headache, high fever, and stiff neck</strong>. But in practice, not every patient will have all three at once, especially in the early hours.
@@ -122,7 +122,7 @@ export default function Post() {
           In infants, the signs are different and easier to miss. Look for a bulging fontanelle (the soft spot on the baby's head), a high-pitched unusual cry, refusal to feed, a limp or floppy body, and extreme irritability.
         </p>
 
-        <h2>The rash — and the glass test</h2>
+        <h2>The rash - and the glass test</h2>
 
         <p>
           In meningococcal meningitis specifically, a rash can appear. It starts as small red or purple spots that look like tiny blood spots under the skin (petechiae). These can spread rapidly into larger blotchy bruise-like patches (purpura).
@@ -130,7 +130,7 @@ export default function Post() {
 
         {/* Glass test step-by-step */}
         <div className="not-prose rounded-xl border border-red-200 bg-red-50 p-6 my-6">
-          <p className="text-xs font-bold uppercase tracking-widest text-red-600 mb-4">The glass test — step by step</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-red-600 mb-4">The glass test - step by step</p>
           <div className="flex flex-col gap-3">
             {[
               { step: '1', text: 'Find a clear drinking glass' },
@@ -146,7 +146,7 @@ export default function Post() {
           <div className="mt-4 grid sm:grid-cols-2 gap-3">
             <div className="rounded-lg bg-green-100 border border-green-200 p-3 text-center">
               <p className="text-xs font-bold text-green-700 uppercase tracking-wide mb-1">Spots fade ✓</p>
-              <p className="text-xs text-green-700">Likely not meningococcal — monitor closely</p>
+              <p className="text-xs text-green-700">Likely not meningococcal - monitor closely</p>
             </div>
             <div className="rounded-lg bg-red-200 border border-red-300 p-3 text-center">
               <p className="text-xs font-bold text-red-800 uppercase tracking-wide mb-1">Spots stay visible 🚨</p>
@@ -162,7 +162,7 @@ export default function Post() {
         <h2>Why meningitis is commonly missed in India</h2>
 
         <p>
-          The early symptoms — fever, headache, fatigue — overlap heavily with common illnesses like viral fever, dengue, typhoid, and even malaria. This is why it is so often attributed to "viral fever" and treated at home in the first critical hours.
+          The early symptoms - fever, headache, fatigue - overlap heavily with common illnesses like viral fever, dengue, typhoid, and even malaria. This is why it is so often attributed to "viral fever" and treated at home in the first critical hours.
         </p>
 
         {/* Comparison table */}
@@ -176,7 +176,7 @@ export default function Post() {
             ['Headache', 'Mild, dull', 'Severe, sudden, constant'],
             ['Neck stiffness', 'Absent', 'Almost always present'],
             ['Light sensitivity', 'Mild', 'Intense, distressing'],
-            ['Deterioration', 'Gradual over days', 'Hours — can be rapid'],
+            ['Deterioration', 'Gradual over days', 'Hours - can be rapid'],
             ['Rash', 'May be present', 'Non-blanching spots'],
           ].map(([symptom, fever, meningitis]) => (
             <div key={symptom} className="grid grid-cols-3 px-4 py-3 border-t border-slate-100 bg-white">
@@ -190,11 +190,11 @@ export default function Post() {
         <h2>What to do if you suspect meningitis</h2>
 
         <p>
-          <strong>Do not wait to see if it improves.</strong> Meningitis is not a wait-and-watch situation. If you see a combination of severe headache, fever, and neck stiffness — particularly in a child or young adult — go to hospital immediately. Tell the healthcare staff you are concerned about meningitis. Those words will ensure the person is seen urgently.
+          <strong>Do not wait to see if it improves.</strong> Meningitis is not a wait-and-watch situation. If you see a combination of severe headache, fever, and neck stiffness - particularly in a child or young adult - go to hospital immediately. Tell the healthcare staff you are concerned about meningitis. Those words will ensure the person is seen urgently.
         </p>
 
         <p>
-          In hospital, the diagnosis is confirmed with a lumbar puncture (spinal tap) — a procedure where a small sample of the fluid surrounding the spinal cord is tested. Blood cultures are also taken. Treatment for bacterial meningitis is intravenous antibiotics, started as soon as possible. Every hour of delay worsens the outcome.
+          In hospital, the diagnosis is confirmed with a lumbar puncture (spinal tap) - a procedure where a small sample of the fluid surrounding the spinal cord is tested. Blood cultures are also taken. Treatment for bacterial meningitis is intravenous antibiotics, started as soon as possible. Every hour of delay worsens the outcome.
         </p>
 
         <h2>Vaccines available in India</h2>
@@ -211,7 +211,7 @@ export default function Post() {
               {
                 name: 'Pneumococcal vaccine',
                 brands: 'PCV13 / PCV15 / PPSV23',
-                protects: 'Streptococcus pneumoniae — the leading cause of bacterial meningitis in India',
+                protects: 'Streptococcus pneumoniae - the leading cause of bacterial meningitis in India',
                 who: 'All children, adults over 65, anyone with chronic illness or weakened immunity',
                 note: 'PCV13 available at many government hospitals at subsidised rates',
               },
@@ -226,7 +226,7 @@ export default function Post() {
                 name: 'Hib vaccine',
                 brands: 'Part of Pentavalent vaccine',
                 protects: 'Haemophilus influenzae type b',
-                who: 'Infants — already in Universal Immunisation Programme',
+                who: 'Infants - already in Universal Immunisation Programme',
                 note: 'Ensure all scheduled infant doses are completed',
               },
             ].map(({ name, brands, protects, who, note }) => (
@@ -246,13 +246,13 @@ export default function Post() {
         <h2>A note on antibiotic use</h2>
 
         <p>
-          Bacterial meningitis requires immediate intravenous antibiotics — not oral tablets bought from a chemist. If you suspect meningitis, please do not attempt to treat it at home with leftover antibiotics. The causative bacteria need to be identified first through culture testing, so the correct antibiotic can be chosen. Self-medicating can also mask symptoms and delay accurate diagnosis.
+          Bacterial meningitis requires immediate intravenous antibiotics - not oral tablets bought from a chemist. If you suspect meningitis, please do not attempt to treat it at home with leftover antibiotics. The causative bacteria need to be identified first through culture testing, so the correct antibiotic can be chosen. Self-medicating can also mask symptoms and delay accurate diagnosis.
         </p>
 
         <h2>The bottom line</h2>
 
         <p>
-          Meningitis is uncommon, but it is serious enough that every Indian family should know its warning signs. The combination of sudden severe headache, high fever, neck stiffness, and light sensitivity in any person — especially a child, teenager, or young adult — should be treated as an emergency until proven otherwise. If in doubt, go to hospital. It is always better to be wrong than to wait too long.
+          Meningitis is uncommon, but it is serious enough that every Indian family should know its warning signs. The combination of sudden severe headache, high fever, neck stiffness, and light sensitivity in any person - especially a child, teenager, or young adult - should be treated as an emergency until proven otherwise. If in doubt, go to hospital. It is always better to be wrong than to wait too long.
         </p>
 
         <p>

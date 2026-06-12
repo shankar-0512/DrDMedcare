@@ -160,7 +160,7 @@ export default function SlotStep(props: {
       {/* Slots */}
       {selectedDate && <div>
         <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
-          Available slots — {formatDate(selectedDate)}
+          Available slots - {formatDate(selectedDate)}
         </p>
 
         {loading ? (

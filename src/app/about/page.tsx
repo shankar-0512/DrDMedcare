@@ -17,10 +17,10 @@ const CREDENTIALS = [
 ]
 
 const APPROACH_ITEMS = [
-  { icon: '💊', title: 'Prescription clarity', desc: 'I go through your prescription line by line — what each medicine is for, how and when to take it, and what to watch out for.' },
+  { icon: '💊', title: 'Prescription clarity', desc: 'I go through your prescription line by line - what each medicine is for, how and when to take it, and what to watch out for.' },
   { icon: '⚠️', title: 'Interaction awareness', desc: 'Drug–drug and drug–food interactions are common and dangerous. I flag these clearly so you know exactly what to avoid.' },
   { icon: '📅', title: 'Medication adherence', desc: 'For chronic patients, I build a structured schedule and follow up to make sure medicines are being taken correctly and consistently.' },
-  { icon: '👨‍👩‍👧', title: 'Special populations', desc: 'Extra care for elderly, paediatric and chronic patients — those who need the most guidance and are often underserved.' },
+  { icon: '👨‍👩‍👧', title: 'Special populations', desc: 'Extra care for elderly, paediatric and chronic patients - those who need the most guidance and are often underserved.' },
 ]
 
 const STATS = [
@@ -77,7 +77,7 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="mt-5 text-lg leading-relaxed text-slate-600">
-              I'm a clinical pharmacist from Chennai with a Pharm D from Tamil Nadu Dr. M.G.R. Medical University. After years working in a private hospital, I saw the same problem repeat itself every single day — patients leaving with prescriptions they didn't fully understand.
+              I'm a clinical pharmacist from Chennai with a Pharm D from Tamil Nadu Dr. M.G.R. Medical University. After years working in a private hospital, I saw the same problem repeat itself every single day - patients leaving with prescriptions they didn't fully understand.
             </p>
             <p className="mt-4 text-base leading-relaxed text-slate-600">
               The moment that crystallised everything for me was reading about a mother who gave her child cough syrup with milk. The child died from a drug interaction that nobody had warned her about. That shouldn't happen. It doesn't have to happen. That's why Dr D's MedCare exists.
@@ -117,9 +117,9 @@ export default function AboutPage() {
               </div>
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">Medication counselling is the missing pill in Indian healthcare</h2>
               <p className="mt-4 text-base leading-relaxed text-slate-600">Doctors in India are overworked. A consultation lasts 5 minutes on average. There's no time to explain every medicine, every interaction, every side effect. Patients go home with a prescription and a prayer.</p>
-              <p className="mt-3 text-base leading-relaxed text-slate-600">Elders skip doses. Parents misread instructions. Chronic patients stop their medicines the moment they feel better. These aren't careless mistakes — they're the result of a system that never took the time to explain.</p>
-              <p className="mt-3 text-base leading-relaxed text-slate-600">In the UK, US, Australia and Canada, every pharmacy has a dedicated pharmacist whose job is to counsel patients on their medicines — it's built into the system as a standard of care. In India, that role simply doesn't exist at scale yet.</p>
-              <p className="mt-3 text-base leading-relaxed text-slate-600">To make things more complicated, India has no legal definition of "OTC" — meaning antibiotics and other potent drugs are routinely sold without a prescription, often without any guidance on how to use them safely.</p>
+              <p className="mt-3 text-base leading-relaxed text-slate-600">Elders skip doses. Parents misread instructions. Chronic patients stop their medicines the moment they feel better. These aren't careless mistakes - they're the result of a system that never took the time to explain.</p>
+              <p className="mt-3 text-base leading-relaxed text-slate-600">In the UK, US, Australia and Canada, every pharmacy has a dedicated pharmacist whose job is to counsel patients on their medicines - it's built into the system as a standard of care. In India, that role simply doesn't exist at scale yet.</p>
+              <p className="mt-3 text-base leading-relaxed text-slate-600">To make things more complicated, India has no legal definition of "OTC" - meaning antibiotics and other potent drugs are routinely sold without a prescription, often without any guidance on how to use them safely.</p>
               <p className="mt-3 text-base leading-relaxed text-slate-600">I fill that gap. One focused session where your medicines are explained clearly, in your language, at your pace.</p>
             </div>
             <div className="space-y-4">
@@ -127,7 +127,7 @@ export default function AboutPage() {
                 { stat: '50%', text: 'of Indian patients do not take medicines as prescribed' },
                 { stat: '1 in 3', text: 'hospital readmissions are linked to medication errors' },
                 { stat: '5 mins', text: 'average doctor consultation time in India' },
-                { stat: '0', text: 'legal definition of "OTC" exists in India — potent drugs are sold freely without guidance' },
+                { stat: '0', text: 'legal definition of "OTC" exists in India - potent drugs are sold freely without guidance' },
               ].map((item) => (
                 <div key={item.stat} className="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4">
                   <div className="text-2xl font-bold shrink-0" style={{ color: 'rgb(var(--color-primary))' }}>{item.stat}</div>
@@ -188,11 +188,11 @@ export default function AboutPage() {
           <div className="flex items-start gap-4">
             <div className="text-3xl shrink-0">⚠️</div>
             <div>
-              <h3 className="text-lg font-bold text-slate-900">Before you book — please read this</h3>
+              <h3 className="text-lg font-bold text-slate-900">Before you book - please read this</h3>
               <p className="mt-2 text-sm leading-relaxed text-slate-600">I am a medication counsellor, not a prescribing doctor. I will never change your prescription, alter your dosage, or advise you to stop a medicine. All medical decisions remain with your doctor.</p>
               <ul className="mt-3 space-y-1.5 text-sm text-slate-600">
                 <li className="flex items-start gap-2"><span className="text-amber-600 shrink-0">→</span> For prescription counselling, please have your prescription ready to share on WhatsApp or upload during booking.</li>
-                <li className="flex items-start gap-2"><span className="text-amber-600 shrink-0">→</span> This service is for education only — not for emergencies or diagnosis.</li>
+                <li className="flex items-start gap-2"><span className="text-amber-600 shrink-0">→</span> This service is for education only - not for emergencies or diagnosis.</li>
                 <li className="flex items-start gap-2"><span className="text-amber-600 shrink-0">→</span> Available for patients in India only.</li>
               </ul>
             </div>
