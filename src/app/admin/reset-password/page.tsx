@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense, useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { supabase } from '@/lib/supabase/client'
 
@@ -15,6 +15,12 @@ function ResetPasswordForm() {
   const [error, setError]         = useState('')
   const [loading, setLoading]     = useState(false)
   const [done, setDone]           = useState(false)
+
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session) setVerified(true)
+    })
+  }, [])
 
   async function handleVerify() {
     setError('')
