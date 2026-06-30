@@ -5,8 +5,8 @@ import type { NextRequest } from 'next/server'
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  // Only protect /admin routes, allow /admin/login through
-  if (!pathname.startsWith('/admin') || pathname === '/admin/login') {
+  // Only protect /admin routes, allow /admin/login and /admin/reset-password through
+  if (!pathname.startsWith('/admin') || pathname === '/admin/login' || pathname === '/admin/reset-password') {
     return NextResponse.next()
   }
 
