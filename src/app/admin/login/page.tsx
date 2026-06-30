@@ -12,10 +12,12 @@ function LoginForm() {
   const [email, setEmail]       = useState('')
   const [password, setPassword] = useState('')
   const [error, setError]       = useState('')
+  const [info, setInfo]         = useState('')
   const [loading, setLoading]   = useState(false)
 
   async function handleLogin() {
     setError('')
+    setInfo('')
     setLoading(true)
 
     const { error } = await supabase.auth.signInWithPassword({ email, password })
@@ -27,6 +29,29 @@ function LoginForm() {
     }
 
     router.push(redirectTo)
+  }
+
+  async function handleForgotPassword() {
+    setError('')
+    setInfo('')
+
+    if (!email) {
+      setError('Enter your email above first, then click "Forgot password?".')
+      return
+    }
+
+    setLoading(true)
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/admin/reset-password`,
+    })
+    setLoading(false)
+
+    if (error) {
+      setError(error.message)
+      return
+    }
+
+    setInfo('If an account exists for that email, a reset link has been sent.')
   }
 
   const inputClass = 'w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-[rgb(var(--color-primary))] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))]/10 transition-all'
@@ -52,6 +77,12 @@ function LoginForm() {
         {error && (
           <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
             {error}
+          </div>
+        )}
+
+        {info && (
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
+            {info}
           </div>
         )}
 
@@ -87,6 +118,15 @@ function LoginForm() {
           style={{ background: 'rgb(var(--color-primary))' }}
         >
           {loading ? 'Signing in…' : 'Sign in'}
+        </button>
+
+        <button
+          type="button"
+          onClick={handleForgotPassword}
+          disabled={loading}
+          className="w-full text-center text-xs font-medium text-slate-500 hover:text-slate-700 transition-colors disabled:opacity-50"
+        >
+          Forgot password?
         </button>
 
       </div>
