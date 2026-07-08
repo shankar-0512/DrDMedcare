@@ -303,8 +303,8 @@ const POSTS = [
       '#e0f2fe',
       '#0369a1',
       'Education',
-      'Apixaban: Dose, Interactions & Warning Signs',
-      'No INR monitoring needed - but the dose and warning signs still matter',
+      'Apixaban: Dose, Interactions & Contraindications',
+      'No INR monitoring needed - but the dose and contraindications still matter',
       'Dr Priyanka Deventhiran',
       /* decor */ `
       <svg style="position:absolute;top:-80px;right:-80px;opacity:0.12;" width="480" height="480" viewBox="0 0 480 480">

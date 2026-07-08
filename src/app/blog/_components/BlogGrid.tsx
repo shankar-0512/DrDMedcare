@@ -18,8 +18,8 @@ type BlogPost = {
 const POSTS: BlogPost[] = [
   {
     slug: 'apixaban-india',
-    title: 'Apixaban: Dose, Interactions, and Warning Signs Every Patient Should Know',
-    excerpt: "Apixaban (Eliquis) is one of the most widely prescribed blood thinners in India. No INR monitoring needed - but the dose, the interactions, and the bleeding warning signs matter just as much as they did with warfarin.",
+    title: 'Apixaban: Dose, Interactions, and Contraindications Every Patient Should Know',
+    excerpt: "Apixaban is one of the most widely prescribed blood thinners in India. No INR monitoring needed - but the dose, the interactions, and the contraindications matter just as much as they did with warfarin.",
     category: 'Education',
     readTime: '8 min read',
     date: 'July 2026',
@@ -204,7 +204,7 @@ export default function BlogGrid() {
                 <div className="text-center">
                   <div className="text-7xl">💊</div>
                   <p className="mt-4 text-sm font-medium text-sky-700">Education</p>
-                  <p className="mt-1 text-xs text-slate-400 max-w-[200px] leading-relaxed">Dose, interactions, and warning signs for a widely prescribed blood thinner</p>
+                  <p className="mt-1 text-xs text-slate-400 max-w-[200px] leading-relaxed">Dose, interactions, and contraindications for a widely prescribed blood thinner</p>
                 </div>
               </div>
             </div>

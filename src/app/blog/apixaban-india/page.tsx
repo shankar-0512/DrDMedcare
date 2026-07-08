@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import BlogPostLayout from '@/components/BlogPostLayout'
 
-const _title = 'Apixaban: Dose, Interactions, and Warning Signs Explained'
-const _desc = "Apixaban (Eliquis) is one of the most widely prescribed blood thinners in India. No INR monitoring needed - but the dose, the interactions, and the bleeding warning signs matter just as much as they did with warfarin. Here's what every patient should know."
+const _title = 'Apixaban: Dose, Interactions, and Contraindications Explained'
+const _desc = "Apixaban is one of the most widely prescribed blood thinners in India. No INR monitoring needed - but the dose, the interactions, and the contraindications matter just as much as they did with warfarin. Here's what every patient should know."
 const _ogImage = 'https://drdmedcare.com/og/apixaban-india.jpg'
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
-  headline: 'Apixaban: Dose, Interactions, and Warning Signs Every Patient Should Know',
+  headline: 'Apixaban: Dose, Interactions, and Contraindications Every Patient Should Know',
   description: _desc,
   author: { '@type': 'Person', name: 'Dr Priyanka Deventhiran', jobTitle: 'Clinical Pharmacist' },
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
@@ -38,7 +38,7 @@ const jsonLd = {
   url: 'https://drdmedcare.com/blog/apixaban-india',
   image: _ogImage,
   inLanguage: 'en-IN',
-  keywords: 'apixaban India, Eliquis, apixaban dose, blood thinner India, apixaban vs warfarin, atrial fibrillation medicine, DVT PE treatment, apixaban side effects',
+  keywords: 'apixaban India, apixaban dose, blood thinner India, apixaban vs warfarin, atrial fibrillation medicine, DVT PE treatment, apixaban side effects',
 }
 
 export default function Post() {
@@ -46,14 +46,14 @@ export default function Post() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <BlogPostLayout
-        title="Apixaban: Dose, Interactions, and Warning Signs Every Patient Should Know"
+        title="Apixaban: Dose, Interactions, and Contraindications Every Patient Should Know"
         excerpt={_desc}
         category="Education"
         readTime="8 min read"
         date="July 2026"
       >
         <p>
-          If you or someone in your family has been started on apixaban - usually sold in India as Eliquis, or as one of several generic brands - it is almost certainly because of atrial fibrillation, a blood clot in the leg or lung, or a recent hip or knee replacement. It is now one of the most commonly prescribed blood thinners in the country, and for good reason: it works well, and unlike its predecessor warfarin, it does not need regular blood test monitoring.
+          If you or someone in your family has been started on apixaban, it is almost certainly because of atrial fibrillation, a blood clot in the leg or lung, or a recent hip or knee replacement. It is now one of the most commonly prescribed blood thinners in the country, and for good reason: it works well, and unlike its predecessor warfarin, it does not need regular blood test monitoring.
         </p>
         <p>
           But "no monitoring needed" does not mean "nothing to think about." Apixaban still carries a real bleeding risk, still interacts with a specific set of medicines, and still requires the correct dose for your age, weight, and kidney function. This article covers what every patient on apixaban - and every caregiver - should understand.
@@ -91,7 +91,7 @@ export default function Post() {
             <p className="text-xs font-bold text-slate-500 uppercase tracking-wide">Approved uses</p>
           </div>
           {[
-            { icon: '❤️', use: 'Stroke prevention in atrial fibrillation', detail: 'The most common reason apixaban is prescribed. AF causes blood to pool in the heart, raising the risk of a clot travelling to the brain.' },
+            { icon: '❤️', use: 'Stroke prevention in non-valvular atrial fibrillation', detail: 'The most common reason apixaban is prescribed. AF causes blood to pool in the heart, raising the risk of a clot travelling to the brain. Apixaban is not used for AF caused by a mechanical heart valve or significant mitral valve disease - warfarin remains standard there.' },
             { icon: '🩸', use: 'Treating a DVT or PE', detail: 'A clot in a deep leg vein (DVT) or in the lungs (pulmonary embolism, PE). Apixaban dissolves the clot risk going forward while the body reabsorbs the existing clot.' },
             { icon: '🔁', use: 'Preventing a repeat DVT or PE', detail: 'After an initial course of treatment, a lower dose is often continued long-term to prevent recurrence.' },
             { icon: '🦴', use: 'After hip or knee replacement surgery', detail: 'A short course to prevent DVT during the high-risk weeks of reduced mobility after major orthopaedic surgery.' },
@@ -191,7 +191,7 @@ export default function Post() {
             ['Diet restrictions', 'Vitamin K-rich foods affect it', 'No significant food interactions'],
             ['Onset of action', 'Slow - takes days to reach effect', 'Fast - within 3-4 hours'],
             ['Dose adjustment', 'Frequent, based on INR', 'Fixed, rarely changed'],
-            ['Reversal in emergency', 'Vitamin K, readily available', 'Specific agent exists but limited availability in India'],
+            ['Reversal in emergency', 'Vitamin K, readily available', 'Supportive care and clotting factor concentrates; a specific antidote exists but access varies'],
           ].map(([factor, warfarin, apixaban]) => (
             <div key={factor} className="grid grid-cols-3 px-4 py-3 border-t border-slate-100 bg-white">
               <p className="text-sm font-semibold text-slate-700">{factor}</p>
@@ -204,11 +204,14 @@ export default function Post() {
         <p>
           The absence of routine monitoring is convenient, but it cuts both ways: with warfarin, a blood test would eventually flag a problem. With apixaban, there is no equivalent early warning system - which makes taking the correct dose, at the correct times, without missed or doubled doses, even more important.
         </p>
+        <p>
+          On reversal specifically: a targeted antidote for apixaban (andexanet alfa) is authorised for use in India, but its role is under active reassessment - it was withdrawn from the US market in December 2025 after post-marketing data linked it to an increased rate of clotting complications. In practice, major bleeding on apixaban is still managed primarily with supportive care and, where needed, clotting factor concentrates, regardless of whether the specific antidote is used.
+        </p>
 
         <h2>If you miss a dose</h2>
         <ul>
-          <li>If you remember on the <strong>same day</strong>, take the missed dose as soon as you remember, then continue your normal twice-daily schedule.</li>
-          <li>If you do not remember until the <strong>next day</strong>, skip the missed dose entirely - do not take two doses together to make up for it.</li>
+          <li>If it has been <strong>less than 6 hours</strong> since your missed dose was due, take it as soon as you remember, then continue your normal twice-daily schedule.</li>
+          <li>If <strong>more than 6 hours</strong> have passed, skip the missed dose entirely and take your next scheduled dose at the usual time - do not take two doses together to make up for it.</li>
           <li>Never double up. Taking extra apixaban to "catch up" meaningfully raises bleeding risk without adding protection.</li>
           <li>If you frequently forget doses, mention this to your doctor or pharmacist - alarms, pill organisers, or a change in regimen can help.</li>
         </ul>
@@ -317,7 +320,7 @@ export default function Post() {
 
         <h2>Cost and access in India</h2>
         <p>
-          Apixaban is sold under the brand name Eliquis, and also as several lower-cost generic versions. Generics contain the same active ingredient and are held to the same regulatory standards, but if you do switch between brands, mention it to your pharmacist - consistency matters for a medicine where dosing precision affects both clotting protection and bleeding risk. If cost is a barrier, ask your doctor or pharmacist about generic options rather than skipping or reducing doses on your own.
+          Apixaban is available in India both as the original manufacturer's product and as several lower-cost generic versions. Generics contain the same active ingredient and are held to the same regulatory standards, but if you do switch between brands, mention it to your pharmacist - consistency matters for a medicine where dosing precision affects both clotting protection and bleeding risk. If cost is a barrier, ask your doctor or pharmacist about generic options rather than skipping or reducing doses on your own.
         </p>
 
         <h2>Living with apixaban</h2>
