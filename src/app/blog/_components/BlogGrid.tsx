@@ -17,13 +17,21 @@ type BlogPost = {
 
 const POSTS: BlogPost[] = [
   {
+    slug: 'apixaban-india',
+    title: 'Apixaban: Dose, Interactions, and Warning Signs Every Patient Should Know',
+    excerpt: "Apixaban (Eliquis) is one of the most widely prescribed blood thinners in India. No INR monitoring needed - but the dose, the interactions, and the bleeding warning signs matter just as much as they did with warfarin.",
+    category: 'Education',
+    readTime: '8 min read',
+    date: 'July 2026',
+    featured: true,
+  },
+  {
     slug: 'myasthenia-gravis-india',
     title: 'Myasthenia Gravis: Understanding the Disease, the Treatment, and the Medicines to Avoid',
     excerpt: "MG is a rare autoimmune disease where muscle weakness is unpredictable, and where a common antibiotic or antacid can trigger a crisis. Here is what every patient and carer needs to know.",
     category: 'Education',
     readTime: '7 min read',
     date: 'June 2026',
-    featured: true,
   },
   {
     slug: 'how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners',
@@ -192,11 +200,11 @@ export default function BlogGrid() {
                   <span className="inline-flex items-center gap-1 text-sm font-semibold text-[rgb(var(--color-primary))] group-hover:gap-2 transition-all">Read article →</span>
                 </div>
               </div>
-              <div className="hidden lg:flex items-center justify-center bg-violet-50/60 p-10">
+              <div className="hidden lg:flex items-center justify-center bg-sky-50/60 p-10">
                 <div className="text-center">
-                  <div className="text-7xl">🧠</div>
-                  <p className="mt-4 text-sm font-medium text-violet-700">Education</p>
-                  <p className="mt-1 text-xs text-slate-400 max-w-[200px] leading-relaxed">Understanding a rare condition and its medicines</p>
+                  <div className="text-7xl">💊</div>
+                  <p className="mt-4 text-sm font-medium text-sky-700">Education</p>
+                  <p className="mt-1 text-xs text-slate-400 max-w-[200px] leading-relaxed">Dose, interactions, and warning signs for a widely prescribed blood thinner</p>
                 </div>
               </div>
             </div>

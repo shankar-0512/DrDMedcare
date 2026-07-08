@@ -294,6 +294,38 @@ const POSTS = [
     )
   },
 
+  // 9. Apixaban
+  {
+    slug: 'apixaban-india',
+    html: base(
+      'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%)',
+      '#0369a1',
+      '#e0f2fe',
+      '#0369a1',
+      'Education',
+      'Apixaban: Dose, Interactions & Warning Signs',
+      'No INR monitoring needed - but the dose and warning signs still matter',
+      'Dr Priyanka Deventhiran',
+      /* decor */ `
+      <svg style="position:absolute;top:-80px;right:-80px;opacity:0.12;" width="480" height="480" viewBox="0 0 480 480">
+        <circle cx="240" cy="240" r="240" fill="#0369a1"/>
+      </svg>
+      <div style="position:absolute;top:48px;right:88px;font-size:150px;opacity:0.18;transform:rotate(-12deg);user-select:none;">💊</div>
+      <!-- Dose card -->
+      <div style="position:absolute;top:170px;right:72px;background:white;border-radius:16px;padding:16px 24px;box-shadow:0 8px 32px rgba(3,105,161,0.15);border:1px solid #e0f2fe;">
+        <div style="font-size:11px;font-weight:700;color:#0369a1;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">Standard Dose</div>
+        <div style="font-size:22px;font-weight:900;color:#0f172a;">5 mg twice daily</div>
+        <div style="font-size:11px;color:#64748b;margin-top:4px;">Atrial fibrillation</div>
+      </div>
+      <!-- No monitoring badge -->
+      <div style="position:absolute;bottom:120px;right:64px;background:#fef2f2;border-radius:12px;padding:10px 18px;box-shadow:0 4px 16px rgba(220,38,38,0.1);display:flex;align-items:center;gap:8px;border:1px solid #fecaca;">
+        <span style="font-size:16px;">🩸</span>
+        <span style="font-size:13px;font-weight:600;color:#dc2626;">Know the bleeding signs</span>
+      </div>
+      `
+    )
+  },
+
   // 8. Myasthenia Gravis
   {
     slug: 'myasthenia-gravis-india',
