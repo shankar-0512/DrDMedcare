@@ -60,10 +60,10 @@ export default function LegalLayout({ current, updated, children }: { current: s
                 ))}
               </nav>
 
-              <div className="on-dark rounded-[2rem] bg-panel p-6 text-paper">
-                <h3 className="display text-[1.4rem] leading-tight text-paper">Questions about <em>your medicines?</em></h3>
-                <p className="mt-3 text-[0.92rem] leading-[1.6] text-paper/70">A private one-to-one session, in your language.</p>
-                <Link href="/book" className="btn btn-brand mt-5 !px-5 !py-3 !text-[0.9rem]">Book a session <span className="arr" aria-hidden /></Link>
+              <div className="rounded-[2rem] bg-panel p-6 text-dark">
+                <h3 className="display text-[1.4rem] leading-tight text-dark">Questions about <em>your medicines?</em></h3>
+                <p className="mt-3 text-[0.92rem] leading-[1.6] text-dark/70">A private one-to-one session, in your language.</p>
+                <Link href="/book" className="btn btn-dark mt-5 !px-5 !py-3 !text-[0.9rem]">Book a session <span className="arr" aria-hidden /></Link>
               </div>
             </div>
           </aside>

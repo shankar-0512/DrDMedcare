@@ -160,7 +160,7 @@ export default async function HomePage() {
       </section>
 
       {/* marquee */}
-      <div className="overflow-hidden bg-panel py-4 text-brand" aria-hidden>
+      <div className="overflow-hidden bg-panel py-4 text-dark" aria-hidden>
         <div className="marquee-track">
           {[0, 1].map((k) => (
             <div key={k} className="flex shrink-0 items-center">
@@ -257,7 +257,7 @@ export default async function HomePage() {
       </section>
 
       {/* ───────── Routine ───────── */}
-      <section className="on-dark bg-panel text-paper">
+      <section className="bg-panel text-dark">
         <div className="mx-auto grid max-w-[1280px] items-center gap-14 px-6 py-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:px-10 lg:py-32">
           <Reveal>
             <div className="relative aspect-[3/2] overflow-hidden rounded-full border-[6px] border-brand">
@@ -271,14 +271,14 @@ export default async function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-brand">Adherence</p>
-            <h2 className="display mt-6 text-[clamp(2.2rem,4.2vw,3.6rem)] text-paper">
+            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark">Adherence</p>
+            <h2 className="display mt-6 text-[clamp(2.2rem,4.2vw,3.6rem)] text-dark">
               The medicine is rarely the problem. <em>The routine is.</em>
             </h2>
-            <p className="mt-7 max-w-lg text-[1.05rem] leading-[1.7] text-paper/75">
+            <p className="mt-7 max-w-lg text-[1.05rem] leading-[1.7] text-dark/75">
               Doses get missed, timings get mixed up, and tablets get stopped the moment someone feels better. Together we build a simple routine around your day, so the treatment can actually work.
             </p>
-            <Link href="/book?type=adherence-planning" className="btn btn-brand mt-9">
+            <Link href="/book?type=adherence-planning" className="btn btn-dark mt-9">
               Plan my routine <span className="arr" aria-hidden>→</span>
             </Link>
           </Reveal>
@@ -316,17 +316,17 @@ export default async function HomePage() {
 
       {/* ───────── Closing CTA ───────── */}
       <section className="bg-paper px-3 py-3 sm:px-5 sm:py-5">
-        <div className="on-dark mx-auto max-w-[1280px] rounded-[2.5rem] bg-panel px-6 py-20 text-center text-paper lg:py-28">
+        <div className="mx-auto max-w-[1280px] rounded-[2.5rem] bg-panel px-6 py-20 text-center text-dark lg:py-28">
           <Reveal>
-            <h2 className="display mx-auto max-w-3xl text-[clamp(2.4rem,5.4vw,4.8rem)] text-paper">
+            <h2 className="display mx-auto max-w-3xl text-[clamp(2.4rem,5.4vw,4.8rem)] text-dark">
               Ready to understand <em>your medicines?</em>
             </h2>
-            <p className="mx-auto mt-6 max-w-md text-[1.05rem] text-paper/70">Booking takes under two minutes.</p>
+            <p className="mx-auto mt-6 max-w-md text-[1.05rem] text-dark/70">Booking takes under two minutes.</p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <Link href="/book" className="btn btn-brand">
+              <Link href="/book" className="btn btn-dark">
                 Book a session <span className="arr" aria-hidden>→</span>
               </Link>
-              <a href={waLink(WA_MESSAGES.general)} target="_blank" rel="noreferrer" className="btn btn-ghost text-paper hover:!bg-paper hover:!text-dark">
+              <a href={waLink(WA_MESSAGES.general)} target="_blank" rel="noreferrer" className="btn btn-ghost text-dark hover:!bg-dark hover:!text-paper">
                 Ask a question first
               </a>
             </div>

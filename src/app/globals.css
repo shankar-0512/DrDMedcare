@@ -15,7 +15,8 @@
   --c-hero:         229 232 238;   /* soft grey-blue: page heroes, big light panels */
   --c-second:       229 232 238;
   --c-second-soft:  240 233 214;   /* warm sand: calm section panels */
-  --c-panel:        15 31 61;      /* deep navy: big colour sections, footer */
+  --c-pink:         248 200 214;   /* pastel pink: big colour blocks, footer, cards */
+  --c-panel:        248 200 214;   /* alias: big colour sections use the pink */
 
   /* Neutrals */
   --c-paper:        250 247 240;   /* page background, cards (warm ivory) */
@@ -33,8 +34,8 @@
 
   /* Legacy aliases — older pages still read these. Don't edit. */
   --color-primary:      var(--c-dark);
-  --color-primary-soft: var(--c-brand);
-  --color-primary-mid:  var(--c-brand-deep);
+  --color-primary-soft: var(--c-brand-soft);
+  --color-primary-mid:  var(--c-brand);
   --color-secondary:    var(--c-dark-2);
   --color-bg:           var(--c-paper);
   --color-surface:      255 255 255;
@@ -50,6 +51,7 @@
   --color-second:      rgb(var(--c-second));
   --color-second-soft: rgb(var(--c-second-soft));
   --color-panel:       rgb(var(--c-panel));
+  --color-pink:        rgb(var(--c-pink));
   --color-paper:       rgb(var(--c-paper));
   --color-dark:        rgb(var(--c-dark));
   --color-dark-2:      rgb(var(--c-dark-2));

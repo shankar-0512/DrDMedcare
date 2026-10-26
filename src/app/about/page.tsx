@@ -74,12 +74,12 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="bg-panel text-paper">
+      <section className="bg-panel text-dark">
         <div className="mx-auto grid max-w-[1280px] grid-cols-2 gap-8 px-6 py-12 lg:grid-cols-4 lg:px-10">
           {STATS.map((st) => (
             <div key={st.label} className="text-center">
-              <p className="display text-[3rem] text-brand">{st.value}</p>
-              <p className="mt-1 text-[0.85rem] font-semibold text-paper/75">{st.label}</p>
+              <p className="display text-[3rem] text-dark">{st.value}</p>
+              <p className="mt-1 text-[0.85rem] font-semibold text-dark/75">{st.label}</p>
             </div>
           ))}
         </div>

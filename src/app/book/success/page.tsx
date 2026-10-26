@@ -37,6 +37,12 @@ const SERVICE_LABELS: Record<string, string> = {
   'side-effects':             'Side Effects Review',
 }
 
+const PLAN_LABELS: Record<string, string> = {
+  quick_15: 'Quick Clarity (15 min)',
+  full_30:  'Full Counselling (30 min)',
+  monthly:  'Monthly Plan',
+}
+
 function SuccessContent() {
   const [isAndroid, setIsAndroid] = useState(false)
   const router = useRouter()
@@ -89,7 +95,7 @@ function SuccessContent() {
       {/* Booking summary card */}
       <div
         className="mt-8 rounded-[2rem] border-2 p-6 sm:p-8 space-y-4"
-        style={{ borderColor: 'rgb(var(--color-primary))', background: 'rgb(var(--color-primary-soft))' }}
+        style={{ borderColor: 'rgb(var(--c-dark))', background: 'rgb(var(--c-brand-soft))' }}
       >
         <p className="text-xs font-semibold uppercase tracking-widest text-[rgb(var(--color-primary))]">
           Booking summary
@@ -98,36 +104,36 @@ function SuccessContent() {
         {booking ? (
           <div className="grid grid-cols-2 gap-y-3 gap-x-4 text-sm">
             <div>
-              <p className="text-xs text-slate-400">Patient</p>
+              <p className="text-xs text-subtle">Patient</p>
               <p className="font-medium text-slate-800">{booking.patient_name}</p>
             </div>
             <div>
-              <p className="text-xs text-slate-400">Amount</p>
+              <p className="text-xs text-subtle">Amount</p>
               <p className="text-lg font-bold text-slate-900">₹{booking.final_price_inr}</p>
             </div>
             <div>
-              <p className="text-xs text-slate-400">Service</p>
+              <p className="text-xs text-subtle">Service</p>
               <p className="font-medium text-slate-800">{SERVICE_LABELS[booking.service_type_slug] ?? formatSlug(booking.service_type_slug)}</p>
             </div>
             <div>
-              <p className="text-xs text-slate-400">Plan</p>
-              <p className="font-medium text-slate-800">{formatSlug(booking.plan_code)}</p>
+              <p className="text-xs text-subtle">Plan</p>
+              <p className="font-medium text-slate-800">{PLAN_LABELS[booking.plan_code] ?? formatSlug(booking.plan_code.replace(/_/g, '-'))}</p>
             </div>
             <div className="col-span-2">
-              <p className="text-xs text-slate-400">Slot</p>
+              <p className="text-xs text-subtle">Slot</p>
               <p className="font-medium text-slate-800">{formatDateTime(booking.preferred_start)}</p>
             </div>
           </div>
         ) : (
-          <p className="text-sm text-slate-400">Could not load booking details.</p>
+          <p className="text-sm text-subtle">Could not load booking details.</p>
         )}
 
-        <div className="border-t pt-3" style={{ borderColor: 'rgb(var(--color-primary-mid))' }}>
-          <p className="text-xs text-slate-400 mb-1">Booking ID</p>
+        <div className="border-t pt-3" style={{ borderColor: 'rgb(var(--c-dark) / 0.25)' }}>
+          <p className="text-xs text-subtle mb-1">Booking ID</p>
           <p className="break-all font-mono text-sm font-semibold text-slate-800">
             {bookingId ?? '-'}
           </p>
-          <p className="mt-1 text-xs text-slate-400">
+          <p className="mt-1 text-xs text-subtle">
             Include this ID in your WhatsApp message.
           </p>
         </div>

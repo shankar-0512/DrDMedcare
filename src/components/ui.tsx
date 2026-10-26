@@ -45,11 +45,11 @@ export function NumBadge({ n, className = '' }: { n: number | string; className?
 export function CtaCard({ title, body, secondary }: { title: React.ReactNode; body?: string; secondary?: React.ReactNode }) {
   return (
     <section className="bg-paper px-3 py-3 sm:px-5 sm:py-5">
-      <div className="on-dark mx-auto max-w-[1280px] rounded-[2.5rem] bg-panel px-6 py-16 text-center text-paper lg:py-24">
-        <h2 className="display mx-auto max-w-3xl text-[clamp(2.1rem,4.6vw,4rem)] text-paper">{title}</h2>
-        {body && <p className="mx-auto mt-5 max-w-md text-[1.05rem] text-paper/70">{body}</p>}
+      <div className="mx-auto max-w-[1280px] rounded-[2.5rem] bg-panel px-6 py-16 text-center text-dark lg:py-24">
+        <h2 className="display mx-auto max-w-3xl text-[clamp(2.1rem,4.6vw,4rem)] text-dark">{title}</h2>
+        {body && <p className="mx-auto mt-5 max-w-md text-[1.05rem] text-dark/70">{body}</p>}
         <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
-          <Link href="/book" className="btn btn-brand">
+          <Link href="/book" className="btn btn-dark">
             Book a session <span className="arr" aria-hidden>→</span>
           </Link>
           {secondary}
