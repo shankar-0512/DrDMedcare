@@ -15,9 +15,9 @@ function Mark() {
   return (
     <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden>
       <g transform="rotate(-40 17 17)">
-        <rect x="2" y="9.5" width="30" height="15" rx="7.5" style={{ fill: 'rgb(var(--c-dark))' }} />
+        <rect x="2" y="9.5" width="30" height="15" rx="7.5" style={{ fill: 'rgb(var(--c-teal))' }} />
         <path d="M17 9.5h8a7.5 7.5 0 0 1 0 15h-8z" style={{ fill: 'rgb(var(--c-brand-deep))' }} />
-        <rect x="2" y="9.5" width="30" height="15" rx="7.5" fill="none" style={{ stroke: 'rgb(var(--c-dark))' }} strokeWidth="1.5" />
+        <rect x="2" y="9.5" width="30" height="15" rx="7.5" fill="none" style={{ stroke: 'rgb(var(--c-teal))' }} strokeWidth="1.5" />
       </g>
     </svg>
   )

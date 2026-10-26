@@ -108,7 +108,7 @@ html { scroll-behavior: smooth; }
     font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em;
     background: rgb(var(--c-paper)); color: rgb(var(--c-dark));
   }
-  .chip .dot { width: .5rem; height: .5rem; border-radius: 999px; background: rgb(var(--c-dark)); }
+  .chip .dot { width: .5rem; height: .5rem; border-radius: 999px; background: rgb(var(--c-teal)); }
 
   /* capsule buttons */
   .btn {
