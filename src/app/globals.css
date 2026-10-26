@@ -22,9 +22,9 @@
 
   /* Neutrals */
   --c-paper:        255 255 255;   /* page background, cards (white) */
-  --c-dark:         11 43 40;      /* text (deep teal-black) */
-  --c-dark-2:       15 118 110;    /* secondary text, hover */
-  --c-subtle:       84 108 104;    /* muted body text */
+  --c-dark:         18 18 18;      /* text (black) */
+  --c-dark-2:       15 118 110;    /* green emphasis words only */
+  --c-subtle:       78 78 78;      /* muted body text (neutral grey) */
 
   /* Third-party brand (kept separate on purpose) */
   --c-whatsapp:      20 131 63;
@@ -62,17 +62,17 @@
   --color-whatsapp-deep: rgb(var(--c-whatsapp-deep));
 
   /* Tailwind slate re-tuned to the palette (legacy pages use slate-*) */
-  --color-slate-50:  #f7faf9;
-  --color-slate-100: #edf3f2;
-  --color-slate-200: #dbe6e4;
-  --color-slate-300: #bfd0cd;
-  --color-slate-400: #8aa19d;
-  --color-slate-500: #647c78;
-  --color-slate-600: #4b6360;
-  --color-slate-700: #364c49;
-  --color-slate-800: #223835;
-  --color-slate-900: #0b2b28;
-  --color-slate-950: #061a18;
+  --color-slate-50:  #fafafa;
+  --color-slate-100: #f2f2f2;
+  --color-slate-200: #e3e3e3;
+  --color-slate-300: #cdcdcd;
+  --color-slate-400: #9a9a9a;
+  --color-slate-500: #707070;
+  --color-slate-600: #4e4e4e;
+  --color-slate-700: #373737;
+  --color-slate-800: #262626;
+  --color-slate-900: #121212;
+  --color-slate-950: #0a0a0a;
 }
 
 body {
@@ -95,12 +95,11 @@ html { scroll-behavior: smooth; }
     text-wrap: balance;
   }
   .display em {
-    font-style: normal; font-weight: 700; color: inherit;
+    font-style: normal; font-weight: 700; color: rgb(var(--c-dark-2));
     text-decoration: underline; text-decoration-color: rgb(var(--c-brand));
     text-decoration-thickness: 0.09em; text-underline-offset: 0.14em;
   }
-  .on-dark .display em, .on-brand .display em { color: inherit; }
-  .on-dark .display em { color: rgb(var(--c-brand)); text-decoration-color: rgb(var(--c-brand) / 0.55); }
+    .on-dark .display em { color: rgb(var(--c-brand)); text-decoration-color: rgb(var(--c-brand) / 0.55); }
 
   .chip {
     display: inline-flex; align-items: center; gap: 0.5rem;

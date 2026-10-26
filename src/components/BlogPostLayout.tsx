@@ -57,13 +57,13 @@ export default function BlogPostLayout({ title, excerpt, category, readTime, dat
       <div className="bg-paper">
         <div className="mx-auto grid max-w-[1280px] gap-14 px-6 pb-16 pt-14 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-16 lg:px-10 lg:pt-20">
           <article id="article-body" className="min-w-0">
-            <div className="space-y-5 text-[1.07rem] leading-[1.8] text-slate-600 [&>p]:max-w-[48rem] [&>ul]:max-w-[48rem] [&>ol]:max-w-[48rem] [&>blockquote]:max-w-[48rem] [&>h2]:max-w-[48rem] [&>h2]:font-bold [&>h2]:tracking-[-0.03em] [&>h2]:mt-12 [&>h2]:mb-3 [&>h2]:text-[1.75rem] [&>h2]:leading-tight [&>h2]:text-dark [&>p]:text-left [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-2 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:space-y-2 [&>blockquote]:rounded-[1.5rem] [&>blockquote]:bg-hero [&>blockquote]:p-6 [&>blockquote]:font-semibold [&>blockquote]:text-dark [&>hr]:my-10 [&>hr]:border-dark/15 [&_strong]:font-bold [&_strong]:text-dark [&_em]:italic [&_a]:font-semibold [&_a]:text-dark-2 [&_a]:underline [&_li]:leading-relaxed">
+            <div className="space-y-5 text-[1.07rem] leading-[1.8] text-slate-600 [&>p]:max-w-[48rem] [&>ul]:max-w-[48rem] [&>ol]:max-w-[48rem] [&>blockquote]:max-w-[48rem] [&>h2]:max-w-[48rem] [&>h2]:font-bold [&>h2]:tracking-[-0.03em] [&>h2]:mt-12 [&>h2]:mb-3 [&>h2]:text-[1.75rem] [&>h2]:leading-tight [&>h2]:text-dark [&>p]:text-left [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-2 [&>ol]:list-decimal [&>ol]:pl-6 [&>ol]:space-y-2 [&>blockquote]:rounded-[1.5rem] [&>blockquote]:bg-hero [&>blockquote]:p-6 [&>blockquote]:font-semibold [&>blockquote]:text-dark [&>hr]:my-10 [&>hr]:border-dark/15 [&_strong]:font-bold [&_strong]:text-dark [&_em]:italic [&_a]:font-semibold [&_a]:text-dark [&_a]:underline [&_li]:leading-relaxed">
               {children}
             </div>
 
             {/* ── Disclaimer ── */}
             <div className="mt-14 max-w-[48rem] rounded-[2rem] border-2 border-dark/15 bg-brand-soft p-6 lg:p-7">
-              <p className="text-[0.75rem] font-bold uppercase tracking-[0.16em] text-dark-2">Disclaimer</p>
+              <p className="text-[0.75rem] font-bold uppercase tracking-[0.16em] text-dark">Disclaimer</p>
               <p className="mt-2 text-[0.92rem] leading-[1.7] text-subtle">
                 This article is for educational purposes only. It does not constitute medical advice and should not replace a consultation with your doctor. Always consult a qualified healthcare professional before making any changes to your medicines.
               </p>

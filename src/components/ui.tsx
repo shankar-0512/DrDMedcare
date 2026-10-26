@@ -31,7 +31,7 @@ export function PageHero({
 
 export function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
-    <p className={`text-[0.78rem] font-bold uppercase tracking-[0.16em] ${light ? 'text-brand' : 'text-dark-2'}`}>{children}</p>
+    <p className={`text-[0.78rem] font-bold uppercase tracking-[0.16em] ${light ? 'text-brand' : 'text-dark'}`}>{children}</p>
   )
 }
 

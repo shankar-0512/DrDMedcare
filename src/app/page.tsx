@@ -187,7 +187,7 @@ export default async function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark-2">The gap</p>
+            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark">The gap</p>
             <p className="display mt-6 text-[clamp(1.9rem,3.7vw,3.3rem)] text-dark">
               There is no time to explain every medicine, every interaction, every side effect. <em>That&rsquo;s the gap I work in.</em>
             </p>
@@ -199,7 +199,7 @@ export default async function HomePage() {
       <section className="bg-second-soft">
         <div className="mx-auto max-w-[1280px] px-6 py-24 lg:px-10 lg:py-32">
           <Reveal>
-            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark-2">How it works</p>
+            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark">How it works</p>
             <h2 className="display mt-6 max-w-3xl text-[clamp(2.2rem,4.6vw,4rem)] text-dark">
               One focused conversation. <em>Nothing rushed.</em>
             </h2>
@@ -222,7 +222,7 @@ export default async function HomePage() {
       <section id="how-i-can-help" className="scroll-mt-24 bg-paper">
         <div className="mx-auto max-w-[1280px] px-6 py-24 lg:px-10 lg:py-32">
           <Reveal className="max-w-2xl">
-            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark-2">What I offer</p>
+            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark">What I offer</p>
             <h2 className="display mt-6 text-[clamp(2.4rem,4.8vw,4.2rem)] text-dark">
               How I can <em>help.</em>
             </h2>
@@ -300,7 +300,7 @@ export default async function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark-2">Meet Priyanka</p>
+            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark">Meet Priyanka</p>
             <h2 className="display mt-6 text-[clamp(2.1rem,4vw,3.5rem)] text-dark">
               After years in a hospital, I kept seeing patients leave with prescriptions <em className="!text-dark-2">they didn&rsquo;t fully understand.</em>
             </h2>

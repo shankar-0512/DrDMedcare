@@ -27,12 +27,12 @@ export default function LegalLayout({ current, updated, children }: { current: s
       <div className="bg-paper">
         <div className="mx-auto grid max-w-[1280px] gap-14 px-6 pb-16 pt-14 lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-16 lg:px-10 lg:pt-20">
           <article id="legal-body" className="min-w-0">
-            <div className="max-w-[48rem] space-y-10 text-[1.02rem] leading-[1.8] text-slate-600 [&_h2]:mb-3 [&_h2]:text-[1.5rem] [&_h2]:font-bold [&_h2]:leading-tight [&_h2]:tracking-[-0.03em] [&_h2]:text-dark [&_strong]:font-bold [&_strong]:text-dark [&_a]:font-semibold [&_a]:text-dark-2 [&_a]:underline [&_li]:leading-relaxed">
+            <div className="max-w-[48rem] space-y-10 text-[1.02rem] leading-[1.8] text-slate-600 [&_h2]:mb-3 [&_h2]:text-[1.5rem] [&_h2]:font-bold [&_h2]:leading-tight [&_h2]:tracking-[-0.03em] [&_h2]:text-dark [&_strong]:font-bold [&_strong]:text-dark [&_a]:font-semibold [&_a]:text-dark [&_a]:underline [&_li]:leading-relaxed">
               {children}
             </div>
 
             <section aria-label="Next document" className="mt-16">
-              <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark-2">Read next</p>
+              <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark">Read next</p>
               <Link href={`/legal/${next.slug}`} className="group mt-5 flex items-center justify-between gap-6 rounded-[2.5rem] border-2 border-dark/10 bg-paper p-7 transition-all duration-300 hover:border-dark hover:bg-hero lg:p-9">
                 <div>
                   <h3 className="display text-[1.5rem] leading-[1.15] text-dark lg:text-[1.9rem]">{next.title}</h3>
@@ -46,7 +46,7 @@ export default function LegalLayout({ current, updated, children }: { current: s
           <aside>
             <div className="space-y-5 lg:sticky lg:top-28">
               <nav aria-label="Legal documents" className="rounded-[2rem] border-2 border-dark/10 bg-paper p-3">
-                <p className="px-4 pb-1 pt-3 text-[0.75rem] font-bold uppercase tracking-[0.16em] text-dark-2">Legal documents</p>
+                <p className="px-4 pb-1 pt-3 text-[0.75rem] font-bold uppercase tracking-[0.16em] text-dark">Legal documents</p>
                 {DOCS.map((d, n) => (
                   <Link
                     key={d.slug}

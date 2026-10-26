@@ -14,7 +14,7 @@ export default function NextArticle() {
 
   return (
     <section aria-label="Next article" className="mt-16">
-      <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark-2">Read next</p>
+      <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark">Read next</p>
       <Link href={`/blog/${next.slug}`} className="group mt-5 grid overflow-hidden rounded-[2.5rem] border-2 border-dark/10 bg-paper transition-all duration-300 hover:border-dark sm:grid-cols-[0.8fr_1.2fr]">
         <PostCover slug={next.slug} className="min-h-[200px]" sizes="(min-width:640px) 340px, 92vw" />
         <div className="flex flex-col justify-center p-7 lg:p-10">
