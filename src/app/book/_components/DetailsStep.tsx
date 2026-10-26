@@ -299,7 +299,8 @@ export default function DetailsStep(props: {
               Preferred session language <span className="text-red-400">*</span>
             </label>
             <select
-              className={inputClass}
+              className={`${inputClass} cursor-pointer appearance-none bg-no-repeat pr-11`}
+              style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%230b5e58' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3.5 6l4.5 4.5L12.5 6'/%3E%3C/svg%3E\")", backgroundSize: '1rem', backgroundPosition: 'right 1rem center' }}
               value={language}
               onChange={(e) => setLanguage(e.target.value)}
             >
