@@ -286,7 +286,7 @@ export default async function HomePage() {
       </section>
 
       {/* ───────── Meet Priyanka ───────── */}
-      <section className="bg-hero">
+      <section className="bg-brand-soft">
         <div className="mx-auto grid max-w-[1280px] items-center gap-14 px-6 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-10 lg:py-32">
           <Reveal>
             <div className="relative mx-auto aspect-[3/4.4] w-full max-w-[360px] overflow-hidden rounded-full border-[7px] border-brand bg-paper">

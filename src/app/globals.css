@@ -9,20 +9,20 @@
   /* Accent: gold — rings, rules, badges, buttons on dark, highlights */
   --c-brand:        210 172 82;    /* #d2ac52 */
   --c-brand-deep:   168 134 52;
-  --c-brand-soft:   244 235 212;   /* pale gold-cream panels */
+  --c-brand-soft:   253 236 242;   /* pale gold-cream panels */
 
   /* Surfaces */
-  --c-hero:         229 232 238;   /* soft grey-blue: page heroes, big light panels */
-  --c-second:       229 232 238;
+  --c-hero:         248 200 214;   /* pastel pink: page heroes, big light panels */
+  --c-second:       248 200 214;
   --c-second-soft:  240 233 214;   /* warm sand: calm section panels */
   --c-pink:         248 200 214;   /* pastel pink: big colour blocks, footer, cards */
   --c-panel:        248 200 214;   /* alias: big colour sections use the pink */
 
   /* Neutrals */
-  --c-paper:        250 247 240;   /* page background, cards (warm ivory) */
-  --c-dark:         15 31 61;      /* text, buttons (navy) */
-  --c-dark-2:       40 62 104;     /* hover on dark, secondary navy */
-  --c-subtle:       84 97 122;     /* muted body text */
+  --c-paper:        253 249 247;   /* page background, cards (warm ivory) */
+  --c-dark:         42 29 38;      /* text, buttons (deep plum-charcoal) */
+  --c-dark-2:       92 62 80;     /* hover on dark, secondary text */
+  --c-subtle:       110 90 101;     /* muted body text */
 
   /* Third-party brand (kept separate on purpose) */
   --c-whatsapp:      20 131 63;
@@ -60,17 +60,17 @@
   --color-whatsapp-deep: rgb(var(--c-whatsapp-deep));
 
   /* Tailwind slate re-tuned to the palette (legacy pages use slate-*) */
-  --color-slate-50:  #f8f7f4;
-  --color-slate-100: #eef0f3;
-  --color-slate-200: #dde1e8;
-  --color-slate-300: #c3cad6;
-  --color-slate-400: #8e99ad;
-  --color-slate-500: #66728a;
-  --color-slate-600: #4d5a73;
-  --color-slate-700: #36445f;
-  --color-slate-800: #22304d;
-  --color-slate-900: #0f1f3d;
-  --color-slate-950: #0a1530;
+  --color-slate-50:  #fbf6f6;
+  --color-slate-100: #f6ecee;
+  --color-slate-200: #ead9de;
+  --color-slate-300: #d6bfc7;
+  --color-slate-400: #a08e97;
+  --color-slate-500: #7b6a74;
+  --color-slate-600: #5f4f5a;
+  --color-slate-700: #44363f;
+  --color-slate-800: #33252f;
+  --color-slate-900: #2a1d26;
+  --color-slate-950: #1b1218;
 }
 
 body {
