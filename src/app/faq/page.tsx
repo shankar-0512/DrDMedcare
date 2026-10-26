@@ -1,16 +1,15 @@
 'use client'
 
-import Link from 'next/link'
 import { useState } from 'react'
 import WhatsAppButton, { WA_MESSAGES } from '@/components/WhatsappButton'
+import { PageHero, CtaCard } from '@/components/ui'
 
 type FAQItem = { q: string; a: string }
-type FAQCategory = { title: string; icon: string; items: FAQItem[] }
+type FAQCategory = { title: string; items: FAQItem[] }
 
 const FAQ_DATA: FAQCategory[] = [
   {
     title: 'About the service',
-    icon: '💊',
     items: [
       { q: 'What exactly is medication counselling?', a: 'Medication counselling is a focused session where I explain your medicines to you clearly - what each one does, how and when to take it, what side effects to watch for, and what foods or other medicines to avoid. It fills the gap that a 5-minute doctor consultation simply cannot.' },
       { q: 'Is this the same as seeing a doctor?', a: 'No. I am a clinical pharmacist, not a prescribing doctor. I will not diagnose conditions, change your prescription, or alter your dosage. All medical decisions remain with your doctor. This is purely education and counselling about medicines you have already been prescribed.' },
@@ -21,7 +20,6 @@ const FAQ_DATA: FAQCategory[] = [
   },
   {
     title: 'Before your session',
-    icon: '📋',
     items: [
       { q: 'Do I need a prescription to book?', a: 'For prescription counselling sessions, yes - you will need to share your prescription via WhatsApp before your session. For medication adherence planning, a prescription is helpful but not always required.' },
       { q: 'What languages are sessions available in?', a: 'Sessions are available in Tamil, English, Telugu and Hindi. Please mention your preferred language when booking.' },
@@ -31,7 +29,6 @@ const FAQ_DATA: FAQCategory[] = [
   },
   {
     title: 'Sessions & booking',
-    icon: '📅',
     items: [
       { q: 'How does booking work?', a: 'Choose your service type and plan on the booking page, pick a preferred slot, and fill in your details. Once your booking is created, send payment proof on WhatsApp. I will confirm your slot after payment is verified - usually within a few hours.' },
       { q: 'How is the session conducted?', a: 'Sessions are conducted over a phone or video call, depending on your preference. You will receive the call details after your booking is confirmed.' },
@@ -41,7 +38,6 @@ const FAQ_DATA: FAQCategory[] = [
   },
   {
     title: 'Payment & privacy',
-    icon: '🔒',
     items: [
       { q: 'How do I pay?', a: 'Payment is accepted via UPI or bank transfer. After creating your booking, you will receive payment details. Send your payment screenshot on WhatsApp along with your Booking ID, and I will confirm your session.' },
       { q: 'Is my prescription and health information kept private?', a: 'Yes. Any information you share - prescriptions, health history, personal details - is used only for your counselling session and is kept strictly confidential. It is never shared with third parties.' },
@@ -52,19 +48,14 @@ const FAQ_DATA: FAQCategory[] = [
 
 function AccordionItem({ item, isOpen, onToggle }: { item: FAQItem; isOpen: boolean; onToggle: () => void }) {
   return (
-    <div
-      className={`rounded-xl border transition-all duration-200 ${isOpen ? 'shadow-sm' : 'border-slate-200 bg-white hover:border-slate-300'}`}
-      style={isOpen ? { borderColor: 'rgb(var(--color-primary-mid))', background: 'rgb(var(--color-primary-soft) / 0.3)' } : {}}
-    >
-      <button type="button" onClick={onToggle} className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left">
-        <span className={`text-sm font-semibold leading-relaxed ${isOpen ? 'text-[rgb(var(--color-primary))]' : 'text-slate-800'}`}>{item.q}</span>
-        <div className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 transition-all duration-200 ${isOpen ? 'border-[rgb(var(--color-primary))] bg-[rgb(var(--color-primary))] text-white' : 'border-slate-300 text-slate-400'}`}>
-          <svg className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-            {isOpen ? <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14" /> : <path strokeLinecap="round" strokeLinejoin="round" d="M12 5v14M5 12h14" />}
-          </svg>
-        </div>
+    <div className={`rounded-[1.75rem] border-2 transition-colors duration-200 ${isOpen ? 'border-dark bg-brand-soft' : 'border-dark/10 bg-paper hover:border-dark/40'}`}>
+      <button type="button" onClick={onToggle} aria-expanded={isOpen} className="flex w-full items-center justify-between gap-5 px-6 py-5 text-left">
+        <span className="display text-[1.1rem] leading-snug text-dark">{item.q}</span>
+        <span className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-all duration-200 ${isOpen ? 'rotate-45 bg-dark text-brand' : 'bg-brand text-dark'}`}>
+          <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" d="M12 5v14M5 12h14" /></svg>
+        </span>
       </button>
-      {isOpen && <div className="px-5 pb-5"><p className="text-sm leading-relaxed text-slate-600">{item.a}</p></div>}
+      {isOpen && <div className="px-6 pb-6"><p className="max-w-2xl text-[1rem] leading-[1.7] text-dark/85">{item.a}</p></div>}
     </div>
   )
 }
@@ -74,53 +65,54 @@ export default function FAQPage() {
   function toggle(key: string) { setOpenKey((prev) => (prev === key ? null : key)) }
 
   return (
-    <main className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 -right-32 h-[480px] w-[480px] rounded-full opacity-[0.06]" style={{ background: 'rgb(var(--color-primary))' }} />
-        <div className="absolute top-16 right-64 h-8 w-8 rounded-full bg-amber-300 opacity-40" />
-        <div className="absolute top-[60%] -left-20 h-72 w-72 rounded-full opacity-[0.04]" style={{ background: 'rgb(var(--color-primary))' }} />
-      </div>
+    <main>
+      <PageHero
+        eyebrow="Frequently asked questions"
+        title={<>Got questions? <em>Good.</em></>}
+        sub="Everything you need to know about Dr D's MedCare before booking your first session."
+      />
 
-      <section className="relative mx-auto max-w-3xl px-4 py-14 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[rgb(var(--color-primary))]" style={{ background: 'rgb(var(--color-primary-soft))', borderColor: 'rgb(var(--color-primary-mid))' }}>
-          <span className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ background: 'rgb(var(--color-primary))' }} />
-          Frequently asked questions
-        </div>
-        <h1 className="mt-4 text-4xl font-bold tracking-tight text-slate-900">Got questions? We've got answers.</h1>
-        <p className="mt-3 text-base text-slate-500 max-w-lg mx-auto leading-relaxed">Everything you need to know about Dr D's MedCare before booking your first session.</p>
-      </section>
+      <section className="bg-paper">
+        <div className="mx-auto max-w-[1280px] px-6 py-20 lg:px-10 lg:py-28">
+          <div className="grid gap-12 lg:grid-cols-[0.55fr_1.45fr] lg:gap-20">
+            <nav className="hidden lg:block" aria-label="FAQ sections">
+              <ul className="sticky top-28 space-y-2">
+                {FAQ_DATA.map((c, i) => (
+                  <li key={c.title}>
+                    <a href={`#faq-${i}`} className="flex items-center gap-3 rounded-full px-4 py-3 text-[0.97rem] font-semibold text-dark/80 transition-colors hover:bg-brand hover:text-dark">
+                      <span className="display grid h-8 w-8 place-items-center rounded-full bg-brand text-[0.9rem] text-dark">{i + 1}</span>
+                      {c.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-      <section className="relative mx-auto max-w-3xl px-4 pb-20 space-y-10">
-        {FAQ_DATA.map((category, ci) => (
-          <div key={category.title}>
-            <div className="flex items-center gap-3 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl text-xl border" style={{ background: 'rgb(var(--color-primary-soft))', borderColor: 'rgb(var(--color-primary-mid))' }}>
-                {category.icon}
-              </div>
-              <h2 className="text-lg font-bold text-slate-900">{category.title}</h2>
+            <div className="space-y-16">
+              {FAQ_DATA.map((category, ci) => (
+                <div key={category.title} id={`faq-${ci}`} className="scroll-mt-28">
+                  <h2 className="display flex items-center gap-4 text-[1.9rem] text-dark">
+                    <span className="grid h-11 w-11 place-items-center rounded-full bg-dark text-[1.1rem] text-brand">{ci + 1}</span>
+                    {category.title}
+                  </h2>
+                  <div className="mt-6 space-y-3">
+                    {category.items.map((item, ii) => {
+                      const key = `${ci}-${ii}`
+                      return <AccordionItem key={key} item={item} isOpen={openKey === key} onToggle={() => toggle(key)} />
+                    })}
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="space-y-2">
-              {category.items.map((item, ii) => {
-                const key = `${ci}-${ii}`
-                return <AccordionItem key={key} item={item} isOpen={openKey === key} onToggle={() => toggle(key)} />
-              })}
-            </div>
-          </div>
-        ))}
-
-        {/* Still have questions */}
-        <div className="rounded-2xl border bg-white/80 p-8 text-center shadow-sm" style={{ borderColor: 'rgb(var(--color-primary-mid))' }}>
-          <div className="text-3xl mb-3">💬</div>
-          <h3 className="text-lg font-bold text-slate-900">Still have a question?</h3>
-          <p className="mt-2 text-sm text-slate-500">Drop a message on WhatsApp and I'll get back to you.</p>
-          <div className="mt-5 flex flex-wrap justify-center gap-3">
-            <WhatsAppButton message={WA_MESSAGES.faq} variant="green" />
-            <Link href="/book" className="rounded-lg border border-slate-200 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 transition-colors">
-              Book a session →
-            </Link>
           </div>
         </div>
       </section>
+
+      <CtaCard
+        title={<>Still have a <em>question?</em></>}
+        body="Drop a message on WhatsApp and I'll get back to you."
+        secondary={<WhatsAppButton message={WA_MESSAGES.faq} variant="green" />}
+      />
     </main>
   )
 }

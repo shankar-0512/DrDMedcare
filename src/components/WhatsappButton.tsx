@@ -40,7 +40,7 @@ export default function WhatsAppButton({
         href={href}
         target="_blank"
         rel="noreferrer"
-        className={`inline-flex items-center gap-2 rounded-lg bg-green-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:bg-green-700 transition-colors ${className}`}
+        className={`btn bg-whatsapp text-white hover:bg-whatsapp-deep ${className}`}
       >
         {WA_ICON}
         {label}
@@ -53,9 +53,9 @@ export default function WhatsAppButton({
       href={href}
       target="_blank"
       rel="noreferrer"
-      className={`inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-5 py-3 text-sm font-medium text-slate-700 shadow-sm hover:bg-slate-50 transition-colors ${className}`}
+      className={`btn btn-ghost text-dark hover:text-paper ${className}`}
     >
-      <span className="text-green-500">{WA_ICON}</span>
+      <span>{WA_ICON}</span>
       {label}
     </a>
   )

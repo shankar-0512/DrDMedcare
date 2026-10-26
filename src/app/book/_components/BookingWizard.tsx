@@ -64,8 +64,8 @@ function StepIndicator({ current }: { current: 1 | 2 | 3 }) {
                   done
                     ? 'border-[rgb(var(--color-primary))] bg-[rgb(var(--color-primary))] text-white'
                     : active
-                    ? 'border-[rgb(var(--color-primary))] bg-white text-[rgb(var(--color-primary))] shadow-md'
-                    : 'border-slate-200 bg-white text-slate-400',
+                    ? 'border-[rgb(var(--color-primary))] bg-brand text-[rgb(var(--color-primary))] shadow-md'
+                    : 'border-slate-200 bg-paper text-slate-400',
                 ].join(' ')}
               >
                 {done ? (
@@ -89,7 +89,7 @@ function StepIndicator({ current }: { current: 1 | 2 | 3 }) {
             {/* Connector line */}
             {i < STEPS.length - 1 && (
               <div className="mx-2 mb-5 h-0.5 w-16 sm:w-24 rounded-full transition-all duration-300"
-                style={{ background: s.number < current ? 'rgb(var(--color-primary))' : '#e2e8f0' }}
+                style={{ background: s.number < current ? 'rgb(var(--color-primary))' : 'rgb(var(--c-second-soft))' }}
               />
             )}
           </div>
@@ -180,7 +180,7 @@ export default function BookingWizard() {
   if (loading) {
     return (
       <div className="mx-auto max-w-2xl px-4 py-16">
-        <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+        <div className="rounded-[2rem] border-2 border-dark/10 bg-paper p-8">
           <div className="flex flex-col items-center gap-3">
             <div className="h-9 w-9 animate-spin rounded-full border-2 border-slate-200 border-t-[rgb(var(--color-primary))]" />
             <p className="text-sm text-slate-400">Loading…</p>
@@ -191,30 +191,13 @@ export default function BookingWizard() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-10">
-
-      {/* Page title */}
-      <div className="mb-8 text-center">
-        <div
-          className="inline-flex items-center gap-2 rounded-full border px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[rgb(var(--color-primary))]"
-          style={{ background: 'rgb(var(--color-primary-soft))', borderColor: 'rgb(var(--color-primary-mid))' }}
-        >
-          <span className="h-1.5 w-1.5 rounded-full animate-pulse" style={{ background: 'rgb(var(--color-primary))' }} />
-          Book a session
-        </div>
-        <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900">
-          Let's get you booked
-        </h1>
-        <p className="mt-1.5 text-sm text-slate-500">
-          Takes less than 2 minutes. Confirmation after payment proof on WhatsApp.
-        </p>
-      </div>
+    <div className="mx-auto max-w-3xl px-4 py-12">
 
       {/* Step indicator */}
       <StepIndicator current={step} />
 
       {/* Service type pill selector */}
-      <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div className="mt-8 rounded-[2rem] border-2 border-dark/10 bg-paper p-6 sm:p-8">
         <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">
           Service type
         </p>
@@ -255,7 +238,7 @@ export default function BookingWizard() {
       )}
 
       {/* Step content */}
-      <div className="mt-4 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+      <div className="mt-4 rounded-[2rem] border-2 border-dark/10 bg-paper p-6 sm:p-8">
         {step === 1 && (
           <ServiceStep
             plans={plans}

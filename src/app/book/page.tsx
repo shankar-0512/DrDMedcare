@@ -10,13 +10,21 @@ export const metadata: Metadata = {
   },
 }
 import BookingWizard from './_components/BookingWizard'
+import { PageHero } from '@/components/ui'
 
 export default function BookPage() {
   return (
-    <div className="mx-auto max-w-5xl px-4 py-10">
-      <Suspense>
-        <BookingWizard />
-      </Suspense>
-    </div>
+    <main>
+      <PageHero
+        eyebrow="Book a session"
+        title={<>Let&rsquo;s get you <em>booked.</em></>}
+        sub="Takes less than 2 minutes. Confirmation after payment proof on WhatsApp."
+      />
+      <div className="bg-paper">
+        <Suspense>
+          <BookingWizard />
+        </Suspense>
+      </div>
+    </main>
   )
 }

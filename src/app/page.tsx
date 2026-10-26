@@ -1,5 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
+import Reveal from '@/components/Reveal'
+import { waLink, WA_MESSAGES } from '@/components/WhatsappButton'
+import { createSupabaseServer } from '@/lib/supabase/server'
+
+export const revalidate = 300
 
 export const metadata: Metadata = {
   title: "Dr D's MedCare - Medication Counselling by a Clinical Pharmacist",
@@ -9,9 +15,6 @@ export const metadata: Metadata = {
     languages: { 'en-IN': '/' },
   },
 }
-import Image from 'next/image'
-import HomeServiceTabs from '@/components/HomeServiceTabs'
-import WhatsAppButton, { WA_MESSAGES } from '@/components/WhatsappButton'
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -42,7 +45,7 @@ const jsonLd = {
       credentialCategory: 'Pharm D',
     },
     knowsLanguage: ['English', 'Tamil', 'Telugu', 'Hindi'],
-    worksFor: { '@name': "Dr D's MedCare" },
+    worksFor: { '@type': 'Organization', name: "Dr D's MedCare" },
   },
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
@@ -58,137 +61,278 @@ const jsonLd = {
   },
 };
 
-const TRUST_BADGES = [
-  { icon: '🎓', label: 'Pharm D Qualified' },
-  { icon: '🇮🇳', label: 'India Only' },
-  { icon: '💬', label: 'Personalised Sessions' },
+type Service = { id: number; slug: string; title: string; short_desc: string; base_price_inr: number | null }
+
+const FALLBACK_SERVICES: Service[] = [
+  { id: 1, slug: 'prescription-counselling', title: 'Prescription counselling', short_desc: 'Understand what each medicine is for and how to take it safely.', base_price_inr: null },
+  { id: 2, slug: 'adherence-planning', title: 'Medication adherence planning', short_desc: 'A simple timing plan to help you take medicines correctly and consistently.', base_price_inr: null },
+  { id: 3, slug: 'elderly-polypharmacy', title: 'Elderly & polypharmacy care', short_desc: 'A careful review for seniors taking many medicines together.', base_price_inr: null },
+  { id: 7, slug: 'disease-awareness', title: 'Disease awareness counselling', short_desc: 'What your diagnosis means, and how your medicines work to manage it.', base_price_inr: null },
+  { id: 8, slug: 'device-usage', title: 'Medication device counselling', short_desc: 'Inhaler, insulin pen, BP monitor or glucometer, step by step.', base_price_inr: null },
+  { id: 9, slug: 'side-effects', title: 'Side-effects counselling', short_desc: 'Recognise, manage and report side effects safely.', base_price_inr: null },
 ]
 
-const STATS = [
-  { value: '500+', label: 'Patients Counselled' },
-  { value: '3', label: 'Session Plans' },
-  { value: '8+', label: 'Specialisations' },
+async function getServices(): Promise<Service[]> {
+  try {
+    const supabase = createSupabaseServer()
+    const { data, error } = await supabase
+      .from('service_types')
+      .select('id,slug,title,short_desc,base_price_inr')
+      .eq('is_active', true)
+      .order('sort_order', { ascending: true })
+    if (error || !data || data.length === 0) return FALLBACK_SERVICES
+    return data as Service[]
+  } catch {
+    return FALLBACK_SERVICES
+  }
+}
+
+const STEPS = [
+  { n: '01', title: 'Share your prescription', body: 'Book a slot, then send your prescription on WhatsApp or upload it while booking. Nothing else to prepare.' },
+  { n: '02', title: 'Talk it through', body: 'A focused 15 or 30 minute call, in Tamil, English, Telugu or Hindi. Ask everything, at your pace.' },
+  { n: '03', title: 'Leave with clarity', body: 'You know what each medicine is for, how to take it, what to avoid, and when to go back to your doctor.' },
 ]
 
-export default function HomePage() {
+const MARQUEE = ['Prescription counselling', 'Side effects', 'Drug interactions', 'Medication routines', 'Inhaler & insulin pen training', 'Elderly care', 'Disease awareness']
+
+function Capsule({ className = '', style }: { className?: string; style?: React.CSSProperties }) {
   return (
-    <main className="relative overflow-hidden">
+    <div className={`absolute overflow-hidden rounded-full ${className}`} style={style} aria-hidden>
+      <div className="absolute inset-x-0 top-0 h-1/2 bg-panel" />
+      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-brand-deep" />
+    </div>
+  )
+}
+
+export default async function HomePage() {
+  const services = await getServices()
+
+  return (
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 -right-32 h-[480px] w-[480px] rounded-full opacity-[0.07]" style={{ background: 'rgb(var(--color-primary))' }} />
-        <div className="absolute top-16 right-64 h-8 w-8 rounded-full bg-amber-300 opacity-40" />
-        <div className="absolute top-[55%] -left-20 h-72 w-72 rounded-full opacity-[0.05]" style={{ background: 'rgb(var(--color-primary))' }} />
-        <div className="absolute top-[75%] -right-10 h-48 w-48 rounded-full opacity-[0.04]" style={{ background: 'rgb(var(--color-primary))' }} />
-      </div>
-
-      {/* Hero */}
-      <section className="relative">
-        <div className="relative mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="grid items-center gap-12 lg:grid-cols-[1fr_420px]">
-
-            <div>
-              <div
-                className="inline-flex items-center gap-2 rounded-full border px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[rgb(var(--color-primary))]"
-                style={{ background: 'rgb(var(--color-primary-soft))', borderColor: 'rgb(var(--color-primary-mid))' }}
-              >
-                <span className="h-1.5 w-1.5 rounded-full bg-[rgb(var(--color-primary))] animate-pulse" />
-                Medication Education · India
-              </div>
-
-              <h1 className="mt-5 text-4xl font-bold leading-[1.15] tracking-tight text-slate-900 lg:text-5xl">
-                Understand your{' '}
-                <span className="relative inline-block" style={{ color: 'rgb(var(--color-primary))' }}>
-                  medicines
-                  <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" preserveAspectRatio="none" style={{ height: '6px' }}>
-                    <path d="M0,6 Q50,0 100,5 Q150,10 200,4" fill="none" stroke="#d97706" strokeWidth="2.5" strokeLinecap="round" />
-                  </svg>
-                </span>
-                {' '}before you take them
-              </h1>
-
-              <p className="mt-5 max-w-lg text-base leading-relaxed text-slate-600">
-                I help patients and caregivers understand prescriptions, spot side effects,
-                and know when to go back to their doctor - all in a single focused session.
-              </p>
-
-              <p className="mt-4 text-sm italic text-slate-400">
-                "Patient counselling - the missing pill in Indian healthcare."
-              </p>
-
-              <div className="mt-8 flex flex-wrap items-center gap-3">
-                <Link
-                  href="/book"
-                  className="rounded-lg px-6 py-3 text-sm font-semibold text-white shadow-md transition-all hover:opacity-90 hover:shadow-lg"
-                  style={{ background: 'rgb(var(--color-primary))' }}
-                >
-                  Book a session →
-                </Link>
-                <WhatsAppButton message={WA_MESSAGES.booking} />
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                {TRUST_BADGES.map((b) => (
-                  <div key={b.label} className="flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-600">
-                    <span>{b.icon}</span>
-                    {b.label}
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-10 flex gap-8 border-t border-slate-100 pt-6">
-                {STATS.map((s) => (
-                  <div key={s.label}>
-                    <div className="text-2xl font-bold" style={{ color: 'rgb(var(--color-primary))' }}>{s.value}</div>
-                    <div className="mt-0.5 text-xs text-slate-500">{s.label}</div>
-                  </div>
-                ))}
-              </div>
+      {/* ───────── Hero ───────── */}
+      <section className="relative -mt-[84px] overflow-hidden bg-hero pt-[84px]">
+        <div className="mx-auto grid max-w-[1280px] items-center gap-6 px-6 pb-20 pt-14 lg:grid-cols-[1.12fr_0.88fr] lg:gap-10 lg:px-10 lg:pb-28 lg:pt-20">
+          <div>
+            <p className="chip rise rise-1"><span className="dot" />Clinical pharmacist &middot; Chennai</p>
+            <h1 className="display rise rise-2 mt-7 text-[clamp(2.5rem,4.9vw,4.7rem)] text-dark">
+              Understand your medicines <em className="!text-dark-2">before</em> you take them.
+            </h1>
+            <p className="rise rise-3 mt-8 max-w-[33rem] text-[1.14rem] leading-[1.65] text-dark/80">
+              A private one-to-one session with Dr Priyanka Deventhiran to explain your prescription, spot side effects, and know when to go back to your doctor.
+            </p>
+            <div className="rise rise-4 mt-10 flex flex-wrap items-center gap-4">
+              <Link href="/book" className="btn btn-dark">
+                Book a session <span className="arr" aria-hidden>→</span>
+              </Link>
+              <a href={waLink(WA_MESSAGES.booking)} target="_blank" rel="noreferrer" className="btn btn-ghost text-dark hover:text-paper">
+                WhatsApp
+              </a>
             </div>
-
-            <div className="flex justify-center lg:justify-end">
-              <div className="relative">
-                <div className="absolute -bottom-4 -right-4 h-full w-full rounded-2xl" style={{ background: 'rgb(var(--color-primary))', opacity: 0.12 }} />
-                <div className="absolute -top-4 -left-4 grid grid-cols-4 gap-1.5 opacity-40">
-                  {Array.from({ length: 16 }).map((_, i) => (
-                    <div key={i} className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-                  ))}
-                </div>
-                <div className="relative z-10 h-[420px] w-[320px] overflow-hidden rounded-2xl border border-slate-200 shadow-xl">
-                  <Image src="/priyanka.jpg" alt="Dr Priyanka Deventhiran" fill className="object-cover object-top" priority />
-                  <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/60 bg-white/90 px-4 py-3 shadow-lg backdrop-blur-sm">
-                    <p className="text-sm font-semibold text-slate-900">Dr Priyanka Deventhiran</p>
-                    <p className="mt-0.5 text-xs text-slate-500">Pharm D · Medication Counsellor</p>
-                    <div className="mt-2 flex items-center gap-1">
-                      {[1,2,3,4,5].map((s) => (
-                        <svg key={s} className="h-3 w-3 fill-amber-400" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-                        </svg>
-                      ))}
-                      <span className="ml-1 text-xs text-slate-500">5.0 · Verified</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            <p className="rise rise-4 mt-9 text-[0.85rem] font-semibold text-dark/70">
+              Pharm D &nbsp;&middot;&nbsp; Tamil &nbsp;&middot;&nbsp; English &nbsp;&middot;&nbsp; Telugu &nbsp;&middot;&nbsp; Hindi
+            </p>
           </div>
-        </div>
 
-        <div className="pointer-events-none">
-          <svg viewBox="0 0 1440 40" className="w-full" preserveAspectRatio="none" style={{ height: '40px', display: 'block' }}>
-            <path d="M0,20 C360,40 1080,0 1440,20 L1440,40 L0,40 Z" fill="rgb(241 245 249)" />
-          </svg>
+          {/* capsule composition */}
+          <div className="rise rise-3 relative mx-auto h-[560px] w-full max-w-[520px] lg:h-[640px]">
+            <Capsule className="right-[2%] top-[4%] h-[470px] w-[210px] rotate-[16deg] lg:h-[540px] lg:w-[240px]" />
+            <Capsule className="bottom-[2%] left-[4%] h-[150px] w-[68px] -rotate-[28deg]" />
+            <div className="absolute left-1/2 top-1/2 h-[500px] w-[300px] -translate-x-[54%] -translate-y-1/2 overflow-hidden rounded-full border-[7px] border-brand bg-paper shadow-[0_30px_60px_-24px_rgb(var(--c-dark)/0.55)] lg:h-[580px] lg:w-[340px]">
+              <Image
+                src="/photos/hero-corridor.jpg"
+                alt="Dr Priyanka Deventhiran, clinical pharmacist"
+                fill
+                priority
+                sizes="340px"
+                className="object-cover object-[50%_14%]"
+              />
+            </div>
+            <p className="chip floaty absolute left-[-2%] top-[14%] shadow-lg" style={{ ['--r' as string]: '-4deg' }}>Before or after food?</p>
+            <p className="chip floaty absolute right-[-2%] top-[46%] shadow-lg" style={{ ['--r' as string]: '3deg', animationDelay: '1.2s' }}>Safe with my other tablets?</p>
+            <p className="chip floaty absolute bottom-[10%] left-[2%] shadow-lg" style={{ ['--r' as string]: '-2deg', animationDelay: '2.2s' }}>Is this side effect normal?</p>
+          </div>
         </div>
       </section>
 
-      {/* Services */}
-      <div id="how-i-can-help" className="relative scroll-mt-36">
-        <HomeServiceTabs />
+      {/* marquee */}
+      <div className="overflow-hidden bg-panel py-4 text-brand" aria-hidden>
+        <div className="marquee-track">
+          {[0, 1].map((k) => (
+            <div key={k} className="flex shrink-0 items-center">
+              {MARQUEE.map((m) => (
+                <span key={m + k} className="flex items-center whitespace-nowrap text-[1.05rem] font-semibold">
+                  <span className="px-7">{m}</span>
+                  <span className="h-2.5 w-5 rounded-full bg-brand-deep" />
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* ───────── The gap ───────── */}
+      <section className="bg-paper">
+        <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-6 py-24 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20 lg:px-10 lg:py-32">
+          <Reveal>
+            <div className="mx-auto grid aspect-square w-[min(300px,70vw)] place-items-center rounded-full bg-brand text-center text-dark">
+              <div>
+                <p className="display text-[7.5rem] leading-none">5</p>
+                <p className="-mt-1 text-[0.82rem] font-bold uppercase tracking-[0.14em]">minutes<br />with your doctor</p>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark-2">The gap</p>
+            <p className="display mt-6 text-[clamp(1.9rem,3.7vw,3.3rem)] text-dark">
+              There is no time to explain every medicine, every interaction, every side effect. <em>That&rsquo;s the gap I work in.</em>
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ───────── How it works ───────── */}
+      <section className="bg-second-soft">
+        <div className="mx-auto max-w-[1280px] px-6 py-24 lg:px-10 lg:py-32">
+          <Reveal>
+            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark-2">How it works</p>
+            <h2 className="display mt-6 max-w-3xl text-[clamp(2.2rem,4.6vw,4rem)] text-dark">
+              One focused conversation. <em>Nothing rushed.</em>
+            </h2>
+          </Reveal>
+          <div className="mt-14 grid gap-5 md:grid-cols-3">
+            {STEPS.map((st, i) => (
+              <Reveal key={st.n} delay={i * 100}>
+                <div className="h-full rounded-[2rem] bg-paper p-8 shadow-[0_1px_0_rgb(var(--c-dark)/0.06)]">
+                  <span className="display grid h-14 w-14 place-items-center rounded-full bg-brand text-[1.5rem] text-dark">{st.n.replace('0', '')}</span>
+                  <h3 className="display mt-7 text-[1.65rem] text-dark">{st.title}</h3>
+                  <p className="mt-3 text-[1rem] leading-[1.65] text-subtle">{st.body}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───────── Services ───────── */}
+      <section id="how-i-can-help" className="scroll-mt-24 bg-paper">
+        <div className="mx-auto max-w-[1280px] px-6 py-24 lg:px-10 lg:py-32">
+          <Reveal className="max-w-2xl">
+            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark-2">What I offer</p>
+            <h2 className="display mt-6 text-[clamp(2.4rem,4.8vw,4.2rem)] text-dark">
+              How I can <em>help.</em>
+            </h2>
+            <p className="mt-6 max-w-lg text-[1.05rem] leading-[1.65] text-subtle">
+              Every session is education and counselling. I never prescribe, diagnose, or change a dose.
+            </p>
+          </Reveal>
+
+          <ul className="mt-14 grid gap-4 md:grid-cols-2">
+            {services.map((s, i) => (
+              <li key={s.id}>
+                <Link
+                  href={`/book?type=${encodeURIComponent(s.slug)}`}
+                  className="group flex h-full items-start gap-5 rounded-[2rem] border-2 border-dark/10 bg-paper p-7 transition-all duration-300 hover:-translate-y-1 hover:border-dark hover:bg-hero sm:p-8"
+                >
+                  <span className="display grid h-12 w-12 shrink-0 place-items-center rounded-full bg-brand text-[1.15rem] text-dark transition-colors group-hover:bg-dark group-hover:text-brand">{i + 1}</span>
+                  <div className="flex-1">
+                    <h3 className="display text-[1.5rem] leading-[1.1] text-dark">{s.title}</h3>
+                    <p className="mt-2 text-[0.97rem] leading-[1.6] text-subtle group-hover:text-dark/80">{s.short_desc}</p>
+                    <div className="mt-5 flex items-center justify-between">
+                      {s.base_price_inr ? (
+                        <span className="rounded-full bg-brand-soft px-3.5 py-1.5 text-[0.82rem] font-bold text-dark group-hover:bg-paper">from &#8377;{s.base_price_inr}</span>
+                      ) : <span />}
+                      <span className="arr-c bg-dark text-brand transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* ───────── Routine ───────── */}
+      <section className="on-dark bg-panel text-paper">
+        <div className="mx-auto grid max-w-[1280px] items-center gap-14 px-6 py-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:px-10 lg:py-32">
+          <Reveal>
+            <div className="relative aspect-[3/2] overflow-hidden rounded-full border-[6px] border-brand">
+              <Image
+                src="/photos/pill-organiser.jpg"
+                alt="Hands sorting daily tablets into a weekly pill organiser"
+                fill
+                sizes="(min-width:1024px) 640px, 92vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-brand">Adherence</p>
+            <h2 className="display mt-6 text-[clamp(2.2rem,4.2vw,3.6rem)] text-paper">
+              The medicine is rarely the problem. <em>The routine is.</em>
+            </h2>
+            <p className="mt-7 max-w-lg text-[1.05rem] leading-[1.7] text-paper/75">
+              Doses get missed, timings get mixed up, and tablets get stopped the moment someone feels better. Together we build a simple routine around your day, so the treatment can actually work.
+            </p>
+            <Link href="/book?type=adherence-planning" className="btn btn-brand mt-9">
+              Plan my routine <span className="arr" aria-hidden>→</span>
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ───────── Meet Priyanka ───────── */}
+      <section className="bg-hero">
+        <div className="mx-auto grid max-w-[1280px] items-center gap-14 px-6 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-10 lg:py-32">
+          <Reveal>
+            <div className="relative mx-auto aspect-[3/4.4] w-full max-w-[360px] overflow-hidden rounded-full border-[7px] border-brand bg-paper">
+              <Image
+                src="/photos/counselling-counter.jpg"
+                alt="Dr Priyanka explaining a medicine to a patient"
+                fill
+                sizes="360px"
+                className="object-cover object-[62%_30%]"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <p className="text-[0.78rem] font-bold uppercase tracking-[0.16em] text-dark-2">Meet Priyanka</p>
+            <h2 className="display mt-6 text-[clamp(2.1rem,4vw,3.5rem)] text-dark">
+              After years in a hospital, I kept seeing patients leave with prescriptions <em className="!text-dark-2">they didn&rsquo;t fully understand.</em>
+            </h2>
+            <p className="mt-7 max-w-xl text-[1.05rem] leading-[1.7] text-dark/80">
+              I&rsquo;m a clinical pharmacist from Chennai with a Pharm D from Tamil Nadu Dr. M.G.R. Medical University. Dr D&rsquo;s MedCare exists so that no one has to take a medicine they don&rsquo;t understand.
+            </p>
+            <Link href="/about" className="btn btn-dark mt-9">
+              Read my story <span className="arr" aria-hidden>→</span>
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ───────── Closing CTA ───────── */}
+      <section className="bg-paper px-3 py-3 sm:px-5 sm:py-5">
+        <div className="on-dark mx-auto max-w-[1280px] rounded-[2.5rem] bg-panel px-6 py-20 text-center text-paper lg:py-28">
+          <Reveal>
+            <h2 className="display mx-auto max-w-3xl text-[clamp(2.4rem,5.4vw,4.8rem)] text-paper">
+              Ready to understand <em>your medicines?</em>
+            </h2>
+            <p className="mx-auto mt-6 max-w-md text-[1.05rem] text-paper/70">Booking takes under two minutes.</p>
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+              <Link href="/book" className="btn btn-brand">
+                Book a session <span className="arr" aria-hidden>→</span>
+              </Link>
+              <a href={waLink(WA_MESSAGES.general)} target="_blank" rel="noreferrer" className="btn btn-ghost text-paper hover:!bg-paper hover:!text-dark">
+                Ask a question first
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
     </main>
   )
 }

@@ -129,7 +129,7 @@ export default function DetailsStep(props: {
     window.location.href = `/book/success?${params.toString()}`
   }
 
-  const inputClass = 'w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-[rgb(var(--color-primary))] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-primary))]/10 transition-all'
+  const inputClass = 'w-full rounded-2xl border-2 border-dark/15 bg-brand-soft px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-dark focus:bg-paper focus:outline-none focus:ring-4 focus:ring-brand/60 transition-all'
 
   return (
     <div className="space-y-5">
@@ -166,7 +166,7 @@ export default function DetailsStep(props: {
       {isPrescription && (
         <div className="rounded-xl border border-amber-200 bg-amber-50 p-4">
           <div className="flex items-start gap-3">
-            <span className="text-amber-500 text-lg shrink-0">📋</span>
+            <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-amber-500 text-[11px] font-bold text-white">Rx</span>
             <div>
               <p className="text-sm font-semibold text-amber-800">Prescription required</p>
               <p className="mt-1 text-sm text-amber-700 leading-relaxed">
@@ -186,7 +186,7 @@ export default function DetailsStep(props: {
 
           {/* Full name */}
           <div className="sm:col-span-2">
-            <label className="mb-1 block text-xs font-medium text-slate-500">
+            <label className="mb-1.5 block text-xs font-bold text-slate-600">
               Full name <span className="text-red-400">*</span>
             </label>
             <input
@@ -199,7 +199,7 @@ export default function DetailsStep(props: {
 
           {/* Age */}
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-500">
+            <label className="mb-1.5 block text-xs font-bold text-slate-600">
               Age <span className="text-red-400">*</span>
             </label>
             <input
@@ -215,7 +215,7 @@ export default function DetailsStep(props: {
 
           {/* Gender */}
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-500">
+            <label className="mb-1.5 block text-xs font-bold text-slate-600">
               Gender <span className="text-red-400">*</span>
             </label>
             <div className="flex gap-3 pt-1">
@@ -247,7 +247,7 @@ export default function DetailsStep(props: {
 
           {/* Phone */}
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-500">
+            <label className="mb-1.5 block text-xs font-bold text-slate-600">
               Phone number <span className="text-red-400">*</span>
             </label>
             <input
@@ -267,7 +267,7 @@ export default function DetailsStep(props: {
 
           {/* Email */}
           <div>
-            <label className="mb-1 block text-xs font-medium text-slate-500">
+            <label className="mb-1.5 block text-xs font-bold text-slate-600">
               Email address <span className="text-slate-300">(optional)</span>
             </label>
             <input
@@ -281,7 +281,7 @@ export default function DetailsStep(props: {
 
           {/* Address */}
           <div className="sm:col-span-2">
-            <label className="mb-1 block text-xs font-medium text-slate-500">
+            <label className="mb-1.5 block text-xs font-bold text-slate-600">
               Address <span className="text-red-400">*</span>
             </label>
             <textarea
@@ -295,7 +295,7 @@ export default function DetailsStep(props: {
 
           {/* Language */}
           <div className="sm:col-span-2">
-            <label className="mb-1 block text-xs font-medium text-slate-500">
+            <label className="mb-1.5 block text-xs font-bold text-slate-600">
               Preferred session language <span className="text-red-400">*</span>
             </label>
             <select
@@ -363,7 +363,7 @@ export default function DetailsStep(props: {
         <button
           type="button"
           onClick={props.onBack}
-          className="w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-all"
+          className="w-full rounded-full border-2 border-dark/25 bg-paper px-4 py-3.5 text-sm font-bold text-dark hover:border-dark hover:bg-brand transition-all"
         >
           ← Back
         </button>
@@ -371,7 +371,7 @@ export default function DetailsStep(props: {
           type="button"
           onClick={submit}
           disabled={loading}
-          className="w-full rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-md transition-all hover:opacity-90 hover:shadow-lg disabled:opacity-50"
+          className="w-full rounded-full px-4 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-dark-2 disabled:opacity-50"
           style={{ background: 'rgb(var(--color-primary))' }}
         >
           {loading

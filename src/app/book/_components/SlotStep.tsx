@@ -103,7 +103,7 @@ export default function SlotStep(props: {
 
       {/* Info note */}
       <div className="flex items-start gap-2.5 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3">
-        <span className="mt-0.5 text-amber-500">ℹ️</span>
+        <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-amber-500 text-[11px] font-bold text-white">i</span>
         <p className="text-sm text-amber-800 leading-relaxed">
           Select a date and available slot. Your session will be confirmed after payment proof is shared on WhatsApp.
         </p>
@@ -140,7 +140,7 @@ export default function SlotStep(props: {
                   type="button"
                   onClick={() => setSelectedDate(date)}
                   className={[
-                    'flex shrink-0 flex-col items-center rounded-xl border-2 px-3 py-2 transition-all duration-200 min-w-[56px]',
+                    'flex shrink-0 flex-col items-center rounded-[1.5rem] border-2 px-3 py-2.5 transition-all duration-200 min-w-[60px]',
                     isSelected
                       ? 'text-white border-transparent shadow-md'
                       : 'border-slate-200 bg-white text-slate-600 hover:border-slate-300',
@@ -198,7 +198,7 @@ export default function SlotStep(props: {
                   type="button"
                   onClick={() => setSelectedSlot(slot)}
                   className={[
-                    'rounded-xl border-2 px-3 py-2.5 text-sm font-semibold transition-all duration-200',
+                    'rounded-full border-2 px-3 py-2.5 text-sm font-bold transition-all duration-200',
                     isSelected
                       ? 'text-white border-transparent shadow-md'
                       : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300',
@@ -237,7 +237,7 @@ export default function SlotStep(props: {
         <button
           type="button"
           onClick={props.onBack}
-          className="w-full rounded-xl border-2 border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 hover:border-slate-300 hover:bg-slate-50 transition-all"
+          className="w-full rounded-full border-2 border-dark/25 bg-paper px-4 py-3.5 text-sm font-bold text-dark hover:border-dark hover:bg-brand transition-all"
         >
           ← Back
         </button>
@@ -245,7 +245,7 @@ export default function SlotStep(props: {
           type="button"
           onClick={handleContinue}
           disabled={!selectedSlot}
-          className="w-full rounded-xl px-4 py-3 text-sm font-semibold text-white shadow-md transition-all hover:opacity-90 hover:shadow-lg disabled:opacity-40"
+          className="w-full rounded-full px-4 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-0.5 hover:bg-dark-2 disabled:opacity-40"
           style={{ background: 'rgb(var(--color-primary))' }}
         >
           Continue →

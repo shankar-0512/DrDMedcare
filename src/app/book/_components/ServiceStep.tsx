@@ -16,7 +16,7 @@ type ServiceType = {
 
 const PLAN_META: Record<string, { icon: string; tag?: string; tagColor?: string }> = {
   quick_15: { icon: '⚡' },
-  full_30:  { icon: '🎯', tag: 'Most popular', tagColor: 'bg-amber-50 text-amber-700 border-amber-200' },
+  full_30:  { icon: '🎯', tag: 'Most popular', tagColor: 'bg-brand text-dark border-brand-deep' },
   monthly:  { icon: '📅', tag: 'Best value', tagColor: 'brand' },
 }
 
@@ -63,7 +63,7 @@ export default function ServiceStep(props: {
             type="button"
             onClick={() => props.onSelect(p)}
             className={[
-              'group w-full rounded-xl border-2 p-4 text-left transition-all duration-200',
+              'group w-full rounded-[1.75rem] border-2 p-5 text-left transition-all duration-200',
               isSelected
                 ? 'border-[rgb(var(--color-primary))] shadow-md'
                 : 'border-slate-200 bg-white hover:border-slate-300 hover:shadow-sm',
@@ -75,10 +75,10 @@ export default function ServiceStep(props: {
               {/* Left */}
               <div className="flex items-center gap-3">
                 <div className={[
-                  'flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-xl transition-colors',
-                  isSelected ? 'bg-[rgb(var(--color-primary-soft))]' : 'bg-slate-100 group-hover:bg-slate-200',
+                  'flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-base font-extrabold text-dark transition-colors',
+                  isSelected ? 'bg-brand' : 'bg-brand-soft group-hover:bg-brand',
                 ].join(' ')}>
-                  {meta.icon}
+                  {p.duration_minutes}
                 </div>
 
                 <div>

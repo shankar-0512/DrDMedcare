@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import LegalLayout from '@/components/LegalLayout'
 
 export const metadata: Metadata = {
   alternates: {
@@ -10,15 +10,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-16">
-
-      <div className="mb-10">
-        <p className="text-xs font-semibold uppercase tracking-widest text-[rgb(var(--color-primary))] mb-2">Legal</p>
-        <h1 className="text-3xl font-bold tracking-tight text-slate-900">Privacy Policy</h1>
-        <p className="mt-2 text-sm text-slate-400">Last updated: 1 March 2026</p>
-      </div>
-
-      <div className="space-y-8 text-sm leading-relaxed text-slate-700">
+    <LegalLayout current="privacy" updated="1 March 2026">
 
         <section>
           <p>
@@ -27,7 +19,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">1. Information we collect</h2>
+          <h2>1. Information we collect</h2>
           <p>When you book a session, we collect:</p>
           <ul className="mt-2 space-y-1 list-disc list-inside text-slate-600">
             <li>Full name, age, and gender</li>
@@ -44,7 +36,7 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">2. How we use your information</h2>
+          <h2>2. How we use your information</h2>
           <p>We use your information solely to:</p>
           <ul className="mt-2 space-y-1 list-disc list-inside text-slate-600">
             <li>Process and confirm your booking</li>
@@ -59,42 +51,42 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">3. Sensitive personal data</h2>
+          <h2>3. Sensitive personal data</h2>
           <p>
             Health-related information you share during a session is considered Sensitive Personal Data or Information (SPDI) under Indian law. We handle such information with strict confidentiality and use it only for the purpose of your session. It is not disclosed to any third party without your explicit consent, except as required by law.
           </p>
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">4. Payment information</h2>
+          <h2>4. Payment information</h2>
           <p>
             Payments are made directly via UPI. We collect only the UPI transaction reference number for verification purposes. We do not collect or store your bank account details, UPI PIN, or any other payment credentials.
           </p>
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">5. WhatsApp and email communication</h2>
+          <h2>5. WhatsApp and email communication</h2>
           <p>
             When you communicate with us via WhatsApp or email, those communications may be retained for the purposes of confirming bookings, maintaining session records, and resolving disputes. WhatsApp communications are subject to WhatsApp's own privacy policy. We recommend you do not share sensitive financial information over WhatsApp beyond what is necessary for payment verification.
           </p>
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">6. Data storage and security</h2>
+          <h2>6. Data storage and security</h2>
           <p>
             Your booking information is stored securely using Supabase, a cloud database provider. We implement reasonable security practices as required under Indian law to protect your personal data from unauthorised access, disclosure, or loss. However, no method of electronic storage is 100% secure and we cannot guarantee absolute security.
           </p>
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">7. Data retention</h2>
+          <h2>7. Data retention</h2>
           <p>
             We retain your booking and session records for a period of three years from the date of your last session, after which they are securely deleted. You may request earlier deletion of your data subject to any applicable legal retention requirements.
           </p>
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">8. Your rights</h2>
+          <h2>8. Your rights</h2>
           <p>You have the right to:</p>
           <ul className="mt-2 space-y-1 list-disc list-inside text-slate-600">
             <li>Access the personal information we hold about you</li>
@@ -108,34 +100,27 @@ export default function PrivacyPage() {
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">9. Cookies</h2>
+          <h2>9. Cookies</h2>
           <p>
             Our website uses only essential cookies required for the booking system to function. We do not use tracking, advertising, or analytics cookies.
           </p>
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">10. Changes to this policy</h2>
+          <h2>10. Changes to this policy</h2>
           <p>
             We may update this policy from time to time. The date at the top of this page reflects when it was last updated. Continued use of our services after any changes constitutes your acceptance of the updated policy.
           </p>
         </section>
 
         <section>
-          <h2 className="text-base font-bold text-slate-900 mb-3">11. Contact</h2>
+          <h2>11. Contact</h2>
           <p>
             For any privacy-related queries, please contact Dr Priyanka Deventhiran via WhatsApp at +91 90807 09332 or by email. We will respond within 7 working days.
           </p>
         </section>
 
-      </div>
-
-      <div className="mt-12 flex gap-4 text-xs text-slate-400 border-t border-slate-200 pt-6">
-        <Link href="/legal/disclaimer" className="hover:text-slate-600 transition-colors">Disclaimer</Link>
-        <Link href="/legal/privacy" className="hover:text-slate-600 transition-colors">Privacy Policy</Link>
-        <Link href="/legal/terms" className="hover:text-slate-600 transition-colors">Terms of Service</Link>
-      </div>
-
-    </main>
+      
+    </LegalLayout>
   )
 }
