@@ -7,8 +7,8 @@
    ══════════════════════════════════════════════════════════════ */
 :root {
   /* Secondary: gold — rings, rules, badges, underlines, buttons on dark */
-  --c-brand:        210 172 82;    /* #d2ac52 */
-  --c-brand-deep:   168 134 52;
+  --c-brand:        216 182 95;    /* #d8b65f */
+  --c-brand-deep:   180 146 66;
   --c-brand-soft:   226 243 240;   /* pale mint: badges, summary boxes, soft panels */
 
   /* Surfaces */
