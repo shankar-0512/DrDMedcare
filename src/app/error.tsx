@@ -11,7 +11,7 @@ export default function GlobalError({
   return (
     <main className="relative -mt-[84px] bg-hero pt-[84px]">
       <div className="mx-auto flex min-h-[78vh] max-w-2xl flex-col items-center justify-center px-6 py-24 text-center">
-        <span className="display grid h-20 w-20 place-items-center rounded-full bg-dark text-[2.4rem] text-brand">!</span>
+        <span className="display grid h-20 w-20 place-items-center rounded-full bg-teal text-[2.4rem] text-brand">!</span>
         <h1 className="display mt-7 text-[2.4rem] text-dark">Something went wrong</h1>
         <p className="mt-4 max-w-md text-[1.05rem] leading-[1.65] text-dark/80">
           An unexpected error occurred. Your booking has not been placed.

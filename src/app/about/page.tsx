@@ -74,12 +74,12 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="bg-panel text-dark">
+      <section className="bg-panel text-paper">
         <div className="mx-auto grid max-w-[1280px] grid-cols-2 gap-8 px-6 py-12 lg:grid-cols-4 lg:px-10">
           {STATS.map((st) => (
             <div key={st.label} className="text-center">
-              <p className="display text-[3rem] text-dark">{st.value}</p>
-              <p className="mt-1 text-[0.85rem] font-semibold text-dark/75">{st.label}</p>
+              <p className="display text-[3rem] text-brand">{st.value}</p>
+              <p className="mt-1 text-[0.85rem] font-semibold text-paper/75">{st.label}</p>
             </div>
           ))}
         </div>
@@ -163,7 +163,7 @@ export default function AboutPage() {
       <section className="bg-paper px-6 pb-24 lg:px-10">
         <div className="mx-auto max-w-[1280px] rounded-[2.5rem] border-2 border-dark bg-brand-soft p-8 lg:p-12">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-            <span className="display grid h-14 w-14 shrink-0 place-items-center rounded-full bg-dark text-[1.6rem] text-brand">!</span>
+            <span className="display grid h-14 w-14 shrink-0 place-items-center rounded-full bg-teal text-[1.6rem] text-brand">!</span>
             <div>
               <h3 className="display text-[1.7rem] text-dark">Before you book - please read this</h3>
               <p className="mt-3 max-w-3xl text-[1rem] leading-[1.7] text-subtle">I am a medication counsellor, not a prescribing doctor. I will never change your prescription, alter your dosage, or advise you to stop a medicine. All medical decisions remain with your doctor.</p>

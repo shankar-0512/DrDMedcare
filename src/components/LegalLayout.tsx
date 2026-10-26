@@ -38,7 +38,7 @@ export default function LegalLayout({ current, updated, children }: { current: s
                   <h3 className="display text-[1.5rem] leading-[1.15] text-dark lg:text-[1.9rem]">{next.title}</h3>
                   <p className="mt-2 text-[0.97rem] leading-[1.6] text-subtle">{next.blurb}</p>
                 </div>
-                <span className="arr-c shrink-0 bg-dark text-brand transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
+                <span className="arr-c shrink-0 bg-teal text-brand transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
               </Link>
             </section>
           </article>
@@ -54,16 +54,16 @@ export default function LegalLayout({ current, updated, children }: { current: s
                     aria-current={d.slug === current ? 'page' : undefined}
                     className={['flex items-center gap-3 rounded-full px-4 py-3 text-[0.95rem] font-semibold transition-colors', d.slug === current ? 'bg-brand text-dark' : 'text-dark/75 hover:bg-hero hover:text-dark'].join(' ')}
                   >
-                    <span className="display grid h-7 w-7 place-items-center rounded-full bg-dark text-[0.8rem] text-brand">{n + 1}</span>
+                    <span className="display grid h-7 w-7 place-items-center rounded-full bg-teal text-[0.8rem] text-brand">{n + 1}</span>
                     {d.title}
                   </Link>
                 ))}
               </nav>
 
-              <div className="rounded-[2rem] bg-panel p-6 text-dark">
-                <h3 className="display text-[1.4rem] leading-tight text-dark">Questions about <em>your medicines?</em></h3>
-                <p className="mt-3 text-[0.92rem] leading-[1.6] text-dark/70">A private one-to-one session, in your language.</p>
-                <Link href="/book" className="btn btn-dark mt-5 !px-5 !py-3 !text-[0.9rem]">Book a session <span className="arr" aria-hidden /></Link>
+              <div className="on-dark rounded-[2rem] bg-panel p-6 text-paper">
+                <h3 className="display text-[1.4rem] leading-tight text-paper">Questions about <em>your medicines?</em></h3>
+                <p className="mt-3 text-[0.92rem] leading-[1.6] text-paper/70">A private one-to-one session, in your language.</p>
+                <Link href="/book" className="btn btn-brand mt-5 !px-5 !py-3 !text-[0.9rem]">Book a session <span className="arr" aria-hidden /></Link>
               </div>
             </div>
           </aside>

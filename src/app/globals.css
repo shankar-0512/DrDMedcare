@@ -6,23 +6,25 @@
    Values are "R G B" channels (so opacity like bg-brand/60 works).
    ══════════════════════════════════════════════════════════════ */
 :root {
-  /* Accent: gold — rings, rules, badges, buttons on dark, highlights */
+  /* Secondary: gold — rings, rules, badges, underlines, buttons on dark */
   --c-brand:        210 172 82;    /* #d2ac52 */
   --c-brand-deep:   168 134 52;
-  --c-brand-soft:   253 236 242;   /* pale gold-cream panels */
+  --c-brand-soft:   226 243 240;   /* pale mint: badges, summary boxes, soft panels */
 
   /* Surfaces */
-  --c-hero:         248 200 214;   /* pastel pink: page heroes, big light panels */
-  --c-second:       248 200 214;
-  --c-second-soft:  240 233 214;   /* warm sand: calm section panels */
-  --c-pink:         248 200 214;   /* pastel pink: big colour blocks, footer, cards */
-  --c-panel:        248 200 214;   /* alias: big colour sections use the pink */
+  --c-hero:         226 243 240;   /* soft mint: page heroes, light panels */
+  --c-second:       226 243 240;
+  --c-second-soft:  244 240 228;   /* warm ivory: calm section panels */
+  --c-panel:        11 94 88;      /* deep teal: big colour sections, footer */
+
+  /* Primary: teal (the original brand green) */
+  --c-teal:         15 118 110;    /* #0f766e: buttons, links */
 
   /* Neutrals */
-  --c-paper:        253 249 247;   /* page background, cards (warm ivory) */
-  --c-dark:         42 29 38;      /* text, buttons (deep plum-charcoal) */
-  --c-dark-2:       92 62 80;     /* hover on dark, secondary text */
-  --c-subtle:       110 90 101;     /* muted body text */
+  --c-paper:        255 255 255;   /* page background, cards (white) */
+  --c-dark:         11 43 40;      /* text (deep teal-black) */
+  --c-dark-2:       15 118 110;    /* secondary text, hover */
+  --c-subtle:       84 108 104;    /* muted body text */
 
   /* Third-party brand (kept separate on purpose) */
   --c-whatsapp:      20 131 63;
@@ -33,10 +35,10 @@
   --radius-panel: 2.5rem;
 
   /* Legacy aliases — older pages still read these. Don't edit. */
-  --color-primary:      var(--c-dark);
+  --color-primary:      var(--c-teal);
   --color-primary-soft: var(--c-brand-soft);
   --color-primary-mid:  var(--c-brand);
-  --color-secondary:    var(--c-dark-2);
+  --color-secondary:    var(--c-panel);
   --color-bg:           var(--c-paper);
   --color-surface:      255 255 255;
   --color-muted:        var(--c-subtle);
@@ -51,7 +53,7 @@
   --color-second:      rgb(var(--c-second));
   --color-second-soft: rgb(var(--c-second-soft));
   --color-panel:       rgb(var(--c-panel));
-  --color-pink:        rgb(var(--c-pink));
+  --color-teal:        rgb(var(--c-teal));
   --color-paper:       rgb(var(--c-paper));
   --color-dark:        rgb(var(--c-dark));
   --color-dark-2:      rgb(var(--c-dark-2));
@@ -60,17 +62,17 @@
   --color-whatsapp-deep: rgb(var(--c-whatsapp-deep));
 
   /* Tailwind slate re-tuned to the palette (legacy pages use slate-*) */
-  --color-slate-50:  #fbf6f6;
-  --color-slate-100: #f6ecee;
-  --color-slate-200: #ead9de;
-  --color-slate-300: #d6bfc7;
-  --color-slate-400: #a08e97;
-  --color-slate-500: #7b6a74;
-  --color-slate-600: #5f4f5a;
-  --color-slate-700: #44363f;
-  --color-slate-800: #33252f;
-  --color-slate-900: #2a1d26;
-  --color-slate-950: #1b1218;
+  --color-slate-50:  #f7faf9;
+  --color-slate-100: #edf3f2;
+  --color-slate-200: #dbe6e4;
+  --color-slate-300: #bfd0cd;
+  --color-slate-400: #8aa19d;
+  --color-slate-500: #647c78;
+  --color-slate-600: #4b6360;
+  --color-slate-700: #364c49;
+  --color-slate-800: #223835;
+  --color-slate-900: #0b2b28;
+  --color-slate-950: #061a18;
 }
 
 body {
@@ -130,9 +132,9 @@ html { scroll-behavior: smooth; }
   }
   .btn:hover .arr { transform: translateX(3px); }
   .arr-c { width: 2.25rem; height: 2.25rem; border-radius: 999px; }
-  .btn-dark { background: rgb(var(--c-dark)); color: rgb(var(--c-paper)); }
+  .btn-dark { background: rgb(var(--c-teal)); color: rgb(var(--c-paper)); }
   .btn-dark .arr { background: rgb(var(--c-brand)); color: rgb(var(--c-dark)); }
-  .btn-dark:hover { background: rgb(var(--c-dark-2)); }
+  .btn-dark:hover { background: rgb(var(--c-panel)); }
   .btn-brand { background: rgb(var(--c-brand)); color: rgb(var(--c-dark)); }
   .btn-brand .arr { background: rgb(var(--c-dark)); color: rgb(var(--c-brand)); }
   .btn-brand:hover { background: rgb(var(--c-paper)); }
