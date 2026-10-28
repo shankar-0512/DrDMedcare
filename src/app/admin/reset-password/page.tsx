@@ -75,7 +75,7 @@ function ResetPasswordForm() {
 
       <div className="mb-8 text-center">
         <div className="mx-auto mb-4 grid h-14 w-14 place-items-center rounded-full bg-slate-100"><AdminMark className="h-9 w-9" /></div>
-        <h1 className="text-xl font-bold text-slate-900">Dr D's MedCare</h1>
+        <h1 className="text-xl font-bold text-slate-900">Dr D&apos;s MedCare</h1>
         <p className="mt-1 text-sm text-slate-500">Set a new password</p>
       </div>
 

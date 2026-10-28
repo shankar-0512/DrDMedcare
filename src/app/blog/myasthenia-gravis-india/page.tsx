@@ -400,7 +400,7 @@ export default function Post() {
           In this context, a full medication review by a clinical pharmacist is a practical safeguard, not a luxury. The aim is to ensure that every medicine being taken is necessary, appropriately dosed, and compatible with the MG diagnosis. It is also an opportunity to flag anything in the regimen that carries MG-specific risk and to review medicines that may have been continued out of habit long after they were needed.
         </p>
         <p>
-          If you or a family member has been diagnosed with MG and would like a structured review of your medicines, that is exactly the kind of session Dr D's MedCare offers.
+          If you or a family member has been diagnosed with MG and would like a structured review of your medicines, that is exactly the kind of session Dr D&apos;s MedCare offers.
         </p>
 
       </BlogPostLayout>

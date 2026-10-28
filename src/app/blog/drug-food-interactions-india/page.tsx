@@ -52,13 +52,13 @@ export default function Post() {
       date="March 2026"
     >
       <p>
-        Most people know that you shouldn't drink alcohol with certain medicines. But very few people know that a glass of milk, a cup of tea, or even a banana can interfere with their medication just as significantly. In India, where food and medicine routines are deeply intertwined, this is one of the most common - and most overlooked - causes of medicines not working as they should.
+        Most people know that you shouldn&apos;t drink alcohol with certain medicines. But very few people know that a glass of milk, a cup of tea, or even a banana can interfere with their medication just as significantly. In India, where food and medicine routines are deeply intertwined, this is one of the most common - and most overlooked - causes of medicines not working as they should.
       </p>
 
       <h2>Milk and antibiotics</h2>
 
       <p>
-        Milk is perhaps the most well-known culprit. Tetracycline antibiotics, as well as some fluoroquinolones like ciprofloxacin, bind to the calcium in milk and dairy products. When this happens, the antibiotic cannot be properly absorbed by your body - meaning you're taking the medicine but not getting its full benefit.
+        Milk is perhaps the most well-known culprit. Tetracycline antibiotics, as well as some fluoroquinolones like ciprofloxacin, bind to the calcium in milk and dairy products. When this happens, the antibiotic cannot be properly absorbed by your body - meaning you&apos;re taking the medicine but not getting its full benefit.
       </p>
 
       <p>
@@ -82,7 +82,7 @@ export default function Post() {
       </p>
 
       <p>
-        <strong>What to do:</strong> You don't need to avoid bananas entirely, but don't overdo it. One banana a day is generally fine. Talk to your doctor if you're on multiple blood pressure medicines.
+        <strong>What to do:</strong> You don&apos;t need to avoid bananas entirely, but don&apos;t overdo it. One banana a day is generally fine. Talk to your doctor if you&apos;re on multiple blood pressure medicines.
       </p>
 
       <h2>Grapefruit and statins</h2>
@@ -92,7 +92,7 @@ export default function Post() {
       </p>
 
       <p>
-        <strong>What to do:</strong> If you're on a statin, avoid grapefruit and grapefruit juice entirely. Regular oranges and other citrus fruits are fine.
+        <strong>What to do:</strong> If you&apos;re on a statin, avoid grapefruit and grapefruit juice entirely. Regular oranges and other citrus fruits are fine.
       </p>
 
       <h2>Dal and thyroid medicines</h2>
@@ -102,7 +102,7 @@ export default function Post() {
       </p>
 
       <p>
-        <strong>What to do:</strong> Levothyroxine should always be taken on an empty stomach, 30-60 minutes before breakfast. Don't eat your morning dal immediately after taking your thyroid tablet.
+        <strong>What to do:</strong> Levothyroxine should always be taken on an empty stomach, 30-60 minutes before breakfast. Don&apos;t eat your morning dal immediately after taking your thyroid tablet.
       </p>
 
       <h2>Vitamin K-rich foods and blood thinners</h2>
@@ -112,7 +112,7 @@ export default function Post() {
       </p>
 
       <p>
-        <strong>What to do:</strong> You don't need to avoid these vegetables, but try to keep your intake consistent from day to day. Sudden large increases can affect how well your blood thinner is working.
+        <strong>What to do:</strong> You don&apos;t need to avoid these vegetables, but try to keep your intake consistent from day to day. Sudden large increases can affect how well your blood thinner is working.
       </p>
 
       <h2>The bottom line</h2>
@@ -122,7 +122,7 @@ export default function Post() {
       </p>
 
       <p>
-        If you'd like to go through your specific prescription and understand exactly what to eat, avoid, and when - that's precisely what a prescription counselling session with me covers.
+        If you&apos;d like to go through your specific prescription and understand exactly what to eat, avoid, and when - that&apos;s precisely what a prescription counselling session with me covers.
       </p>
     </BlogPostLayout>
     </>

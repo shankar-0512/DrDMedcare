@@ -192,16 +192,16 @@ export default function Post() {
         <h2>Common Mistakes to Avoid</h2>
 
         <div className="bg-red-50 border border-red-200 rounded-lg p-4 my-6">
-          <h3 className="text-red-800 font-semibold mb-2">🚫 Don't Do This</h3>
+          <h3 className="text-red-800 font-semibold mb-2">🚫 Don&apos;t Do This</h3>
           <ul className="text-red-700 space-y-1 text-sm">
             <li>Measuring right after eating or drinking</li>
             <li>Talking or moving during the reading</li>
-            <li>Using a cuff that's too small or large</li>
+            <li>Using a cuff that&apos;s too small or large</li>
           </ul>
         </div>
 
         <p>
-          Home blood pressure monitoring empowers you to stay on top of your health. Start today and book a consultation with Dr D's Medcare for expert guidance.
+          Home blood pressure monitoring empowers you to stay on top of your health. Start today and book a consultation with Dr D&apos;s Medcare for expert guidance.
         </p>
       </BlogPostLayout>
     </>

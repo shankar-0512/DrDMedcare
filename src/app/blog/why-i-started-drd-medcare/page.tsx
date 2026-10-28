@@ -52,21 +52,21 @@ export default function Post() {
       date="March 2026"
     >
       <p>
-        I was working as a clinical pharmacist in a private hospital in Chennai when I read a news report that I haven't been able to forget since. A mother had given her young child a dose of cough syrup mixed into a glass of milk - thinking, as many parents do, that it would make the medicine easier to swallow. The child died from a drug interaction.
+        I was working as a clinical pharmacist in a private hospital in Chennai when I read a news report that I haven&apos;t been able to forget since. A mother had given her young child a dose of cough syrup mixed into a glass of milk - thinking, as many parents do, that it would make the medicine easier to swallow. The child died from a drug interaction.
       </p>
 
       <p>
-        She wasn't careless. She wasn't negligent. She simply didn't know. And nobody had told her.
+        She wasn&apos;t careless. She wasn&apos;t negligent. She simply didn&apos;t know. And nobody had told her.
       </p>
 
       <h2>The gap nobody talks about</h2>
 
       <p>
-        Every day in India, patients leave hospitals and clinics with prescriptions in hand and almost no understanding of what they're holding. A doctor's consultation lasts an average of five minutes. In that time, a diagnosis is made, a prescription is written, and the patient is sent on their way. There is no time - and often, no system - for anyone to sit down and explain what each medicine does, how to take it, what to avoid, and what to watch out for.
+        Every day in India, patients leave hospitals and clinics with prescriptions in hand and almost no understanding of what they&apos;re holding. A doctor&apos;s consultation lasts an average of five minutes. In that time, a diagnosis is made, a prescription is written, and the patient is sent on their way. There is no time - and often, no system - for anyone to sit down and explain what each medicine does, how to take it, what to avoid, and what to watch out for.
       </p>
 
       <p>
-        In countries like the UK, the US, and Australia, this gap is filled by a dedicated pharmacist counsellor at every pharmacy. It's built into the healthcare system as a standard of care. In India, that role simply doesn't exist at scale.
+        In countries like the UK, the US, and Australia, this gap is filled by a dedicated pharmacist counsellor at every pharmacy. It&apos;s built into the healthcare system as a standard of care. In India, that role simply doesn&apos;t exist at scale.
       </p>
 
       <p>
@@ -76,7 +76,7 @@ export default function Post() {
       <h2>What I kept seeing at the hospital</h2>
 
       <p>
-        As a clinical pharmacist, I was one of the few people in the hospital whose job included talking to patients about their medicines. And every single day, I would see the same things. Patients who had been on a medicine for months but had no idea what it was for. Caregivers managing five or six medicines for an elderly parent with no understanding of which one was for what. Parents terrified because their child had been given a new antibiotic and they'd read something frightening about it online.
+        As a clinical pharmacist, I was one of the few people in the hospital whose job included talking to patients about their medicines. And every single day, I would see the same things. Patients who had been on a medicine for months but had no idea what it was for. Caregivers managing five or six medicines for an elderly parent with no understanding of which one was for what. Parents terrified because their child had been given a new antibiotic and they&apos;d read something frightening about it online.
       </p>
 
       <p>
@@ -86,19 +86,19 @@ export default function Post() {
       <h2>Why I built this</h2>
 
       <p>
-        Dr D's MedCare started from a simple idea: what if patients could get 15 or 30 minutes with someone who would just explain their medicines to them? No diagnosis. No prescription changes. Just clear, honest, personalised education - in their own language, at their own pace.
+        Dr D&apos;s MedCare started from a simple idea: what if patients could get 15 or 30 minutes with someone who would just explain their medicines to them? No diagnosis. No prescription changes. Just clear, honest, personalised education - in their own language, at their own pace.
       </p>
 
       <p>
-        Medication counselling is the missing pill in Indian healthcare. I'm here to fill that gap - one session at a time.
+        Medication counselling is the missing pill in Indian healthcare. I&apos;m here to fill that gap - one session at a time.
       </p>
 
       <blockquote>
-        "Patient counselling - the missing pill in Indian healthcare."
+        &quot;Patient counselling - the missing pill in Indian healthcare.&quot;
       </blockquote>
 
       <p>
-        If you've ever left a doctor's appointment with questions you were too nervous to ask, or stared at a prescription wondering what you're actually taking - this service is for you.
+        If you&apos;ve ever left a doctor&apos;s appointment with questions you were too nervous to ask, or stared at a prescription wondering what you&apos;re actually taking - this service is for you.
       </p>
     </BlogPostLayout>
     </>

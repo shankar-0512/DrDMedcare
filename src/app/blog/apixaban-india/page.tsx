@@ -56,7 +56,7 @@ export default function Post() {
           If you or someone in your family has been started on apixaban, it is almost certainly because of atrial fibrillation, a blood clot in the leg or lung, or a recent hip or knee replacement. It is now one of the most commonly prescribed blood thinners in the country, and for good reason: it works well, and unlike its predecessor warfarin, it does not need regular blood test monitoring.
         </p>
         <p>
-          But "no monitoring needed" does not mean "nothing to think about." Apixaban still carries a real bleeding risk, still interacts with a specific set of medicines, and still requires the correct dose for your age, weight, and kidney function. This article covers what every patient on apixaban - and every caregiver - should understand.
+          But &quot;no monitoring needed&quot; does not mean &quot;nothing to think about.&quot; Apixaban still carries a real bleeding risk, still interacts with a specific set of medicines, and still requires the correct dose for your age, weight, and kidney function. This article covers what every patient on apixaban - and every caregiver - should understand.
         </p>
 
         <h2>What apixaban is and how it works</h2>
@@ -152,7 +152,7 @@ export default function Post() {
         </div>
 
         <p>
-          For atrial fibrillation specifically, the dose is reduced to <strong>2.5 mg twice daily</strong> if you meet <strong>at least two</strong> of the following three criteria. This is sometimes called the "2 of 3" rule, and it exists because these factors raise blood levels of the drug and, with them, bleeding risk.
+          For atrial fibrillation specifically, the dose is reduced to <strong>2.5 mg twice daily</strong> if you meet <strong>at least two</strong> of the following three criteria. This is sometimes called the &quot;2 of 3&quot; rule, and it exists because these factors raise blood levels of the drug and, with them, bleeding risk.
         </p>
 
         <div className="not-prose rounded-xl border-2 border-amber-200 bg-amber-50 p-6 my-6">
@@ -175,7 +175,7 @@ export default function Post() {
           </p>
         </div>
 
-        <h2>Apixaban vs warfarin - what's actually different</h2>
+        <h2>Apixaban vs warfarin - what&apos;s actually different</h2>
         <p>
           If you or a family member has switched from warfarin, or you are simply curious why apixaban is now preferred for most patients, this comparison covers the practical differences.
         </p>
@@ -212,7 +212,7 @@ export default function Post() {
         <ul>
           <li>If it has been <strong>less than 6 hours</strong> since your missed dose was due, take it as soon as you remember, then continue your normal twice-daily schedule.</li>
           <li>If <strong>more than 6 hours</strong> have passed, skip the missed dose entirely and take your next scheduled dose at the usual time - do not take two doses together to make up for it.</li>
-          <li>Never double up. Taking extra apixaban to "catch up" meaningfully raises bleeding risk without adding protection.</li>
+          <li>Never double up. Taking extra apixaban to &quot;catch up&quot; meaningfully raises bleeding risk without adding protection.</li>
           <li>If you frequently forget doses, mention this to your doctor or pharmacist - alarms, pill organisers, or a change in regimen can help.</li>
         </ul>
 
@@ -320,7 +320,7 @@ export default function Post() {
 
         <h2>Cost and access in India</h2>
         <p>
-          Apixaban is available in India both as the original manufacturer's product and as several lower-cost generic versions. Generics contain the same active ingredient and are held to the same regulatory standards, but if you do switch between brands, mention it to your pharmacist - consistency matters for a medicine where dosing precision affects both clotting protection and bleeding risk. If cost is a barrier, ask your doctor or pharmacist about generic options rather than skipping or reducing doses on your own.
+          Apixaban is available in India both as the original manufacturer&apos;s product and as several lower-cost generic versions. Generics contain the same active ingredient and are held to the same regulatory standards, but if you do switch between brands, mention it to your pharmacist - consistency matters for a medicine where dosing precision affects both clotting protection and bleeding risk. If cost is a barrier, ask your doctor or pharmacist about generic options rather than skipping or reducing doses on your own.
         </p>
 
         <h2>Living with apixaban</h2>

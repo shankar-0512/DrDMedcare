@@ -209,7 +209,7 @@ export default function SlotsPage() {
       <div className="rounded-2xl border border-slate-200 bg-white shadow-sm mb-6 p-6">
         <h2 className="font-semibold text-slate-900 mb-1">Generate slots</h2>
         <p className="text-xs text-slate-500 mb-4">
-          Generates 30-minute slots from your weekly schedule. Safe to run multiple times - existing slots won't be duplicated.
+          Generates 30-minute slots from your weekly schedule. Safe to run multiple times - existing slots won&apos;t be duplicated.
         </p>
         <div className="flex items-center gap-3 flex-wrap">
           <div className="flex items-center gap-2">
@@ -275,7 +275,7 @@ export default function SlotsPage() {
         ) : slots.length === 0 ? (
           <div className="px-6 py-10 text-center">
             <p className="text-sm text-slate-400">No slots for {formatDate(selectedDate)}.</p>
-            <p className="mt-1 text-xs text-slate-400">Click "Generate slots" above to create them.</p>
+            <p className="mt-1 text-xs text-slate-400">Click &quot;Generate slots&quot; above to create them.</p>
           </div>
         ) : (
           <div className="divide-y divide-slate-100">

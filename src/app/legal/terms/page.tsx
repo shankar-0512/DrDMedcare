@@ -14,14 +14,14 @@ export default function TermsPage() {
 
         <section>
           <p>
-            These Terms of Service govern your use of Dr D's MedCare's website and services. By booking a session or using our website, you agree to these terms in full. If you do not agree, please do not use our services.
+            These Terms of Service govern your use of Dr D&apos;s MedCare&apos;s website and services. By booking a session or using our website, you agree to these terms in full. If you do not agree, please do not use our services.
           </p>
         </section>
 
         <section>
           <h2>1. Service description</h2>
           <p>
-            Dr D's MedCare provides medication education and counselling services conducted by Dr Priyanka Deventhiran, a qualified pharmacist. Services include prescription counselling, medication adherence planning, elderly care, disease awareness counselling, medication device training, and side effects counselling.
+            Dr D&apos;s MedCare provides medication education and counselling services conducted by Dr Priyanka Deventhiran, a qualified pharmacist. Services include prescription counselling, medication adherence planning, elderly care, disease awareness counselling, medication device training, and side effects counselling.
           </p>
           <p className="mt-3">
             All services are educational only. We do not diagnose medical conditions, prescribe medications, or recommend changes to any existing treatment. Our services are not a substitute for consultation with a licensed physician.
@@ -90,14 +90,14 @@ export default function TermsPage() {
         <section>
           <h2>8. Intellectual property</h2>
           <p>
-            All content on this website including text, design, and materials shared during sessions is the intellectual property of Dr D's MedCare. You may not reproduce, distribute, or use any content for commercial purposes without prior written consent.
+            All content on this website including text, design, and materials shared during sessions is the intellectual property of Dr D&apos;s MedCare. You may not reproduce, distribute, or use any content for commercial purposes without prior written consent.
           </p>
         </section>
 
         <section>
           <h2>9. Limitation of liability</h2>
           <p>
-            To the maximum extent permitted under applicable Indian law, Dr D's MedCare shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of our services or reliance on information provided during a session. Our total liability in any circumstance shall not exceed the amount paid for the relevant session.
+            To the maximum extent permitted under applicable Indian law, Dr D&apos;s MedCare shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of our services or reliance on information provided during a session. Our total liability in any circumstance shall not exceed the amount paid for the relevant session.
           </p>
         </section>
 

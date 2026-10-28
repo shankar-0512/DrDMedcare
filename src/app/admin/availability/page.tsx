@@ -278,7 +278,7 @@ export default function AvailabilityPage() {
       <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <div className="border-b border-slate-100 px-6 py-4">
           <h2 className="font-semibold text-slate-900">Date exceptions</h2>
-          <p className="text-xs text-slate-500 mt-0.5">Block a holiday or add availability on a day you don't normally work.</p>
+          <p className="text-xs text-slate-500 mt-0.5">Block a holiday or add availability on a day you don&apos;t normally work.</p>
         </div>
 
         {/* Add override form */}

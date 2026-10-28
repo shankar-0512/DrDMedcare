@@ -122,7 +122,7 @@ export default function Post() {
         </div>
 
         <p>
-          In infants, the signs are different and easier to miss. Look for a bulging fontanelle (the soft spot on the baby's head), a high-pitched unusual cry, refusal to feed, a limp or floppy body, and extreme irritability.
+          In infants, the signs are different and easier to miss. Look for a bulging fontanelle (the soft spot on the baby&apos;s head), a high-pitched unusual cry, refusal to feed, a limp or floppy body, and extreme irritability.
         </p>
 
         <h2>The rash - and the glass test</h2>
@@ -165,7 +165,7 @@ export default function Post() {
         <h2>Why meningitis is commonly missed in India</h2>
 
         <p>
-          The early symptoms - fever, headache, fatigue - overlap heavily with common illnesses like viral fever, dengue, typhoid, and even malaria. This is why it is so often attributed to "viral fever" and treated at home in the first critical hours.
+          The early symptoms - fever, headache, fatigue - overlap heavily with common illnesses like viral fever, dengue, typhoid, and even malaria. This is why it is so often attributed to &quot;viral fever&quot; and treated at home in the first critical hours.
         </p>
 
         {/* Comparison table */}

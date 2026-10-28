@@ -143,7 +143,7 @@ export default function AdminDashboard() {
       <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4">
           <div>
-            <h2 className="font-semibold text-slate-900">Today's slots</h2>
+            <h2 className="font-semibold text-slate-900">Today&apos;s slots</h2>
             <p className="text-xs text-slate-500 mt-0.5">
               {bookedToday} booked · {availableToday} available · {todaySlots.length} total
             </p>
@@ -227,7 +227,7 @@ export default function AdminDashboard() {
       <div className="rounded-2xl border border-slate-200 bg-white shadow-sm">
         <div className="flex items-center justify-between border-b border-slate-100 px-6 py-4">
           <div>
-            <h2 className="font-semibold text-slate-900">Today's sessions</h2>
+            <h2 className="font-semibold text-slate-900">Today&apos;s sessions</h2>
             <p className="text-xs text-slate-500 mt-0.5">{todayBookings.length} session{todayBookings.length !== 1 ? 's' : ''} scheduled</p>
           </div>
           <Link

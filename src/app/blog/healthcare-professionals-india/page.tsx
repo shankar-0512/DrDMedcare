@@ -108,11 +108,11 @@ export default function Post() {
       <hr />
 
       <p>
-        Every one of these professionals plays a vital role in your care. The best health outcomes happen when patients engage actively with each of them - asking questions, following guidance, and never hesitating to seek clarification on anything they don't understand.
+        Every one of these professionals plays a vital role in your care. The best health outcomes happen when patients engage actively with each of them - asking questions, following guidance, and never hesitating to seek clarification on anything they don&apos;t understand.
       </p>
 
       <p>
-        If you have questions specifically about your medicines, that's where a medication counselling session can help.
+        If you have questions specifically about your medicines, that&apos;s where a medication counselling session can help.
       </p>
 
     </BlogPostLayout>

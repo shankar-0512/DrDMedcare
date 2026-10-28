@@ -683,7 +683,7 @@ export default function MonographClient() {
                 <TRow><Td bold>Antiepileptics</Td><Td>Carbamazepine, Phenytoin, Phenobarbital, Primidone</Td><Td>↑ CYP3A4 induction → ↓ MPA efficacy</Td><Td>Non-hormonal backup contraception</Td></TRow>
                 <TRow><Td bold>Antiretrovirals</Td><Td>Ritonavir-boosted regimens, efavirenz</Td><Td>Variable: induction or inhibition possible</Td><Td>Specialist review required</Td></TRow>
                 <TRow><Td bold>HCV Direct-acting antivirals</Td><Td>Some NS5B inhibitors</Td><Td>Possible enzyme induction</Td><Td>Prescriber alert</Td></TRow>
-                <TRow><Td bold>Herbal</Td><Td>St John's Wort (Hypericum perforatum)</Td><Td>CYP3A4 induction → ↓ MPA levels</Td><Td>Contraindicated with MPA</Td></TRow>
+                <TRow><Td bold>Herbal</Td><Td>St John&apos;s Wort (Hypericum perforatum)</Td><Td>CYP3A4 induction → ↓ MPA levels</Td><Td>Contraindicated with MPA</Td></TRow>
               </tbody>
             </Table>
             {[
@@ -808,7 +808,7 @@ export default function MonographClient() {
               <CounselCard icon="🛑" title="Do NOT Stop Suddenly Without Advice">If you stop taking this medicine, you will usually have a withdrawal bleed within a few days. If no bleed occurs and you are sexually active, take a pregnancy test and inform your doctor.</CounselCard>
               <CounselCard icon="🚗" title="Driving & Machinery">This medicine can cause dizziness and fatigue. If you feel drowsy or dizzy, do not drive, cycle, or operate machinery until you feel better.</CounselCard>
               <CounselCard icon="🍺" title="Alcohol">You can drink alcohol in moderation while taking this medicine. However, alcohol will make side effects like headaches, dizziness, and fatigue worse - so drink cautiously.</CounselCard>
-              <CounselCard icon="🌿" title="Herbal Supplements">Do not take St John's Wort while on this medicine - it significantly reduces its effectiveness. Always tell your doctor or pharmacist about any herbal products, vitamins, or supplements you take.</CounselCard>
+              <CounselCard icon="🌿" title="Herbal Supplements">Do not take St John&apos;s Wort while on this medicine - it significantly reduces its effectiveness. Always tell your doctor or pharmacist about any herbal products, vitamins, or supplements you take.</CounselCard>
               <CounselCard icon="🤰" title="Planning a Pregnancy">Tell your doctor before starting this medicine if you plan to get pregnant. Oral MPA: fertility returns quickly after stopping. Injectable MPA: fertility can take 10–18 months to return after the last injection.</CounselCard>
               <CounselCard icon="😔" title="Mood Changes">Some people feel low in mood, anxious, or depressed while taking this medicine. If you notice significant changes in how you feel emotionally, speak to your doctor - do not simply stop the medication without guidance.</CounselCard>
               <CounselCard icon="⚖️" title="Weight & Lifestyle">A small amount of weight gain is possible, especially with injections. A balanced diet and regular physical activity can help manage this. Weight-bearing exercise also helps protect bone density with long-term use.</CounselCard>
@@ -853,7 +853,7 @@ export default function MonographClient() {
                 <TRow><Td bold>United States (FDA)</Td><Td>Prescription Only (Rx)</Td><Td>Schedule: Non-controlled. Approved since June 18, 1959. Current label rev. March 2024.</Td></TRow>
                 <TRow><Td bold>United Kingdom (MHRA)</Td><Td>Prescription Only Medicine (POM)</Td><Td>Licensed for gynaecological indications and HRT adjunct. Tablets available on NHS prescription.</Td></TRow>
                 <TRow><Td bold>European Union (EMA)</Td><Td>Prescription Only</Td><Td>Available across EU member states under national authorisations. High-dose oncology formulations subject to separate national approvals.</Td></TRow>
-                <TRow><Td bold>India (CDSCO)</Td><Td>Schedule H (Prescription Required)</Td><Td>Widely marketed in multiple generic formulations. Depo-Provera IM introduced into India's public health system in 2016.</Td></TRow>
+                <TRow><Td bold>India (CDSCO)</Td><Td>Schedule H (Prescription Required)</Td><Td>Widely marketed in multiple generic formulations. Depo-Provera IM introduced into India&apos;s public health system in 2016.</Td></TRow>
                 <TRow><Td bold>Australia (TGA)</Td><Td>Prescription Only (S4)</Td><Td>Registered for gynaecological and contraceptive indications.</Td></TRow>
               </tbody>
             </Table>

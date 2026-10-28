@@ -14,7 +14,7 @@ export default function PrivacyPage() {
 
         <section>
           <p>
-            Dr D's MedCare ("we", "our", "us") is committed to protecting the privacy of our patients and website visitors. This policy explains what information we collect, how we use it, and your rights under the Information Technology Act, 2000 and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011.
+            Dr D&apos;s MedCare (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) is committed to protecting the privacy of our patients and website visitors. This policy explains what information we collect, how we use it, and your rights under the Information Technology Act, 2000 and the Information Technology (Reasonable Security Practices and Procedures and Sensitive Personal Data or Information) Rules, 2011.
           </p>
         </section>
 
@@ -67,7 +67,7 @@ export default function PrivacyPage() {
         <section>
           <h2>5. WhatsApp and email communication</h2>
           <p>
-            When you communicate with us via WhatsApp or email, those communications may be retained for the purposes of confirming bookings, maintaining session records, and resolving disputes. WhatsApp communications are subject to WhatsApp's own privacy policy. We recommend you do not share sensitive financial information over WhatsApp beyond what is necessary for payment verification.
+            When you communicate with us via WhatsApp or email, those communications may be retained for the purposes of confirming bookings, maintaining session records, and resolving disputes. WhatsApp communications are subject to WhatsApp&apos;s own privacy policy. We recommend you do not share sensitive financial information over WhatsApp beyond what is necessary for payment verification.
           </p>
         </section>
 

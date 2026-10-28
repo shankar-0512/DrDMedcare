@@ -14,13 +14,13 @@ Things to update:
 - `<BlogPostLayout>` props: title, excerpt, category, readTime, date
 - Post content
 
-**Categories and their colours:**
-| Category | Colour |
+**Categories and their badge styles** (set in `BlogGrid.tsx` and `BlogPostLayout.tsx`):
+| Category | Style |
 |---|---|
-| Awareness | Sky blue |
-| Education | Amber |
-| Our story | Teal (brand) |
-| Devices & conditions | Violet |
+| Awareness | Soft mint |
+| Education | Gold |
+| Our story | Teal |
+| Devices & conditions | Deep gold |
 
 ---
 
@@ -31,17 +31,17 @@ Add an entry to `scripts/generate-og-images.mjs` following the pattern of existi
 node scripts/generate-og-images.mjs
 ```
 
-The PNG will be saved to `public/og/[slug].png` automatically.
+The image is saved to `public/og/[slug].jpg` (JPG, not PNG). It is also used as the article's cover on the Journal cards, the article header and the "Read next" card, so it must exist before you publish.
 
 Set `_ogImage` in the page file to:
 ```
-https://drdmedcare.com/og/[slug].png
+https://drdmedcare.com/og/[slug].jpg
 ```
 
 ---
 
 ### 3. Add to the blog index
-`src/app/blog/page.tsx` - add an entry to the `POSTS` array:
+`src/app/blog/posts.ts` - add an entry to the `POSTS` array (not `page.tsx` or `BlogGrid.tsx`; both read from here):
 
 ```ts
 {
@@ -51,6 +51,7 @@ https://drdmedcare.com/og/[slug].png
   category: 'Education',
   readTime: '5 min read',
   date: 'March 2026',
+  cover: 'Short label',   // required: small label shown on the cover
   featured: true, // optional - only one post should have this
 }
 ```
@@ -87,6 +88,8 @@ git push
 - Paste the full URL of the new post
 - Click **Request Indexing**
 
+(Only needed for new URLs. Existing, already-indexed pages are recrawled automatically.)
+
 ---
 
 ## File locations at a glance
@@ -94,7 +97,8 @@ git push
 | What | Where |
 |---|---|
 | Blog posts | `src/app/blog/[slug]/page.tsx` |
-| Blog index | `src/app/blog/page.tsx` |
+| Blog posts list (POSTS array) | `src/app/blog/posts.ts` |
+| Blog index page and cards | `src/app/blog/page.tsx`, `src/app/blog/_components/BlogGrid.tsx` |
 | OG image generator | `scripts/generate-og-images.mjs` |
 | Generated OG images | `public/og/` |
 | Sitemap | `src/app/sitemap.ts` |
