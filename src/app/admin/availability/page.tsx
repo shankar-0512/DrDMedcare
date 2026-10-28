@@ -166,7 +166,7 @@ export default function AvailabilityPage() {
     load()
   }
 
-  const inputClass = 'rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-900 focus:border-[rgb(var(--color-primary))] focus:bg-white focus:outline-none transition-all'
+  const inputClass = 'rounded-2xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-900 focus:border-[rgb(var(--color-primary))] focus:bg-white focus:outline-none transition-all'
 
   if (loading) {
     return (
@@ -181,7 +181,7 @@ export default function AvailabilityPage() {
 
       {/* Toast */}
       {toast && (
-        <div className="fixed top-6 right-6 z-50 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700 shadow-lg">
+        <div className="fixed top-6 right-6 z-50 rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700 shadow-lg">
           {toast}
         </div>
       )}
@@ -202,7 +202,7 @@ export default function AvailabilityPage() {
             type="button"
             onClick={saveRules}
             disabled={saving}
-            className="rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-90 disabled:opacity-50"
+            className="rounded-full px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-90 disabled:opacity-50"
             style={{ background: 'rgb(var(--color-primary))' }}
           >
             {saving ? 'Saving…' : 'Save schedule'}
@@ -338,7 +338,7 @@ export default function AvailabilityPage() {
             <button
               type="button"
               onClick={addOverride}
-              className="rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-90"
+              className="rounded-full px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-90"
               style={{ background: 'rgb(var(--color-primary))' }}
             >
               Add

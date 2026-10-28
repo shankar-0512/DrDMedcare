@@ -1,5 +1,6 @@
 'use client'
 
+import AdminIcon from '@/components/AdminIcon'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 
@@ -98,10 +99,10 @@ export default function AdminDashboard() {
   }
 
   const statCards: StatCard[] = [
-    { icon: '📋', label: 'Total bookings',    value: stats.total,     sub: 'All time' },
-    { icon: '✅', label: 'Confirmed',          value: stats.confirmed, sub: 'All time' },
-    { icon: '⏳', label: 'Pending payment',    value: stats.pending,   sub: 'Action needed' },
-    { icon: '💰', label: 'Revenue confirmed',  value: `₹${stats.revenue.toLocaleString('en-IN')}`, sub: 'All time' },
+    { icon: 'list', label: 'Total bookings',    value: stats.total,     sub: 'All time' },
+    { icon: 'check', label: 'Confirmed',          value: stats.confirmed, sub: 'All time' },
+    { icon: 'hourglass', label: 'Pending payment',    value: stats.pending,   sub: 'Action needed' },
+    { icon: 'rupee', label: 'Revenue confirmed',  value: `₹${stats.revenue.toLocaleString('en-IN')}`, sub: 'All time' },
   ]
 
   const availableToday = todaySlots.filter((s) => !s.is_booked && !s.is_blocked && !s.is_dummy).length
@@ -130,7 +131,7 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {statCards.map((s) => (
           <div key={s.label} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-            <div className="text-2xl mb-2">{s.icon}</div>
+            <div className="mb-3 grid h-10 w-10 place-items-center rounded-full bg-slate-100 text-slate-700"><AdminIcon name={s.icon} /></div>
             <div className="text-2xl font-bold text-slate-900">{s.value}</div>
             <div className="mt-0.5 text-xs font-medium text-slate-600">{s.label}</div>
             {s.sub && <div className="mt-0.5 text-[10px] text-slate-400">{s.sub}</div>}
@@ -179,7 +180,7 @@ export default function AdminDashboard() {
               return (
                 <span
                   key={slot.id}
-                  className={`rounded-lg border px-3 py-1.5 text-xs font-medium ${bg}`}
+                  className={`rounded-full border px-3 py-1.5 text-xs font-medium ${bg}`}
                 >
                   {formatTime(slot.start_time)}
                 </span>

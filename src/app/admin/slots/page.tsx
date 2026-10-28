@@ -188,14 +188,14 @@ export default function SlotsPage() {
     loadSlots(selectedDate)
   }
 
-  const inputClass = 'rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-900 focus:border-[rgb(var(--color-primary))] focus:bg-white focus:outline-none transition-all'
+  const inputClass = 'rounded-2xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-900 focus:border-[rgb(var(--color-primary))] focus:bg-white focus:outline-none transition-all'
 
   return (
     <div className="px-8 py-8 max-w-4xl">
 
       {/* Toast */}
       {toast && (
-        <div className="fixed top-6 right-6 z-50 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700 shadow-lg">
+        <div className="fixed top-6 right-6 z-50 rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700 shadow-lg">
           {toast}
         </div>
       )}
@@ -228,7 +228,7 @@ export default function SlotsPage() {
             type="button"
             onClick={generateSlots}
             disabled={generating}
-            className="rounded-lg px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-90 disabled:opacity-50"
+            className="rounded-full px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-90 disabled:opacity-50"
             style={{ background: 'rgb(var(--color-primary))' }}
           >
             {generating ? 'Generating…' : 'Generate slots'}

@@ -4,12 +4,13 @@ import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { supabase } from '@/lib/supabase/client'
+import AdminIcon, { AdminMark } from '@/components/AdminIcon'
 
 const NAV = [
-  { href: '/admin',              icon: '📊', label: 'Dashboard'   },
-  { href: '/admin/availability', icon: '🗓️', label: 'Availability' },
-  { href: '/admin/slots',        icon: '⏱️', label: 'Slots'        },
-  { href: '/admin/bookings',     icon: '📋', label: 'Bookings'     },
+  { href: '/admin',              icon: 'dashboard', label: 'Dashboard'   },
+  { href: '/admin/availability', icon: 'calendar', label: 'Availability' },
+  { href: '/admin/slots',        icon: 'clock', label: 'Slots'        },
+  { href: '/admin/bookings',     icon: 'list', label: 'Bookings'     },
 ]
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
@@ -44,12 +45,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         ].join(' ')}>
           {!collapsed && (
             <div className="flex items-center gap-2.5 min-w-0">
-              <div
-                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm text-white"
-                style={{ background: 'rgb(var(--color-primary))' }}
-              >
-                💻
-              </div>
+              <AdminMark className="h-8 w-8 shrink-0" />
               <div className="min-w-0">
                 <p className="text-xs font-bold text-slate-900 leading-tight truncate">Dr D's MedCare</p>
                 <p className="text-[10px] text-slate-400">Admin panel</p>
@@ -81,7 +77,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 href={item.href}
                 title={collapsed ? item.label : undefined}
                 className={[
-                  'flex items-center rounded-lg py-2 text-sm font-medium transition-all',
+                  'flex items-center rounded-full py-2 text-sm font-medium transition-all',
                   collapsed ? 'justify-center px-2' : 'gap-2.5 px-3',
                   isActive
                     ? 'text-white shadow-sm'
@@ -89,7 +85,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                 ].join(' ')}
                 style={isActive ? { background: 'rgb(var(--color-primary))' } : {}}
               >
-                <span className="text-base shrink-0">{item.icon}</span>
+                <AdminIcon name={item.icon} className="h-[18px] w-[18px] shrink-0" />
                 {!collapsed && item.label}
               </Link>
             )
@@ -103,7 +99,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             onClick={handleSignOut}
             title={collapsed ? 'Sign out' : undefined}
             className={[
-              'flex w-full items-center rounded-lg py-2 text-sm font-medium text-slate-500 hover:bg-slate-50 hover:text-slate-700 transition-all',
+              'flex w-full items-center rounded-full py-2 text-sm font-medium text-slate-500 hover:bg-slate-50 hover:text-slate-700 transition-all',
               collapsed ? 'justify-center px-2' : 'gap-2.5 px-3',
             ].join(' ')}
           >

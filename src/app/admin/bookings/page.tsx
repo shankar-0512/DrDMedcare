@@ -161,14 +161,14 @@ export default function BookingsPage() {
     ? bookings
     : bookings.filter((b) => b.status === statusFilter)
 
-  const inputClass = 'rounded-lg border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-900 focus:border-[rgb(var(--color-primary))] focus:bg-white focus:outline-none transition-all'
+  const inputClass = 'rounded-2xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-900 focus:border-[rgb(var(--color-primary))] focus:bg-white focus:outline-none transition-all'
 
   return (
     <div className="flex h-screen overflow-hidden">
 
       {/* Toast */}
       {toast && (
-        <div className="fixed top-6 right-6 z-50 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700 shadow-lg">
+        <div className="fixed top-6 right-6 z-50 rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-sm font-medium text-green-700 shadow-lg">
           {toast}
         </div>
       )}
@@ -310,7 +310,7 @@ export default function BookingsPage() {
                     type="button"
                     onClick={() => updateBooking(selected.id, { payment_ref: paymentRef })}
                     disabled={updating}
-                    className="rounded-lg px-3 py-1.5 text-sm font-semibold text-white transition-all hover:opacity-90 disabled:opacity-50"
+                    className="rounded-full px-3 py-1.5 text-sm font-semibold text-white transition-all hover:opacity-90 disabled:opacity-50"
                     style={{ background: 'rgb(var(--color-primary))' }}
                   >
                     Save
@@ -329,7 +329,7 @@ export default function BookingsPage() {
                     type="button"
                     disabled={updating}
                     onClick={() => updateBooking(selected.id, { status: 'confirmed' })}
-                    className="rounded-lg px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-90 disabled:opacity-50"
+                    className="rounded-full px-4 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:opacity-90 disabled:opacity-50"
                     style={{ background: 'rgb(var(--color-primary))' }}
                   >
                     Confirm booking
@@ -341,7 +341,7 @@ export default function BookingsPage() {
                     type="button"
                     disabled={updating}
                     onClick={() => updateBooking(selected.id, { status: 'completed' })}
-                    className="rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all disabled:opacity-50"
+                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-all disabled:opacity-50"
                   >
                     Mark completed
                   </button>
@@ -353,7 +353,7 @@ export default function BookingsPage() {
                     type="button"
                     disabled={updating}
                     onClick={() => activateMonthly(selected)}
-                    className="rounded-lg border px-4 py-2 text-sm font-semibold transition-all disabled:opacity-50 text-[rgb(var(--color-primary))]"
+                    className="rounded-full border px-4 py-2 text-sm font-semibold transition-all disabled:opacity-50 text-[rgb(var(--color-primary))]"
                     style={{ borderColor: 'rgb(var(--color-primary-mid))', background: 'rgb(var(--color-primary-soft))' }}
                   >
                     Activate monthly plan
@@ -365,7 +365,7 @@ export default function BookingsPage() {
                     type="button"
                     disabled={updating}
                     onClick={() => cancelBooking(selected)}
-                    className="rounded-lg border border-red-200 bg-red-50 px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-100 transition-all disabled:opacity-50"
+                    className="rounded-full border border-red-200 bg-red-50 px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-100 transition-all disabled:opacity-50"
                   >
                     Cancel booking
                   </button>
@@ -375,7 +375,7 @@ export default function BookingsPage() {
                   type="button"
                   disabled={deleting}
                   onClick={() => deleteBooking(selected)}
-                  className="rounded-lg border border-red-300 bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 transition-all disabled:opacity-50"
+                  className="rounded-full border border-red-300 bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 transition-all disabled:opacity-50"
                 >
                   {deleting ? 'Deleting…' : 'Delete booking'}
                 </button>
