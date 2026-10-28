@@ -31,7 +31,7 @@ export default function ClinicalIndexPage() {
       <div className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgb(var(--color-secondary)) 0%, rgb(var(--color-primary)) 100%)' }}>
         <div className="pointer-events-none absolute -top-16 -right-16 w-64 h-64 rounded-full bg-white opacity-5" />
         <div className="px-6 py-10 max-w-3xl mx-auto">
-          <Link href="/" className="inline-flex items-center gap-1 text-xs font-medium text-white/60 hover:text-white/90 transition-colors mb-6">
+          <Link href="/" className="flex w-fit items-center gap-1 text-xs font-medium text-white/60 hover:text-white/90 transition-colors mb-6">
             ← Back to drdmedcare.com
           </Link>
           <div className="inline-flex items-center gap-2 rounded-full bg-white/15 border border-white/25 px-3 py-1 text-[10px] font-semibold text-white uppercase tracking-widest mb-4">
