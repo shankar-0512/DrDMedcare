@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { Resend } from 'resend'
 import { createSupabaseServer } from '@/lib/supabase/server'
+import { buildAdminNotificationEmail, buildPatientConfirmationEmail } from '@/lib/emails'
 
 type PlanCode = 'quick_15' | 'full_30' | 'monthly'
 
@@ -21,201 +22,6 @@ function roundToClean(amount: number): number {
 
 export function calculateFinalPrice(basePriceInr: number, plan: PlanCode): number {
   return roundToClean(basePriceInr * planMultiplier(plan))
-}
-
-function planLabel(plan: PlanCode): string {
-  switch (plan) {
-    case 'quick_15': return 'Quick Consult (15 min)'
-    case 'full_30':  return 'Full Session (30 min)'
-    case 'monthly':  return 'Monthly Plan'
-  }
-}
-
-function formatDateTime(iso: string): string {
-  return new Date(iso).toLocaleString('en-IN', {
-    timeZone: 'Asia/Kolkata',
-    dateStyle: 'full',
-    timeStyle: 'short',
-  })
-}
-
-function buildAdminNotificationEmail(params: {
-  bookingId: string
-  patientName: string
-  patientPhone: string
-  patientEmail: string
-  patientAge: number
-  patientGender: string
-  patientAddress: string
-  language: string
-  serviceTitle: string
-  planCode: PlanCode
-  preferredStart: string
-  finalPriceInr: number
-}): string {
-  const adminLink = `https://drdmedcare.com/admin/bookings`
-  return `<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f1f5f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:32px 16px;">
-    <tr><td align="center">
-      <table width="100%" style="max-width:540px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.08);">
-
-        <tr>
-          <td style="background:#0f766e;padding:24px 40px;">
-            <h1 style="margin:0;color:#ffffff;font-size:18px;font-weight:700;">New Booking Received</h1>
-            <p style="margin:4px 0 0;color:#99f6e4;font-size:13px;">Dr D's MedCare · Admin Alert</p>
-          </td>
-        </tr>
-
-        <tr>
-          <td style="padding:32px 40px;">
-            <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:24px;">
-              <tr><td style="padding:20px 24px;">
-                <table width="100%" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;width:40%;">Patient</td>
-                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.patientName}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Age / Gender</td>
-                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.patientAge} · ${params.patientGender}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Phone</td>
-                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.patientPhone}</td>
-                  </tr>
-                  ${params.patientEmail ? `<tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Email</td>
-                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.patientEmail}</td>
-                  </tr>` : ''}
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Address</td>
-                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.patientAddress}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Language</td>
-                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.language.toUpperCase()}</td>
-                  </tr>
-                  <tr><td colspan="2" style="padding:8px 0;border-top:1px solid #e2e8f0;"></td></tr>
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Service</td>
-                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.serviceTitle}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Plan</td>
-                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${planLabel(params.planCode)}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Preferred slot</td>
-                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${formatDateTime(params.preferredStart)}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Amount</td>
-                    <td style="padding:5px 0;color:#0f766e;font-size:15px;font-weight:700;">₹${params.finalPriceInr}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Booking ID</td>
-                    <td style="padding:5px 0;color:#94a3b8;font-size:12px;font-family:monospace;">${params.bookingId}</td>
-                  </tr>
-                </table>
-              </td></tr>
-            </table>
-
-            <table cellpadding="0" cellspacing="0">
-              <tr>
-                <td style="background:#0f766e;border-radius:8px;">
-                  <a href="${adminLink}" style="display:inline-block;padding:12px 24px;color:#ffffff;font-size:14px;font-weight:600;text-decoration:none;">
-                    View in Admin →
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </td>
-        </tr>
-
-      </table>
-    </td></tr>
-  </table>
-</body>
-</html>`
-}
-
-function buildPatientConfirmationEmail(params: {
-  patientName: string
-  serviceTitle: string
-  planCode: PlanCode
-  preferredStart: string
-  finalPriceInr: number
-  bookingId: string
-}): string {
-  return `<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;padding:0;background:#f1f5f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
-  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:32px 16px;">
-    <tr><td align="center">
-      <table width="100%" style="max-width:540px;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.08);">
-
-        <tr>
-          <td style="background:#0f766e;padding:24px 40px;">
-            <h1 style="margin:0;color:#ffffff;font-size:18px;font-weight:700;">Booking Received</h1>
-            <p style="margin:4px 0 0;color:#99f6e4;font-size:13px;">Dr D's MedCare · Confirmation</p>
-          </td>
-        </tr>
-
-        <tr>
-          <td style="padding:32px 40px;">
-            <p style="margin:0 0 20px;color:#0f172a;font-size:15px;">Hi ${params.patientName},</p>
-            <p style="margin:0 0 24px;color:#334155;font-size:14px;line-height:1.6;">
-              Thank you for booking a session with Dr Priyanka Deventhiran. Your slot is reserved - please complete the steps below to confirm it.
-            </p>
-
-            <table width="100%" cellpadding="0" cellspacing="0" style="background:#f8fafc;border-radius:10px;border:1px solid #e2e8f0;margin-bottom:24px;">
-              <tr><td style="padding:20px 24px;">
-                <table width="100%" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;width:40%;">Service</td>
-                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${params.serviceTitle}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Plan</td>
-                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${planLabel(params.planCode)}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Preferred slot</td>
-                    <td style="padding:5px 0;color:#0f172a;font-size:13px;font-weight:600;">${formatDateTime(params.preferredStart)}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Amount</td>
-                    <td style="padding:5px 0;color:#0f766e;font-size:15px;font-weight:700;">₹${params.finalPriceInr}</td>
-                  </tr>
-                  <tr>
-                    <td style="padding:5px 0;color:#64748b;font-size:13px;">Booking ID</td>
-                    <td style="padding:5px 0;color:#94a3b8;font-size:12px;font-family:monospace;">${params.bookingId}</td>
-                  </tr>
-                </table>
-              </td></tr>
-            </table>
-
-            <table width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:24px;">
-              <tr><td style="padding:4px 0;color:#334155;font-size:13px;">1. Make payment via UPI to <strong>30818055@kvb</strong> (UPI mobile: 9080709332).</td></tr>
-              <tr><td style="padding:4px 0;color:#334155;font-size:13px;">2. Send your payment screenshot on WhatsApp along with your Booking ID.</td></tr>
-              <tr><td style="padding:4px 0;color:#334155;font-size:13px;">3. We will confirm your session slot within a few hours.</td></tr>
-            </table>
-            <p style="margin:0 0 8px;color:#334155;font-size:13px;line-height:1.6;">
-              Questions? Reply to this email or reach out on WhatsApp at +91 90807 09332.
-            </p>
-            <p style="margin:24px 0 0;color:#94a3b8;font-size:12px;">Dr D's MedCare · drdmedcare.com</p>
-          </td>
-        </tr>
-
-      </table>
-    </td></tr>
-  </table>
-</body>
-</html>`
 }
 
 const schema = z.object({
@@ -411,7 +217,7 @@ export async function POST(req: Request) {
             from,
             to: body.patientEmail,
             replyTo: adminEmail,
-            subject: `Your booking is confirmed - Dr D's MedCare`,
+            subject: `Booking received: complete payment to confirm your slot - Dr D's MedCare`,
             html: buildPatientConfirmationEmail(emailParams),
           })
         )
