@@ -255,9 +255,6 @@ export default function MonographClient() {
 
   return (
     <>
-      {/* Progress bar */}
-      <div className={s.progressBar} style={{ width: `${scrollProgress}%` }} />
-
       {/* Mobile toggle */}
       <button className={s.mobileToggle} onClick={() => setSidebarOpen(o => !o)} aria-label="Toggle navigation">
         {sidebarOpen ? '✕' : '☰'}
