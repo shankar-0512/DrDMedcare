@@ -24,8 +24,6 @@ export default function BlogPostLayout({ title, excerpt, category, readTime, dat
 
   return (
     <main>
-      <ReadingProgress targetId="article-body" />
-
       {/* ── Article header ── */}
       <header className="relative -mt-[84px] bg-hero pt-[84px]">
         <div className="mx-auto grid max-w-[1280px] items-center gap-10 px-6 pb-14 pt-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:px-10 lg:pb-20 lg:pt-20">
@@ -75,6 +73,7 @@ export default function BlogPostLayout({ title, excerpt, category, readTime, dat
           {/* ── Sidebar ── */}
           <aside className="lg:pt-2">
             <div className="space-y-5 lg:sticky lg:top-28">
+              <ReadingProgress targetId="article-body" />
               <div className="rounded-[2rem] border-2 border-dark/10 bg-paper p-6">
                 <div className="flex items-center gap-3.5">
                   <div className="h-14 w-14 shrink-0 overflow-hidden rounded-full border-[3px] border-brand">

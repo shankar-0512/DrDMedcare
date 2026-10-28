@@ -14,8 +14,6 @@ export default function LegalLayout({ current, updated, children }: { current: s
 
   return (
     <main>
-      <ReadingProgress targetId="legal-body" />
-
       <header className="relative -mt-[84px] bg-hero pt-[84px]">
         <div className="mx-auto max-w-[1280px] px-6 pb-14 pt-14 lg:px-10 lg:pb-20 lg:pt-20">
           <p className="chip rise rise-1"><span className="dot" />Legal</p>
@@ -45,6 +43,7 @@ export default function LegalLayout({ current, updated, children }: { current: s
 
           <aside>
             <div className="space-y-5 lg:sticky lg:top-28">
+              <ReadingProgress targetId="legal-body" />
               <nav aria-label="Legal documents" className="rounded-[2rem] border-2 border-dark/10 bg-paper p-3">
                 <p className="px-4 pb-1 pt-3 text-[0.75rem] font-bold uppercase tracking-[0.16em] text-dark">Legal documents</p>
                 {DOCS.map((d, n) => (
