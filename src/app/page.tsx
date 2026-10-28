@@ -160,7 +160,7 @@ export default async function HomePage() {
       </section>
 
       {/* marquee */}
-      <div className="overflow-hidden bg-panel py-4 text-brand" aria-hidden>
+      <div className="overflow-hidden bg-panel py-4 text-gold-text" aria-hidden>
         <div className="marquee-track">
           {[0, 1].map((k) => (
             <div key={k} className="flex shrink-0 items-center">

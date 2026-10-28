@@ -9,6 +9,7 @@
   /* Secondary: gold — rings, rules, badges, underlines, buttons on dark */
   --c-brand:        216 182 95;    /* #d8b65f */
   --c-brand-deep:   180 146 66;
+  --c-gold-text:    242 217 146;   /* gold for small text on the deep teal panel (AA) */
   --c-brand-soft:   226 243 240;   /* pale mint: badges, summary boxes, soft panels */
 
   /* Surfaces */
@@ -53,6 +54,7 @@
   --color-second:      rgb(var(--c-second));
   --color-second-soft: rgb(var(--c-second-soft));
   --color-panel:       rgb(var(--c-panel));
+  --color-gold-text:   rgb(var(--c-gold-text));
   --color-teal:        rgb(var(--c-teal));
   --color-paper:       rgb(var(--c-paper));
   --color-dark:        rgb(var(--c-dark));
@@ -66,13 +68,20 @@
   --color-slate-100: #f2f2f2;
   --color-slate-200: #e3e3e3;
   --color-slate-300: #cdcdcd;
-  --color-slate-400: #9a9a9a;
-  --color-slate-500: #707070;
+  --color-slate-400: #757575;
+  --color-slate-500: #626262;
   --color-slate-600: #4e4e4e;
   --color-slate-700: #373737;
   --color-slate-800: #262626;
   --color-slate-900: #121212;
   --color-slate-950: #0a0a0a;
+
+  /* Tailwind defaults overridden so small text in article callouts meets WCAG AA */
+  --color-teal-600: #0f766e;
+  --color-red-500:  #dc2626;
+  --color-amber-500: #b45309;
+  --color-orange-500: #c2410c;
+  --color-red-600:  #c01a22;
 }
 
 body {

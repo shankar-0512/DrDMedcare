@@ -79,7 +79,7 @@ function StepIndicator({ current }: { current: 1 | 2 | 3 }) {
               <span
                 className={[
                   'text-xs font-medium whitespace-nowrap',
-                  active ? 'text-[rgb(var(--color-primary))]' : done ? 'text-slate-500' : 'text-slate-300',
+                  active ? 'text-[rgb(var(--color-primary))]' : done ? 'text-slate-500' : 'text-slate-500',
                 ].join(' ')}
               >
                 {s.label}
@@ -179,7 +179,7 @@ export default function BookingWizard() {
 
   if (loading) {
     return (
-      <div className="mx-auto max-w-2xl px-4 py-16">
+      <div className="mx-auto min-h-[1010px] max-w-2xl px-4 py-16 sm:min-h-[800px]">
         <div className="rounded-[2rem] border-2 border-dark/10 bg-paper p-8">
           <div className="flex flex-col items-center gap-3">
             <div className="h-9 w-9 animate-spin rounded-full border-2 border-slate-200 border-t-[rgb(var(--color-primary))]" />
@@ -191,7 +191,7 @@ export default function BookingWizard() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12">
+    <div className="mx-auto min-h-[1010px] max-w-3xl px-4 py-12 sm:min-h-[800px]">
 
       {/* Step indicator */}
       <StepIndicator current={step} />

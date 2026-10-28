@@ -21,7 +21,7 @@ export default function BookPage() {
         sub="Takes less than 2 minutes. Confirmation after payment proof on WhatsApp."
       />
       <div className="bg-paper">
-        <Suspense>
+        <Suspense fallback={<div className="min-h-[1010px] sm:min-h-[800px]" aria-hidden />}>
           <BookingWizard />
         </Suspense>
       </div>
