@@ -143,7 +143,7 @@ export default function Post() {
               <div key={name} className="bg-white rounded-lg border border-teal-100 p-4">
                 <div className="flex items-start justify-between gap-2 mb-2">
                   <p className="text-sm font-bold text-slate-800">{name}</p>
-                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0 ${tagColor}`}>{dose}</span>
+                  <span className={`text-[10px] font-bold px-2.5 py-1 rounded-xl max-w-[58%] text-right leading-snug ${tagColor}`}>{dose}</span>
                 </div>
                 <p className="text-xs text-slate-600 leading-relaxed">{note}</p>
               </div>

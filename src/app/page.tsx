@@ -116,7 +116,7 @@ export default async function HomePage() {
 
       {/* ───────── Hero ───────── */}
       <section className="relative -mt-[84px] overflow-hidden bg-hero pt-[84px]">
-        <div className="mx-auto grid max-w-[1280px] items-center gap-6 px-6 pb-20 pt-14 lg:grid-cols-[1.12fr_0.88fr] lg:gap-10 lg:px-10 lg:pb-28 lg:pt-20">
+        <div className="mx-auto grid max-w-[1280px] items-center gap-6 px-6 pb-20 pt-14 md:grid-cols-[1.05fr_0.95fr] md:gap-8 lg:grid-cols-[1.12fr_0.88fr] lg:gap-10 lg:px-10 lg:pb-28 lg:pt-20">
           <div>
             <p className="chip rise rise-1"><span className="dot" />Clinical pharmacist &middot; Chennai</p>
             <h1 className="display rise rise-2 mt-7 text-[clamp(2.5rem,4.9vw,4.7rem)] text-dark">
@@ -126,10 +126,10 @@ export default async function HomePage() {
               A private one-to-one session with Dr Priyanka Deventhiran to explain your prescription, spot side effects, and know when to go back to your doctor.
             </p>
             <div className="rise rise-4 mt-10 flex flex-wrap items-center gap-4">
-              <Link href="/book" className="btn btn-dark">
+              <Link href="/book" className="btn btn-dark w-full justify-center sm:w-auto">
                 Book a session <span className="arr" aria-hidden>→</span>
               </Link>
-              <a href={waLink(WA_MESSAGES.booking)} target="_blank" rel="noreferrer" className="btn btn-ghost text-dark hover:text-paper">
+              <a href={waLink(WA_MESSAGES.booking)} target="_blank" rel="noreferrer" className="btn btn-ghost w-full justify-center text-dark hover:text-paper sm:w-auto">
                 WhatsApp
               </a>
             </div>
@@ -139,10 +139,10 @@ export default async function HomePage() {
           </div>
 
           {/* capsule composition */}
-          <div className="rise rise-3 relative mx-auto h-[560px] w-full max-w-[520px] lg:h-[640px]">
-            <Capsule className="right-[2%] top-[4%] h-[470px] w-[210px] rotate-[16deg] lg:h-[540px] lg:w-[240px]" />
+          <div className="rise rise-3 relative mx-auto h-[560px] w-full max-w-[520px] md:h-[480px] lg:h-[640px]">
+            <Capsule className="right-[2%] top-[4%] h-[470px] w-[210px] rotate-[16deg] md:h-[380px] md:w-[170px] lg:h-[540px] lg:w-[240px]" />
             <Capsule className="bottom-[2%] left-[4%] h-[150px] w-[68px] -rotate-[28deg]" />
-            <div className="absolute left-1/2 top-1/2 h-[500px] w-[300px] -translate-x-[54%] -translate-y-1/2 overflow-hidden rounded-full border-[7px] border-brand bg-paper shadow-[0_30px_60px_-24px_rgb(var(--c-dark)/0.55)] lg:h-[580px] lg:w-[340px]">
+            <div className="absolute left-1/2 top-1/2 h-[500px] w-[300px] md:h-[420px] md:w-[250px] -translate-x-[54%] -translate-y-1/2 overflow-hidden rounded-full border-[7px] border-brand bg-paper shadow-[0_30px_60px_-24px_rgb(var(--c-dark)/0.55)] lg:h-[580px] lg:w-[340px]">
               <Image
                 src="/photos/hero-corridor.jpg"
                 alt="Dr Priyanka Deventhiran, clinical pharmacist"
@@ -177,9 +177,9 @@ export default async function HomePage() {
 
       {/* ───────── The gap ───────── */}
       <section className="bg-paper">
-        <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-6 py-24 lg:grid-cols-[0.7fr_1.3fr] lg:gap-20 lg:px-10 lg:py-32">
+        <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-6 py-24 md:grid-cols-[0.7fr_1.3fr] md:gap-12 lg:gap-20 lg:px-10 lg:py-32">
           <Reveal>
-            <div className="mx-auto grid aspect-square w-[min(300px,70vw)] place-items-center rounded-full bg-brand text-center text-dark">
+            <div className="mx-auto grid aspect-square w-[min(300px,70vw)] place-items-center md:w-full md:max-w-[230px] lg:max-w-[300px] rounded-full bg-brand text-center text-dark">
               <div>
                 <p className="display text-[7.5rem] leading-none">5</p>
                 <p className="-mt-1 text-[0.82rem] font-bold uppercase tracking-[0.14em]">minutes<br />with your doctor</p>
@@ -258,7 +258,7 @@ export default async function HomePage() {
 
       {/* ───────── Routine ───────── */}
       <section className="on-dark bg-panel text-paper">
-        <div className="mx-auto grid max-w-[1280px] items-center gap-14 px-6 py-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:px-10 lg:py-32">
+        <div className="mx-auto grid max-w-[1280px] items-center gap-14 px-6 py-24 md:grid-cols-[1.05fr_0.95fr] md:gap-12 lg:gap-20 lg:px-10 lg:py-32">
           <Reveal>
             <div className="relative aspect-[3/2] overflow-hidden rounded-full border-[6px] border-brand">
               <Image
@@ -287,7 +287,7 @@ export default async function HomePage() {
 
       {/* ───────── Meet Priyanka ───────── */}
       <section className="bg-hero">
-        <div className="mx-auto grid max-w-[1280px] items-center gap-14 px-6 py-24 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-10 lg:py-32">
+        <div className="mx-auto grid max-w-[1280px] items-center gap-14 px-6 py-24 md:grid-cols-[0.8fr_1.2fr] md:gap-12 lg:gap-20 lg:px-10 lg:py-32">
           <Reveal>
             <div className="relative mx-auto aspect-[3/4.4] w-full max-w-[360px] overflow-hidden rounded-full border-[7px] border-brand bg-paper">
               <Image

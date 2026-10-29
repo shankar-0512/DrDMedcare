@@ -166,7 +166,7 @@ export default function AvailabilityPage() {
     load()
   }
 
-  const inputClass = 'rounded-2xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-900 focus:border-[rgb(var(--color-primary))] focus:bg-white focus:outline-none transition-all'
+  const inputClass = 'rounded-2xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-base sm:text-sm text-slate-900 focus:border-[rgb(var(--color-primary))] focus:bg-white focus:outline-none transition-all'
 
   if (loading) {
     return (

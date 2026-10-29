@@ -28,7 +28,7 @@ export default function BlogPostLayout({ title, excerpt, category, readTime, dat
       <header className="relative -mt-[84px] bg-hero pt-[84px]">
         <div className="mx-auto grid max-w-[1280px] items-center gap-10 px-6 pb-14 pt-14 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:px-10 lg:pb-20 lg:pt-20">
           <div>
-            <Link href="/blog" className="mb-8 inline-flex items-center gap-2 text-[0.85rem] font-bold text-dark/80 transition-colors hover:text-dark">
+            <Link href="/blog" className="mb-8 inline-flex min-h-[44px] items-center gap-2 text-[0.85rem] font-bold text-dark/80 transition-colors hover:text-dark">
               <span className="grid h-7 w-7 place-items-center rounded-full bg-paper text-dark" aria-hidden>←</span> All articles
             </Link>
             <div>
@@ -72,7 +72,7 @@ export default function BlogPostLayout({ title, excerpt, category, readTime, dat
 
           {/* ── Sidebar ── */}
           <aside className="lg:pt-2">
-            <div className="space-y-5 lg:sticky lg:top-28">
+            <div className="grid gap-5 md:grid-cols-2 lg:sticky lg:top-28 lg:block lg:space-y-5">
               <ReadingProgress targetId="article-body" />
               <div className="rounded-[2rem] border-2 border-dark/10 bg-paper p-6">
                 <div className="flex items-center gap-3.5">

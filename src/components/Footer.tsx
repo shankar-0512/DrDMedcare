@@ -18,7 +18,7 @@ const LEGAL = [
 export default function Footer() {
   return (
     <footer className="on-dark mt-0 bg-panel text-paper">
-      <div className="mx-auto max-w-[1280px] px-6 pb-10 pt-20 lg:px-10 lg:pt-24">
+      <div className="mx-auto max-w-[1280px] px-6 pb-28 pt-20 md:pb-10 lg:px-10 lg:pt-24">
         <div className="grid gap-14 lg:grid-cols-[1.5fr_1fr_1fr_1.2fr]">
           <div>
             <p className="display text-[2.3rem] text-paper sm:text-[2.9rem]">

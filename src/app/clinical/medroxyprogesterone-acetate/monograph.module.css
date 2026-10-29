@@ -143,3 +143,8 @@
   .main { margin-left: 0; }
   .mobileToggle { display: flex; align-items: center; justify-content: center; }
 }
+
+/* Touch devices and tablets: bigger tap targets in the section index */
+@media (max-width: 1023px) {
+  .navLink { align-items: center; min-height: 44px; padding-top: 0.55rem; padding-bottom: 0.55rem; font-size: 0.85rem; }
+}

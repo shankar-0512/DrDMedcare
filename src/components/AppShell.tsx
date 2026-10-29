@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import MobileActionBar from '@/components/MobileActionBar'
 
 export default function AppShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
@@ -29,6 +30,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       <Header />
       <div className="flex-1">{children}</div>
       <Footer />
+      <MobileActionBar />
     </div>
   )
 }

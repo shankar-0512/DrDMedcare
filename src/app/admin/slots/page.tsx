@@ -188,7 +188,7 @@ export default function SlotsPage() {
     loadSlots(selectedDate)
   }
 
-  const inputClass = 'rounded-2xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-sm text-slate-900 focus:border-[rgb(var(--color-primary))] focus:bg-white focus:outline-none transition-all'
+  const inputClass = 'rounded-2xl border border-slate-200 bg-slate-50 px-3 py-1.5 text-base sm:text-sm text-slate-900 focus:border-[rgb(var(--color-primary))] focus:bg-white focus:outline-none transition-all'
 
   return (
     <div className="px-8 py-8 max-w-4xl">

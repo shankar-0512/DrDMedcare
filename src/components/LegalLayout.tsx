@@ -42,7 +42,7 @@ export default function LegalLayout({ current, updated, children }: { current: s
           </article>
 
           <aside>
-            <div className="space-y-5 lg:sticky lg:top-28">
+            <div className="grid gap-5 md:grid-cols-2 lg:sticky lg:top-28 lg:block lg:space-y-5">
               <ReadingProgress targetId="legal-body" />
               <nav aria-label="Legal documents" className="rounded-[2rem] border-2 border-dark/10 bg-paper p-3">
                 <p className="px-4 pb-1 pt-3 text-[0.75rem] font-bold uppercase tracking-[0.16em] text-dark">Legal documents</p>

@@ -47,7 +47,7 @@ export default function AboutPage() {
     <main>
       {/* Hero */}
       <section className="relative -mt-[84px] overflow-hidden bg-hero pt-[84px]">
-        <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-6 pb-20 pt-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-10 lg:pb-28 lg:pt-20">
+        <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-6 pb-20 pt-14 md:grid-cols-[1.1fr_0.9fr] md:gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-10 lg:pb-28 lg:pt-20">
           <div>
             <p className="chip rise rise-1"><span className="dot" />About me</p>
             <h1 className="display rise rise-2 mt-7 text-[clamp(2.8rem,6vw,5.4rem)] text-dark">
@@ -60,8 +60,8 @@ export default function AboutPage() {
               The moment that crystallised everything for me was reading about a mother who gave her child cough syrup with milk. The child died from a drug interaction that nobody had warned her about. That shouldn&rsquo;t happen. It doesn&rsquo;t have to happen. That&rsquo;s why Dr D&rsquo;s MedCare exists.
             </p>
             <div className="rise rise-4 mt-9 flex flex-wrap items-center gap-4">
-              <Link href="/book" className="btn btn-dark">Book a session <span className="arr" aria-hidden>→</span></Link>
-              <WhatsAppButton message={WA_MESSAGES.general} />
+              <Link href="/book" className="btn btn-dark w-full justify-center sm:w-auto">Book a session <span className="arr" aria-hidden>→</span></Link>
+              <WhatsAppButton message={WA_MESSAGES.general} className="w-full justify-center sm:w-auto" />
             </div>
           </div>
           <div className="rise rise-3 relative mx-auto w-full max-w-[400px]">

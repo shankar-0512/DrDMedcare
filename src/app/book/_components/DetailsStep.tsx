@@ -129,7 +129,7 @@ export default function DetailsStep(props: {
     window.location.href = `/book/success?${params.toString()}`
   }
 
-  const inputClass = 'w-full rounded-2xl border-2 border-dark/15 bg-brand-soft px-4 py-3 text-sm text-slate-900 placeholder:text-slate-400 focus:border-dark focus:bg-paper focus:outline-none focus:ring-4 focus:ring-brand/60 transition-all'
+  const inputClass = 'w-full rounded-2xl border-2 border-dark/15 bg-brand-soft px-4 py-3 text-base sm:text-sm text-slate-900 placeholder:text-slate-400 focus:border-dark focus:bg-paper focus:outline-none focus:ring-4 focus:ring-brand/60 transition-all'
 
   return (
     <div className="space-y-5">
