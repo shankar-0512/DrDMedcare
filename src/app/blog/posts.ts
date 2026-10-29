@@ -12,6 +12,16 @@ type BlogPost = {
 export type { BlogPost }
 export const POSTS: BlogPost[] = [
   {
+    slug: 'dark-chocolate-period-pain-india',
+    cover: 'Period pain',
+    title: 'Dark Chocolate and Period Pain: What the Evidence Says, and the Foods That May Help More',
+    excerpt: "Dark chocolate is the most popular home remedy for period cramps. Here is what the research actually shows about it, which foods have better evidence, and when period pain needs a doctor.",
+    category: 'Education',
+    readTime: '8 min read',
+    date: 'October 2026',
+    featured: true,
+  },
+  {
     slug: 'apixaban-india',
     cover: 'Blood thinners',
     title: 'Apixaban: Dose, Interactions, and Contraindications Every Patient Should Know',
@@ -19,7 +29,6 @@ export const POSTS: BlogPost[] = [
     category: 'Education',
     readTime: '8 min read',
     date: 'July 2026',
-    featured: true,
   },
   {
     slug: 'myasthenia-gravis-india',

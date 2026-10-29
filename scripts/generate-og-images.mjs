@@ -326,6 +326,38 @@ const POSTS = [
     )
   },
 
+  // 10. Dark chocolate and period pain
+  {
+    slug: 'dark-chocolate-period-pain-india',
+    html: base(
+      'linear-gradient(135deg, #fff1f2 0%, #ffe4e6 50%, #fecdd3 100%)',
+      '#9f1239',
+      '#ffe4e6',
+      '#9f1239',
+      'Education',
+      'Dark Chocolate and Period Pain: What the Evidence Says',
+      'Plus the foods with better evidence, and when pain needs a doctor',
+      'Dr Priyanka Deventhiran',
+      /* decor */ `
+      <svg style="position:absolute;top:-80px;right:-80px;opacity:0.12;" width="480" height="480" viewBox="0 0 480 480">
+        <circle cx="240" cy="240" r="240" fill="#9f1239"/>
+      </svg>
+      <div style="position:absolute;top:44px;right:92px;font-size:150px;opacity:0.2;transform:rotate(-10deg);user-select:none;">🍫</div>
+      <!-- Evidence card -->
+      <div style="position:absolute;top:190px;right:72px;background:white;border-radius:16px;padding:16px 24px;box-shadow:0 8px 32px rgba(159,18,57,0.15);border:1px solid #ffe4e6;min-width:250px;">
+        <div style="font-size:11px;font-weight:700;color:#9f1239;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;">What the trial found</div>
+        <div style="font-size:22px;font-weight:900;color:#0f172a;">Promising, not proven</div>
+        <div style="font-size:11px;color:#64748b;margin-top:4px;">45 women, one dose, no placebo</div>
+      </div>
+      <!-- Ginger badge -->
+      <div style="position:absolute;bottom:120px;right:64px;background:#fff7ed;border-radius:12px;padding:10px 18px;box-shadow:0 4px 16px rgba(234,88,12,0.1);display:flex;align-items:center;gap:8px;border:1px solid #fed7aa;">
+        <span style="font-size:16px;">🫚</span>
+        <span style="font-size:13px;font-weight:600;color:#c2410c;">Ginger has the best evidence</span>
+      </div>
+      `
+    )
+  },
+
   // 8. Myasthenia Gravis
   {
     slug: 'myasthenia-gravis-india',
@@ -370,6 +402,7 @@ async function run() {
   })
 
   for (const post of POSTS) {
+    if (process.env.ONLY && post.slug !== process.env.ONLY) continue
     console.log(`Generating: ${post.slug}`)
     const page = await browser.newPage()
     await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1 })

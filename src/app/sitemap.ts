@@ -83,6 +83,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
+      url: `${BASE_URL}/blog/dark-chocolate-period-pain-india`,
+      lastModified: new Date('2026-10-29'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
       url: `${BASE_URL}/blog/apixaban-india`,
       lastModified: new Date('2026-07-08'),
       changeFrequency: 'monthly',
