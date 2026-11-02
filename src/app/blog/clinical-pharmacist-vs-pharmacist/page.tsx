@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = "Clinical Pharmacist vs Pharmacist"
 const _desc = "Both work with medicines - but their roles, training, and what they can do for you are very different. Here's what you need to know."
-const _ogImage = 'https://drdmedcare.com/og/clinical-pharmacist-vs-pharmacist.jpg'
+const _ogImage = 'https://drdmedcare.com/og/clinical-pharmacist-vs-pharmacist.png'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: _desc,
     type: 'article',
     url: 'https://drdmedcare.com/blog/clinical-pharmacist-vs-pharmacist',
-    images: [{ url: _ogImage, width: 1200, height: 630 }],
+    images: [{ url: _ogImage, width: 2400, height: 1260 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -35,7 +35,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-20',
   url: 'https://drdmedcare.com/blog/clinical-pharmacist-vs-pharmacist',
-  image: 'https://drdmedcare.com/og/clinical-pharmacist-vs-pharmacist.jpg',
+  image: 'https://drdmedcare.com/og/clinical-pharmacist-vs-pharmacist.png',
   inLanguage: 'en-IN',
   keywords: 'clinical pharmacist India, pharmacist vs clinical pharmacist, Pharm D India, medication counselling India',
 }

@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = "Why I Became a Medication Counsellor"
 const _desc = "A child died because nobody warned a mother about mixing cough syrup with milk. That moment changed everything for me."
-const _ogImage = 'https://drdmedcare.com/og/why-i-started-drd-medcare.jpg'
+const _ogImage = 'https://drdmedcare.com/og/why-i-started-drd-medcare.png'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: _desc,
     type: 'article',
     url: 'https://drdmedcare.com/blog/why-i-started-drd-medcare',
-    images: [{ url: _ogImage, width: 1200, height: 630 }],
+    images: [{ url: _ogImage, width: 2400, height: 1260 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -35,7 +35,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-01',
   url: 'https://drdmedcare.com/blog/why-i-started-drd-medcare',
-  image: 'https://drdmedcare.com/og/why-i-started-drd-medcare.jpg',
+  image: 'https://drdmedcare.com/og/why-i-started-drd-medcare.png',
   inLanguage: 'en-IN',
   keywords: 'medication counselling India, clinical pharmacist India, patient education',
 }

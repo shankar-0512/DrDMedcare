@@ -4,7 +4,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Dark Chocolate and Period Pain: What the Evidence Says'
 const _desc = 'Does dark chocolate really ease period cramps? We looked at the one controlled trial, the magnesium theory, and which foods have better evidence, from ginger to omega-3.'
-const _ogImage = 'https://drdmedcare.com/og/dark-chocolate-period-pain-india.jpg'
+const _ogImage = 'https://drdmedcare.com/og/dark-chocolate-period-pain-india.png'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: _desc,
     type: 'article',
     url: 'https://drdmedcare.com/blog/dark-chocolate-period-pain-india',
-    images: [{ url: _ogImage, width: 1200, height: 630 }],
+    images: [{ url: _ogImage, width: 2400, height: 1260 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -37,7 +37,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-10-29',
   url: 'https://drdmedcare.com/blog/dark-chocolate-period-pain-india',
-  image: 'https://drdmedcare.com/og/dark-chocolate-period-pain-india.jpg',
+  image: 'https://drdmedcare.com/og/dark-chocolate-period-pain-india.png',
   inLanguage: 'en-IN',
   keywords: 'dark chocolate period pain, foods for period cramps, dysmenorrhoea diet India, ginger for period pain, magnesium period cramps, home remedies menstrual pain',
 }

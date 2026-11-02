@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Meningitis Warning Signs in India'
 const _desc = "Bacterial meningitis can become life-threatening within 24 hours. Here's how to recognise it early, what to do, and which vaccines are available in India."
-const _ogImage = 'https://drdmedcare.com/og/meningitis-symptoms-india.jpg'
+const _ogImage = 'https://drdmedcare.com/og/meningitis-symptoms-india.png'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: _desc,
     type: 'article',
     url: 'https://drdmedcare.com/blog/meningitis-symptoms-india',
-    images: [{ url: _ogImage, width: 1200, height: 630 }],
+    images: [{ url: _ogImage, width: 2400, height: 1260 }],
   },
   twitter: {
     card: 'summary_large_image',

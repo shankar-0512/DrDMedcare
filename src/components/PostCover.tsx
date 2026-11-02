@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-/** Article cover = the per-post social thumbnail in /public/og/<slug>.jpg (1200x630). */
+/** Article cover = the per-post social thumbnail in /public/og/<slug>.png (2400x1260, 2x retina). */
 export default function PostCover({
   slug,
   className = '',
@@ -15,7 +15,7 @@ export default function PostCover({
 }) {
   return (
     <div className={`relative overflow-hidden bg-hero ${className}`}>
-      <Image src={`/og/${slug}.jpg`} alt="" fill sizes={sizes} priority={priority} className="object-cover" />
+      <Image src={`/og/${slug}.png`} alt="" fill sizes={sizes} priority={priority} className="object-cover" />
     </div>
   )
 }

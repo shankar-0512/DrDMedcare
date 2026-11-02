@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Who Does What in Indian Healthcare'
 const _desc = 'Doctor, specialist, pharmacist, clinical pharmacist, medication counsellor, nurse - each plays a distinct role. A quick guide to who does what in Indian healthcare.'
-const _ogImage = 'https://drdmedcare.com/og/healthcare-professionals-india.jpg'
+const _ogImage = 'https://drdmedcare.com/og/healthcare-professionals-india.png'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: _desc,
     type: 'article',
     url: 'https://drdmedcare.com/blog/healthcare-professionals-india',
-    images: [{ url: _ogImage, width: 1200, height: 630 }],
+    images: [{ url: _ogImage, width: 2400, height: 1260 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -35,7 +35,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-15',
   url: 'https://drdmedcare.com/blog/healthcare-professionals-india',
-  image: 'https://drdmedcare.com/og/healthcare-professionals-india.jpg',
+  image: 'https://drdmedcare.com/og/healthcare-professionals-india.png',
   inLanguage: 'en-IN',
   keywords: 'Indian healthcare professionals, clinical pharmacist India, doctor vs pharmacist, healthcare roles India',
 }

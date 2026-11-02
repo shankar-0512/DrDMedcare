@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Blood Pressure Monitors: A Home Guide'
 const _desc = 'Monitoring your blood pressure at home is a simple yet powerful way to take control of your heart health. Learn how to choose a device, take accurate readings, and interpret results.'
-const _ogImage = 'https://drdmedcare.com/og/how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners.jpg'
+const _ogImage = 'https://drdmedcare.com/og/how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners.png'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: _desc,
     type: 'article',
     url: 'https://drdmedcare.com/blog/how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners',
-    images: [{ url: _ogImage, width: 1200, height: 630 }],
+    images: [{ url: _ogImage, width: 2400, height: 1260 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -36,7 +36,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-04-19',
   url: 'https://drdmedcare.com/blog/how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners',
-  image: 'https://drdmedcare.com/og/how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners.jpg',
+  image: 'https://drdmedcare.com/og/how-to-use-blood-pressure-monitors-at-home-a-guide-for-beginners.png',
   inLanguage: 'en-IN',
   keywords: 'home blood pressure monitoring India, blood pressure monitor guide, hypertension at home, Dr. Morepen AccuSure',
 }

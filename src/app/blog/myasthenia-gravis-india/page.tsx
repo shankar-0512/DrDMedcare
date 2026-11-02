@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Myasthenia Gravis: Medicines to Avoid'
 const _desc = 'MG is a rare autoimmune disease where muscle weakness is unpredictable, and where a common antibiotic or antacid can trigger a crisis. Here is what every patient and carer needs to know.'
-const _ogImage = 'https://drdmedcare.com/og/myasthenia-gravis-india.jpg'
+const _ogImage = 'https://drdmedcare.com/og/myasthenia-gravis-india.png'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: _desc,
     type: 'article',
     url: 'https://drdmedcare.com/blog/myasthenia-gravis-india',
-    images: [{ url: _ogImage, width: 1200, height: 630 }],
+    images: [{ url: _ogImage, width: 2400, height: 1260 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -36,7 +36,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-06-02',
   url: 'https://drdmedcare.com/blog/myasthenia-gravis-india',
-  image: 'https://drdmedcare.com/og/myasthenia-gravis-india.jpg',
+  image: 'https://drdmedcare.com/og/myasthenia-gravis-india.png',
   inLanguage: 'en-IN',
   keywords: 'myasthenia gravis India, myasthenia gravis treatment, myasthenia gravis medicines avoid, myasthenic crisis, pyridostigmine India',
 }

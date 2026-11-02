@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Apixaban: Dose, Interactions, and Contraindications Explained'
 const _desc = "Apixaban is one of the most widely prescribed blood thinners in India. No INR monitoring needed - but the dose, the interactions, and the contraindications matter just as much as they did with warfarin. Here's what every patient should know."
-const _ogImage = 'https://drdmedcare.com/og/apixaban-india.jpg'
+const _ogImage = 'https://drdmedcare.com/og/apixaban-india.png'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: _desc,
     type: 'article',
     url: 'https://drdmedcare.com/blog/apixaban-india',
-    images: [{ url: _ogImage, width: 1200, height: 630 }],
+    images: [{ url: _ogImage, width: 2400, height: 1260 }],
   },
   twitter: {
     card: 'summary_large_image',

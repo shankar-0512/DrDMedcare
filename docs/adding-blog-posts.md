@@ -31,11 +31,11 @@ Add an entry to `scripts/generate-og-images.mjs` following the pattern of existi
 node scripts/generate-og-images.mjs
 ```
 
-The image is saved to `public/og/[slug].jpg` (JPG, not PNG). It is also used as the article's cover on the Journal cards, the article header and the "Read next" card, so it must exist before you publish.
+The image is saved to `public/og/[slug].png` at 2x retina (2400x1260 PNG). It is also used as the article's cover on the Journal cards, the article header and the "Read next" card, so it must exist before you publish.
 
 Set `_ogImage` in the page file to:
 ```
-https://drdmedcare.com/og/[slug].jpg
+https://drdmedcare.com/og/[slug].png
 ```
 
 ---

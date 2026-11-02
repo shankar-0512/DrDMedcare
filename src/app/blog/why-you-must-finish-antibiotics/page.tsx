@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Why You Must Finish Your Antibiotics'
 const _desc = "Feeling better doesn't mean the infection is gone. Here's what actually happens when you stop your antibiotic course early."
-const _ogImage = 'https://drdmedcare.com/og/why-you-must-finish-antibiotics.jpg'
+const _ogImage = 'https://drdmedcare.com/og/why-you-must-finish-antibiotics.png'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: _desc,
     type: 'article',
     url: 'https://drdmedcare.com/blog/why-you-must-finish-antibiotics',
-    images: [{ url: _ogImage, width: 1200, height: 630 }],
+    images: [{ url: _ogImage, width: 2400, height: 1260 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -35,7 +35,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-10',
   url: 'https://drdmedcare.com/blog/why-you-must-finish-antibiotics',
-  image: 'https://drdmedcare.com/og/why-you-must-finish-antibiotics.jpg',
+  image: 'https://drdmedcare.com/og/why-you-must-finish-antibiotics.png',
   inLanguage: 'en-IN',
   keywords: 'antibiotics course India, antibiotic resistance, finish antibiotics, stop antibiotics early',
 }

@@ -3,7 +3,7 @@ import BlogPostLayout from '@/components/BlogPostLayout'
 
 const _title = 'Drug-Food Interactions in India'
 const _desc = 'Dal, milk, banana, tea - everyday foods that can silently reduce or amplify the effect of your medicines.'
-const _ogImage = 'https://drdmedcare.com/og/drug-food-interactions-india.jpg'
+const _ogImage = 'https://drdmedcare.com/og/drug-food-interactions-india.png'
 
 export const metadata: Metadata = {
   title: `${_title} | Dr D's MedCare Blog`,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: _desc,
     type: 'article',
     url: 'https://drdmedcare.com/blog/drug-food-interactions-india',
-    images: [{ url: _ogImage, width: 1200, height: 630 }],
+    images: [{ url: _ogImage, width: 2400, height: 1260 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -35,7 +35,7 @@ const jsonLd = {
   publisher: { '@type': 'Organization', name: "Dr D's MedCare", url: 'https://drdmedcare.com' },
   datePublished: '2026-03-05',
   url: 'https://drdmedcare.com/blog/drug-food-interactions-india',
-  image: 'https://drdmedcare.com/og/drug-food-interactions-india.jpg',
+  image: 'https://drdmedcare.com/og/drug-food-interactions-india.png',
   inLanguage: 'en-IN',
   keywords: 'drug food interactions India, milk antibiotics, medicine with food, Indian diet medicine',
 }
