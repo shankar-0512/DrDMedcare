@@ -405,12 +405,12 @@ async function run() {
     if (process.env.ONLY && post.slug !== process.env.ONLY) continue
     console.log(`Generating: ${post.slug}`)
     const page = await browser.newPage()
-    await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 2 }) // 2x retina: output is 2400x1260
+    await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 3 }) // 3x: output is 3600x1890, stays sharp full-screen on retina laptops
     await page.setContent(post.html, { waitUntil: 'networkidle0' })
 
     const outPath = path.join(OUT_DIR, `${post.slug}.png`)
     await page.screenshot({ path: outPath, type: 'png', clip: { x: 0, y: 0, width: 1200, height: 630 } })
-    console.log(`  ✓ Saved ${post.slug}.png (2400x1260)`)
+    console.log(`  ✓ Saved ${post.slug}.png (3600x1890)`)
     await page.close()
   }
 

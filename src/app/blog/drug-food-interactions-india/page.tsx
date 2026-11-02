@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: _desc,
     type: 'article',
     url: 'https://drdmedcare.com/blog/drug-food-interactions-india',
-    images: [{ url: _ogImage, width: 2400, height: 1260 }],
+    images: [{ url: _ogImage, width: 3600, height: 1890 }],
   },
   twitter: {
     card: 'summary_large_image',

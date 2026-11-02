@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    // 75 is the default; 90 is used for the text-heavy article thumbnails so small type stays crisp
+    qualities: [75, 90],
+  },
   async redirects() {
     return [
       {
