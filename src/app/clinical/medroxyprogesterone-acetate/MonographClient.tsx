@@ -424,7 +424,7 @@ export default function MonographClient() {
             <p>MPA acts as a potent full agonist at the progesterone receptor (PR), with approximately 100-fold higher binding affinity and transactivation potency compared to endogenous progesterone. This explains why oral doses of just 10 mg/day can suppress ovulation - a task that would require 300 mg/day of exogenous progesterone.</p>
             <p className="text-xs font-bold uppercase tracking-widest pt-2" style={{ color: 'rgb(var(--color-primary))' }}>Endometrial Effects</p>
             <p>When adequate endogenous oestrogen is present, MPA transforms proliferative endometrium into secretory endometrium. This is the basis for its utility in treating dysfunctional uterine bleeding and for providing endometrial protection in women receiving unopposed oestrogen as HRT.</p>
-            <p className="text-xs font-bold uppercase tracking-widest pt-2" style={{ color: 'rgb(var(--color-primary))' }}>Hypothalamic–Pituitary Axis Suppression</p>
+            <p className="text-xs font-bold uppercase tracking-widest pt-2" style={{ color: 'rgb(var(--color-primary))' }}>Hypothalamic-Pituitary Axis Suppression</p>
             <p>MPA binds progesterone receptors in the hypothalamus and anterior pituitary, suppressing GnRH secretion and consequently reducing LH and FSH release. This effect is dose- and route-dependent:</p>
             <ul className="list-disc pl-5 space-y-1.5">
               <li><strong className="text-slate-800">Parenteral high-dose MPA (e.g., 150 mg IM):</strong> Reliably inhibits follicular maturation and ovulation - the basis for its contraceptive action.</li>
@@ -442,7 +442,7 @@ export default function MonographClient() {
 
           {/* 03 */}
           <Section id="s3" num="03" title="What It Treats - Licensed Indications" collapsed={!!collapsed['s3']} onToggle={() => toggleSection('s3')}>
-            <p className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgb(var(--color-primary))' }}>Standard-Dose Oral (2.5–10 mg tablets)</p>
+            <p className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgb(var(--color-primary))' }}>Standard-Dose Oral (2.5-10 mg tablets)</p>
             <ul className="list-disc pl-5 space-y-1.5">
               <li><strong className="text-slate-800">Secondary amenorrhoea</strong> due to hormonal imbalance (excluding organic causes such as fibroids or uterine cancer)</li>
               <li><strong className="text-slate-800">Abnormal uterine bleeding</strong> due to ovulatory dysfunction</li>
@@ -456,7 +456,7 @@ export default function MonographClient() {
               <li><strong className="text-slate-800">IM 150 mg/mL:</strong> Contraception; adjunctive/palliative therapy for inoperable, recurrent, or metastatic endometrial carcinoma (400 mg/mL formulation)</li>
               <li><strong className="text-slate-800">SC 104 mg/0.65 mL:</strong> Contraception; pain management in endometriosis</li>
             </ul>
-            <p className="text-xs font-bold uppercase tracking-widest pt-2" style={{ color: 'rgb(var(--color-primary))' }}>High-Dose Oral (100–400 mg tablets)</p>
+            <p className="text-xs font-bold uppercase tracking-widest pt-2" style={{ color: 'rgb(var(--color-primary))' }}>High-Dose Oral (100-400 mg tablets)</p>
             <p>Reserved exclusively for certain oncological indications. Not within the scope of this standard-dose monograph - specialist oncology guidance should be followed.</p>
           </Section>
 
@@ -491,14 +491,14 @@ export default function MonographClient() {
           {/* 06 */}
           <Section id="s6" num="06" title="Dosage & Administration" collapsed={!!collapsed['s6']} onToggle={() => toggleSection('s6')}>
             <Callout type="info" title="ℹ️ Food Effect">
-              <p>Taking oral MPA with food significantly increases bioavailability. A 10 mg dose taken peri-prandially increases Cmax by 50–70% and AUC by 18–33%, without altering half-life. While not strictly required, consistent administration with or without food is advisable for predictable drug levels.</p>
+              <p>Taking oral MPA with food significantly increases bioavailability. A 10 mg dose taken peri-prandially increases Cmax by 50-70% and AUC by 18-33%, without altering half-life. While not strictly required, consistent administration with or without food is advisable for predictable drug levels.</p>
             </Callout>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 my-4">
-              <DoseCard indication="Secondary Amenorrhoea" dose="5–10 mg OD × 5–10 days" notes="Commence at any point in cycle. Withdrawal bleed expected 3–7 days post-course." />
-              <DoseCard indication="Abnormal Uterine Bleeding" dose="5–10 mg OD × 5–10 days" notes="Begin on days 16–21 of cycle. If oestrogenic deficiency co-exists, add oestrogen." />
+              <DoseCard indication="Secondary Amenorrhoea" dose="5-10 mg OD × 5-10 days" notes="Commence at any point in cycle. Withdrawal bleed expected 3-7 days post-course." />
+              <DoseCard indication="Abnormal Uterine Bleeding" dose="5-10 mg OD × 5-10 days" notes="Begin on days 16-21 of cycle. If oestrogenic deficiency co-exists, add oestrogen." />
               <DoseCard indication="Endometriosis" dose="10 mg TDS × 3 months" notes="30 mg/day continuously. Begin on first day of a period." />
-              <DoseCard indication="PCOS (Oligomenorrhoea)" dose="10 mg OD × 14 days" notes="Every 1–3 months to induce withdrawal bleeding." />
-              <DoseCard indication="HRT Endometrial Protection" dose="1.5–10 mg OD" notes="Sequential: 10 mg × 12–14 days/cycle. Continuous combined: 2.5–5 mg daily." />
+              <DoseCard indication="PCOS (Oligomenorrhoea)" dose="10 mg OD × 14 days" notes="Every 1-3 months to induce withdrawal bleeding." />
+              <DoseCard indication="HRT Endometrial Protection" dose="1.5-10 mg OD" notes="Sequential: 10 mg × 12-14 days/cycle. Continuous combined: 2.5-5 mg daily." />
               <DoseCard indication="Prostate Cancer Hot Flushes" dose="20 mg OD (2 × 10 mg)" notes="Initial 10-week course. Review and continue as needed." />
               <DoseCard indication="Contraception (IM)" dose="150 mg IM q13 weeks" notes="Initiate within 5 days of menstrual onset. Vigorously shake vial before use." />
               <DoseCard indication="Contraception (SC)" dose="104 mg SC q13 weeks" notes="Anterior thigh or abdomen. 45° angle. Do not rub after injection." />
@@ -510,7 +510,7 @@ export default function MonographClient() {
               <li>IM injections: Administer to gluteal or deltoid region. Vigorously shake suspension immediately before use. Never dilute, never administer IV.</li>
               <li>SC injections: Administer to anterior thigh or abdomen at 45°. Pull skin away from body before injecting. Press lightly - do not rub post-injection.</li>
               <li>If more than 13 weeks have elapsed since the last injectable dose, exclude pregnancy before re-administering.</li>
-              <li>Duration of therapy is indication-dependent. Most gynaecological oral courses run 2–3 months. Injectable contraception requires ongoing q13-week scheduling.</li>
+              <li>Duration of therapy is indication-dependent. Most gynaecological oral courses run 2-3 months. Injectable contraception requires ongoing q13-week scheduling.</li>
             </ul>
           </Section>
 
@@ -518,16 +518,16 @@ export default function MonographClient() {
           <Section id="s7" num="07" title="Pharmacokinetics - ADME" collapsed={!!collapsed['s7']} onToggle={() => toggleSection('s7')}>
             <p className="text-xs font-bold uppercase tracking-widest" style={{ color: 'rgb(var(--color-primary))' }}>Absorption</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 my-3">
-              <PKCard label="Tmax (oral)" value="2–4 hours" note="Rapid GI absorption; lag time ~30 min" />
-              <PKCard label="Cmax (oral 10 mg)" value="1.2–5.2 ng/mL" note="Via GC-MS; highly variable between individuals" />
-              <PKCard label="Food Effect" value="↑Cmax 50–70%" note="↑AUC 18–33%; t½ unchanged" />
+              <PKCard label="Tmax (oral)" value="2-4 hours" note="Rapid GI absorption; lag time ~30 min" />
+              <PKCard label="Cmax (oral 10 mg)" value="1.2-5.2 ng/mL" note="Via GC-MS; highly variable between individuals" />
+              <PKCard label="Food Effect" value="↑Cmax 50-70%" note="↑AUC 18-33%; t½ unchanged" />
               <PKCard label="Oral Bioavailability" value="~100%" note="Absolute bioavailability not formally studied; high relative BA confirmed" />
-              <PKCard label="Tmax (IM 150 mg)" value="~3 weeks" note="Peak plasma 1–7 ng/mL; prolonged depot release" />
+              <PKCard label="Tmax (IM 150 mg)" value="~3 weeks" note="Peak plasma 1-7 ng/mL; prolonged depot release" />
               <PKCard label="Tmax (SC 104 mg)" value="~6.5 days" note="Cmax ~3.83 nmol/L; slower absorption vs IM" />
             </div>
             <p className="text-xs font-bold uppercase tracking-widest pt-2" style={{ color: 'rgb(var(--color-primary))' }}>Distribution</p>
             <div className="grid grid-cols-2 gap-2.5 my-3">
-              <PKCard label="Protein Binding" value="86–90%" note="Primarily to albumin; NO binding to SHBG" />
+              <PKCard label="Protein Binding" value="86-90%" note="Primarily to albumin; NO binding to SHBG" />
               <PKCard label="Volume of Distribution" value="High (lipophilic)" note="Extensive tissue distribution; exact Vd not standardised" />
             </div>
             <p className="text-xs font-bold uppercase tracking-widest pt-2" style={{ color: 'rgb(var(--color-primary))' }}>Metabolism</p>
@@ -535,12 +535,12 @@ export default function MonographClient() {
             <p>No formal DDI studies with specific CYP3A4 inducers or inhibitors have been conducted for MPA, though CYP3A4 inducers are known to reduce MPA plasma concentrations clinically.</p>
             <p className="text-xs font-bold uppercase tracking-widest pt-2" style={{ color: 'rgb(var(--color-primary))' }}>Elimination</p>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 my-3">
-              <PKCard label="Half-life (oral)" value="11.6–33 hours" note="Variable; some sources report up to 40–60 hours for high-dose formulations" />
+              <PKCard label="Half-life (oral)" value="11.6-33 hours" note="Variable; some sources report up to 40-60 hours for high-dose formulations" />
               <PKCard label="Half-life (IM depot)" value="~50 days" note="Microcrystalline aqueous suspension" />
               <PKCard label="Half-life (SC depot)" value="~40 days" note="Microcrystalline aqueous suspension" />
-              <PKCard label="Urinary Excretion" value="20–50%" note="Following IV administration" />
-              <PKCard label="Faecal Excretion" value="5–10%" note="Minor route of elimination" />
-              <PKCard label="Clearance (oral)" value="1,600–4,000 L/day" note="High inter-patient variability; mean ~1,668 L/day" />
+              <PKCard label="Urinary Excretion" value="20-50%" note="Following IV administration" />
+              <PKCard label="Faecal Excretion" value="5-10%" note="Minor route of elimination" />
+              <PKCard label="Clearance (oral)" value="1,600-4,000 L/day" note="High inter-patient variability; mean ~1,668 L/day" />
             </div>
             <Callout type="warning" title="⚠️ Hepatic Impairment - PK Impact">
               <p>MPA is almost exclusively hepatically cleared. In patients with alcoholic cirrhosis, elimination is significantly reduced. Oral dose reduction may be warranted; injectable formulations have no established dose-adjustment guidance in this setting. Avoid in significant liver disease.</p>
@@ -565,10 +565,10 @@ export default function MonographClient() {
             <Table>
               <THead><tr><Th>Formulation</Th><Th>Onset</Th><Th>Full Effect</Th><Th>Duration</Th></tr></THead>
               <tbody>
-                <TRow><Td bold>Oral (gynaecological)</Td><Td>Immediate (pharmacologically)</Td><Td>2–3 months for full symptom resolution</Td><Td>Per treatment course (typically 5–14 days or cyclic)</Td></TRow>
-                <TRow><Td bold>IM 150 mg (contraception)</Td><Td>Contraceptive within 24 hours if given on day 1–5 of cycle</Td><Td>Peak serum ~3 weeks post-injection</Td><Td>13 weeks (3 months) per dose</Td></TRow>
-                <TRow><Td bold>SC 104 mg (contraception)</Td><Td>Contraceptive within 24 hours (day 1–5 of cycle)</Td><Td>Peak ~6–7 days</Td><Td>13 weeks per dose</Td></TRow>
-                <TRow><Td bold>Fertility return (post-IM)</Td><Td>N/A</Td><Td>Median 10 months post last injection</Td><Td>Up to 12–18 months in some patients</Td></TRow>
+                <TRow><Td bold>Oral (gynaecological)</Td><Td>Immediate (pharmacologically)</Td><Td>2-3 months for full symptom resolution</Td><Td>Per treatment course (typically 5-14 days or cyclic)</Td></TRow>
+                <TRow><Td bold>IM 150 mg (contraception)</Td><Td>Contraceptive within 24 hours if given on day 1-5 of cycle</Td><Td>Peak serum ~3 weeks post-injection</Td><Td>13 weeks (3 months) per dose</Td></TRow>
+                <TRow><Td bold>SC 104 mg (contraception)</Td><Td>Contraceptive within 24 hours (day 1-5 of cycle)</Td><Td>Peak ~6-7 days</Td><Td>13 weeks per dose</Td></TRow>
+                <TRow><Td bold>Fertility return (post-IM)</Td><Td>N/A</Td><Td>Median 10 months post last injection</Td><Td>Up to 12-18 months in some patients</Td></TRow>
               </tbody>
             </Table>
             <p>Oral tablets begin working immediately but patients should be counselled that symptom improvement - particularly for heavy periods or endometriosis pain - may take one to three months to become fully apparent.</p>
@@ -605,8 +605,8 @@ export default function MonographClient() {
               <p>The following warnings apply <strong>specifically when MPA is used in combination with oestrogen</strong> (e.g., conjugated oestrogens + MPA as HRT). They do <strong>not</strong> apply to MPA used alone at standard doses. This distinction is clinically critical and must be explicitly communicated to patients and prescribers.</p>
               <ul className="list-disc pl-4 space-y-1 mt-2">
                 <li><strong>Cardiovascular:</strong> CE/MPA combination significantly increases risk of myocardial infarction, stroke, and pulmonary embolism (WHI data; mean follow-up 5.6 years; trial stopped early)</li>
-                <li><strong>Breast cancer:</strong> RR 1.24 (95% CI 1.01–1.54) for invasive breast cancer - 41 vs 33 cases per 10,000 women-years vs placebo</li>
-                <li><strong>Dementia:</strong> Increased risk of probable dementia in women ≥65 years receiving combined oestrogen–progestin HRT (WHIMS sub-study)</li>
+                <li><strong>Breast cancer:</strong> RR 1.24 (95% CI 1.01-1.54) for invasive breast cancer - 41 vs 33 cases per 10,000 women-years vs placebo</li>
+                <li><strong>Dementia:</strong> Increased risk of probable dementia in women ≥65 years receiving combined oestrogen-progestin HRT (WHIMS sub-study)</li>
               </ul>
             </Callout>
             {[
@@ -668,7 +668,7 @@ export default function MonographClient() {
             <p>Menstrual irregularity is the single most common adverse effect of injectable MPA used as contraception:</p>
             <ul className="list-disc pl-5 space-y-1 mt-1">
               <li>~57% of users experience irregular bleeding or spotting at 12 months</li>
-              <li>~60–70% develop amenorrhoea by 12–24 months of use</li>
+              <li>~60-70% develop amenorrhoea by 12-24 months of use</li>
               <li>Weight gain {'>'} 10 lb in ~38% at 24 months</li>
             </ul>
           </Section>
@@ -727,7 +727,7 @@ export default function MonographClient() {
             <p className="text-xs font-bold uppercase tracking-widest pb-1" style={{ color: 'rgb(var(--color-primary))' }}>Pregnancy</p>
             <Callout type="danger" title="⛔ Contraindicated in Pregnancy - FDA Category X">
               <p>MPA should not be used during pregnancy. First-trimester exposure has been associated with potential increased risk of hypospadias, clitoral enlargement, and labial fusion in offspring, though clear causation has not been definitively established. If pregnancy is confirmed during therapy, MPA should be discontinued immediately and the patient counselled on fetal risk.</p>
-              <p className="mt-2"><strong>Low-dose exposure before pregnancy was known:</strong> Standard oral doses (2.5–10 mg) taken before awareness of pregnancy are unlikely to cause significant fetal harm.</p>
+              <p className="mt-2"><strong>Low-dose exposure before pregnancy was known:</strong> Standard oral doses (2.5-10 mg) taken before awareness of pregnancy are unlikely to cause significant fetal harm.</p>
             </Callout>
             <p>MPA can affect the hormonal milieu of pregnancy. Injectable MPA is not recommended for women attempting to conceive, given the prolonged fertility delay post-discontinuation.</p>
             <p className="text-xs font-bold uppercase tracking-widest pt-3 pb-1" style={{ color: 'rgb(var(--color-primary))' }}>Lactation</p>
@@ -741,7 +741,7 @@ export default function MonographClient() {
             <p className="text-xs font-bold uppercase tracking-widest pt-3 pb-1" style={{ color: 'rgb(var(--color-primary))' }}>Fertility</p>
             <ul className="list-disc pl-5 space-y-1.5">
               <li><strong className="text-slate-800">Oral MPA:</strong> Fertility typically returns promptly after cessation.</li>
-              <li><strong className="text-slate-800">Injectable MPA:</strong> Median return of fertility is approximately 10 months post last injection, but can extend to 12–18 months. Patients planning pregnancy should be counselled about this delay before initiating injectable therapy.</li>
+              <li><strong className="text-slate-800">Injectable MPA:</strong> Median return of fertility is approximately 10 months post last injection, but can extend to 12-18 months. Patients planning pregnancy should be counselled about this delay before initiating injectable therapy.</li>
               <li>Ectopic pregnancy has been reported in cases of contraceptive failure with injectable MPA.</li>
             </ul>
           </Section>
@@ -809,7 +809,7 @@ export default function MonographClient() {
               <CounselCard icon="🚗" title="Driving & Machinery">This medicine can cause dizziness and fatigue. If you feel drowsy or dizzy, do not drive, cycle, or operate machinery until you feel better.</CounselCard>
               <CounselCard icon="🍺" title="Alcohol">You can drink alcohol in moderation while taking this medicine. However, alcohol will make side effects like headaches, dizziness, and fatigue worse - so drink cautiously.</CounselCard>
               <CounselCard icon="🌿" title="Herbal Supplements">Do not take St John&apos;s Wort while on this medicine - it significantly reduces its effectiveness. Always tell your doctor or pharmacist about any herbal products, vitamins, or supplements you take.</CounselCard>
-              <CounselCard icon="🤰" title="Planning a Pregnancy">Tell your doctor before starting this medicine if you plan to get pregnant. Oral MPA: fertility returns quickly after stopping. Injectable MPA: fertility can take 10–18 months to return after the last injection.</CounselCard>
+              <CounselCard icon="🤰" title="Planning a Pregnancy">Tell your doctor before starting this medicine if you plan to get pregnant. Oral MPA: fertility returns quickly after stopping. Injectable MPA: fertility can take 10-18 months to return after the last injection.</CounselCard>
               <CounselCard icon="😔" title="Mood Changes">Some people feel low in mood, anxious, or depressed while taking this medicine. If you notice significant changes in how you feel emotionally, speak to your doctor - do not simply stop the medication without guidance.</CounselCard>
               <CounselCard icon="⚖️" title="Weight & Lifestyle">A small amount of weight gain is possible, especially with injections. A balanced diet and regular physical activity can help manage this. Weight-bearing exercise also helps protect bone density with long-term use.</CounselCard>
               <CounselCard icon="🦴" title="Bone Health (Injections Only)">Long-term use of the injection can reduce bone density. Discuss calcium and vitamin D supplementation with your doctor if you are using the injection for more than 2 years. Avoid smoking, which worsens bone loss.</CounselCard>
@@ -824,7 +824,7 @@ export default function MonographClient() {
             <Table>
               <THead><tr><Th>Parameter</Th><Th>Oral Tablets</Th><Th>Injectable Suspension</Th></tr></THead>
               <tbody>
-                <TRow><Td bold>Temperature</Td><Td>20–25°C (68–77°F) - Controlled Room Temperature (USP)</Td><Td>15–30°C - protect from freezing</Td></TRow>
+                <TRow><Td bold>Temperature</Td><Td>20-25°C (68-77°F) - Controlled Room Temperature (USP)</Td><Td>15-30°C - protect from freezing</Td></TRow>
                 <TRow><Td bold>Light</Td><Td>Protect from light; store in tight, light-resistant container</Td><Td>Keep in original packaging; protect from prolonged light</Td></TRow>
                 <TRow><Td bold>Moisture</Td><Td>Keep away from moisture; do not store in bathroom medicine cabinet</Td><Td>N/A (aqueous suspension)</Td></TRow>
                 <TRow><Td bold>Special handling</Td><Td>None required</Td><Td>Shake vigorously immediately before use. Do not dilute. Do not administer IV. Single use only.</Td></TRow>
@@ -841,7 +841,7 @@ export default function MonographClient() {
               <li><strong className="text-slate-800">UK (NHS):</strong> Available on NHS prescription. Tablets dispensed under generic name or branded equivalents. Injectable Depo-Provera available at sexual and reproductive health clinics and GP surgeries. No patient prescription charge for those with exemption certificates.</li>
               <li><strong className="text-slate-800">India:</strong> Available in multiple generic tablet brands across all tiers of healthcare. Widely accessible and inexpensive.</li>
               <li><strong className="text-slate-800">US:</strong> Provera (branded) and generic MPA tablets widely available. Depo-Provera injection available at clinics. Covered under most insurance plans for contraception at no cost under ACA-mandated preventive services.</li>
-              <li><strong className="text-slate-800">High-dose formulations (100–400 mg):</strong> Less widely available; typically dispensed through specialist oncology pharmacy channels.</li>
+              <li><strong className="text-slate-800">High-dose formulations (100-400 mg):</strong> Less widely available; typically dispensed through specialist oncology pharmacy channels.</li>
             </ul>
           </Section>
 
@@ -864,8 +864,8 @@ export default function MonographClient() {
           <Section id="s25" num="25" title="Recent Updates - New Findings & Guideline Changes" collapsed={!!collapsed['s25']} onToggle={() => toggleSection('s25')}>
             {[
               ['FDA Label Update - March 2024', 'The Provera (medroxyprogesterone acetate tablets) prescribing information was updated in March 2024. The removal of pregnancy as a contraindication from the injectable formulation\'s label (Depo-Provera) was noted in April 2024 - a regulatory label alignment, not a change in clinical recommendation (MPA remains contraindicated in pregnancy).'],
-              ['Meningioma Risk - Growing Evidence Base', 'Accumulating real-world pharmacovigilance data and cohort studies (2022–2024) have strengthened the association between high-dose, long-duration progestogen use (including MPA) and intracranial meningioma. Regulatory agencies in France (ANSM) and the UK have issued guidance advising clinicians to review patients on high-dose MPA for neurological symptoms and to consider alternative therapies where possible. This signal appears dose-dependent and is most notable with oncology-level dosing.'],
-              ['PPOS (Progestin-Primed Ovarian Stimulation) - Growing ART Use', 'MPA as part of PPOS protocols in IVF has gained increasing traction in the literature (2020–2024), particularly in China, showing comparable clinical pregnancy rates to GnRH antagonist protocols in freeze-all cycles. MPA (10 mg/day) administered alongside gonadotrophins prevents premature LH surges without reducing ovarian response. Not yet universally adopted in Western ART practice but increasingly recognised in international guidelines.'],
+              ['Meningioma Risk - Growing Evidence Base', 'Accumulating real-world pharmacovigilance data and cohort studies (2022-2024) have strengthened the association between high-dose, long-duration progestogen use (including MPA) and intracranial meningioma. Regulatory agencies in France (ANSM) and the UK have issued guidance advising clinicians to review patients on high-dose MPA for neurological symptoms and to consider alternative therapies where possible. This signal appears dose-dependent and is most notable with oncology-level dosing.'],
+              ['PPOS (Progestin-Primed Ovarian Stimulation) - Growing ART Use', 'MPA as part of PPOS protocols in IVF has gained increasing traction in the literature (2020-2024), particularly in China, showing comparable clinical pregnancy rates to GnRH antagonist protocols in freeze-all cycles. MPA (10 mg/day) administered alongside gonadotrophins prevents premature LH surges without reducing ovarian response. Not yet universally adopted in Western ART practice but increasingly recognised in international guidelines.'],
               ['BMD Evidence - ACOG Guidance', 'The American College of Obstetricians and Gynecologists (ACOG) has reaffirmed guidance that the BMD reduction with injectable MPA should not deter clinicians from prescribing it when it is the most appropriate contraceptive for a patient - including adolescents - provided counselling on the risk is given and duration is minimised. BMD loss has been shown to recover after discontinuation in most patients.'],
               ['MPA vs. Newer Progestogens in HRT', 'Ongoing discussion in the literature continues to compare MPA\'s safety profile in combination HRT against newer, more progesterone-like progestins (e.g., dydrogesterone, micronised progesterone). Some observational data suggest that micronised progesterone may carry a more favourable breast cancer risk profile compared to MPA when used in HRT, though head-to-head RCT data remain limited. This area is expected to produce updated clinical guideline recommendations in coming years.'],
             ].map(([heading, body]) => (

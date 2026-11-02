@@ -136,7 +136,7 @@ export default function SlotsPage() {
       }
     }
 
-    // Randomly mark 1–7 slots as dummy per day
+    // Randomly mark 1-7 slots as dummy per day
     if (autoDummy && toInsert.length > 0) {
       const groupedByDate = toInsert.reduce((acc, slot) => {
         if (!acc[slot.slot_date]) acc[slot.slot_date] = []
@@ -242,7 +242,7 @@ export default function SlotsPage() {
             className="rounded border-slate-300 accent-[rgb(var(--color-primary))]"
           />
           <span className="text-sm text-slate-600">
-            Automatic dummy slots <span className="text-slate-400 text-xs">(randomly marks 1–7 slots as dummy per day)</span>
+            Automatic dummy slots <span className="text-slate-400 text-xs">(randomly marks 1-7 slots as dummy per day)</span>
           </span>
         </label>
       </div>
@@ -293,7 +293,7 @@ export default function SlotsPage() {
                   <div className="flex items-center gap-3">
                     <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${dotColor}`} />
                     <span className="text-sm font-semibold text-slate-800 w-32">
-                      {formatTime(slot.start_time)} – {formatTime(slot.end_time)}
+                      {formatTime(slot.start_time)} - {formatTime(slot.end_time)}
                     </span>
                     {slot.is_booked && (
                       <span className="rounded-full border border-blue-200 bg-blue-50 px-2 py-0.5 text-[10px] font-semibold text-blue-700">

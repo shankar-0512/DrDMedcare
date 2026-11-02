@@ -75,7 +75,7 @@ const POSTS = [
   {
     slug: 'clinical-pharmacist-vs-pharmacist',
     title: 'Clinical Pharmacist vs Pharmacist',
-    subtitle: "What's the difference — and why does it matter for your care?",
+    subtitle: "What's the difference, and why does it matter for your care?",
     category: 'Awareness',
     html: base(
       'linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #bae6fd 100%)',
@@ -84,7 +84,7 @@ const POSTS = [
       '#0369a1',
       'Awareness',
       'Clinical Pharmacist vs Pharmacist',
-      "What's the difference — and why does it matter for your care?",
+      "What's the difference, and why does it matter for your care?",
       'Dr Priyanka Deventhiran',
       /* decor */ `
       <!-- Background blob -->
@@ -158,7 +158,7 @@ const POSTS = [
       <div style="position:absolute;top:52px;right:80px;font-size:160px;opacity:0.2;transform:rotate(-10deg);">❤️</div>
       <!-- Quote card -->
       <div style="position:absolute;bottom:140px;right:60px;background:white;border-radius:16px;padding:20px 24px;box-shadow:0 8px 32px rgba(15,118,110,0.15);border-left:4px solid #0f766e;max-width:320px;">
-        <p style="font-size:14px;color:#334155;line-height:1.6;font-style:italic;">"Patient counselling — the missing pill in Indian healthcare."</p>
+        <p style="font-size:14px;color:#334155;line-height:1.6;font-style:italic;">"Patient counselling: the missing pill in Indian healthcare."</p>
       </div>
       <div style="position:absolute;top:200px;right:72px;font-size:80px;opacity:0.15;">💙</div>
       `
@@ -175,7 +175,7 @@ const POSTS = [
       '#b45309',
       'Education',
       'Drug-Food Interactions Every Indian Patient Should Know',
-      'Dal, milk, banana, tea — foods that can silently affect your medicines',
+      'Dal, milk, banana, tea: foods that can silently affect your medicines',
       'Dr Priyanka Deventhiran',
       /* decor */ `
       <svg style="position:absolute;top:-80px;right:-80px;opacity:0.12;" width="480" height="480" viewBox="0 0 480 480">
@@ -206,7 +206,7 @@ const POSTS = [
       '#7c3aed',
       'Education',
       'Meningitis: Warning Signs Every Indian Family Must Know',
-      'Bacterial meningitis can turn fatal within 24 hours — know the signs',
+      'Bacterial meningitis can turn fatal within 24 hours. Know the signs',
       'Dr Priyanka Deventhiran',
       /* decor */ `
       <svg style="position:absolute;top:-80px;right:-80px;opacity:0.12;" width="480" height="480" viewBox="0 0 480 480">
@@ -239,7 +239,7 @@ const POSTS = [
       '#b45309',
       'Education',
       'Why Stopping Antibiotics Midway Is Dangerous',
-      'Feeling better is not the finish line — it is the halfway point',
+      'Feeling better is not the finish line. It is the halfway point',
       'Dr Priyanka Deventhiran',
       /* decor */ `
       <svg style="position:absolute;top:-80px;right:-80px;opacity:0.12;" width="480" height="480" viewBox="0 0 480 480">
@@ -253,7 +253,7 @@ const POSTS = [
           <div style="height:100%;width:45%;background:linear-gradient(90deg,#f59e0b,#d97706);border-radius:8px;"></div>
         </div>
         <div style="display:flex;justify-content:space-between;margin-top:8px;">
-          <span style="font-size:11px;color:#92400e;font-weight:600;">Day 3 — Feeling better</span>
+          <span style="font-size:11px;color:#92400e;font-weight:600;">Day 3: Feeling better</span>
           <span style="font-size:11px;color:#94a3b8;">Day 7</span>
         </div>
       </div>
@@ -367,7 +367,7 @@ const POSTS = [
       '#ede9fe',
       '#6d28d9',
       'Education',
-      'Myasthenia Gravis: Medicines That Help — and Ones That Don\'t',
+      'Myasthenia Gravis: Medicines That Help, and Ones That Don\'t',
       'Why every new prescription needs a second look in MG',
       'Dr Priyanka Deventhiran',
       /* decor */ `

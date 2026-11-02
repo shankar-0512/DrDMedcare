@@ -358,7 +358,7 @@ export default function AvailabilityPage() {
                   {new Date(o.date + 'T00:00:00').toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })}
                 </span>
                 {o.is_available
-                  ? <Badge color="green">Extra: {o.start_time?.slice(0,5)} – {o.end_time?.slice(0,5)}</Badge>
+                  ? <Badge color="green">Extra: {o.start_time?.slice(0,5)} - {o.end_time?.slice(0,5)}</Badge>
                   : <Badge color="red">Blocked</Badge>
                 }
                 {o.reason && <span className="text-xs text-slate-400">{o.reason}</span>}

@@ -7,7 +7,7 @@ import ReadingProgress from '@/components/ReadingProgress'
 const FAQS = [
   {
     q: 'When will I feel better?',
-    a: 'The medicine starts working straight away, but full effects can take 2–3 months. Most people notice improvement within the first month.',
+    a: 'The medicine starts working straight away, but full effects can take 2-3 months. Most people notice improvement within the first month.',
   },
   {
     q: 'What happens when I stop taking it?',
@@ -120,9 +120,9 @@ const LIFESTYLE_CARDS = [
 ]
 
 const DOSE_ROWS = [
-  ['Period problems / Heavy bleeding', '2.5–10mg once daily', '5–10 days per cycle; 2–3 cycles'],
+  ['Period problems / Heavy bleeding', '2.5-10mg once daily', '5-10 days per cycle; 2-3 cycles'],
   ['Endometriosis', '10mg three times a day', '3 months continuously'],
-  ['PCOS (absent/infrequent periods)', '10mg once daily', '14 days every 1–3 months'],
+  ['PCOS (absent/infrequent periods)', '10mg once daily', '14 days every 1-3 months'],
   ['Prostate cancer hot flushes', '20mg (two 10mg) once daily', '10 weeks, then reviewed'],
   ['Menopause symptoms (HRT)', 'As advised by doctor', 'Part of 28-day HRT cycle'],
 ]
@@ -382,7 +382,7 @@ export default function PILClient() {
             <ul className="list-disc pl-5 space-y-2">
               <li>
                 <strong>Pregnancy:</strong> Do not take medroxyprogesterone while pregnant. It can affect natural
-                hormone changes. Low doses (2.5–10mg) are unlikely to harm if taken before pregnancy was known. Stop
+                hormone changes. Low doses (2.5-10mg) are unlikely to harm if taken before pregnancy was known. Stop
                 immediately and tell your doctor if you become pregnant.
               </li>
               <li>

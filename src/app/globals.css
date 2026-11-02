@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 /* ══════════════════════════════════════════════════════════════
-   DR D'S MEDCARE — DESIGN TOKENS
+   DR D'S MEDCARE: DESIGN TOKENS
    Change the look of the whole site by editing ONLY this block.
    Values are "R G B" channels (so opacity like bg-brand/60 works).
    ══════════════════════════════════════════════════════════════ */
 :root {
-  /* Secondary: gold — rings, rules, badges, underlines, buttons on dark */
+  /* Secondary: gold: rings, rules, badges, underlines, buttons on dark */
   --c-brand:        216 182 95;    /* #d8b65f */
   --c-brand-deep:   180 146 66;
   --c-gold-text:    242 217 146;   /* gold for small text on the deep teal panel (AA) */
@@ -35,7 +35,7 @@
   --radius-card: 2rem;
   --radius-panel: 2.5rem;
 
-  /* Legacy aliases — older pages still read these. Don't edit. */
+  /* Legacy aliases: older pages still read these. Don't edit. */
   --color-primary:      var(--c-teal);
   --color-primary-soft: var(--c-brand-soft);
   --color-primary-mid:  var(--c-brand);
